@@ -68,6 +68,7 @@ const theme = {
       grey_dark: '#0E1011',
       grey_darked: '#202427',
       lighterBlue: '#EAE8E8',
+      pink: '#DF73E9'
       
     },
   }

@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter} from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { Theme } from './styles/Theme'
 
 import { AppWrapper } from './styles/App.styled'
