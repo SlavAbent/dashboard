@@ -3,16 +3,14 @@ import { AvatarWrapper, AvatarImage, AvatarButton, AvatarFace, AvatarBorder, Ava
 
 interface IAvatarProps {
     className: string
-    classNameSmallCircle?: string
     size?: number
     image?: string
     title?: string
-    onClick: () => void
 
 }
 
-const Avatar: React.FC<IAvatarProps> = (props) => {
-    const { size = 32, image, className, title, classNameSmallCircle } = props
+export const Avatar: React.FC<IAvatarProps> = (props) => {
+    const { size = 42, image, className, title } = props
 
     const sizeBox = `${size - 4}px`
     const sizeInner = `${size - 8}px`
@@ -24,7 +22,6 @@ const Avatar: React.FC<IAvatarProps> = (props) => {
             className={className}
             style={{width: sizeInner, height: sizeInner}}>
             <AvatarWrapper 
-                className={classNameSmallCircle}
                 style={{width: sizeInner, height: sizeInner}}>
                 {image && (
                     <AvatarImage 
@@ -41,13 +38,13 @@ const Avatar: React.FC<IAvatarProps> = (props) => {
                         {title}
                     </AvatarFace>
                 )}
-                <AvatarBorder 
-                    style={{width: sizeWrapper, height: sizeWrapper}}>
-                    <AvatarBorderBox style={{width: sizeBox, height: sizeBox}} />
-                </AvatarBorder>
+               
             </AvatarWrapper>
+            <AvatarBorder 
+                style={{width: sizeWrapper, height: sizeWrapper}}>
+                <AvatarBorderBox style={{width: sizeBox, height: sizeBox}} />
+            </AvatarBorder>
+            
         </AvatarButton>
     )
 }
-
-export default Avatar
