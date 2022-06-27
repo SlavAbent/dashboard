@@ -1,19 +1,20 @@
 import React from 'react';
 import styled from 'styled-components'
-import male from '../../components/Icons/Person/male.svg'
 
-import  Avatar  from '../UI/uikit/Avatar/Avatar.tsx';
+import  Avatar  from '../UI/uikit/Avatar';
 
-// const UiKit = styled.div``
+const UiKit = styled.div``
 
 const UI = () => {
     return (
-        <div>
+        <UiKit>
             <Avatar
-                image={male}
+                className="red"
+                image=""
+                title="Avatar"     
+                size={42}  
             />
-        </div>
-        // <>123</>
+        </UiKit>
     )
 }
 

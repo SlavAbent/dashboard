@@ -1,10 +1,10 @@
 import React from 'react';
-import Avatar from '../pages/UI/uikit/Avatar/Avatar.tsx';
+import Avatar from 'pages/UI/uikit/Avatar';
 
 
 export default {
     title: 'Avatar',
-    component: Avatar
+    component: Avatar,
 }
 
 const Template = (arg) => <Avatar {...arg}/>

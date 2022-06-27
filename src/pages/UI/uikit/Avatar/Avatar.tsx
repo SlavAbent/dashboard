@@ -6,11 +6,10 @@ interface IAvatarProps {
     size?: number
     image?: string
     title?: string
-    onClick: () => void
 
 }
 
-const Avatar: React.FC<IAvatarProps> = (props) => {
+export const Avatar: React.FC<IAvatarProps> = (props) => {
     const { size = 42, image, className, title } = props
 
     const sizeBox = `${size - 4}px`
@@ -49,5 +48,3 @@ const Avatar: React.FC<IAvatarProps> = (props) => {
         </AvatarButton>
     )
 }
-
-export default Avatar
