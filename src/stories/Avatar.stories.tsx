@@ -1,13 +1,14 @@
 import React from 'react';
-import Avatar from 'pages/UI/uikit/Avatar';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Avatar } from '../pages/UI/uikit/Avatar/Avatar';
 
 
 export default {
     title: 'Avatar',
     component: Avatar,
-}
+} as ComponentMeta<typeof Avatar>
 
-const Template = (arg) => <Avatar {...arg}/>
+const Template: ComponentStory<typeof Avatar> = (arg) => <Avatar {...arg}/>
 
 export const Default = Template.bind({})
 
