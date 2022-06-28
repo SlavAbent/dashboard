@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeaderComponent } from './Header.style'
-import person from '../Icons/Person/male.svg'
+// import person from '../Icons/Person/male.svg'
 
 import  Avatar  from '../../pages/UI/uikit/Avatar';
 
@@ -9,7 +9,7 @@ const Header = () => {
         <HeaderComponent>
             <Avatar
                 size={42}
-                image={person} 
+                // image={person} 
                 className={'test'}
                 title={'test'}
             />
