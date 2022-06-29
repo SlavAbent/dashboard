@@ -1,11 +1,18 @@
+import { Avatar } from '../../components/uikit/Avatar';
+import { Button } from '../../components/uikit/Button';
 import React from 'react';
-import styled from 'styled-components'
-
-import  Avatar  from '../UI/uikit/Avatar';
+import styled from 'styled-components';
 
 const UiKit = styled.div``
 
+
+
 const UI = () => {
+    
+    const handleClick = (event: React.MouseEvent) => {
+        alert('test'); 
+    }
+
     return (
         <UiKit>
             <Avatar
@@ -14,6 +21,7 @@ const UI = () => {
                 title="Avatar"     
                 size={42}  
             />
+            <Button onClick={handleClick}>send</Button>
         </UiKit>
     )
 }

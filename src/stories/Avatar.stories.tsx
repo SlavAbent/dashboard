@@ -1,7 +1,7 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Avatar } from '../pages/UI/uikit/Avatar/Avatar';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import { Avatar } from '../components/uikit/Avatar/Avatar';
+import React from 'react';
 
 export default {
     title: 'Avatar',
