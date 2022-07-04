@@ -1,17 +1,16 @@
-import React from 'react';
-import { HeaderComponent } from './Header.style'
-// import person from '../Icons/Person/male.svg'
-
 import { Avatar }  from '../uikit/Avatar/';
+import { HeaderComponent } from './Header.style'
+import avatar from 'components/uikit/Avatar/avatar.jpeg';
 
 const Header = () => {
     return (
         <HeaderComponent>
             <Avatar
                 size={42}
-                // image={person} 
+                image={avatar} 
                 className={'test'}
                 title={'test'}
+                status={'warning'}
             />
         </HeaderComponent>
     )
