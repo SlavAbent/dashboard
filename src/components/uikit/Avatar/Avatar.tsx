@@ -1,5 +1,6 @@
+import { AvatarBorder, AvatarBorderBox, AvatarButton, AvatarFace, AvatarImage, AvatarWrapper } from './Avatar.style'
+
 import React from 'react'
-import { AvatarWrapper, AvatarImage, AvatarButton, AvatarFace, AvatarBorder, AvatarBorderBox } from './Avatar.style'
 
 interface IAvatarProps {
     className: string

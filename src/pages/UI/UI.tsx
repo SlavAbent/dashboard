@@ -1,5 +1,6 @@
 import { Avatar } from '../../components/uikit/Avatar';
 import { Button } from '../../components/uikit/Button';
+import { Icon } from '../../components/uikit/Icon'
 import React from 'react';
 import styled from 'styled-components';
 
@@ -22,6 +23,7 @@ const UI = () => {
                 size={42}  
             />
             <Button onClick={handleClick}>send</Button>
+            <Icon type="svg"/>
         </UiKit>
     )
 }
