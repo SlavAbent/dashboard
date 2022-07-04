@@ -1,16 +1,28 @@
+import {
+    AvatarBorder,
+    AvatarBorderBox,
+    AvatarButton,
+    AvatarFace,
+    AvatarImage,
+    AvatarStatus,
+    AvatarWrapper
+} from './Avatar.style'
+
 import React from 'react'
-import { AvatarWrapper, AvatarImage, AvatarButton, AvatarFace, AvatarBorder, AvatarBorderBox } from './Avatar.style'
+import classNames from 'classnames';
+
+export type statusType = 'success' | 'warning' | 'error'
 
 interface IAvatarProps {
     className: string
     size?: number
     image?: string
     title?: string
-
+    status?: statusType
 }
 
 export const Avatar: React.FC<IAvatarProps> = (props) => {
-    const { size = 42, image, className, title } = props
+    const { size = 42, image, className, title, status } = props
 
     const sizeBox = `${size - 4}px`
     const sizeInner = `${size - 8}px`
@@ -23,6 +35,7 @@ export const Avatar: React.FC<IAvatarProps> = (props) => {
             style={{width: sizeInner, height: sizeInner}}>
             <AvatarWrapper 
                 style={{width: sizeInner, height: sizeInner}}>
+                {status && <AvatarStatus className={status}/> }    
                 {image && (
                     <AvatarImage 
                         src={image} 
