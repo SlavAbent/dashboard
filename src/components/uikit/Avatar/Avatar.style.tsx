@@ -10,16 +10,24 @@ const AvatarWrapper = styled.div`
     border-radius: 50%;
     z-index: 10000;
     overflow: hidden;
-    &:before {
-        content: '';
-        position: absolute;
-        top: -4px;
-        right: -1px;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: ${props => props.theme.colors.pink};
-        z-index: 1100;
+`;
+
+const AvatarStatus = styled.div`
+    position: absolute;
+    top: -4px;
+    right: -1px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    z-index: 1100;
+    &.success {
+        background-color: ${props => props.theme.colors.lighterGreen};
+    }
+    &.error {
+        background-color: red;
+    }
+    &.warning {
+        background-color: yellow
     }
 `;
 
@@ -53,4 +61,4 @@ const AvatarBorderBox = styled.div`
 
 `;
 
-export { AvatarWrapper, AvatarImage, AvatarButton, AvatarFace, AvatarBorder, AvatarBorderBox }
+export { AvatarWrapper, AvatarImage, AvatarButton, AvatarFace, AvatarBorder, AvatarBorderBox, AvatarStatus }
