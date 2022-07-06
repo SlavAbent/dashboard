@@ -9,7 +9,6 @@ import {
 } from './Avatar.style'
 
 import React from 'react'
-import classNames from 'classnames';
 
 export type statusType = 'success' | 'warning' | 'error'
 
@@ -19,10 +18,11 @@ interface IAvatarProps {
     image?: string
     title?: string
     status?: statusType
+    onClick?: (event: React.MouseEvent) => void 
 }
 
 export const Avatar: React.FC<IAvatarProps> = (props) => {
-    const { size = 42, image, className, title, status } = props
+    const { size = 42, image, className, title, status, onClick } = props
 
     const sizeBox = `${size - 4}px`
     const sizeInner = `${size - 8}px`
@@ -32,6 +32,7 @@ export const Avatar: React.FC<IAvatarProps> = (props) => {
     return (
         <AvatarButton
             className={className}
+            onClick={onClick}
             style={{width: sizeInner, height: sizeInner}}>
             <AvatarWrapper 
                 style={{width: sizeInner, height: sizeInner}}>

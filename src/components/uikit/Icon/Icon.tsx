@@ -1,11 +1,8 @@
 import React, { DOMAttributes } from 'react';
 
+import { ReactComponent as Male } from 'components/Icons/Person/male.svg';
 import classNames from 'classnames';
 import { newGuid } from 'utils/guid'
-
-// import { ReactComponent as Male } from 'components/Icons/Person/Male.svg';
-
-
 
 export type IconType = | 'svg'
 
