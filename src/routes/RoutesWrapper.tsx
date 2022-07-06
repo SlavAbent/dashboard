@@ -1,11 +1,12 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom'
-import { RoutesComponent } from './RoutesWrapper.style'
+import { Route, Routes } from 'react-router-dom'
 
-import Main from '../pages/Main'
-import UI from '../pages/UI'
 import Chat from '../pages/Chat'
+import Main from '../pages/Main'
 import Profile from '../pages/Profile'
+import React from 'react';
+import { RoutesComponent } from './RoutesWrapper.style'
+import UI from '../pages/UI'
+
 // import Map from '../pages/Map/Map'
 
 export interface IRoutesWrapper {}

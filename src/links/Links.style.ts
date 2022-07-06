@@ -1,12 +1,11 @@
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 const LinksContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 30px;
-    height: 30px;
     margin-bottom: 50px;
 `;
 

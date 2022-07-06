@@ -1,12 +1,10 @@
-import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import { Theme } from './styles/Theme'
-
 import { AppWrapper } from './styles/App.styled'
-
-import { RoutesWrapper } from './routes/RoutesWrapper'
 import Aside from './components/Aside/Aside'
+import { BrowserRouter } from 'react-router-dom'
 import Header from './components/Header/Header'
+import React from 'react'
+import { RoutesWrapper } from './routes/RoutesWrapper'
+import { Theme } from './styles/Theme'
 
 const App = () => {
   return (
@@ -15,8 +13,8 @@ const App = () => {
         <BrowserRouter>
           <Aside/>
           <RoutesWrapper/>
+          <Header/>
         </BrowserRouter>
-        <Header/>
       </AppWrapper>
     </Theme>
   );
