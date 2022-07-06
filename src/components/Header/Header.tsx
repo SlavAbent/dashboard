@@ -1,7 +1,8 @@
 import { Avatar }  from '../uikit/Avatar/';
-import DropDownMenu from '../DropDownMenu/DropDownMenu';
+import { DropDownMenu } from '../uikit/DropDownMenu';
 import { HeaderComponent } from './Header.style'
 import { Icon } from '../uikit/Icon/Icon'
+import { Link } from 'react-router-dom'
 import avatar from 'components/uikit/Avatar/avatar.jpeg';
 import { useState } from 'react';
 
@@ -9,8 +10,9 @@ const Header = () => {
 
     const [activeDropDown, setActiveDropDown] = useState<boolean>(false)
 
-    const avatarDropDownMenu = () => {
-        setActiveDropDown(activeDropDown => !activeDropDown)
+    const avatarDropDownMenu = (event: React.MouseEvent) => {
+        //refactor!
+        setActiveDropDown(!activeDropDown)
     }
 
     return (
@@ -25,8 +27,15 @@ const Header = () => {
                 onClick={avatarDropDownMenu}
             />
             <DropDownMenu 
-                activeDropDown={activeDropDown}
-            />
+                activeDropDown={activeDropDown} // refactor!
+                // direction={'topToLeft'}
+                transitioned={true}
+            >
+                <>
+                    <Link to="Profile">Profile</Link>
+                    <Link to="Logout">Logout</Link>
+                </>
+            </DropDownMenu>
         </HeaderComponent>
     )
 }

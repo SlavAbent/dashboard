@@ -6,8 +6,6 @@ import styled from 'styled-components';
 
 const UiKit = styled.div``
 
-
-
 const UI = () => {
     
     const handleClick = (event: React.MouseEvent) => {
