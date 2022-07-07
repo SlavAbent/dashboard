@@ -1,6 +1,5 @@
 import React, { DOMAttributes } from 'react';
-
-import { ReactComponent as Icons } from 'components/Icons/Person/male.svg';
+import { ReactComponent as Icons } from 'assets/Person/male.svg';
 import classNames from 'classnames';
 import { newGuid } from '../../../utils/guid'
 

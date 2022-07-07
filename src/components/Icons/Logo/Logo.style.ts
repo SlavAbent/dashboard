@@ -11,7 +11,7 @@ const IconLogo = styled.div`
     svg {
         width: 100%;
         height: 100%;
-        color: ${props => props.theme.colors.lighterBlue}
+        color: ${props => props.theme.colors.lighterMain}
     }
 `;
 

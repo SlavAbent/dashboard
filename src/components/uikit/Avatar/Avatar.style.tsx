@@ -6,7 +6,7 @@ const AvatarButton = styled.div`
 `
 
 const AvatarWrapper = styled.div`
-    background-color: ${props => props.theme.colors.lighterBlue};
+    background-color: ${props => props.theme.colors.lighterMain};
     border-radius: 50%;
     z-index: 10000;
     overflow: hidden;
@@ -24,10 +24,10 @@ const AvatarStatus = styled.div`
         background-color: ${props => props.theme.colors.lighterGreen};
     }
     &.error {
-        background-color: red;
+        background-color: ${props => props.theme.colors.lighterRed};
     }
     &.warning {
-        background-color: yellow
+        background-color: ${props => props.theme.colors.lighterYellow};
     }
 `;
 
@@ -54,11 +54,19 @@ const AvatarBorder = styled.div`
     bottom: 0;
     z-index: 1001;
     border-radius: 50%;
-    border: 1px solid ${props => props.theme.colors.lighterBlue};
+    border: 1px solid ${props => props.theme.colors.lighterMain};
 `;
 
 const AvatarBorderBox = styled.div`
 
 `;
 
-export { AvatarWrapper, AvatarImage, AvatarButton, AvatarFace, AvatarBorder, AvatarBorderBox, AvatarStatus }
+export {
+  AvatarWrapper,
+  AvatarImage,
+  AvatarButton,
+  AvatarFace,
+  AvatarBorder,
+  AvatarBorderBox,
+  AvatarStatus,
+}

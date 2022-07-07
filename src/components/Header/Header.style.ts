@@ -7,7 +7,7 @@ const HeaderComponent = styled.div`
     width: 100%;
     height: 25px;
     padding: ${props => props.theme.padding.default};
-    background-color: ${props => props.theme.colors.grey_darked};
+    background-color: ${props => props.theme.colors.darkTheme.grey_darked};
 `;
 
 export { HeaderComponent }

@@ -7,7 +7,7 @@ const AsideWrapper = styled.div`
     width: 60px;
     padding: ${props => props.theme.padding.small};
     padding-top: ${props => props.theme.padding.default};
-    background-color: ${props => props.theme.colors.grey_dark};
+    background-color: ${props => props.theme.colors.darkTheme.grey_dark};
 `;
 
 export { AsideWrapper }
