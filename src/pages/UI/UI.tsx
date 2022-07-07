@@ -9,7 +9,7 @@ const UiKit = styled.div``
 const UI = () => {
     
     const handleClick = (event: React.MouseEvent) => {
-        alert('test'); 
+      console.log(event)
     }
 
     return (
