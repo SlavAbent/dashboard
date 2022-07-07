@@ -16,11 +16,8 @@ export interface IDropDownMenuProps {
 }
 
 export const DropDownMenu: React.FC<IDropDownMenuProps> = (
-    {   activeDropDown, 
-        hovered, 
-        transitioned, 
-        direction, 
-        children
+    {   activeDropDown,
+      children
     }) => {
         
     const activeDropMenu = activeDropDown ? 'open' : 'close'

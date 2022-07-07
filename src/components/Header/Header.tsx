@@ -1,16 +1,17 @@
 import { Avatar }  from '../uikit/Avatar/';
 import { DropDownMenu } from '../uikit/DropDownMenu';
 import { HeaderComponent } from './Header.style'
-import { Icon } from '../uikit/Icon/Icon'
+import { Icon } from '../uikit/Icon'
 import { Link } from 'react-router-dom'
 import avatar from 'components/uikit/Avatar/avatar.jpeg';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const Header = () => {
 
     const [activeDropDown, setActiveDropDown] = useState<boolean>(false)
 
     const avatarDropDownMenu = (event: React.MouseEvent) => {
+      console.log(event)
         //refactor!
         setActiveDropDown(!activeDropDown)
     }

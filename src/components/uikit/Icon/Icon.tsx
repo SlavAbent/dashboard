@@ -1,13 +1,13 @@
 import React, { DOMAttributes } from 'react';
 
-import { ReactComponent as Male } from 'components/Icons/Person/male.svg';
+import { ReactComponent as Icons } from 'components/Icons/Person/male.svg';
 import classNames from 'classnames';
-import { newGuid } from 'utils/guid'
+import { newGuid } from '../../../utils/guid'
 
 export type IconType = | 'svg'
 
 const iconTypes = new Map([
-    // ["svg", <Svg key={newGuid()}/>]
+    ["svg", <Icons key={newGuid()}/>]
 ])
 
 export interface IIconProps extends DOMAttributes<HTMLDivElement> {
