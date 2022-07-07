@@ -3,7 +3,7 @@ import { DropDownMenu } from '../uikit/DropDownMenu';
 import { HeaderComponent } from './Header.style'
 import { Icon } from '../uikit/Icon'
 import { Link } from 'react-router-dom'
-import avatar from 'components/uikit/Avatar/avatar.jpeg';
+import avatar from '../../assets/avatar.jpeg'
 import React, { useState } from 'react';
 
 const Header = () => {
