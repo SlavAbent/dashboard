@@ -15,7 +15,7 @@ const UI = () => {
     return (
         <UiKit>
             <Avatar
-                className="red"
+                className="someClass"
                 image=""
                 title="Avatar"     
                 size={42}  

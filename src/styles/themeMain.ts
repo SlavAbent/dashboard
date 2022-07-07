@@ -65,12 +65,29 @@ const theme = {
       small: '8px',
     },
     colors: {
-      grey_dark: '#0E1011',
-      grey_darked: '#202427',
-      lighterBlue: '#EAE8E8',
-      lighterGreen: '#00ff2b',
-      pink: '#DF73E9'
-      
+      darkTheme: {
+        grey_dark: '#0E1011',
+        grey_darked: '#202427',
+        grey_smallDark: '#242A2D',
+      },
+      lightTheme: {
+        mainColor: '#ffffff',
+        mainColored: '#adadad',
+        mainColorDarked: '#8c8c8c',
+        mainColorDark: '#5e5e5e',
+      },
+      lighterMain: '#d5d5d5',
+      lighterBlue: '#5DCBDF',
+      lighterGreen: '#AFCFB2',
+      lighterPink: '#F39FB9',
+      lighterYellow: '#FCD68A',
+      lighterRed: '#ED504E',
+      lighterPurple: '#C6B2DB',
+      lighterBrown: '#CBAD97',
+      yellow: '#C0B94E',
+      purple: '#765FE2',
+      brown: '#B49B84',
+      wetAsphalt: '#798FBE',
     },
   }
   
