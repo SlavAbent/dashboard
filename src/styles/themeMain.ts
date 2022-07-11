@@ -41,6 +41,7 @@ const theme = {
         small: 'blur(16px)',
       },
       boxShadow: {
+        purple: '0px 0px 41px 8px rgba(116, 6, 150, 0.88)',
         dark: '0px 18px 40px rgba(0, 130, 145, 0.08)',
         default: '0px 2px 8px rgba(107, 138, 228, 0.12)',
         green: '0px 18px 40px rgba(39, 174, 96, 0.08)',

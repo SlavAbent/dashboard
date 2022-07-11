@@ -13,7 +13,6 @@ export interface IRoutesWrapper {}
 
 export const RoutesWrapper: React.FC<IRoutesWrapper> = (): JSX.Element => {
     return (
-        //ts-ignore
         <RoutesComponent>
             <Routes>
                 <Route path="/" element={<Main />} />
