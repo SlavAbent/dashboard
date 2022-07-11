@@ -8,11 +8,11 @@ import { LinksContainer, LinkAnchor } from './Links.style'
 export const Links = () => {
     return  (
         <LinksContainer>
-            <LinkAnchor to="/"><IoIosKeypad/></LinkAnchor>
-            <LinkAnchor to="UI"><IoIosQrScanner/></LinkAnchor>
-            <LinkAnchor to="Chat"><BsChatDots/></LinkAnchor>
-            <LinkAnchor to="Profile"><IoIosContact/></LinkAnchor>
-            <LinkAnchor to="Map"><BsMap/></LinkAnchor>
+            <LinkAnchor className={({isActive}) => isActive ? ' active' : ''} to="/"><IoIosKeypad/></LinkAnchor>
+            <LinkAnchor className={({isActive}) => isActive ? ' active' : ''} to="UI"><IoIosQrScanner/></LinkAnchor>
+            <LinkAnchor className={({isActive}) => isActive ? ' active' : ''} to="Chat"><BsChatDots/></LinkAnchor>
+            <LinkAnchor className={({isActive}) => isActive ? ' active' : ''} to="Profile"><IoIosContact/></LinkAnchor>
+            <LinkAnchor className={({isActive}) => isActive ? ' active' : ''} to="Map"><BsMap/></LinkAnchor>
         </LinksContainer>
     )
 }
