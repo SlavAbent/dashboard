@@ -14,14 +14,15 @@ const UI = () => {
 
     return (
         <UiKit>
-            <Avatar
-                className="someClass"
-                image=""
-                title="Avatar"     
-                size={42}  
-            />
-            <Button onClick={handleClick}>send</Button>
-            <Icon type="svg"/>
+          UI
+            {/*<Avatar*/}
+            {/*    className="someClass"*/}
+            {/*    image=""*/}
+            {/*    title="Avatar"     */}
+            {/*    size={42}  */}
+            {/*/>*/}
+            {/*<Button onClick={handleClick}>send</Button>*/}
+            {/*<Icon type="svg"/>*/}
         </UiKit>
     )
 }

@@ -5,6 +5,7 @@ import Header from './components/Header/Header'
 import React from 'react'
 import { RoutesWrapper } from './routes/RoutesWrapper'
 import { Theme } from './styles/Theme'
+import ProjectsAside from './components/Main/ProjectsAside'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <BrowserRouter>
           <Aside/>
           <RoutesWrapper/>
+          <ProjectsAside/>
           <Header/>
         </BrowserRouter>
       </AppWrapper>
