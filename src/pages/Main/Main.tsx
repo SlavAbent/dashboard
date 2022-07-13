@@ -3,7 +3,10 @@ import { ToDo } from '../../components/ToDo'
 
 const Main = () => {
     return (
+      <>
+
         <ToDo/>
+      </>
     )
 }
 

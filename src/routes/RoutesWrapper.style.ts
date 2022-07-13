@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 const RoutesComponent = styled.div`
-    position: absolute;
-    left: 100px;
-    top: 100px;
-    width: calc(100% - 130px);
-    height: calc(100% - 130px);
+  display: flex;
+  align-items: flex-start;
+  position: absolute;
+  left: 57px;
+  top: 57px;
+  width: calc(100% - 120px);
+  height: calc(100% - 58px);
 `;
 
 export { RoutesComponent }
