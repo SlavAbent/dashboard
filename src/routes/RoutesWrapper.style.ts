@@ -4,9 +4,9 @@ const RoutesComponent = styled.div`
   display: flex;
   align-items: flex-start;
   position: absolute;
-  left: 57px;
-  top: 57px;
-  width: calc(100% - 120px);
+  left: 320px;
+  top: 60px;
+  width: calc(86% - 120px);
   height: calc(100% - 58px);
 `;
 

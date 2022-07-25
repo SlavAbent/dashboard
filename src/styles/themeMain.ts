@@ -65,6 +65,12 @@ const theme = {
       default: '16px',
       small: '8px',
     },
+    margin: {
+      big: '40px',
+      large: '32px',
+      default: '16px',
+      small: '8px',
+    },
     colors: {
       darkTheme: {
         grey_dark: '#0E1011',

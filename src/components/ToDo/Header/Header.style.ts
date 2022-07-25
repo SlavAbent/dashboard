@@ -3,16 +3,61 @@ import styled from 'styled-components'
 const HeaderWrapper = styled.div`
   width: 100%;
   height: 40px;
-  background-color: ${props => props.theme.colors.darkTheme.grey_smallDark};
+  
   border-radius: 8px;
 `;
 
-const TodoTitle = styled.div`
-
+const HeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 `;
 
-const TodoCounter = styled.div`
-
+const HeaderLeftSide = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
-export { HeaderWrapper, TodoTitle, TodoCounter }
+const HeaderRightSide = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const HeaderBoardView = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  p {
+    margin-left: 5px;
+  }
+`;
+
+const HeaderFilter = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  p {
+    margin-left: 5px;
+  }
+`;
+
+const HeaderSort = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 15px;
+  p {
+    margin-left: 5px;
+  }
+`;
+
+export {
+  HeaderWrapper,
+  HeaderContainer,
+  HeaderLeftSide,
+  HeaderRightSide,
+  HeaderBoardView,
+  HeaderFilter,
+  HeaderSort,
+}

@@ -1,11 +1,12 @@
 import { Avatar }  from '../uikit/Avatar/';
 import { DropDownMenu } from '../uikit/DropDownMenu';
-import { HeaderComponent, HeaderTitle,HeaderSearch } from './Header.style'
+import { HeaderComponent, HeaderTitle, HeaderSearch } from './Header.style'
 import { Icon } from '../uikit/Icon'
 import { Link } from 'react-router-dom'
 import avatar from '../../assets/avatar.jpeg'
 import React, { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai'
+import { TimeDate } from '../Time/Time'
 
 const Header = () => {
 
@@ -17,9 +18,12 @@ const Header = () => {
         setActiveDropDown(!activeDropDown)
     }
 
+    const person = 'Slava'
+
     return (
         <HeaderComponent>
-            <HeaderTitle>Welcome back, Slava 💪</HeaderTitle>
+            <HeaderTitle>Welcome back, {person} 💪</HeaderTitle>
+            <TimeDate/>
             <HeaderSearch><AiOutlineSearch/></HeaderSearch>
 
            <>
@@ -40,6 +44,7 @@ const Header = () => {
                <>
                  <Link to="Profile">Profile</Link>
                  <Link to="Logout">Logout</Link>
+                 <Link to="Register">Register</Link>
                </>
              </DropDownMenu>
            </>
