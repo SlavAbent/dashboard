@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 const HeaderWrapper = styled.div`
+  display: flex;
   width: 100%;
   height: 40px;
-  
   border-radius: 8px;
 `;
 
@@ -30,6 +30,10 @@ const HeaderBoardView = styled.div`
   cursor: pointer;
   p {
     margin-left: 5px;
+    color: ${props => props.theme.colors.lightTheme.mainColor};
+  }
+  svg {
+    fill: ${props => props.theme.colors.lightTheme.mainColor};
   }
 `;
 
@@ -39,6 +43,10 @@ const HeaderFilter = styled.div`
   cursor: pointer;
   p {
     margin-left: 5px;
+    color: ${props => props.theme.colors.lightTheme.mainColor};
+  }
+  svg {
+    fill: ${props => props.theme.colors.lightTheme.mainColor};
   }
 `;
 
@@ -49,6 +57,10 @@ const HeaderSort = styled.div`
   margin-left: 15px;
   p {
     margin-left: 5px;
+    color: ${props => props.theme.colors.lightTheme.mainColor};
+  }
+  svg {
+    fill: ${props => props.theme.colors.lightTheme.mainColor};
   }
 `;
 
