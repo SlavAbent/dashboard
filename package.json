@@ -14,7 +14,7 @@
     "classnames": "^2.3.1",
     "eslint-webpack-plugin": "^3.2.0",
     "jest": "^28.1.0",
-    "moment": "^2.29.3",
+    "moment": "2.29.4",
     "node-sass": "^7.0.1",
     "normalize.css": "^8.0.1",
     "react": "^18.1.0",

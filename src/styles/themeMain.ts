@@ -53,7 +53,7 @@ const theme = {
         panel: '0px -2px 4px rgba(14, 51, 137, 0.02), 0px 2px 4px rgba(14, 51, 137, 0.1)',
       },
       gradient: {
-        default: '90deg, rgba(215,224,242,0.8379726890756303) 21%, rgba(167,190,238,1) 99%',
+        default: 'linear-gradient(0deg, rgba(125,102,233,1) 0%, rgba(105,80,219,1) 100%)',
         transparent: 'linear-gradient(to top, #000, rgba(0, 0, 0, 0))',
       },
       lineHeight: {
@@ -62,6 +62,12 @@ const theme = {
     },
     padding: {
       large: '40px',
+      default: '16px',
+      small: '8px',
+    },
+    margin: {
+      big: '40px',
+      large: '32px',
       default: '16px',
       small: '8px',
     },

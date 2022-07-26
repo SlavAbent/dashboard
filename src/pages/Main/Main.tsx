@@ -1,8 +1,11 @@
 import React from 'react';
+import { ToDo } from './ToDo'
 
 const Main = () => {
     return (
-        <>1</>
+      <>
+        <ToDo/>
+      </>
     )
 }
 

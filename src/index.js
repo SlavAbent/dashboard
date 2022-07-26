@@ -7,7 +7,9 @@ import 'normalize.css'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import reducer from './redux/reducers/index'
- import App from './App';
+import App from './App';
+
+import 'normalize.css';
 
 const store = createStore(reducer)
 
