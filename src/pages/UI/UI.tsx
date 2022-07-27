@@ -21,7 +21,7 @@ const UI = () => {
             {/*    title="Avatar"     */}
             {/*    size={42}  */}
             {/*/>*/}
-            {/*<Button onClick={handleClick}>send</Button>*/}
+            <Button onClick={handleClick}>send</Button>
             {/*<Icon type="svg"/>*/}
         </UiKit>
     )

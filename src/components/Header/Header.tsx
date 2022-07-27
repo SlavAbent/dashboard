@@ -37,6 +37,7 @@ const Header = () => {
                onClick={avatarDropDownMenu}
              />
              <DropDownMenu
+               width={104}
                activeDropDown={activeDropDown} // refactor!
                // direction={'topToLeft'}
                transitioned={true}
