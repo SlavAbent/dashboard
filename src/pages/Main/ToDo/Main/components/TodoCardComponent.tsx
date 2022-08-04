@@ -11,17 +11,17 @@ import {
 import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi'
 import { AiOutlinePaperClip } from 'react-icons/ai'
 
-const TodoCardComponent = ({job}) => {
-
+const TodoCardComponent = (props) => {
+  const {title, description, completed} = props
 
   return (
     <TodoCard>
       <TodoCardContainer>
         <TodoCardWrapper>
-          <TodoCardTitle>{job}</TodoCardTitle>
-          <TodoCardDescription>{}</TodoCardDescription>
+          <TodoCardTitle>{title}</TodoCardTitle>
+          <TodoCardDescription>{description}</TodoCardDescription>
         </TodoCardWrapper>
-        <HiOutlineDotsCircleHorizontal />
+        <HiOutlineDotsCircleHorizontal/>
       </TodoCardContainer>
       <TodoFooter>
         <TodoDateCreate>date</TodoDateCreate>

@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer, useRef, useState } from 'react'
 import {
   MainContainer,
   MainWrapper,
@@ -12,63 +12,91 @@ import { DropDownMenu } from '../../../../components/uikit/DropDownMenu'
 import TodoCardComponent from './components/TodoCardComponent'
 
 const initState = {
-  job: '',
-  jobs: []
+    todos: [
+      {
+        title: 'test',
+        description: 'test',
+        completed: false,
+      }
+    ]
 }
 
-const SET_JOB = 'set_job'
-const ADD_JOB = 'add_job'
-const DELETE_JOB = 'delete_job'
+const ADD_TODO = 'add_todo'
+const SET_TODO = 'set_todo'
+const TOGGLE_TODO = 'toggle_todo'
+const DELETE_TODO = 'delete_todo'
 
-const setJob = payload => {
+
+const addTodo = payload => {
   return {
-    type: SET_JOB,
+    type: ADD_TODO,
     payload
   }
 }
 
-const addJob = payload => {
+const setTodo = payload => {
   return {
-    type: ADD_JOB,
+    type: SET_TODO,
+    payload
+  }
+}
+
+const deleteTodo = payload => {
+  return {
+    type: DELETE_TODO,
+    payload
+  }
+}
+
+const toggleTodo = payload => {
+  return {
+    type: TOGGLE_TODO,
     payload
   }
 }
 
 const reducer = (state, action) => {
-  let newState
   switch (action.type) {
-    case SET_JOB:
-      newState = {
+    case SET_TODO:
+      return {
         ...state,
-        job: action.payload
-    }
-    break
-    case ADD_JOB:
-      newState = {
-        ...state,
-        jobs: [...state.jobs, action.payload]
+        todo: [
+          {
+            title:  action.payload
+          }
+        ]
       }
-      break
+    case ADD_TODO:
+      return {
+        ...state,
+        todos: [...state.todos, action.payload]
+      }
     default: throw new Error('error')
   }
-  return newState
 }
 
 
 export const Main = () => {
   const [activeDropDown, setActiveDropDown] = useState(false)
+  const inputTodo = useRef()
 
   const openCreateWindow = (event) => {
     setActiveDropDown(!activeDropDown)
   }
 
   const [state, dispatch] = useReducer(reducer, initState)
+  console.log(state)
 
-  const { job, jobs } = state
+  const { title,
+    description,
+    completed,
+    todos } = state
 
   const handleSubmit = () => {
-    dispatch(addJob(job))
+    dispatch(addTodo(title))
   }
+
+
   return (
     <MainContainer>
       <MainWrapper>
@@ -85,16 +113,14 @@ export const Main = () => {
                 <input
                   type="text"
                   placeholder="text"
-                  value={job}
-                  onChange={e => {
-                    dispatch(setJob(e.target.value))
-                  }}
+                  value={title}
+                  onChange={e => dispatch(setTodo(e.target.value))}
                 />
-                <input
-                  type="text"
-                  placeholder="description"
+                {/*<input*/}
+                {/*  type="text"*/}
+                {/*  placeholder="description"*/}
 
-                />
+                {/*/>*/}
                 <button
                   type="submit"
                   onClick={handleSubmit}
@@ -105,9 +131,15 @@ export const Main = () => {
             </DropDownMenu>
           </TodoAddNewTask>
         </MainWrapperTodo>
-        {jobs.map((job) => {
+        {todos.map((todo, index) => {
+          const {title, description, completed} = todo
           return (
-            <TodoCardComponent job={job}/>
+            <TodoCardComponent
+              key={index}
+              title={title}
+              description={description}
+              completed={completed}
+            />
           )
         })}
       </MainWrapper>
