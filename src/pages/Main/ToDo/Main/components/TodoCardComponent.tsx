@@ -12,19 +12,19 @@ import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi'
 import { AiOutlinePaperClip } from 'react-icons/ai'
 
 const TodoCardComponent = (props) => {
-  const {title, description, completed} = props
+  const {title, description, completed, date} = props
 
   return (
     <TodoCard>
       <TodoCardContainer>
         <TodoCardWrapper>
           <TodoCardTitle>{title}</TodoCardTitle>
-          <TodoCardDescription>{description}</TodoCardDescription>
+          {/*<TodoCardDescription>{description}</TodoCardDescription>*/}
         </TodoCardWrapper>
         <HiOutlineDotsCircleHorizontal/>
       </TodoCardContainer>
       <TodoFooter>
-        <TodoDateCreate>date</TodoDateCreate>
+        <TodoDateCreate>{date}</TodoDateCreate>
         <input
           type='checkbox'
         />

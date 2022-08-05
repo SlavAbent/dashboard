@@ -10,15 +10,14 @@ import {
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { DropDownMenu } from '../../../../components/uikit/DropDownMenu'
 import TodoCardComponent from './components/TodoCardComponent'
+import moment from 'moment'
 
 const initState = {
-    todos: [
-      {
-        title: 'test',
-        description: 'test',
-        completed: false,
-      }
-    ]
+    title: '',
+    description: '',
+    completed: false,
+    date: '',
+    todos: []
 }
 
 const ADD_TODO = 'add_todo'
@@ -60,17 +59,20 @@ const reducer = (state, action) => {
     case SET_TODO:
       return {
         ...state,
-        todo: [
-          {
-            title:  action.payload
-          }
-        ]
+        title: action.payload
       }
     case ADD_TODO:
       return {
         ...state,
-        todos: [...state.todos, action.payload]
+        todos: [
+          ...state.todos,
+          {
+            title: action.payload,
+            date: moment().format('DD MMM YYYY'),
+          }
+        ]
       }
+
     default: throw new Error('error')
   }
 }
@@ -78,7 +80,7 @@ const reducer = (state, action) => {
 
 export const Main = () => {
   const [activeDropDown, setActiveDropDown] = useState(false)
-  const inputTodo = useRef()
+  const titleRef = useRef()
 
   const openCreateWindow = (event) => {
     setActiveDropDown(!activeDropDown)
@@ -90,18 +92,19 @@ export const Main = () => {
   const { title,
     description,
     completed,
+    date,
     todos } = state
 
-  const handleSubmit = () => {
-    dispatch(addTodo(title))
-  }
+  const inputTitleData = () => dispatch(setTodo(titleRef.current.value))
+
+  const handleSubmit = () => dispatch(addTodo(title))
 
 
   return (
     <MainContainer>
       <MainWrapper>
         <MainWrapperTodo>
-          <TodoCount>length</TodoCount>
+          <TodoCount>{todos.length}</TodoCount>
           <TodoAddNewTask>
             <AiOutlinePlusCircle onClick={openCreateWindow}/>
             <TodoNewTaskTitle>add new task</TodoNewTaskTitle>
@@ -111,16 +114,12 @@ export const Main = () => {
             >
               <>
                 <input
+                  ref={titleRef}
                   type="text"
                   placeholder="text"
                   value={title}
-                  onChange={e => dispatch(setTodo(e.target.value))}
+                  onChange={inputTitleData}
                 />
-                {/*<input*/}
-                {/*  type="text"*/}
-                {/*  placeholder="description"*/}
-
-                {/*/>*/}
                 <button
                   type="submit"
                   onClick={handleSubmit}
@@ -132,15 +131,16 @@ export const Main = () => {
           </TodoAddNewTask>
         </MainWrapperTodo>
         {todos.map((todo, index) => {
-          const {title, description, completed} = todo
-          return (
-            <TodoCardComponent
-              key={index}
-              title={title}
-              description={description}
-              completed={completed}
-            />
-          )
+          const {title, description, completed, date} = todo
+          console.log(todo)
+            return (
+              <TodoCardComponent
+                key={index}
+                title={title}
+                description={description}
+                completed={completed}
+                date={date}
+              />)
         })}
       </MainWrapper>
     </MainContainer>
