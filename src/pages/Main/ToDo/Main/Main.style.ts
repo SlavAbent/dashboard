@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const MainContainer = styled.div`
   height: calc(100vh - 130px);
+  overflow: hidden;
   background-color: ${props => props.theme.colors.darkTheme.grey_smallDark};
   border-radius: ${props => props.theme.padding.default};
 `;
@@ -19,6 +20,11 @@ const MainWrapperTodo = styled.div`
   justify-content: space-between;
   margin-bottom: 10px;
 `;
+
+const MainWrapperContent = styled.div`
+  height: calc(100vh - 130px);
+  overflow-y: scroll;
+`
 
 const TodoCount = styled.p`
   color: ${props => props.theme.colors.lightTheme.mainColor};
@@ -69,6 +75,10 @@ const TodoCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  &.completed {
+    text-decoration: line-through;
+    color: ${props => props.theme.colors.lightTheme.mainColor};
+  }
 `;
 
 const TodoCardTitle = styled.p`
@@ -120,4 +130,5 @@ export {
   TodoDateCreate,
   TodoFixNote,
   TodoFooter,
+  MainWrapperContent,
 }

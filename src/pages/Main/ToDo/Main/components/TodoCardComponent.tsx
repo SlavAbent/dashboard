@@ -2,42 +2,26 @@ import React from 'react'
 import {
   TodoCard,
   TodoCardContainer,
-  TodoCardDescription,
-  TodoCardTitle,
-  TodoCardWrapper,
   TodoDateCreate, TodoFixNote,
   TodoFooter
 } from '../Main.style'
-import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi'
 import { AiOutlinePaperClip } from 'react-icons/ai'
+import MaxCard from './MaxCard'
+import MinCard from './MinCard'
 
 const TodoCardComponent = (props) => {
   const {
-    title,
-    description,
-    completed,
     date,
-    handleDeleteTodo,
-    index,
+    viewCard,
   } = props
-  // debugger
 
   return (
     <TodoCard>
       <TodoCardContainer>
-        <TodoCardWrapper>
-          <TodoCardTitle>{title}</TodoCardTitle>
-          {/*<TodoCardDescription>{description}</TodoCardDescription>*/}
-        </TodoCardWrapper>
-        <HiOutlineDotsCircleHorizontal
-          onClick={() => handleDeleteTodo(index)}
-        />
+        { viewCard ? <MaxCard props={props}/> : <MinCard props={props}/> }
       </TodoCardContainer>
       <TodoFooter>
         <TodoDateCreate>{date}</TodoDateCreate>
-        <input
-          type='checkbox'
-        />
         <TodoFixNote>
           <AiOutlinePaperClip/>
         </TodoFixNote>

@@ -1,4 +1,4 @@
-import React, { useCallback, useReducer, useRef, useState } from 'react'
+import React, { useReducer, useRef, useState } from 'react'
 import {
   MainContainer,
   MainWrapper,
@@ -6,6 +6,7 @@ import {
   TodoCount,
   TodoAddNewTask,
   TodoNewTaskTitle,
+  MainWrapperContent,
 } from './Main.style'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { DropDownMenu } from '../../../../components/uikit/DropDownMenu'
@@ -17,13 +18,15 @@ const initState = {
     description: '',
     completed: false,
     date: '',
-    todos: []
+    todos: [],
+    viewCard: []
 }
 
 const ADD_TODO = 'add_todo'
 const SET_TODO = 'set_todo'
 const TOGGLE_TODO = 'toggle_todo'
 const DELETE_TODO = 'delete_todo'
+const VIEW_TODO = 'view_todo'
 
 
 const addTodo = payload => {
@@ -54,13 +57,19 @@ const toggleTodo = payload => {
   }
 }
 
+const viewCard = payload => {
+  return {
+    type: VIEW_TODO,
+    payload
+  }
+}
+
 const reducer = (state, action) => {
   switch (action.type) {
     case SET_TODO:
       return {
         ...state,
-        id: new Date().getTime().toString(),
-        title: action.payload
+        title: action.payload,
       }
     case ADD_TODO:
       return {
@@ -70,7 +79,8 @@ const reducer = (state, action) => {
           {
             id: new Date().getTime().toString(),
             title: action.payload,
-            date: moment().format('DD MMM YYYY'),
+            date: moment().format('DD MMM YYYY HH:mm'),
+            completed: false,
           }
         ]
       }
@@ -80,8 +90,21 @@ const reducer = (state, action) => {
         ...state,
         todos: newTodo
       }
-
-
+    case TOGGLE_TODO:
+      const toggledTodo = state.todos.map(elem => elem.id === action.payload
+        ? { ...elem, completed: !elem.completed }
+        : elem
+      )
+      return {
+        ...state,
+        todos: toggledTodo
+      }
+    case VIEW_TODO:
+      // const toggleView = state.todos.map(elem => )
+      return {
+        // ...state,
+        // todos:
+      }
     default: throw new Error('error')
   }
 }
@@ -91,16 +114,12 @@ export const Main = () => {
   const [activeDropDown, setActiveDropDown] = useState(false)
   const titleRef = useRef()
 
-  const openCreateWindow = (event) => {
+  const openCreateWindow = () => {
     setActiveDropDown(!activeDropDown)
   }
 
   const [state, dispatch] = useReducer(reducer, initState)
-  const { title,
-    description,
-    completed,
-    date,
-    todos } = state
+  const { title, todos } = state
 
   const inputTitleData = () => {
     dispatch(setTodo(titleRef.current.value))
@@ -108,10 +127,19 @@ export const Main = () => {
 
   const handleSubmit = () => {
     dispatch(addTodo(title))
+    dispatch(setTodo(''))
   }
 
   const handleDeleteTodo = (index) => {
       dispatch(deleteTodo(index))
+  }
+
+  const handleToggleTodo = index => {
+    dispatch(toggleTodo(index))
+  }
+
+  const handleViewCard = () => {
+    dispatch(viewCard())
   }
 
 
@@ -120,9 +148,9 @@ export const Main = () => {
       <MainWrapper>
         <MainWrapperTodo>
           <TodoCount>{todos.length}</TodoCount>
-          <TodoAddNewTask>
+          <TodoAddNewTask >
             <AiOutlinePlusCircle onClick={openCreateWindow}/>
-            <TodoNewTaskTitle>add new task</TodoNewTaskTitle>
+            <TodoNewTaskTitle>add task</TodoNewTaskTitle>
             <DropDownMenu
               width={200}
               activeDropDown={activeDropDown}
@@ -131,7 +159,7 @@ export const Main = () => {
                 <input
                   ref={titleRef}
                   type="text"
-                  placeholder="text"
+                  placeholder="Enter text"
                   value={title}
                   onChange={inputTitleData}
                 />
@@ -145,19 +173,24 @@ export const Main = () => {
             </DropDownMenu>
           </TodoAddNewTask>
         </MainWrapperTodo>
+        <MainWrapperContent>
         {todos.map((todo) => {
           const {title, description, completed, date, id} = todo
-            return (
-              <TodoCardComponent
-                key={id}
-                index={id}
-                title={title}
-                description={description}
-                completed={completed}
-                date={date}
-                handleDeleteTodo={handleDeleteTodo}
-              />)
+          return (
+            <TodoCardComponent
+              key={id}
+              index={id}
+              date={date}
+              title={title}
+              viewCard={true}
+              completed={completed}
+              description={description}
+              handleDeleteTodo={handleDeleteTodo}
+              handleToggleTodo={handleToggleTodo}
+              handleViewCard={handleViewCard}
+            />)
         })}
+        </MainWrapperContent>
       </MainWrapper>
     </MainContainer>
   )
