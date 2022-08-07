@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const DropDownMenuWrapper = styled.div`
-    width: 104px;
+  width: auto;
     height: auto;
     padding: 10px;
     display: flex;
@@ -9,13 +9,19 @@ const DropDownMenuWrapper = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    right: 0px;
     top: 53px;
     z-index: 1000;
     background-color: white;
     border-radius: 8px;
     opacity: 0;
     visibility: hidden;
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
     
     &.open {
         opacity: 1;
