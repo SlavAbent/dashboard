@@ -12,7 +12,15 @@ import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi'
 import { AiOutlinePaperClip } from 'react-icons/ai'
 
 const TodoCardComponent = (props) => {
-  const {title, description, completed, date} = props
+  const {
+    title,
+    description,
+    completed,
+    date,
+    handleDeleteTodo,
+    index,
+  } = props
+  // debugger
 
   return (
     <TodoCard>
@@ -21,7 +29,9 @@ const TodoCardComponent = (props) => {
           <TodoCardTitle>{title}</TodoCardTitle>
           {/*<TodoCardDescription>{description}</TodoCardDescription>*/}
         </TodoCardWrapper>
-        <HiOutlineDotsCircleHorizontal/>
+        <HiOutlineDotsCircleHorizontal
+          onClick={() => handleDeleteTodo(index)}
+        />
       </TodoCardContainer>
       <TodoFooter>
         <TodoDateCreate>{date}</TodoDateCreate>

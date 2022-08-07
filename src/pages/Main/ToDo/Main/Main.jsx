@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useState } from 'react'
+import React, { useCallback, useReducer, useRef, useState } from 'react'
 import {
   MainContainer,
   MainWrapper,
@@ -59,6 +59,7 @@ const reducer = (state, action) => {
     case SET_TODO:
       return {
         ...state,
+        id: new Date().getTime().toString(),
         title: action.payload
       }
     case ADD_TODO:
@@ -67,11 +68,19 @@ const reducer = (state, action) => {
         todos: [
           ...state.todos,
           {
+            id: new Date().getTime().toString(),
             title: action.payload,
             date: moment().format('DD MMM YYYY'),
           }
         ]
       }
+    case DELETE_TODO:
+      const newTodo = state.todos.filter(elem => elem.id !== action.payload)
+      return {
+        ...state,
+        todos: newTodo
+      }
+
 
     default: throw new Error('error')
   }
@@ -87,17 +96,23 @@ export const Main = () => {
   }
 
   const [state, dispatch] = useReducer(reducer, initState)
-  console.log(state)
-
   const { title,
     description,
     completed,
     date,
     todos } = state
 
-  const inputTitleData = () => dispatch(setTodo(titleRef.current.value))
+  const inputTitleData = () => {
+    dispatch(setTodo(titleRef.current.value))
+  }
 
-  const handleSubmit = () => dispatch(addTodo(title))
+  const handleSubmit = () => {
+    dispatch(addTodo(title))
+  }
+
+  const handleDeleteTodo = (index) => {
+      dispatch(deleteTodo(index))
+  }
 
 
   return (
@@ -130,16 +145,17 @@ export const Main = () => {
             </DropDownMenu>
           </TodoAddNewTask>
         </MainWrapperTodo>
-        {todos.map((todo, index) => {
-          const {title, description, completed, date} = todo
-          console.log(todo)
+        {todos.map((todo) => {
+          const {title, description, completed, date, id} = todo
             return (
               <TodoCardComponent
-                key={index}
+                key={id}
+                index={id}
                 title={title}
                 description={description}
                 completed={completed}
                 date={date}
+                handleDeleteTodo={handleDeleteTodo}
               />)
         })}
       </MainWrapper>
