@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
+  TodoDropDownComponent,
   TodoDropDownButton,
   TodoDropDownDelete,
   TodoDropDownFlexButton,
@@ -9,19 +10,28 @@ import {
 
 const TodoDropDown = (props) => {
   const {
-    titleRef,
-    inputTitleData,
+    title,
+    handleEnter,
     handleSubmit,
+    handleChange,
   } = props
+
+  const [openDropDown, setOpenDropDown ] = useState(false)
+
+  const closeDropDown = () => {
+    setOpenDropDown(openDropDown)
+  }
+
   return (
-    <TodoDropDown>
-      <TodoDropDownDelete>X</TodoDropDownDelete>
+    <TodoDropDownComponent>
+      <TodoDropDownDelete onClick={closeDropDown}>x</TodoDropDownDelete>
       <TodoDropDownMain>
         <TodoDropDownInput
-          ref={titleRef}
           type="text"
           placeholder="Enter text"
-          onChange={inputTitleData}
+          value={title}
+          onChange={handleChange}
+          onKeyDown={handleEnter}
         />
         <TodoDropDownFlexButton>
           <TodoDropDownButton
@@ -35,7 +45,7 @@ const TodoDropDown = (props) => {
           </TodoDropDownButton>
         </TodoDropDownFlexButton>
       </TodoDropDownMain>
-    </TodoDropDown>
+    </TodoDropDownComponent>
   )
 }
 

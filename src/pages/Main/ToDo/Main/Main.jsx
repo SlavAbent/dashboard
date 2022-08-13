@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {
   MainContainer,
   MainWrapper,
@@ -8,47 +8,53 @@ import {
   TodoNewTaskTitle,
   MainWrapperContent,
 } from './Main.style'
-import {
-  TodoDropDown,
-  TodoDropDownDelete,
-  TodoDropDownInput,
-  TodoDropDownButton,
-  TodoDropDownMain,
-  TodoDropDownFlexButton,
-} from './components/TodoDropDown/TodoDropDown.styled'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { DropDownMenu } from '../../../../components/uikit/DropDownMenu'
 import TodoCardComponent from './components/TodoCardComponent'
 import { TodoListContext } from '../../../../redux/context/Provider'
-import { addTodo, deleteTodo, setTodo, toggleTodo } from '../../../../redux/actions'
+import TodoDropDown from './components/TodoDropDown/TodoDropDown'
+import { ADD_TODO, DELETE_TODO, TOGGLE_TODO } from '../../../../redux/variables'
+import moment from 'moment'
 
 export const Main = () => {
   const [activeDropDown, setActiveDropDown] = useState(false)
+  const [title, setTitle] = useState('')
+  const {state: {todos}, dispatch } = useContext(TodoListContext);
 
-  const [{ todos }, dispatch] = useContext(TodoListContext);
-  const titleRef = useRef(null)
 
-  const openCreateWindow = () => {
-    setActiveDropDown(!activeDropDown)
-  }
-
-  const inputTitleData = () => {
-    // current value problem
-    dispatch(setTodo(titleRef.current.value))
-    dispatch(setTodo(''))
-  }
+  //Functions
+  const openCreateWindow = () => setActiveDropDown(!activeDropDown)
+  const handleChange = ({target : {value}}) => setTitle(value)
 
   const handleSubmit = () => {
-    dispatch(addTodo(titleRef.current.value))
-    dispatch(setTodo(''))
+    setTitle('')
+    dispatch({
+      type: ADD_TODO,
+      payload: {
+        id: crypto.randomUUID(),
+        title,
+        date: moment().format('DD MMM YYYY HH:mm'),
+        completed: false
+      }
+    })
   }
 
   const handleDeleteTodo = (index) => {
-    dispatch(deleteTodo(index))
+    dispatch({
+      type: DELETE_TODO,
+      payload: index
+    })
   }
 
   const handleToggleTodo = index => {
-    dispatch(toggleTodo(index))
+    dispatch({
+      type: TOGGLE_TODO,
+      payload: index
+    })
+  }
+
+  const handleEnter = e => {
+    if(e.key === 'Enter') handleSubmit()
   }
 
   return (
@@ -63,30 +69,30 @@ export const Main = () => {
               width={200}
               activeDropDown={activeDropDown}
             >
-                <TodoDropDown
-                  titleRef={titleRef}
-                  inputTitleData={inputTitleData}
-                  handleSubmit={handleSubmit}
-                />
+              <TodoDropDown
+                title={title}
+                handleEnter={handleEnter}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+              />
             </DropDownMenu>
           </TodoAddNewTask>
         </MainWrapperTodo>
         <MainWrapperContent>
-        {todos.map((todo) => {
-          const { description, completed, date, id} = todo
-          return (
-            <TodoCardComponent
-              key={id}
-              index={id}
-              date={date}
-              title={titleRef.current.value}
-              completed={completed}
-              description={description}
-              handleDeleteTodo={handleDeleteTodo}
-              handleToggleTodo={handleToggleTodo}
-              // handleViewCard={handleViewCard}
-            />)
-        })}
+          {todos.map((todo) => {
+            const { description, completed, date, id} = todo
+            return (
+              <TodoCardComponent
+                key={id}
+                index={id}
+                date={date}
+                title={todo.title}
+                completed={completed}
+                description={description}
+                handleDeleteTodo={handleDeleteTodo}
+                handleToggleTodo={handleToggleTodo}
+              />)
+          })}
         </MainWrapperContent>
       </MainWrapper>
     </MainContainer>

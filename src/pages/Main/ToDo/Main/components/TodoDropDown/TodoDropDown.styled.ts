@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const TodoDropDown = styled.div`
+const TodoDropDownComponent = styled.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -8,15 +8,15 @@ const TodoDropDown = styled.div`
 
 const TodoDropDownDelete = styled.p`
   position: absolute;
-  top: 50px;
-  right: 5px;
+  top: -5px;
+  right: -5px;
 `;
 
 const TodoDropDownInput = styled.input`
   outline: none;
   border: 1px solid ${props => props.theme.colors.lighterRed};
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 `;
 
 const TodoDropDownButton = styled.button`
@@ -25,7 +25,8 @@ const TodoDropDownButton = styled.button`
   background-color: ${props => props.theme.colors.lighterRed};
   color: ${props => props.theme.colors.lightTheme.mainColor};
   box-sizing: border-box;
-
+  outline: none;
+  cursor: pointer;
 `;
 
 const TodoDropDownMain = styled.div`
@@ -39,7 +40,7 @@ const TodoDropDownFlexButton = styled.div`
 `;
 
 export {
-  TodoDropDown,
+  TodoDropDownComponent,
   TodoDropDownDelete,
   TodoDropDownInput,
   TodoDropDownButton,

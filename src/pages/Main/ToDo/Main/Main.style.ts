@@ -30,11 +30,6 @@ const MainWrapperContent = styled.div`
     width: 2px;
   }
 
-  &::-webkit-scrollbar-track {
-    background-color: ${props => props.theme.colors.lightTheme.mainColorDarked};
-    border-radius: 50px;
-  }
-
   &::-webkit-scrollbar-thumb {
     background-color: ${props => props.theme.colors.lighterRed};;
     border-radius: 50px;
