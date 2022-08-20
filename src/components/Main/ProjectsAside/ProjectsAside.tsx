@@ -1,5 +1,5 @@
 import React from 'react'
-import db from '../../../assets/db.json'
+
 import {
   ProjectsAsideContainer,
   AsideThemeProject,
@@ -10,7 +10,6 @@ import {
 } from './ProjectsAside.style'
 import { MdLightMode, MdDarkMode } from 'react-icons/md'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
-import List from './List/List'
 
 export const ProjectsAside = () => {
   return (
@@ -19,7 +18,6 @@ export const ProjectsAside = () => {
         <ProjectsAsideTitle>Projects</ProjectsAsideTitle>
         <AiOutlinePlusCircle/>
       </ProjectsAsideWrapper>
-      <List items={db}/>
       <AsideThemeProject>
         <DarkTheme className="active">
           <MdDarkMode/>

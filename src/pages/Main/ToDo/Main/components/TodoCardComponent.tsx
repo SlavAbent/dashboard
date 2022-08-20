@@ -18,7 +18,7 @@ const TodoCardComponent = (props) => {
   return (
     <TodoCard>
       <TodoCardContainer>
-        <MaxCard props={props}/>
+        { viewCard ? <MaxCard props={props}/> : <MinCard props={props}/> }
       </TodoCardContainer>
       <TodoFooter>
         <TodoDateCreate>{date}</TodoDateCreate>
