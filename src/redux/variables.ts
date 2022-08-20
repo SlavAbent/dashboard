@@ -1,5 +1,0 @@
-export const ADD_TODO = 'add_todo'
-export const SET_TODO = 'set_todo'
-export const TOGGLE_TODO = 'toggle_todo'
-export const DELETE_TODO = 'delete_todo'
-export const VIEW_LIST = 'view_list'

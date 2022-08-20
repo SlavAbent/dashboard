@@ -13,12 +13,12 @@ import { DropDownMenu } from '../../../../components/uikit/DropDownMenu'
 import TodoCardComponent from './components/TodoCardComponent'
 import { TodoListContext } from '../../../../redux/context/Provider'
 import TodoDropDown from './components/TodoDropDown/TodoDropDown'
-import { ADD_TODO, DELETE_TODO, TOGGLE_TODO } from '../../../../redux/variables'
+import { TodoActionsTypes } from '../../../../redux/todoTypes/todoEnums'
 import moment from 'moment'
 
 export const Main = () => {
   const [activeDropDown, setActiveDropDown] = useState(false)
-  const [title, setTitle] = useState('')
+  const [title, setTitle] = useState<string>('')
   const {state: {todos}, dispatch } = useContext(TodoListContext);
 
 
@@ -29,7 +29,7 @@ export const Main = () => {
   const handleSubmit = () => {
     setTitle('')
     dispatch({
-      type: ADD_TODO,
+      type: TodoActionsTypes.ADD_TODO,
       payload: {
         id: crypto.randomUUID(),
         title,
@@ -39,16 +39,16 @@ export const Main = () => {
     })
   }
 
-  const handleDeleteTodo = (index) => {
+  const handleDeleteTodo = (index: number) => {
     dispatch({
-      type: DELETE_TODO,
+      type: TodoActionsTypes.DELETE_TODO,
       payload: index
     })
   }
 
-  const handleToggleTodo = index => {
+  const handleToggleTodo = (index: number) => {
     dispatch({
-      type: TOGGLE_TODO,
+      type: TodoActionsTypes.TOGGLE_TODO,
       payload: index
     })
   }
