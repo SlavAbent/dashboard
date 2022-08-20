@@ -10,7 +10,6 @@ const MainContainer = styled.div`
 const MainWrapper = styled.div`
   width: 300px;
   padding: ${props => props.theme.decoration.borderRadius.large};
-  padding-right: 5px; 
   border-radius: ${props => props.theme.padding.default};
   background-color: ${props => props.theme.colors.darkTheme.grey_dark};
 `;
@@ -25,15 +24,6 @@ const MainWrapperTodo = styled.div`
 const MainWrapperContent = styled.div`
   height: calc(100vh - 130px);
   overflow-y: scroll;
-  padding-right: 5px;
-  &::-webkit-scrollbar {
-    width: 2px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: ${props => props.theme.colors.lighterRed};;
-    border-radius: 50px;
-  }
 `
 
 const TodoCount = styled.p`
