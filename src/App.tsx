@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import Header from './components/Header/Header'
 import { RoutesWrapper } from './routes/RoutesWrapper'
 import { Theme } from './styles/Theme'
-import ProjectsAside from './components/Main/ProjectsAside'
+import ProjectsAside from './pages/Main/ProjectsAside'
 import Provider from './redux/context/Provider'
 
 const App = () => {

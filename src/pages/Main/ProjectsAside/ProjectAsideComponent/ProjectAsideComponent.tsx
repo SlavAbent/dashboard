@@ -1,6 +1,6 @@
 import React from 'react'
 import { BadgeContainer, ProjectsAsideTitle, ProjectsAsideWrapper } from '../ProjectsAside.style'
-import { DropDownMenu } from '../../../uikit/DropDownMenu'
+import { DropDownMenu } from '../../../../components/uikit/DropDownMenu'
 import Badge from '../Badge'
 
 interface IProjectAsideComponent {
