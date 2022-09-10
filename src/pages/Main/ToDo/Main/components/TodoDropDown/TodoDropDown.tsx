@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import {
   TodoDropDownComponent,
   TodoDropDownButton,
@@ -8,18 +8,25 @@ import {
   TodoDropDownMain
 } from './TodoDropDown.styled'
 
-const TodoDropDown = (props) => {
+interface TodoDropDownProps {
+  title: string
+  handleEnter: (e: React.KeyboardEvent) => void
+  handleSubmit: () => void
+  handleChange: ({ target: { value } }: { target: { value: any; }; }) => void
+  setActiveDropDown: Dispatch<SetStateAction<boolean>>
+}
+
+const TodoDropDown = (props: TodoDropDownProps) => {
   const {
     title,
     handleEnter,
     handleSubmit,
     handleChange,
+    setActiveDropDown,
   } = props
 
-  const [openDropDown, setOpenDropDown ] = useState(false)
-
   const closeDropDown = () => {
-    setOpenDropDown(openDropDown)
+    setActiveDropDown(false)
   }
 
   return (

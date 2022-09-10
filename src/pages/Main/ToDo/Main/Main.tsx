@@ -19,6 +19,7 @@ import moment from 'moment'
 export const Main = () => {
   const [activeDropDown, setActiveDropDown] = useState(false)
   const [title, setTitle] = useState<string>('')
+  // @ts-ignore
   const {state: {todos}, dispatch } = useContext(TodoListContext);
 
 
@@ -74,6 +75,7 @@ export const Main = () => {
                 handleEnter={handleEnter}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
+                setActiveDropDown={setActiveDropDown}
               />
             </DropDownMenu>
           </TodoAddNewTask>
@@ -93,6 +95,22 @@ export const Main = () => {
                 handleToggleTodo={handleToggleTodo}
               />)
           })}
+        </MainWrapperContent>
+      </MainWrapper>
+      <MainWrapper>
+        <MainWrapperTodo>
+          <TodoAddNewTask className="bigTodo">
+            <TodoNewTaskTitle>Фронтенд</TodoNewTaskTitle>
+            <input type="text" placeholder="Новая задача"/>
+          </TodoAddNewTask>
+        </MainWrapperTodo>
+        <MainWrapperContent className="bigTodoTask">
+          <div>
+            <input type="checkbox"/>
+            <p>задача</p>
+            <span>x</span>
+          </div>
+          {/*<TodoCardComponent/>*/}
         </MainWrapperContent>
       </MainWrapper>
     </MainContainer>

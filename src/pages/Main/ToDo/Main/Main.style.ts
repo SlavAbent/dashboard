@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 const MainContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
   height: calc(100vh - 130px);
   overflow: hidden;
   background-color: ${props => props.theme.colors.darkTheme.grey_smallDark};
@@ -10,6 +12,7 @@ const MainContainer = styled.div`
 const MainWrapper = styled.div`
   width: 300px;
   padding: ${props => props.theme.decoration.borderRadius.large};
+  margin-right: 10px;
   padding-right: 5px; 
   border-radius: ${props => props.theme.padding.default};
   background-color: ${props => props.theme.colors.darkTheme.grey_dark};
@@ -34,6 +37,20 @@ const MainWrapperContent = styled.div`
     background-color: ${props => props.theme.colors.lighterRed};;
     border-radius: 50px;
   }
+  
+  &.bigTodoTask{
+    div {
+      display: flex;
+      align-items: center;
+    }
+    p {
+      flex-grow: 1;
+      color: white;
+    }
+    span {
+      color: white;
+    }
+  }
 `
 
 const TodoCount = styled.p`
@@ -50,6 +67,11 @@ const TodoAddNewTask = styled.div`
     height: 18px;
     margin-right: 5px;
     color: ${props => props.theme.colors.lightTheme.mainColor};
+  }
+  &.bigTodo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 `;
 

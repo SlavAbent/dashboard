@@ -8,6 +8,10 @@ const ListWrap = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  padding: 4px;
+  &.active {
+    background: #fff;
+  }
 `;
 
 const ListWrapColor = styled.div`
@@ -27,6 +31,11 @@ const ListWrapDelete = styled.div`
   right: 0;
   cursor: pointer;
 `;
+const ListWrapIcon = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 export {
   ListWrapper,
@@ -34,4 +43,5 @@ export {
   ListWrapColor,
   ListWrapName,
   ListWrapDelete,
+  ListWrapIcon,
 }
