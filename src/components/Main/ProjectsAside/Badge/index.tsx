@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import classNames from 'classnames';
 import { BadgeWrapper } from './Badge.style'
 
@@ -8,6 +8,8 @@ interface  IProps {
   color?: string
   className?: string | boolean
 }
+
+// Компонента цветных меток для проектов в сайдбаре
 
 const Badge = ({ color, onClick, className }: IProps) => {
   return (
