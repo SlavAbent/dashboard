@@ -1,12 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { ToDo } from './ToDo'
 
-const Main = () => {
-    return (
-      <>
-        <ToDo/>
-      </>
-    )
-}
-
-export default Main
+export const Main = ({lists}) => <ToDo lists={lists} />

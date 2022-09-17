@@ -9,13 +9,15 @@ import UI from '../pages/UI'
 
 // import Map from '../pages/Map/Map'
 
-export interface IRoutesWrapper {}
+export interface IRoutesWrapper {
+  lists: any[]
+}
 
-export const RoutesWrapper: React.FC<IRoutesWrapper> = (): JSX.Element => {
+export const RoutesWrapper: React.FC<IRoutesWrapper> = ({lists}): JSX.Element => {
     return (
         <RoutesComponent>
             <Routes>
-                <Route path="/" element={<Main />} />
+                <Route path="/" element={<Main lists={lists}/>} />
                 <Route path="/UI" element={<UI />} />
                 <Route path="/Chat" element={<Chat />} />
                 <Route path="/Profile" element={<Profile />} />

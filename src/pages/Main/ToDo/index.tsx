@@ -6,11 +6,11 @@ import  Main  from './Main'
 
 import { ToDoWrapper } from './index.style'
 
-export const ToDo = () => {
+export const ToDo = ({lists}) => {
   return (
       <ToDoWrapper>
           <Header/>
-          <Main/>
+          <Main lists={lists}/>
           {/*<Footer/>*/}
       </ToDoWrapper>
   )

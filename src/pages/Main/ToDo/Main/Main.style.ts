@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const MainContainer = styled.div`
   display: flex;
   align-items: flex-start;
-  height: calc(100vh - 130px);
+  //height: calc(100vh - 130px);
   overflow: hidden;
   background-color: ${props => props.theme.colors.darkTheme.grey_smallDark};
   border-radius: ${props => props.theme.padding.default};
@@ -21,12 +21,13 @@ const MainWrapper = styled.div`
 const MainWrapperTodo = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-bottom: 10px;
 `;
 
 const MainWrapperContent = styled.div`
-  height: calc(100vh - 130px);
+  //height: calc(100vh - 130px);
   overflow-y: scroll;
   padding-right: 5px;
   &::-webkit-scrollbar {

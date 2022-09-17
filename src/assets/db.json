@@ -29,6 +29,21 @@
       "name": "Спорт",
       "colorId": 3,
       "id": 6
+    },
+    {
+      "name": "ntcn",
+      "colorId": 1,
+      "id": 7
+    },
+    {
+      "name": "345345",
+      "colorId": 1,
+      "id": 8
+    },
+    {
+      "name": "fdfg",
+      "colorId": 1,
+      "id": 9
     }
   ],
   "tasks": [

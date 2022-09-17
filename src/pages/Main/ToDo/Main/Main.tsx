@@ -16,7 +16,8 @@ import TodoDropDown from './components/TodoDropDown/TodoDropDown'
 import { TodoActionsTypes } from '../../../../redux/todoTypes/todoEnums'
 import moment from 'moment'
 
-export const Main = () => {
+export const Main = ({lists}) => {
+  console.log(lists?.tasks)
   const [activeDropDown, setActiveDropDown] = useState(false)
   const [title, setTitle] = useState<string>('')
   // @ts-ignore
@@ -99,19 +100,34 @@ export const Main = () => {
       </MainWrapper>
       <MainWrapper>
         <MainWrapperTodo>
-          <TodoAddNewTask className="bigTodo">
-            <TodoNewTaskTitle>Фронтенд</TodoNewTaskTitle>
-            <input type="text" placeholder="Новая задача"/>
-          </TodoAddNewTask>
+          {lists.map(list => {
+            console.log(list)
+              return (
+               <>
+                 <TodoAddNewTask className="bigTodo">
+                   <TodoNewTaskTitle>{list?.name}</TodoNewTaskTitle>
+                   {list && <input type="text" placeholder={list?.name}/>}
+                 </TodoAddNewTask>
+                 {/*<>*/}
+                 {/*  {*/}
+                 {/*    list.tasks.map(task => {*/}
+                 {/*      return (*/}
+                 {/*        <MainWrapperContent key={task.id} className="bigTodoTask">*/}
+                 {/*          <div>*/}
+                 {/*            <input type='checkbox'/>*/}
+                 {/*            <input value={task.text}/>*/}
+                 {/*            <span>x</span>*/}
+                 {/*          </div>*/}
+                 {/*        </MainWrapperContent>*/}
+                 {/*      )*/}
+                 {/*    })*/}
+                 {/*  }*/}
+                 {/*</>*/}
+               </>
+              )
+          })}
         </MainWrapperTodo>
-        <MainWrapperContent className="bigTodoTask">
-          <div>
-            <input type="checkbox"/>
-            <p>задача</p>
-            <span>x</span>
-          </div>
-          {/*<TodoCardComponent/>*/}
-        </MainWrapperContent>
+
       </MainWrapper>
     </MainContainer>
   )
