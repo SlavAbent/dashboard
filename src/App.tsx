@@ -10,13 +10,20 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const App = () => {
-  const [inputValue, setInputValue] = useState('')
-
   //Todo refactor any
+  const [inputValue, setInputValue] = useState('')
   const [selectedColor, selectColor] = useState<any>(3)
-  const [colors, setColors] = useState<any>(null);
-  const [lists, setLists] = useState<any>([])
+  const [colors, setColors] = useState<any>();
+  const [lists, setLists] = useState<any>()
   const [isLoading, setIsLoading] = useState<boolean>(false)
+
+
+
+  // const { data, error, loading } = useFetch('http://localhost:3001/lists?_expand=color&_embed=tasks')
+  // // console.log(data)
+  // setLists(data);
+  // console.log(lists)
+  // setColors(data);
 
   useEffect(() => {
     axios

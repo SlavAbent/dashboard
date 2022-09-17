@@ -1,5 +1,6 @@
 import { TodoActionsTypes } from './todoEnums'
 
+// TODO: refactor any
 export interface IInitialState {
   todos: any[]
 }
