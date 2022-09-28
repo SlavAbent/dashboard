@@ -9,15 +9,35 @@ import UI from '../pages/UI'
 
 // import Map from '../pages/Map/Map'
 
-export interface IRoutesWrapper {
-  lists: any[]
-}
 
-export const RoutesWrapper: React.FC<IRoutesWrapper> = ({lists}): JSX.Element => {
+export const RoutesWrapper = (props): JSX.Element => {
+  const {
+    onAddTask,
+    onEditListTitle,
+    onRemoveTask,
+    onEditTask,
+    onCompleteTask,
+    lists,
+    activeItem,
+    setActiveItem,
+  } = props
+
     return (
         <RoutesComponent>
             <Routes>
-                <Route path="/" element={<Main lists={lists}/>} />
+                <Route path="/" element={
+                  <Main
+                    lists={lists}
+                    onAddTask={onAddTask}
+                    onEditTitle={onEditListTitle}
+                    onRemoveTask={onRemoveTask}
+                    onEditTask={onEditTask}
+                    onCompleteTask={onCompleteTask}
+                    withoutEmpty
+                    activeItem={activeItem}
+                    setActiveItem={setActiveItem}
+                  />
+                }/>
                 <Route path="/UI" element={<UI />} />
                 <Route path="/Chat" element={<Chat />} />
                 <Route path="/Profile" element={<Profile />} />

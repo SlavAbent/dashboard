@@ -6,11 +6,31 @@ import  Main  from './Main'
 
 import { ToDoWrapper } from './index.style'
 
-export const ToDo = ({lists}) => {
+export const ToDo = (props) => {
+  const {
+    onAddTask,
+    onEditListTitle,
+    onRemoveTask,
+    onEditTask,
+    onCompleteTask,
+    lists,
+    activeItem,
+    setActiveItem,
+  } = props
   return (
       <ToDoWrapper>
           <Header/>
-          <Main lists={lists}/>
+          <Main
+            lists={lists}
+            onAddTask={onAddTask}
+            onEditTitle={onEditListTitle}
+            onRemoveTask={onRemoveTask}
+            onEditTask={onEditTask}
+            onComplete={onCompleteTask}
+            withoutEmpty
+            activeItem={activeItem}
+            setActiveItem={setActiveItem}
+          />
           {/*<Footer/>*/}
       </ToDoWrapper>
   )

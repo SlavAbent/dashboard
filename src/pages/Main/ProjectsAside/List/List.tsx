@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { MouseEventHandler, ReactNode } from 'react'
 
 import {
   ListWrapper,
@@ -12,16 +12,18 @@ import Badge from '../Badge'
 import axios from 'axios'
 
 interface IProps {
-  onClick?: (item) => void
+  onClick?: (item) => void | MouseEventHandler<HTMLDivElement> | undefined
+  onClickItem?: (item) => void
   onRemove?: (item) => void
   items: any[]
   children?: ReactNode
   isRemovable?: boolean
+  activeItem: any
 }
 
 // Список проектов в сайдбаре
 
-const List = ({ items, onClick, onRemove, isRemovable }: IProps) => {
+const List = ({ items, onClick, onRemove, isRemovable, onClickItem, activeItem }: IProps) => {
   const removeListSuccess = (item) => {
     if(window.confirm('Точно удалить?')) {
       axios.delete(`http://localhost:3001/lists/` + item.id)
@@ -30,7 +32,6 @@ const List = ({ items, onClick, onRemove, isRemovable }: IProps) => {
             onRemove(item.id)
           }
         })
-
     }
   }
   return (
@@ -39,12 +40,17 @@ const List = ({ items, onClick, onRemove, isRemovable }: IProps) => {
         return (
           <ListWrap
             key={index}
-            className={classNames(item.className, { active: item.active })}
+            className={classNames(item.className, { active: activeItem && activeItem.id === item.id })}
+            // @ts-ignore
+            onClick={onClickItem ? () => onClickItem(item) : null}
           >
             <ListWrapIcon>
               {item.icon ? item.icon : <Badge color={item.color.name}/>}
             </ListWrapIcon>
-            <ListWrapName>{item.name}</ListWrapName>
+            <ListWrapName>
+              {item.name}
+              {item.tasks && item.tasks.length > 0 && `(${ item.tasks.length })`}
+            </ListWrapName>
             { isRemovable && ( <ListWrapDelete onClick={() => removeListSuccess(item)}>x</ListWrapDelete> )}
 
           </ListWrap>

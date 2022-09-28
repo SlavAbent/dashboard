@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useMemo, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import {
   MainContainer,
   MainWrapper,
@@ -15,13 +15,35 @@ import { TodoListContext } from '../../../../redux/context/Provider'
 import TodoDropDown from './components/TodoDropDown/TodoDropDown'
 import { TodoActionsTypes } from '../../../../redux/todoTypes/todoEnums'
 import moment from 'moment'
+import { Link, Route, Routes, useNavigate } from 'react-router-dom'
+import Tasks from './Tasks'
 
-export const Main = ({lists}) => {
+export const Main = ({
+   lists,
+   onEditTitle,
+   onAddTask,
+   onRemoveTask,
+   onEditTask,
+   onComplete,
+   withoutEmpty,
+   activeItem,
+   setActiveItem,
+  }) => {
   const [activeDropDown, setActiveDropDown] = useState(false)
   const [title, setTitle] = useState<string>('')
+  let navigate = useNavigate();
   // @ts-ignore
   const {state: {todos}, dispatch } = useContext(TodoListContext);
 
+
+  useEffect(() => {
+    // const listId = navigate.location.pathname.split('lists/')[1];
+    const listId = 0;
+    if (lists) {
+      const list = lists.find(list => list.id === Number(listId));
+      setActiveItem(list);
+    }
+  }, [lists]);
 
   //Functions
   const openCreateWindow = () => setActiveDropDown(!activeDropDown)
@@ -59,28 +81,59 @@ export const Main = ({lists}) => {
   }
 
   const listArray = useMemo(() => {
+    // TASKS
     return (
-      lists.map(list => {
+      lists && lists.map(list => {
         return (
           <>
             <TodoAddNewTask className="bigTodo">
-              <TodoNewTaskTitle>{list?.name}</TodoNewTaskTitle>
-              {list && <input type="text" placeholder={list?.name}/>}
+              <Link to={`/lists/${list.id}`}>
+                <TodoNewTaskTitle style={{ color: list.color.hex }} className="tasks__title">
+                  {list?.name}
+                  <img src={''} alt="Edit icon" />
+                </TodoNewTaskTitle>
+              </Link>
             </TodoAddNewTask>
             <>
-              {
-                list.tasks?.map(task => {
-                  return (
-                    <MainWrapperContent key={task.id} className="bigTodoTask">
-                      <div>
-                        <input type='checkbox'/>
-                        <input value={task.text}/>
-                        <span>x</span>
-                      </div>
-                    </MainWrapperContent>
-                  )
-                })
-              }
+              {!withoutEmpty && list.tasks && !list.tasks.length && <h2>Задачи отсутствуют</h2>}
+              { list.tasks && list.tasks?.map(task => {
+                // TASK
+                return (
+                  <>
+                    <Routes>
+                      <Route
+                        path="/"
+                        element={lists && lists.map(list => (
+                          <Tasks
+                            key={list.id}
+                            list={list}
+                            onAddTask={onAddTask}
+                            onEditTitle={onEditTitle}
+                            onRemoveTask={onRemoveTask}
+                            onEditTask={onEditTask}
+                            onCompleteTask={onComplete}
+                            withoutEmpty
+                          />
+                        ))}>
+                      </Route>
+                      <Route
+                        path="/lists/:id"
+                        element={lists && activeItem && (
+                          <Tasks
+                            list={activeItem}
+                            onAddTask={onAddTask}
+                            onEditTitle={onEditTitle}
+                            onRemoveTask={onRemoveTask}
+                            onEditTask={onEditTask}
+                            onCompleteTask={onComplete}
+                            withoutEmpty={withoutEmpty}
+                          />
+                        )}>
+                      </Route>
+                    </Routes>
+                  </>
+                )
+              })}
             </>
           </>
         )
@@ -89,6 +142,7 @@ export const Main = ({lists}) => {
   }, [lists]);
 
   const todosArray = useMemo(() => {
+    // TODO LEFTSIDE ON MAIN
     return (
       todos.map((todo) => {
         const { description, completed, date, id} = todo
@@ -112,7 +166,7 @@ export const Main = ({lists}) => {
       <MainWrapper>
         <MainWrapperTodo>
           <TodoCount>{todos.length}</TodoCount>
-          <TodoAddNewTask >
+          <TodoAddNewTask>
             <AiOutlinePlusCircle onClick={openCreateWindow}/>
             <TodoNewTaskTitle>add task</TodoNewTaskTitle>
             <DropDownMenu

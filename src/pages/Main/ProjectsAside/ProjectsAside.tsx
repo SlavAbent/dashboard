@@ -16,6 +16,8 @@ export const ProjectsAside = (props) => {
     isLoading,
     setLists,
     lists,
+    activeItem,
+    setActiveItem,
   } = props
   const [activeDropDown, setActiveDropDown] = useState(false)
 
@@ -32,11 +34,15 @@ export const ProjectsAside = (props) => {
         addList={addList}
         isLoading={isLoading}
       />
-      <ListAside
-        setActiveDropDown={setActiveDropDown}
-        setLists={setLists}
-        lists={lists}
-      />
+      {
+        lists && <ListAside
+          setActiveDropDown={setActiveDropDown}
+          setLists={setLists}
+          lists={lists}
+          activeItem={activeItem}
+          setActiveItem={setActiveItem}
+        />
+      }
       <AsideFooter/>
     </ProjectsAsideContainer>
   )

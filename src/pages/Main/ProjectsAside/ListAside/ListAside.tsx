@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import List from '../List/List'
 
-export const ListAside = ({lists, setActiveDropDown, setLists}) => {
+export const ListAside = ({lists, setActiveDropDown, setLists, activeItem, setActiveItem}) => {
 
-  const onRemove = (id) => {
+    const onRemove = (id) => {
     const newLists = lists.filter(item => item.id !== id)
     setLists(newLists)
   }
@@ -30,12 +30,16 @@ export const ListAside = ({lists, setActiveDropDown, setLists}) => {
             name: 'Все задачи'
           }
         ]}
-      />
+       activeItem={activeItem}/>
       { lists ? (
         <List
           onRemove={onRemove}
           items={lists}
           isRemovable
+          onClickItem={item => {
+            setActiveItem(item)
+          }}
+          activeItem={activeItem}
         /> ) : ( 'Загрузка...' )
       }
     </>
