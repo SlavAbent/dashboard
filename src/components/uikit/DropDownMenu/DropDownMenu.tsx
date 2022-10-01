@@ -24,7 +24,7 @@ export const DropDownMenu: React.FC<IDropDownMenuProps> = (props) => {
     return (
       // @ts-ignore
         <DropDownMenuWrapper className={activeDropMenu} width={`${width}px`}>
-            <>{children}</>
+            {children}
         </DropDownMenuWrapper>
     )
 }
