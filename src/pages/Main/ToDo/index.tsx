@@ -8,10 +8,10 @@ import { ToDoWrapper } from './index.style'
 
 export const ToDo = () => {
   return (
-    <ToDoWrapper>
-      <Header/>
-      <Main/>
-      {/*<Footer/>*/}
-    </ToDoWrapper>
+      <ToDoWrapper>
+          <Header/>
+          <Main/>
+          {/*<Footer/>*/}
+      </ToDoWrapper>
   )
 }

@@ -78,6 +78,15 @@ const LightTheme = styled.div`
   }
 `;
 
+const BadgeContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`
+
 export {
   ProjectsAsideContainer,
   AsideThemeProject,
@@ -85,4 +94,5 @@ export {
   LightTheme,
   ProjectsAsideWrapper,
   ProjectsAsideTitle,
+  BadgeContainer,
 }

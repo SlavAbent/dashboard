@@ -7,13 +7,14 @@ import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi'
 
 const MaxCard = ({props}) => {
   const {
-    title,
     index,
     description,
     completed,
     handleDeleteTodo,
     handleToggleTodo,
+    title
   }  = props
+
   return (
     <>
       <TodoCardWrapper
