@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="64e6798b-5b1d-4431-87a0-0f4419e28f93" name="Changes" comment="add list router">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/preview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Person/male.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/avatar.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Aside/Aside.styled.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Aside/Aside.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Icons/Logo/Logo.style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Icons/Logo/Logo.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/ProjectsAside/ProjectsAside.style.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/ProjectsAside/ProjectsAside.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/ProjectsAside/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Time/Time.styled.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Time/Time.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/uikit/Avatar/Avatar.style.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/uikit/Avatar/Avatar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/uikit/Avatar/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/uikit/Button/Button.style.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/uikit/Button/Button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/uikit/Button/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/uikit/DropDownMenu/DropDownMenu.style.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/uikit/DropDownMenu/DropDownMenu.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/uikit/DropDownMenu/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/uikit/Icon/Icon.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/uikit/Icon/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/links/Links.style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/links/Links.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Chat/Chat.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Chat/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/List/List.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/List/components/AppList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/List/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/Main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/Footer/Footer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/Footer/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/Header/Header.style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/Header/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/Header/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/Main/Main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/Main/Main.style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/Main/components/MaxCard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/Main/components/MinCard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/Main/components/TodoCardComponent.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/Main/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/index.style.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ToDo/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Map/Map.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Profile/Profile.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Profile/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/UI/UI.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/UI/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/RoutesWrapper.style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/RoutesWrapper.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/Avatar.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/Button.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.styled.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/themeMain.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/guid.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="new_list" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="515499dd-1242-49d8-8ff9-9ebc7915faa8" />
+        <option name="url" value="https://github.com/SlavAbent/dashboard.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2Bnm2HXkdLUthdsUB9rJSvmlvSQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "F:/Programming/dashboard-main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "F:\\Programming\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Programming\src\pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Programming\src\pages\Main\ToDo" />
+      <recent name="F:\Programming\src\redux\todoTypes" />
+      <recent name="F:\Programming\src\components\Main\ProjectsAside\List" />
+      <recent name="F:\Programming\src\pages\Main\ToDo\Main\components\TodoDropDown" />
+      <recent name="F:\Programming\src\pages\Main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="fake-json" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="fake-json" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.fake-json" />
+      <item itemvalue="npm.build" />
+      <item itemvalue="npm.start" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.fake-json" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64e6798b-5b1d-4431-87a0-0f4419e28f93" name="Changes" comment="" />
+      <created>1657550020928</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657550020928</updated>
+      <workItem from="1657550028941" duration="7395000" />
+      <workItem from="1657722183281" duration="10628000" />
+      <workItem from="1658571414627" duration="20632000" />
+      <workItem from="1658768696910" duration="1270000" />
+      <workItem from="1658771340686" duration="52000" />
+      <workItem from="1658771481265" duration="510000" />
+      <workItem from="1658772802884" duration="1915000" />
+      <workItem from="1658815287960" duration="18068000" />
+      <workItem from="1658843053507" duration="9493000" />
+      <workItem from="1658912945405" duration="12569000" />
+      <workItem from="1658935234970" duration="411000" />
+      <workItem from="1659364503300" duration="8719000" />
+      <workItem from="1659531992827" duration="11665000" />
+      <workItem from="1659794483926" duration="19205000" />
+      <workItem from="1659854256012" duration="708000" />
+      <workItem from="1659967449228" duration="10998000" />
+      <workItem from="1660145066430" duration="3415000" />
+      <workItem from="1660227678287" duration="9960000" />
+      <workItem from="1660312313569" duration="8447000" />
+      <workItem from="1660373799284" duration="14781000" />
+      <workItem from="1660392200962" duration="1736000" />
+      <workItem from="1660571198044" duration="6249000" />
+      <workItem from="1660583985618" duration="838000" />
+      <workItem from="1660750007901" duration="5093000" />
+      <workItem from="1660995324551" duration="1261000" />
+      <workItem from="1661180418685" duration="7179000" />
+      <workItem from="1661191103686" duration="2889000" />
+      <workItem from="1661275711937" duration="4491000" />
+      <workItem from="1661352759366" duration="10119000" />
+      <workItem from="1661448491416" duration="622000" />
+      <workItem from="1661783727233" duration="5686000" />
+      <workItem from="1661953762157" duration="631000" />
+      <workItem from="1661956484829" duration="6242000" />
+      <workItem from="1662042705870" duration="3106000" />
+      <workItem from="1662391257689" duration="4177000" />
+      <workItem from="1662475499696" duration="652000" />
+      <workItem from="1662477025685" duration="7357000" />
+      <workItem from="1662646894026" duration="591000" />
+      <workItem from="1662798390468" duration="3167000" />
+      <workItem from="1662993962206" duration="8355000" />
+      <workItem from="1663166778680" duration="5946000" />
+      <workItem from="1663403783126" duration="8485000" />
+      <workItem from="1663441177682" duration="319000" />
+      <workItem from="1663600133719" duration="25741000" />
+      <workItem from="1663781629981" duration="795000" />
+      <workItem from="1664379984491" duration="50000" />
+      <workItem from="1664380136913" duration="843000" />
+      <workItem from="1664616712506" duration="20633000" />
+      <workItem from="1664652118098" duration="662000" />
+    </task>
+    <task id="LOCAL-00001" summary="styling aside with refactor">
+      <created>1657559482707</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657559482707</updated>
+    </task>
+    <task id="LOCAL-00002" summary="setup dashboard">
+      <created>1657734361007</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1657734361007</updated>
+    </task>
+    <task id="LOCAL-00003" summary="setup clock">
+      <created>1658768790748</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1658768790748</updated>
+    </task>
+    <task id="LOCAL-00004" summary="setup template todo">
+      <created>1658835715048</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1658835715048</updated>
+    </task>
+    <task id="LOCAL-00005" summary="WIP: create todo">
+      <created>1658935373882</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658935373882</updated>
+    </task>
+    <task id="LOCAL-00006" summary="WIP: todo useReducer">
+      <created>1659532060568</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1659532060568</updated>
+    </task>
+    <task id="LOCAL-00007" summary="WIP: todo useReducer &lt;ADD_TODO with date&gt;">
+      <created>1659721884371</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1659721884371</updated>
+    </task>
+    <task id="LOCAL-00008" summary="WIP: todo useReducer &lt;DELETE_TODO&gt;">
+      <created>1659854366880</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659854366880</updated>
+    </task>
+    <task id="LOCAL-00009" summary="WIP: create functionality">
+      <created>1660391762180</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1660391762180</updated>
+    </task>
+    <task id="LOCAL-00010" summary="WIP: create functionality  исправление тайпскрипт">
+      <created>1660995888658</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1660995888658</updated>
+    </task>
+    <task id="LOCAL-00011" summary="WIP: todo global v2">
+      <created>1662801291570</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1662801291570</updated>
+    </task>
+    <task id="LOCAL-00012" summary="WIP: todo global v3 test">
+      <created>1663408618481</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1663408618481</updated>
+    </task>
+    <task id="LOCAL-00013" summary="WIP: todo global v4 test">
+      <created>1664380220424</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1664380220424</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add list router">
+      <created>1664650025629</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1664650025629</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/redux/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/redux/reducers/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/Main/ToDo/Main/Main.jsx" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="styling aside with refactor" />
+    <MESSAGE value="setup dashboard" />
+    <MESSAGE value="setup clock" />
+    <MESSAGE value="setup template todo" />
+    <MESSAGE value="WIP: create todo" />
+    <MESSAGE value="WIP: todo useReducer" />
+    <MESSAGE value="WIP: todo useReducer &lt;ADD_TODO with date&gt;" />
+    <MESSAGE value="WIP: todo useReducer &lt;DELETE_TODO&gt;" />
+    <MESSAGE value="WIP: create functionality" />
+    <MESSAGE value="WIP: create functionality  исправление тайпскрипт" />
+    <MESSAGE value="WIP: todo global v2" />
+    <MESSAGE value="WIP: todo global v3 test" />
+    <MESSAGE value="WIP: todo global v4 test" />
+    <MESSAGE value="add list router" />
+    <option name="LAST_COMMIT_MESSAGE" value="add list router" />
+  </component>
+</project>
