@@ -1,11 +1,12 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const ProjectsAsideContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 320px;
-  height: 100%;
+  height: calc(100vh - 130px);
   background-color: ${props => props.theme.colors.darkTheme.grey_darked};
+  position: absolute;
   p {
     display: flex;
     flex-grow: 1;

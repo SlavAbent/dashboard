@@ -97,22 +97,22 @@ export const Main = () => {
           })}
         </MainWrapperContent>
       </MainWrapper>
-      <MainWrapper>
-        <MainWrapperTodo>
-          <TodoAddNewTask className="bigTodo">
-            <TodoNewTaskTitle>Фронтенд</TodoNewTaskTitle>
-            <input type="text" placeholder="Новая задача"/>
-          </TodoAddNewTask>
-        </MainWrapperTodo>
-        <MainWrapperContent className="bigTodoTask">
-          <div>
-            <input type="checkbox"/>
-            <p>задача</p>
-            <span>x</span>
-          </div>
-          {/*<TodoCardComponent/>*/}
-        </MainWrapperContent>
-      </MainWrapper>
+      {/*<MainWrapper>*/}
+      {/*  <MainWrapperTodo>*/}
+      {/*    <TodoAddNewTask className="bigTodo">*/}
+      {/*      <TodoNewTaskTitle>Фронтенд</TodoNewTaskTitle>*/}
+      {/*      <input type="text" placeholder="Новая задача"/>*/}
+      {/*    </TodoAddNewTask>*/}
+      {/*  </MainWrapperTodo>*/}
+      {/*  <MainWrapperContent className="bigTodoTask">*/}
+      {/*    <div>*/}
+      {/*      <input type="checkbox"/>*/}
+      {/*      <p>задача</p>*/}
+      {/*      <span>x</span>*/}
+      {/*    </div>*/}
+      {/*    /!*<TodoCardComponent/>*!/*/}
+      {/*  </MainWrapperContent>*/}
+      {/*</MainWrapper>*/}
     </MainContainer>
   )
 }

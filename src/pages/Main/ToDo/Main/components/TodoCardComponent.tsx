@@ -12,7 +12,6 @@ import MinCard from './MinCard'
 const TodoCardComponent = (props) => {
   const {
     date,
-    viewCard,
   } = props
 
   return (

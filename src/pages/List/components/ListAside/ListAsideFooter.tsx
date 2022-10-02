@@ -1,8 +1,8 @@
 import React from 'react'
-import { AsideThemeProject, DarkTheme, LightTheme } from '../ProjectsAside.style'
+import { AsideThemeProject, DarkTheme, LightTheme } from './ListAside.styled'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 
-export const AsideFooter = () => {
+export const ListAsideFooter = () => {
   return (
     <AsideThemeProject>
       <DarkTheme className="active">
