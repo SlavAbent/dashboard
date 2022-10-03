@@ -24,11 +24,6 @@
       "id": 5,
       "name": "Личное",
       "colorId": 1
-    },
-    {
-      "name": "Спорт",
-      "colorId": 3,
-      "id": 6
     }
   ],
   "tasks": [
@@ -71,7 +66,7 @@
     {
       "listId": 1,
       "text": "qweqwe",
-      "completed": false,
+      "completed": true,
       "id": 7
     },
     {
@@ -97,6 +92,12 @@
       "text": "222",
       "completed": true,
       "id": 12
+    },
+    {
+      "listId": 1,
+      "text": "546456",
+      "completed": false,
+      "id": 13
     }
   ],
   "colors": [
