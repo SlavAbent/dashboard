@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { HeaderWrapper,
   HeaderContainer,
   HeaderLeftSide,
@@ -8,14 +8,8 @@ import { HeaderWrapper,
   HeaderSort,
 } from './Header.style'
 import { BsFilterRight, BsSortUpAlt, BsViewList } from 'react-icons/bs'
-import { TodoListContext } from '../../../../redux/context/Provider'
-import { viewList } from '../../../../redux/actions'
 
 export const Header = () => {
-  const [minCard, setMinCard] = useState(false)
-
-
-  const handlerToggleViewTodo = () => setMinCard(!minCard)
   return (
     <HeaderWrapper>
       <HeaderContainer>

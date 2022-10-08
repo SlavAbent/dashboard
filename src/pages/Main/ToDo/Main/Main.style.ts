@@ -9,8 +9,20 @@ const MainContainer = styled.div`
   border-radius: ${props => props.theme.padding.default};
 `;
 
+const MainContainerListAside = styled.div`
+  display: flex;
+  align-items: flex-start;
+  margin-left: 350px;
+  height: calc(100vh - 130px);
+  overflow: hidden;
+  background-color: ${props => props.theme.colors.darkTheme.grey_smallDark};
+  border-radius: ${props => props.theme.padding.default};
+`;
+
 const MainWrapper = styled.div`
   width: 300px;
+  height: 100%;
+  box-sizing: border-box;
   padding: ${props => props.theme.decoration.borderRadius.large};
   margin-right: 10px;
   padding-right: 5px; 
@@ -163,4 +175,5 @@ export {
   TodoFixNote,
   TodoFooter,
   MainWrapperContent,
+  MainContainerListAside,
 }

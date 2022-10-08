@@ -1,45 +1,38 @@
-import styled from 'styled-components/macro'
-
-
-export const BadgeWrapper = styled.i`
+.badge {
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-radius: 30px;
-  cursor: pointer;
-  &.grey {
+
+  &--grey {
     background-color: #c9d1d3;
   }
 
-  &.lime {
+  &--lime {
     background-color: #b6e6bd;
   }
 
-  &.purple {
+  &--purple {
     background-color: #c355f5;
   }
 
-  &.black {
+  &--black {
     background-color: #08001a;
   }
 
-  &.red {
+  &--red {
     background-color: #ff6464;
   }
 
-  &.green {
+  &--green {
     background-color: #42b883;
   }
 
-  &.blue {
+  &--blue {
     background-color: #64c4ed;
   }
 
-  &.pink {
+  &--pink {
     background-color: #ffbbcc;
   }
-  
-  &.active {
-    border: 2px solid black;
-  }
-`;
+}
