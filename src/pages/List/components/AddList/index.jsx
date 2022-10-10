@@ -6,7 +6,13 @@ import Badge from '../Badge';
 
 import closeSvg from '../../../../assets/img/close.svg';
 
-import './AddList.scss';
+import {
+  AddListWrapper,
+  AddListPopup,
+  AddListButton,
+  AddListPopupColors,
+  AddListCloseBtn,
+} from './AddList.styled'
 
 const AddList = ({ colors, onAdd }) => {
   const [visiblePopup, setVisiblePopup] = useState(false);
@@ -52,7 +58,7 @@ const AddList = ({ colors, onAdd }) => {
   };
 
   return (
-    <div className="add-list">
+    <AddListWrapper className="add-list">
       <List
         onClick={() => setVisiblePopup(true)}
         items={[
@@ -87,8 +93,8 @@ const AddList = ({ colors, onAdd }) => {
         ]}
       />
       {visiblePopup && (
-        <div className="add-list__popup">
-          <img
+        <AddListPopup className="add-list__popup">
+          <AddListCloseBtn
             onClick={onClose}
             src={closeSvg}
             alt="Close button"
@@ -103,7 +109,7 @@ const AddList = ({ colors, onAdd }) => {
             placeholder="Название списка"
           />
 
-          <div className="add-list__popup-colors">
+          <AddListPopupColors>
             {colors.map(color => (
               <Badge
                 onClick={() => selectColor(color.id)}
@@ -112,13 +118,13 @@ const AddList = ({ colors, onAdd }) => {
                 className={seletedColor === color.id && 'active'}
               />
             ))}
-          </div>
-          <button onClick={addList} className="button">
+          </AddListPopupColors>
+          <AddListButton onClick={addList} className="button">
             {isLoading ? 'Добавление...' : 'Добавить'}
-          </button>
-        </div>
+          </AddListButton>
+        </AddListPopup>
       )}
-    </div>
+    </AddListWrapper>
   );
 };
 
