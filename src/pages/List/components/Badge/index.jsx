@@ -1,13 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import './Badge.scss';
+import { IBadge } from './Badge.style'
 
 const Badge = ({ color, onClick, className }) => (
-  <i
+  <IBadge
     onClick={onClick}
     className={classNames('badge', { [`badge--${color}`]: color }, className)}
-  ></i>
+  ></IBadge>
 );
 
 export default Badge;

@@ -6,7 +6,13 @@ import removeSvg from '../../../../assets/img/remove.svg';
 
 import Badge from '../Badge';
 
-import './List.scss';
+import {
+  ListUl,
+  ListLi,
+  ListIcon,
+  ListSpan,
+  ListImage,
+} from './List.style'
 
 const List = ({
   items,
@@ -25,9 +31,9 @@ const List = ({
   };
 
   return (
-    <ul onClick={onClick} className="list">
+    <ListUl onClick={onClick}>
       {items.map((item, index) => (
-        <li
+        <ListLi
           key={index}
           className={classNames(item.className, {
             active: item.active
@@ -36,22 +42,22 @@ const List = ({
           })}
           onClick={onClickItem ? () => onClickItem(item) : null}
         >
-          <i>{item.icon ? item.icon : <Badge color={item.color.name} />}</i>
-          <span>
+          <ListIcon>{item.icon ? item.icon : <Badge color={item.color.name} />}</ListIcon>
+          <ListSpan>
             {item.name}
             {item.tasks && ` (${item.tasks.length})`}
-          </span>
+          </ListSpan>
           {isRemovable && (
-            <img
+            <ListImage
               className="list__remove-icon"
               src={removeSvg}
               alt="Remove icon"
               onClick={() => removeList(item)}
             />
           )}
-        </li>
+        </ListLi>
       ))}
-    </ul>
+    </ListUl>
   );
 };
 
