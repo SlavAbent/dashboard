@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 import addSvg from '../../../../assets/img/add.svg';
+import {
+  TasksForm,
+  TasksFormNew,
+  TasksFormBlock,
+  TasksFormButton,
+} from './styles/AddFormTask.styles'
 
 const AddTaskForm = ({ list, onAddTask }) => {
   const [visibleForm, setFormVisible] = useState(false);
@@ -35,14 +41,14 @@ const AddTaskForm = ({ list, onAddTask }) => {
   };
 
   return (
-    <div className="tasks__form">
+    <TasksForm>
       {!visibleForm ? (
-        <div onClick={toggleFormVisible} className="tasks__form-new">
+        <TasksFormNew onClick={toggleFormVisible}>
           <img src={addSvg} alt="Add icon" />
           <span>Новая задача</span>
-        </div>
+        </TasksFormNew>
       ) : (
-        <div className="tasks__form-block">
+        <TasksFormBlock>
           <input
             value={inputValue}
             className="field"
@@ -50,15 +56,15 @@ const AddTaskForm = ({ list, onAddTask }) => {
             placeholder="Текст задачи"
             onChange={e => setInputValue(e.target.value)}
           />
-          <button disabled={isLoading} onClick={addTask} className="button">
+          <TasksFormButton disabled={isLoading} onClick={addTask}>
             {isLoading ? 'Добавление...' : 'Добавить задачу'}
-          </button>
-          <button onClick={toggleFormVisible} className="button button--grey">
+          </TasksFormButton>
+          <TasksFormButton onClick={toggleFormVisible} className="button--grey">
             Отмена
-          </button>
-        </div>
+          </TasksFormButton>
+        </TasksFormBlock>
       )}
-    </div>
+    </TasksForm>
   );
 };
 
