@@ -4,7 +4,12 @@ import { Link } from 'react-router-dom';
 
 import editSvg from '../../../../assets/img/edit.svg';
 
-import './Tasks.scss';
+import {
+  TasksTitle,
+  TasksItems,
+  TasksWrapper,
+} from './styles/index.styles'
+
 
 import AddTaskForm from './AddTaskForm';
 import Task from './Task';
@@ -33,15 +38,15 @@ const Tasks = ({
   };
 
   return (
-    <div className="tasks">
+    <TasksWrapper className="tasks">
       <Link to={`/lists/${list.id}`}>
-        <h2 style={{ color: list.color.hex }} className="tasks__title">
+        <TasksTitle style={{ color: list.color.hex }} className="tasks__title">
           {list.name}
           <img onClick={editTitle} src={editSvg} alt="Edit icon" />
-        </h2>
+        </TasksTitle>
       </Link>
 
-      <div className="tasks__items">
+      <TasksItems className="tasks__items">
         {!withoutEmpty && list.tasks && !list.tasks.length && (
           <h2>Задачи отсутствуют</h2>
         )}
@@ -57,8 +62,8 @@ const Tasks = ({
             />
           ))}
         <AddTaskForm key={list.id} list={list} onAddTask={onAddTask} />
-      </div>
-    </div>
+      </TasksItems>
+    </TasksWrapper>
   );
 };
 

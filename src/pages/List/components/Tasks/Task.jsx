@@ -1,13 +1,20 @@
 import React from 'react';
 
+import {
+  Checkbox,
+  TasksItemsP,
+  TasksItemsRow,
+  TasksItemsRowActions,
+} from './styles/Tasks.styles'
+
 const Task = ({ id, text, completed, list, onRemove, onEdit, onComplete }) => {
   const onChangeCheckbox = e => {
     onComplete(list.id, id, e.target.checked);
   };
 
   return (
-    <div key={id} className="tasks__items-row">
-      <div className="checkbox">
+    <TasksItemsRow key={id} className="tasks__items-row">
+      <Checkbox className="checkbox">
         <input
           onChange={onChangeCheckbox}
           id={`task-${id}`}
@@ -31,9 +38,9 @@ const Task = ({ id, text, completed, list, onRemove, onEdit, onComplete }) => {
             />
           </svg>
         </label>
-      </div>
-      <p>{text}</p>
-      <div className="tasks__items-row-actions">
+      </Checkbox>
+      <TasksItemsP>{text}</TasksItemsP>
+      <TasksItemsRowActions className="tasks__items-row-actions">
         <div onClick={() => onEdit(list.id, { id, text })}>
           <svg
             width="15"
@@ -62,8 +69,8 @@ const Task = ({ id, text, completed, list, onRemove, onEdit, onComplete }) => {
             />
           </svg>
         </div>
-      </div>
-    </div>
+      </TasksItemsRowActions>
+    </TasksItemsRow>
   );
 };
 
