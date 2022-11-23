@@ -1,16 +1,16 @@
 import { Avatar }  from '../uikit/Avatar/';
 import { DropDownMenu } from '../uikit/DropDownMenu';
 import { HeaderComponent, HeaderTitle, HeaderSearch } from './Header.style'
-import { Icon } from '../uikit/Icon'
 import { Link } from 'react-router-dom'
 import avatar from '../../assets/avatar.jpeg'
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { TimeDate } from '../Time/Time'
+import { ThemeContext } from '../ThemeContainer/context/ThemeContext'
 
 const Header = () => {
-
     const [activeDropDown, setActiveDropDown] = useState<boolean>(false)
+    const { toggleTheme } = useContext(ThemeContext)
 
     const avatarDropDownMenu = (event: React.MouseEvent) => {
       console.log(event)
@@ -21,13 +21,12 @@ const Header = () => {
     const person = 'Slava'
 
     return (
-        <HeaderComponent>
-            <HeaderTitle>Welcome back, {person} 💪</HeaderTitle>
+        <HeaderComponent color={toggleTheme}>
+            <HeaderTitle color={toggleTheme}>Welcome back, {person} 💪</HeaderTitle>
             <TimeDate/>
-            <HeaderSearch><AiOutlineSearch/></HeaderSearch>
-
+            <HeaderSearch color={toggleTheme}><AiOutlineSearch/></HeaderSearch>
            <>
-             <Icon type='svg'/>
+             {/*<Icon type='svg'/>*/}
              <Avatar
                size={42}
                image={avatar}

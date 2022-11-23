@@ -12,6 +12,7 @@ const iconTypes = new Map([
 export interface IIconProps extends DOMAttributes<HTMLDivElement> {
     className?: string
     type: IconType
+    color?: string
 }
 
 const getIcon = (type: IconType): JSX.Element => iconTypes.get(type) as JSX.Element

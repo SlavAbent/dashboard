@@ -6,7 +6,7 @@ const AvatarButton = styled.div`
 `
 
 const AvatarWrapper = styled.div`
-    background-color: ${props => props.theme.colors.lighterMain};
+    background-color: ${(props) => props.color === 'light' ? props.theme.colors?.darkTheme.mainColor : props.theme.colors?.lightTheme.mainColor};
     border-radius: 50%;
     z-index: 10000;
     overflow: hidden;
@@ -54,7 +54,7 @@ const AvatarBorder = styled.div`
     bottom: 0;
     z-index: 1001;
     border-radius: 50%;
-    border: 1px solid ${props => props.theme.colors.lighterMain};
+    border: 1px solid ${(props) => props.color === 'light' ? props.theme.colors?.darkTheme.mainColor : props.theme.colors?.lightTheme.mainColor};;
 `;
 
 const AvatarBorderBox = styled.div`

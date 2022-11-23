@@ -5,7 +5,8 @@ const MainContainer = styled.div`
   align-items: flex-start;
   height: calc(100vh - 130px);
   overflow: hidden;
-  background-color: ${props => props.theme.colors.darkTheme.grey_smallDark};
+  transition: .3s;
+  background-color: ${(props) => props.color === 'light' ? props.theme.colors?.darkTheme.mainColored : props.theme.colors?.lightTheme.mainColored};
   border-radius: ${props => props.theme.padding.default};
 `;
 
