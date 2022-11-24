@@ -2,8 +2,6 @@ import { TodoActionsTypes } from '../todoTypes/todoEnums'
 import { IInitialState, TodoAction } from '../todoTypes/todoInterfaces'
 import { initState } from '../state'
 
-
-
 export const todoReducer = (state = initState, action: TodoAction): IInitialState => {
   const { type, payload } = action
   switch (type) {
@@ -11,16 +9,17 @@ export const todoReducer = (state = initState, action: TodoAction): IInitialStat
       return {
         todos: [
           payload,
+          // @ts-ignore
           ...state.todos,
         ]
       }
     case TodoActionsTypes.DELETE_TODO:
-      const newTodo = state.todos.filter(elem => elem.id !== payload)
+      const newTodo = state.todos?.filter(elem => elem.id !== payload)
       return {
         todos: newTodo
       }
     case TodoActionsTypes.TOGGLE_TODO:
-      const toggledTodo = state.todos.map(elem => elem.id === payload
+      const toggledTodo = state.todos?.map(elem => elem.id === payload
         ? { ...elem, completed: !elem.completed }
         : elem
       )

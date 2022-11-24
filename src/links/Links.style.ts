@@ -22,7 +22,7 @@ const LinkAnchor = styled(NavLink)`
     svg {
         width: 25px;
         height: 25px;
-        color: ${props => props.theme.colors.lighterMain}
+        color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor}
     }
   
     &.active {

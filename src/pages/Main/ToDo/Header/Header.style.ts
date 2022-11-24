@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro'
 
+// refact to mixins
+
 const HeaderWrapper = styled.div`
   display: flex;
   width: 100%;
@@ -28,12 +30,13 @@ const HeaderBoardView = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: .3s;
   p {
     margin-left: 5px;
-    color: ${props => props.theme.colors.lightTheme.mainColor};
+    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
   }
   svg {
-    fill: ${props => props.theme.colors.lightTheme.mainColor};
+    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
   }
 `;
 
@@ -41,12 +44,13 @@ const HeaderFilter = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: .3s;
   p {
     margin-left: 5px;
-    color: ${props => props.theme.colors.lightTheme.mainColor};
+    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
   }
   svg {
-    fill: ${props => props.theme.colors.lightTheme.mainColor};
+    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
   }
 `;
 
@@ -55,12 +59,13 @@ const HeaderSort = styled.div`
   align-items: center;
   cursor: pointer;
   margin-left: 15px;
+  transition: .3s;
   p {
     margin-left: 5px;
-    color: ${props => props.theme.colors.lightTheme.mainColor};
+    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
   }
   svg {
-    fill: ${props => props.theme.colors.lightTheme.mainColor};
+    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
   }
 `;
 

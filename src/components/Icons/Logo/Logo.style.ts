@@ -7,11 +7,12 @@ const IconLogo = styled.div`
     width: 30px;
     height: 30px;
     margin-bottom: 50px;
+    transition: .3s;
 
     svg {
         width: 100%;
         height: 100%;
-        color: ${props => props.theme.colors.lighterMain}
+        color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor}
     }
 `;
 

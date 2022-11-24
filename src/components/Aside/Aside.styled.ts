@@ -4,9 +4,17 @@ const AsideWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60px;
-    padding-top: ${props => props.theme.padding.default};
-    background-color: ${props => props.theme.colors.darkTheme.grey_dark};
+    transition: .3s;
+    padding-top: ${(props) => props.theme.padding.default};
+    background-color: ${(props) => props.color === 'night' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
+    &.min__menu {
+      width: 60px;
+    }
+    &.full__menu {
+      width: 300px;
+    }
+    
+    
 `;
 
 export { AsideWrapper }

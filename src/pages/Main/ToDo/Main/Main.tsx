@@ -15,13 +15,14 @@ import { TodoListContext } from '../../../../redux/context/Provider'
 import TodoDropDown from './components/TodoDropDown/TodoDropDown'
 import { TodoActionsTypes } from '../../../../redux/todoTypes/todoEnums'
 import moment from 'moment'
+import { ThemeContext } from '../../../../components/ThemeContainer/context/ThemeContext'
 
 export const Main = () => {
   const [activeDropDown, setActiveDropDown] = useState(false)
   const [title, setTitle] = useState<string>('')
   // @ts-ignore
   const {state: {todos}, dispatch } = useContext(TodoListContext);
-
+  const { toggleTheme } = useContext(ThemeContext)
 
   //Functions
   const openCreateWindow = () => setActiveDropDown(!activeDropDown)
@@ -59,7 +60,7 @@ export const Main = () => {
   }
 
   return (
-    <MainContainer>
+    <MainContainer color={toggleTheme}>
       <MainWrapper>
         <MainWrapperTodo>
           <TodoCount>{todos.length}</TodoCount>
@@ -97,22 +98,6 @@ export const Main = () => {
           })}
         </MainWrapperContent>
       </MainWrapper>
-      {/*<MainWrapper>*/}
-      {/*  <MainWrapperTodo>*/}
-      {/*    <TodoAddNewTask className="bigTodo">*/}
-      {/*      <TodoNewTaskTitle>Фронтенд</TodoNewTaskTitle>*/}
-      {/*      <input type="text" placeholder="Новая задача"/>*/}
-      {/*    </TodoAddNewTask>*/}
-      {/*  </MainWrapperTodo>*/}
-      {/*  <MainWrapperContent className="bigTodoTask">*/}
-      {/*    <div>*/}
-      {/*      <input type="checkbox"/>*/}
-      {/*      <p>задача</p>*/}
-      {/*      <span>x</span>*/}
-      {/*    </div>*/}
-      {/*    /!*<TodoCardComponent/>*!/*/}
-      {/*  </MainWrapperContent>*/}
-      {/*</MainWrapper>*/}
     </MainContainer>
   )
 }
