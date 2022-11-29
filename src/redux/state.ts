@@ -1,5 +1,6 @@
-import { IInitialState } from './todoTypes/todoInterfaces'
+import { IInitialState } from './types/interfaces/interfaces'
 
-export const initState: IInitialState = {
+export const store: IInitialState = {
   todos: [],
+  isOpenMenu: false
 }
