@@ -1,8 +1,9 @@
-import { TodoActionsTypes } from '../todoTypes/todoEnums'
-import { IInitialState, TodoAction } from '../todoTypes/todoInterfaces'
-import { initState } from '../state'
+import { TodoActionsTypes } from '../types/enums/todoEnums'
+import { TodoAction } from '../types/interfaces/todoInterfaces'
+import { store } from '../state'
+import { IInitialState } from '../types/interfaces/interfaces'
 
-export const todoReducer = (state = initState, action: TodoAction): IInitialState => {
+export const todoReducer = (state = store, action: TodoAction): IInitialState => {
   const { type, payload } = action
   switch (type) {
     case TodoActionsTypes.ADD_TODO:

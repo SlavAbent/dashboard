@@ -11,9 +11,9 @@ import {
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { DropDownMenu } from '../../../../components/uikit/DropDownMenu'
 import TodoCardComponent from './components/TodoCardComponent'
-import { TodoListContext } from '../../../../redux/context/Provider'
+import { TodoListContext } from '../../../../redux/context/todoProvider'
 import TodoDropDown from './components/TodoDropDown/TodoDropDown'
-import { TodoActionsTypes } from '../../../../redux/todoTypes/todoEnums'
+import { TodoActionsTypes } from '../../../../redux/types/enums/todoEnums'
 import moment from 'moment'
 import { ThemeContext } from '../../../../components/ThemeContainer/context/ThemeContext'
 

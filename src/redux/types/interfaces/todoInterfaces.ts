@@ -1,8 +1,4 @@
-import { TodoActionsTypes } from './todoEnums'
-
-export interface IInitialState {
-  todos: any[]
-}
+import { TodoActionsTypes } from '../enums/todoEnums'
 
 interface IAdd_Todo {
   type: TodoActionsTypes.ADD_TODO,
@@ -19,4 +15,3 @@ interface IToggle_Todo {
 }
 
 export type TodoAction = IAdd_Todo | IDelete_Todo | IToggle_Todo
-

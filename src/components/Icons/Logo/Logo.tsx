@@ -3,13 +3,13 @@ import { IconLogo } from './Logo.style'
 import { FiCircle } from "react-icons/fi";
 import { ThemeContext } from '../../ThemeContainer/context/ThemeContext'
 
-const Logo = () => {
+const Logo = ({ handleToggleMenu }) => {
   const { toggleTheme } = useContext(ThemeContext)
   // TODO: add toggle menu
     return (
-        <IconLogo color={toggleTheme}>
-            <FiCircle />
-        </IconLogo>
+      <IconLogo color={toggleTheme} onClick={handleToggleMenu}>
+          <FiCircle />
+      </IconLogo>
     )
 }
 
