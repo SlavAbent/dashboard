@@ -6,7 +6,7 @@ import ThemeContainer from '../ThemeContainer/ThemeContainer'
 import { AsideWrapper } from './Aside.styled'
 import { ThemeContext } from '../ThemeContainer/context/ThemeContext'
 import { useDispatch, useSelector } from 'react-redux'
-import { ToggleMenuTypes } from '../../redux/types/enums/panels'
+import { toggleMenu } from '../../redux/actions/panels'
 
 const Aside = () => {
   const dispatch = useDispatch()
@@ -14,13 +14,12 @@ const Aside = () => {
   const isOpenMenu = useSelector((state) => state.isOpenMenu)
   const { toggleTheme } = useContext(ThemeContext)
 
-  const handleToggleMenu = () => {
-    console.log(1)
-    dispatch({type: ToggleMenuTypes.TOGGLE_MENU})
-  }
+  const className = `${isOpenMenu ? ' full__menu' : ' min__menu'}`
+
+  const handleToggleMenu = () => dispatch(toggleMenu())
 
   return (
-      <AsideWrapper color={toggleTheme} className={`${isOpenMenu ? ' min__menu' : ' full__menu'}`}>
+      <AsideWrapper color={toggleTheme} className={className}>
         <Logo handleToggleMenu={handleToggleMenu}/>
         <Links />
         <ThemeContainer />

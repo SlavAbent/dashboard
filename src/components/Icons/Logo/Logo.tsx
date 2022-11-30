@@ -5,12 +5,12 @@ import { ThemeContext } from '../../ThemeContainer/context/ThemeContext'
 
 const Logo = ({ handleToggleMenu }) => {
   const { toggleTheme } = useContext(ThemeContext)
-  // TODO: add toggle menu
-    return (
-      <IconLogo color={toggleTheme} onClick={handleToggleMenu}>
-          <FiCircle />
-      </IconLogo>
-    )
+
+  return (
+    <IconLogo color={toggleTheme} onClick={handleToggleMenu}>
+      <FiCircle />
+    </IconLogo>
+  )
 }
 
 export default Logo

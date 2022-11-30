@@ -6,9 +6,10 @@ import Header from './components/Header/Header'
 import { AppWrapper } from './styles/App.styled'
 import { ThemeContext } from './components/ThemeContainer/context/ThemeContext'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
 import { panelsReducer } from './redux/reducers/panels'
-const store = createStore(panelsReducer)
+import thunk from 'redux-thunk'
+const store = createStore(panelsReducer, applyMiddleware(thunk))
 
 export const AppMainWrapper = () => {
   const { toggleTheme } = useContext(ThemeContext)
