@@ -1,6 +1,6 @@
 import { store } from '../state'
-import { IInitialState } from '../types/interfaces/interfaces'
-import { ToggleMenuTypes } from '../types/enums/panels'
+import { IInitialState } from 'types/interfaces/interfaces'
+import { ToggleMenuTypes } from 'types/enums/panels'
 
 export const panelsReducer = (state = store, action): IInitialState => {
   switch ( action.type ) {

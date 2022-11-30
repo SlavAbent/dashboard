@@ -1,7 +1,7 @@
-import { TodoActionsTypes } from '../types/enums/todoEnums'
-import { TodoAction } from '../types/interfaces/todoInterfaces'
-import { store } from '../state'
-import { IInitialState } from '../types/interfaces/interfaces'
+import { TodoActionsTypes } from '../../../../../types/enums/todoEnums'
+import { TodoAction } from 'types/interfaces/todoInterfaces'
+import { store } from '../../../../../redux/state'
+import { IInitialState } from 'types/interfaces/interfaces'
 
 export const todoReducer = (state = store, action: TodoAction): IInitialState => {
   const { type, payload } = action

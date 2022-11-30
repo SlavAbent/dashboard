@@ -1,6 +1,6 @@
 import { createContext, useReducer } from 'react'
 import { todoReducer } from '../reducers'
-import { store } from '../state'
+import { store } from '../../../../../redux/state'
 
 export const TodoListContext = createContext({});
 

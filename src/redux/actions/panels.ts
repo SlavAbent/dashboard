@@ -1,6 +1,6 @@
-import { ToggleMenuTypes } from '../types/enums/panels'
+import { ToggleMenuTypes } from 'types/enums/panels'
 
-export const toggleMenu = payload => {
+export const toggleMenu = () => {
   return {
     type: ToggleMenuTypes.TOGGLE_MENU,
   }

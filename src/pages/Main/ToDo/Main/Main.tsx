@@ -11,11 +11,11 @@ import {
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { DropDownMenu } from '../../../../components/uikit/DropDownMenu'
 import TodoCardComponent from './components/TodoCardComponent'
-import { TodoListContext } from '../../../../redux/context/todoProvider'
+import { TodoListContext } from '../context/provider/todoProvider'
 import TodoDropDown from './components/TodoDropDown/TodoDropDown'
-import { TodoActionsTypes } from '../../../../redux/types/enums/todoEnums'
 import moment from 'moment'
 import { ThemeContext } from '../../../../components/ThemeContainer/context/ThemeContext'
+import { addTodo, deleteTodo, toggleTodo } from '../context/actions'
 
 export const Main = () => {
   const [activeDropDown, setActiveDropDown] = useState(false)
@@ -30,30 +30,17 @@ export const Main = () => {
 
   const handleSubmit = () => {
     setTitle('')
-    dispatch({
-      type: TodoActionsTypes.ADD_TODO,
-      payload: {
-        id: crypto.randomUUID(),
-        title,
-        date: moment().format('DD MMM YYYY HH:mm'),
-        completed: false
-      }
-    })
+    dispatch(addTodo({
+      id: crypto.randomUUID(),
+      title,
+      date: moment().format('DD MMM YYYY HH:mm'),
+      completed: false
+    }))
   }
 
-  const handleDeleteTodo = (index: number) => {
-    dispatch({
-      type: TodoActionsTypes.DELETE_TODO,
-      payload: index
-    })
-  }
+  const handleDeleteTodo = (index: number) => dispatch(deleteTodo(index))
 
-  const handleToggleTodo = (index: number) => {
-    dispatch({
-      type: TodoActionsTypes.TOGGLE_TODO,
-      payload: index
-    })
-  }
+  const handleToggleTodo = (index: number) => dispatch(toggleTodo(index))
 
   const handleEnter = e => {
     if(e.key === 'Enter') handleSubmit()

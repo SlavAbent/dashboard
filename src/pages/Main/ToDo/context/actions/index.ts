@@ -1,4 +1,4 @@
-import { TodoActionsTypes } from '../types/enums/todoEnums'
+import { TodoActionsTypes } from 'types/enums/todoEnums'
 
 export const addTodo = payload => {
   return {
