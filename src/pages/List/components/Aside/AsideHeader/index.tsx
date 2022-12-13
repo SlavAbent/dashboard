@@ -1,12 +1,13 @@
 import React from 'react'
+import {AsideHeaderWrapper, AsideHeaderText} from './index.styled'
 
 const AsideHeader = () => {
 
   const listCount = 7
   return (
-    <div>
-      <p>Всего списков: {listCount}</p>
-    </div>
+    <AsideHeaderWrapper>
+      <AsideHeaderText>Всего списков: {listCount}</AsideHeaderText>
+    </AsideHeaderWrapper>
   )
 }
 

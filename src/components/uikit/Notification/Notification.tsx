@@ -26,9 +26,6 @@ export const Notification: FC<INotification> = (props) => {
     return clearTimeout(timeIsOver)
   }, [timeout])
 
-
-  console.log('notificationTime', notificationTime)
-
   const classname = `${className} ${type} ${position} ${notificationTime}`
 
   return (

@@ -3,28 +3,34 @@ import { useAxios } from 'hooks/useAxios'
 import { uniqueId } from 'lodash'
 import { Loader } from 'components/uikit/Loader'
 import { Badge } from 'components/uikit/Badge/Badge'
-import { Notification } from '../../../../../components/uikit/Notification/Notification'
-
-export interface IList {
-  id: number
-  name: string,
-  colorId: number
-}
+import { Notification } from 'components/uikit/Notification/Notification'
+import classNames from 'classnames'
+import { AsideRow, AsideRowText, AsideRowWrapper, AsideContain } from './index.styles'
+import { IList } from './index.model'
+import { Delete } from 'components/Icons/Delete/Delete'
 
 const AsideContainer = () => {
   const { response, error, loading } = useAxios({
-    url: '/lists',
+    url: '/lists?_expand=color&_embed=tasks',
     method: 'GET',
   })
 
   const data = useMemo(() => {
     if(Array.isArray(response)) {
       return response.map((list: IList) => {
+        const { id, name, hex } = list.color
+        const className = classNames('badge', { [`badge--${name}`]: name}, 'default')
        return (
-         <div key={uniqueId('list')}>
-           <Badge size={4} />
-           <div>{list?.name}</div>
-         </div>
+         <AsideRow key={uniqueId('list_')}>
+           <Badge
+             id={id}
+             className={className}
+             size={16}
+             color="custom--badge"
+           />
+           <AsideRowText>{list?.name}</AsideRowText>
+           <Delete />
+         </AsideRow>
        )
       })
     }
@@ -32,7 +38,7 @@ const AsideContainer = () => {
   }, [response])
 
   return (
-    <>
+    <AsideContain>
       { loading ?
         <Loader
           size={50}
@@ -41,16 +47,7 @@ const AsideContainer = () => {
           className={' visibility'}
         />
         : (
-          <div>
-            <Notification
-              className={''}
-              icon={<div></div>}
-              position={'bottom-right'}
-              title={'some title'}
-              type={'default'}
-              children={'some text'}
-              timeout={1000}
-            />
+          <AsideRowWrapper>
             {
               error && (
                 <Notification
@@ -60,14 +57,14 @@ const AsideContainer = () => {
                   title={'Error'}
                   type={'error'}
                   children={'data was errors'}
-              />
+                />
               )
             }
             { data }
-          </div>
+          </AsideRowWrapper>
         )
       }
-    </>
+    </AsideContain>
   )
 }
 

@@ -8,11 +8,10 @@ export const useAxios = (axiosParams) => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
 
-  console.log(response)
-
   const fetchData = async (params) => {
     try {
       const result = await axios.request(params);
+      console.log('result', result)
       setResponse(result.data);
     } catch( error ) {
       setError(error);
