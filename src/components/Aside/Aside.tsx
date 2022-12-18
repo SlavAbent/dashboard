@@ -3,7 +3,7 @@ import { Links } from '../../links/Links'
 import Logo from '../Icons/Logo/Logo'
 import ThemeContainer from '../ThemeContainer/ThemeContainer'
 
-import { AsideWrapper } from './Aside.styled'
+import { AsideWrapper, AsideGrowedContainer } from './Aside.styled'
 import { ThemeContext } from '../ThemeContainer/context/ThemeContext'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../../redux/actions/panels'
@@ -20,8 +20,10 @@ const Aside = () => {
 
   return (
       <AsideWrapper color={toggleTheme} className={className}>
-        <Logo handleToggleMenu={handleToggleMenu}/>
-        <Links />
+        <AsideGrowedContainer>
+          <Logo handleToggleMenu={handleToggleMenu}/>
+          <Links />
+        </AsideGrowedContainer>
         <ThemeContainer />
       </AsideWrapper>
   )

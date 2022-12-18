@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 
-const AppWrapper = styled.div`
+export const AppWrapper = styled.div`
     display: flex;
     width: 100%;
     height: 100vh;
@@ -10,4 +10,12 @@ const AppWrapper = styled.div`
     background-color: ${(props) => props.color === 'light' ? props.theme.colors?.darkTheme.mainColored : props.theme.colors?.lightTheme.mainColored};
 `;
 
-export { AppWrapper }
+export const AppMainFields = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: calc(100% - 92px);
+  //Todo fix width params
+  //width: calc(100% - 332px);
+`;
+

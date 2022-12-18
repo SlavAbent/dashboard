@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const AsideWrapper = styled.div`
+export const AsideWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,10 +13,14 @@ const AsideWrapper = styled.div`
       width: 60px;
     }
     &.full__menu {
-      width: 300px;
+      width: 180px;
     }
-    
-    
 `;
 
-export { AsideWrapper }
+export const AsideGrowedContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+`
