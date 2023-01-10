@@ -13,7 +13,7 @@ import React from 'react'
 export type statusType = 'success' | 'warning' | 'error'
 
 interface IAvatarProps {
-    className: string
+    className?: string
     size?: number
     image?: string
     title?: string

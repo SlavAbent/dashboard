@@ -9,6 +9,7 @@ interface IBadge {
   color?: string
   className?: classNameType | string
   onClick?: (event: React.MouseEvent) => void
+  children?: any
 }
 
 export const Badge: FC<IBadge> = (

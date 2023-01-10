@@ -1,15 +1,18 @@
-import React from 'react'
-import { RiDeleteBin6Line } from 'react-icons/ri'
+import React, { FC } from 'react'
+import { DeleteIcon } from './Delete.styled'
+import { IIcon } from '../types'
 
-export const Delete = () => {
+export const Delete: FC<IIcon> = (props) => {
+  const { children, size = 16, color, title} = props
+
+
   return (
-    <RiDeleteBin6Line
-      // children?: React.ReactNode;
-      // size?: string | number;
-      // color?: string;
-      // title?: string;
+    <DeleteIcon
+      size={size}
+      color={color}
+      title={title}
     >
-
-    </RiDeleteBin6Line>
+      {children}
+    </DeleteIcon>
   )
 }

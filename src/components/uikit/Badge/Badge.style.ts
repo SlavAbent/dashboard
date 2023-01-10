@@ -8,8 +8,12 @@ export const BadgeContainer =  styled.span`
   height: 8px;
   margin-right: ${(p) => p.theme.margin.default};
   border-radius: 50%;
+  cursor: pointer;
 
   &.badge {
+    &--aside {
+      margin-right: 0;
+    }
     &--grey {
       background-color: #c9d1d3;
     }

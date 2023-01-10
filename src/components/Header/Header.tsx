@@ -30,9 +30,6 @@ const Header = () => {
              <Avatar
                size={42}
                image={avatar}
-               className={'test'}
-               title={'test'}
-               status={'error'}
                onClick={avatarDropDownMenu}
              />
              <DropDownMenu

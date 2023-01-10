@@ -50,7 +50,6 @@ const menu: LinkData[] = [
 export const Links = () => {
   // @ts-ignore
   const isOpenMenu = useSelector((state) => state.isOpenMenu)
-  console.log('isOpenMenu', isOpenMenu)
 
   const { toggleTheme } = useContext(ThemeContext)
   const className = ({isActive}) => isActive ? ' active' : ''

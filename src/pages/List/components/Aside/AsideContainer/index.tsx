@@ -1,5 +1,4 @@
-import React, { useMemo } from 'react'
-import { useAxios } from 'hooks/useAxios'
+import React, { FC, useMemo } from 'react'
 import { uniqueId } from 'lodash'
 import { Loader } from 'components/uikit/Loader'
 import { Badge } from 'components/uikit/Badge/Badge'
@@ -9,18 +8,13 @@ import { AsideRow, AsideRowText, AsideRowWrapper, AsideContain } from './index.s
 import { IList } from './index.model'
 import { Delete } from 'components/Icons/Delete/Delete'
 
-const AsideContainer = () => {
-  const { response, error, loading } = useAxios({
-    url: '/lists?_expand=color&_embed=tasks',
-    method: 'GET',
-  })
-
-  const data = useMemo(() => {
-    if(Array.isArray(response)) {
-      return response.map((list: IList) => {
+const AsideContainer = ({ data, loading, error, handleAsideDeleteItem }) => {
+  const dataAside = useMemo(() => {
+    if(Array.isArray(data)) {
+      return data.map((list: IList) => {
         const { id, name, hex } = list.color
         const className = classNames('badge', { [`badge--${name}`]: name}, 'default')
-       return (
+        return (
          <AsideRow key={uniqueId('list_')}>
            <Badge
              id={id}
@@ -29,13 +23,17 @@ const AsideContainer = () => {
              color="custom--badge"
            />
            <AsideRowText>{list?.name}</AsideRowText>
-           <Delete />
+           <div onClick={() => handleAsideDeleteItem(list)}>
+             <Delete
+               size={16}
+               color='#ffffff'
+             />
+           </div>
          </AsideRow>
-       )
+        )
       })
     }
-
-  }, [response])
+  }, [data, handleAsideDeleteItem])
 
   return (
     <AsideContain>
@@ -43,8 +41,7 @@ const AsideContainer = () => {
         <Loader
           size={50}
           title='loading'
-          color={''}
-          className={' visibility'}
+          className='visibility'
         />
         : (
           <AsideRowWrapper>
@@ -52,7 +49,7 @@ const AsideContainer = () => {
               error && (
                 <Notification
                   className={'notification__error'}
-                  icon={<div></div>}
+                  icon={<div/>}
                   position={'bottom-right'}
                   title={'Error'}
                   type={'error'}
@@ -60,7 +57,7 @@ const AsideContainer = () => {
                 />
               )
             }
-            { data }
+            { dataAside }
           </AsideRowWrapper>
         )
       }

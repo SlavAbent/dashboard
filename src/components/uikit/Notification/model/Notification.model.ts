@@ -12,7 +12,7 @@ export interface INotification {
   className?: string
   timeout?: number
   onClick?: (event: React.MouseEvent) => void
-  icon: React.ReactNode
+  icon?: React.ReactNode
   position: notificationPositionType
   type?: notificationType
 }
