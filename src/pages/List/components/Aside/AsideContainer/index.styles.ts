@@ -9,6 +9,10 @@ export const AsideRow = styled.div`
 export const AsideContain = styled.div`
 `
 
+export const AsideRowEdit = styled.div`
+  margin-right:${(p) => p.theme.margin.small};
+`
+
 export const AsideRowText = styled.p`
   display: flex;
   flex-grow: 1;

@@ -21,7 +21,7 @@ const menu: LinkData[] = [
     name: 'Главная',
   },
   {
-    to: '/List',
+    to: 'List',
     icon: <BsListCheck/>,
     name: 'Дашборд',
   },

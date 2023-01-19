@@ -3,12 +3,15 @@ import Aside from './components/Aside'
 import MainList from './components/MainList'
 
 import { TodoListWrapper } from './TodoList.styled'
+import { ListProvider } from './components/utility/context/ListProvider'
 
 export const TodoList = () => {
   return (
-    <TodoListWrapper>
-      <Aside />
-      <MainList />
-    </TodoListWrapper>
+    <ListProvider>
+      <TodoListWrapper>
+        <Aside />
+        <MainList />
+      </TodoListWrapper>
+    </ListProvider>
   )
 }

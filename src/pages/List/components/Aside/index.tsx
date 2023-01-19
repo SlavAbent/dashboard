@@ -1,18 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { AsideWrapper } from './Aside.style'
 import AsideHeader from './AsideHeader'
 import AsideContainer from './AsideContainer'
 import AsideAddList from './AsideAddList'
-import { useAxios } from '../../../../hooks/useAxios'
 import { useAddedList } from './hooks/useAddedList'
 import { baseURL } from '../../../../utils/urls'
+import { ListContext } from '../utility/context/ListProvider'
 
 const Aside = () => {
   const { deleteListOnAside } = useAddedList()
-  const { response , error, loading, setResponse } = useAxios({
-    url: '/lists?_expand=color&_embed=tasks',
-    method: 'GET',
-  })
+  const { response, error, loading, setResponse } = useContext(ListContext)
 
   const handlerAddList = listAside => {
     const newListsAside = [...response, listAside]

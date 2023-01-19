@@ -3,27 +3,27 @@
     {
       "id": 1,
       "name": "Продажи",
-      "colorId": 5
+      "colorId": 1
     },
     {
       "id": 2,
       "name": "Фронтенд",
-      "colorId": 4
+      "colorId": 2
     },
     {
       "id": 3,
-      "name": "Фильмы и сериалы1",
+      "name": "Фильмы и сериалы",
       "colorId": 3
     },
     {
       "id": 4,
       "name": "Книги",
-      "colorId": 2
+      "colorId": 4
     },
     {
       "id": 5,
       "name": "Личное",
-      "colorId": 1
+      "colorId": 5
     }
   ],
   "tasks": [
