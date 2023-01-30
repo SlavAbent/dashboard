@@ -37,20 +37,36 @@ const DropDownMenuWrapper = styled.div`
   }
   
   &.bottomToLeft {
-      left: 53px;
-      bottom: 53px;
+    top: auto;
+    right: auto;
+    left: 53px;
+    bottom: 53px;
+    opacity: 1;
+    visibility: visible;
   }
   &.bottomToRight {
-      right: 53px;
-      bottom: 53px;
+    top: auto;
+    left: auto;
+    right: 53px;
+    bottom: 53px;
+    opacity: 1;
+    visibility: visible;
   }
   &.topToLeft {
-      left: 53px;
-      top: 53px;
+    left: 53px;
+    top: 53px;
+    bottom: auto;
+    right: auto;
+    opacity: 1;
+    visibility: visible;
   }
   &.topToRight {
-      right: 53px;
-      top: 53px;
+    right: 53px;
+    top: 53px;
+    bottom: auto;
+    left: auto;
+    opacity: 1;
+    visibility: visible;
   }
 
   &.transitioned {

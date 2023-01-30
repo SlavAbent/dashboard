@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
-const LinksContainer = styled.div`
+export const LinksContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,8 +9,9 @@ const LinksContainer = styled.div`
     margin-bottom: 50px;
 `;
 
-const LinkAnchor = styled(NavLink)`
+export const LinkAnchor = styled(NavLink)`
     display: flex;
+    align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
@@ -18,14 +19,24 @@ const LinkAnchor = styled(NavLink)`
     padding-bottom: 12px;
     background-color: inherit;
     transition: .3s;
-  
-    svg {
+    text-decoration: none;
+
+    span {
+      &.link__active {
+        padding-left: 20px;
+      }
+      svg{
         width: 25px;
         height: 25px;
-        color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor}
+        color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
+      }
     }
   
+
+  
     &.active {
+      display: flex;
+      align-items: center;
       background-color: ${props => props.theme.colors.purple};
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
@@ -33,6 +44,18 @@ const LinkAnchor = styled(NavLink)`
       left: 1px;
       box-shadow: ${props => props.theme.decoration.boxShadow.purple};
     }
+
+    &.link__active {
+      justify-content: flex-start;
+    }
 `;
 
-export { LinksContainer,  LinkAnchor }
+export const LinkAnchorTitle = styled.p`
+  color: ${(p) => p.theme.colors.lightTheme.mainColor};
+  margin-left: ${(p) => p.theme.padding.small};
+  text-decoration: none;
+  display: none;
+  &.link__active {
+    display: block;
+  }
+`

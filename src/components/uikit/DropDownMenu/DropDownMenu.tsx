@@ -12,19 +12,21 @@ export interface IDropDownMenuProps {
     activeDropDown?: boolean
     hovered?: boolean
     transitioned?: boolean
-    direction?: DirectionType
-    children: ReactNode 
+    direction?: DirectionType | string
+    children: ReactNode
+    footer?: ReactNode
 }
 
 export const DropDownMenu: React.FC<IDropDownMenuProps> = (props) => {
-    const { activeDropDown, width = 104, children } = props
+    const { activeDropDown, width = 104, children, direction, footer} = props
         
     const activeDropMenu = activeDropDown ? 'open' : 'close' // if else from direction,transitioned and actived
 
     return (
       // @ts-ignore
-        <DropDownMenuWrapper className={activeDropMenu} width={`${width}px`}>
+        <DropDownMenuWrapper className={`${direction} ${activeDropMenu}`} width={`${width}px`}>
             {children}
+            {footer}
         </DropDownMenuWrapper>
     )
 }

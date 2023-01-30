@@ -8,15 +8,18 @@ export type ButtonType = 'button' | 'submit' | 'reset'
 export interface IButtonProps extends DOMAttributes<HTMLButtonElement> {
     className?: string;
     isDisabled?: boolean;
-    typeButton?: ButtonType;
+    type?: ButtonType;
     onClick?: (event: React.MouseEvent) => void 
 }
+
+
+// Todo add icon, size
 
 export const Button: React.FC<IButtonProps> = ({ 
     className,
     children, 
-    isDisabled, 
-    typeButton, 
+    isDisabled,
+    type,
     onClick,
     ...rest
 }) => {
@@ -25,7 +28,7 @@ export const Button: React.FC<IButtonProps> = ({
                 'Button__disabled': isDisabled,
             })}
             disabled={isDisabled}
-            type={typeButton}
+            type={type}
             onClick={onClick}
             {...rest}
         >

@@ -1,3 +1,2 @@
-import { ListApp as List } from './List'
-
+import { TodoList as List} from './List'
 export default List

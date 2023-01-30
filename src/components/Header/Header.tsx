@@ -12,8 +12,7 @@ const Header = () => {
     const [activeDropDown, setActiveDropDown] = useState<boolean>(false)
     const { toggleTheme } = useContext(ThemeContext)
 
-    const avatarDropDownMenu = (event: React.MouseEvent) => {
-      console.log(event)
+    const avatarDropDownMenu = () => {
         //refactor!
         setActiveDropDown(!activeDropDown)
     }
@@ -30,9 +29,6 @@ const Header = () => {
              <Avatar
                size={42}
                image={avatar}
-               className={'test'}
-               title={'test'}
-               status={'error'}
                onClick={avatarDropDownMenu}
              />
              <DropDownMenu
