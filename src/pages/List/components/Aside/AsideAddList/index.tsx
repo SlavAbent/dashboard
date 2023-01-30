@@ -101,15 +101,18 @@ const AsideAddList = ({ handlerAddList }) => {
         />
         <AsidePopupColors>
           { colors.map((item: IColor, index: number) => {
-           const { hex, id, name } = item
+           const { id, name } = item
            const className = classNames('badge--aside', { [`badge--${name}`]: name}, 'default')
-           return <Badge
-                   key={uniqueId(`list_${index}`)}
-                   className={className}
-                   size={16}
-                   onClick={() => setSelectedColor(id)}
-             >{item}
-           </Badge>
+           return (
+             <Badge
+               key={uniqueId(`list_${index}`)}
+               className={className}
+               size={16}
+               onClick={() => setSelectedColor(id)}
+             >
+               {item}
+             </Badge>
+           )
           })}
         </AsidePopupColors>
       </AsidePopup>

@@ -7,7 +7,7 @@ import Profile from '../pages/Profile'
 import React from 'react';
 import {RoutesComponentLocation } from './RoutesWrapper.style'
 import UI from '../pages/UI'
-import MainList from '../pages/List/components/MainList'
+import { MainListWrapper } from '../pages/List/components/MainList/MainList.style'
 
 // import Map from '../pages/Map/Map'
 
@@ -19,14 +19,12 @@ export const RoutesWrapper: React.FC<IRoutesWrapper> = (): JSX.Element => {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="List" element={<List />}>
-
+            <Route path=":id" element={<MainListWrapper />} />
           </Route>
           <Route path="UI" element={<UI />} />
           <Route path="Chat" element={<Chat />} />
           <Route path="Profile" element={<Profile />} />
           {/* <Route exact  path="/Map" element={<Map />} /> */}
-
-          <Route path={"List/Chapter/:id"} element={<MainList />} />
         </Routes>
       </RoutesComponentLocation>
     )

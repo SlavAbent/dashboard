@@ -7,22 +7,18 @@ import classNames from 'classnames'
 import { AsideRow, AsideRowText, AsideRowWrapper, AsideContain } from './index.styles'
 import { IAsideProps, IList } from '../../utility/types/index.model'
 import { Delete } from 'components/Icons/Delete/Delete'
-import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
 
-
 const AsideContainer: FC<IAsideProps> = ( props) => {
-  const { data, loading, error, handleAsideDeleteItem } = props
-  const match = useLocation();
-  console.log(match)
+  const { data, loading, error, handleAsideDeleteItem } = props;
   const dataAside = useMemo(() => {
     if(Array.isArray(data)) {
       return data.map((list: IList) => {
         const { id, name } = list.color
         const className = classNames('badge', { [`badge--${name}`]: name}, 'default')
         return (
-          <Link to={`Chapter/${id}`}>
-             <AsideRow key={uniqueId('list_')}>
+          <Link to={`${id}`} key={uniqueId('list_')}>
+             <AsideRow>
                <Badge
                  id={id}
                  className={className}

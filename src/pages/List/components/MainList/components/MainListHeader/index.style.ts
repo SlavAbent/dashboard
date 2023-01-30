@@ -14,9 +14,5 @@ export const MainListHeaderIcon = styled.div`
 export const MainListHeaderText = styled.p`
   font-size: 32px;
   margin-right: ${p => p.theme.margin.default};
-  // &:hover ~ ${MainListHeaderIcon} {
-  //   opacity: 1;
-  //   transition: .2s;
-  // }
 `
 

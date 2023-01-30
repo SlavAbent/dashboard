@@ -23,5 +23,5 @@ export const useAxios = (axiosParams) => {
     fetchData(axiosParams);
   }, []);
 
-  return { response, error, loading, setResponse };
+  return { response, error, loading, setResponse, setLoading };
 };

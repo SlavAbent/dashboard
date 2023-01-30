@@ -7,10 +7,10 @@ export interface IAsideProps {
 }
 
 export interface Tasks {
-  completed: boolean
+  completed?: boolean
   id: number
   listId: number
-  text: string
+  text?: string
 }
 
 export interface Colors {

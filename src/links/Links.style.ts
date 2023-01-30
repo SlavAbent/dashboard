@@ -19,6 +19,7 @@ export const LinkAnchor = styled(NavLink)`
     padding-bottom: 12px;
     background-color: inherit;
     transition: .3s;
+    text-decoration: none;
 
     span {
       &.link__active {
