@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { Checkbox } from './styles/Checkbox.styles'
-import checkboxIcon from 'assets/img/checkbox.svg'
+import { Check } from 'components/Icons/Check/Check'
 
 interface ICustomCheckbox {
   id: number
@@ -22,7 +22,10 @@ const CustomCheckbox:FC<ICustomCheckbox> = ({
         checked={completed}
       />
       <label htmlFor={`task-${id}`}>
-        <img src={checkboxIcon} alt="checkbox"/>
+        <Check
+          size={20}
+          color='#ffffff'
+        />
       </label>
     </Checkbox>
   )

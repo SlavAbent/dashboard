@@ -11,6 +11,9 @@ export const MainTodoListTitle = styled.div`
   margin-left:  ${(p) => p.theme.margin.default};
   margin-right:  ${(p) => p.theme.margin.default};
   color: ${(p) => p.theme.colors.lightTheme.mainColor};
+  &.completed {
+    text-decoration: line-through;
+  }
 `
 export const MainTodoListIcon = styled.div`
   margin-right:  ${(p) => p.theme.margin.default};

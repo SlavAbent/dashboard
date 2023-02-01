@@ -28,6 +28,8 @@ const Task:FC<ITaskProps> = (
     onComplete(listId, id, e.target.checked);
   }
 
+  const className = `${completed ? 'completed' : ''}`
+
   return (
     <>
       <CustomCheckbox
@@ -35,7 +37,8 @@ const Task:FC<ITaskProps> = (
         completed={completed}
         onChange={onChangeTask}
       />
-      <MainTodoListTitle>{text}</MainTodoListTitle>
+      <MainTodoListTitle className={className}
+      >{text}</MainTodoListTitle>
       <MainTodoListIcon onClick={() => onEdit(listId, { id, text } )}>
         <Edit />
       </MainTodoListIcon>
