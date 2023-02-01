@@ -7,7 +7,7 @@ import Task from './Task/Task'
 interface IMainTodoListProps {
   tasks: Tasks
   onRemove: (listId: number, id: number) => void
-  onEdit: () => void
+  onEdit: (listId: number, p: { id: number; text: string | undefined }) => void
   onComplete: (listId: number, id: number, event: any) => void
 }
 

@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react'
+import React, { useCallback, useContext, useMemo } from 'react'
 import { MainTodoList } from './components/MainTodoList'
 import { MainListHeader } from './components/MainListHeader'
 import { MainListWrapper } from './MainList.style'
@@ -14,7 +14,36 @@ const MainList = () => {
   const { response, setResponse } = useContext(ListContext)
   const location = useLocation();
 
-  const onAddTask = (listId, taskObj) => {
+  const onEditTask = useCallback((listId, taskObj) => {
+    const newTaskText = window.prompt('Текст задачи', taskObj.text);
+
+    if (!newTaskText) {
+      return;
+    }
+
+    const newList = response.map(list => {
+      if (list.id === listId) {
+        // @ts-ignore
+        list.tasks = list.tasks.map((task: any) => {
+          if (task.id === taskObj.id) {
+            task.text = newTaskText;
+          }
+          return task;
+        });
+      }
+      return list;
+    });
+    setResponse(newList);
+    axios
+      .patch('http://localhost:3001/tasks/' + taskObj.id, {
+        text: newTaskText
+      })
+      .catch(() => {
+        alert('Не удалось обновить задачу');
+      });
+  },[response, setResponse]);
+
+  const onAddTask = useCallback((listId, taskObj) => {
     // TODO fix this any
     const newList = response.map((item: any) => {
       if (item.id === listId) {
@@ -23,9 +52,9 @@ const MainList = () => {
       return item
     })
     setResponse(newList)
-  }
+  },[response, setResponse])
 
-  const onRemove = ((listId: number, id: number) => {
+  const onRemove = useCallback(((listId: number, id: number) => {
     if(window.confirm('Вы действительно хотите удалить?')) {
       // TODO fix this any
       const newList = response.map((itemTasks: any) => {
@@ -40,13 +69,9 @@ const MainList = () => {
         alert('Не удалось удалить задачу');
       });
     }
-  })
+  }),[response, setResponse])
 
-  const onEdit = () => {
-
-  }
-
-  const onComplete = (listId: number, taskId: number, completed) => {
+  const onComplete = useCallback((listId: number, taskId: number, completed) => {
     const newList = response.map((list: IList) => {
       if(list.id === listId) {
         // eslint-disable-next-line array-callback-return
@@ -68,7 +93,7 @@ const MainList = () => {
       .catch(() => {
         alert('Не удалось обновить задачу');
       });
-  }
+  }, [response, setResponse])
 
   const data = useMemo(() => response && response.map((item) => {
     const { id, name, color, colorId, tasks } = item
@@ -88,7 +113,7 @@ const MainList = () => {
               <MainTodoList
                 tasks={tasks}
                 onRemove={onRemove}
-                onEdit={onEdit}
+                onEdit={onEditTask}
                 onComplete={onComplete}
               />
             </MainListWrapper>
@@ -101,7 +126,7 @@ const MainList = () => {
         ) : null }
       </div>
     )
-  }), [response, location.pathname, onRemove, onAddTask])
+  }), [response, location.pathname, onRemove, onEditTask, onComplete, onAddTask])
   return (
     <div>
       {data}
