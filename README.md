@@ -1,13 +1,17 @@
 DASHBOARD with:
 - React 18 with hooks 
 - React-router-dom v6
-- Redux, Redux toolkit
+- Redux / Redux toolkit
 - styled-components
 - typescript
-- axios, jest, moment, storybook
-...and more
+- custom hooks, context and more...
 
-UI components, Chat, Profile page, Auth, Map, Graphs and more
-Node.js, express, mongoDB
+I N S T A L L
 
-work in progress
+git clone this repo
+
+npm install or yarn
+
+npm run start / yarn start
+
+...and start fake-json server ( DB )
