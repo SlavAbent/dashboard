@@ -1,4 +1,12 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+const styledButton = css`
+    padding: ${(props) => props.theme.padding.small};
+    background-color: ${(props) => props.theme.colors.darkTheme.grey_dark};
+    color: ${(props) => props.theme.colors.lightTheme.mainColor};
+    border-radius: ${(props) => props.theme.decoration.borderRadius.default};
+    border: none;
+`;
 
 export const AsidePopup = styled.div`
   position: relative;
@@ -26,4 +34,14 @@ export const AsidePopupInput = styled.input`
 export const AsidePopupColors = styled.div`
   display: flex;
   justify-content: space-between;
+`
+
+export const AddListDropDown = styled.div`
+  .button-dropDown {
+    ${styledButton}
+  }
+  
+  .button-add {
+    ${styledButton}
+  }
 `

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { DropDownMenu } from 'components/uikit/DropDownMenu'
 import { useAxios } from '../../../../../hooks/useAxios'
 import { Badge } from '../../../../../components/uikit/Badge/Badge'
@@ -7,6 +7,7 @@ import {
   AsidePopupClose,
   AsidePopupColors,
   AsidePopupInput,
+  AddListDropDown,
 } from './index.styled'
 import classNames from 'classnames'
 import { Close } from '../../../../../components/Icons/Close/Close'
@@ -44,15 +45,15 @@ const AsideAddList = ({ handlerAddList }) => {
     }
   }, [colors, response])
 
-  const onCloseDropDownAside = () => {
+  const onCloseDropDownAside = useCallback(() => {
     setVisibleDropDown(false)
     setAsideInputValue('')
     setSelectedColor(colors[0].id)
-  }
+  }, [colors])
 
   const openDropDown = () => setVisibleDropDown(prev => !prev)
 
-  const handlerAddListAside = () => {
+  const handlerAddListAside = useCallback(() => {
     if(!asideInputValue) {
       return (
         <Notification
@@ -78,7 +79,14 @@ const AsideAddList = ({ handlerAddList }) => {
       .finally(() => {
         setIsLoading(false);
       });
-  }
+  }, [
+    addListOnAside,
+    asideInputValue,
+    handlerAddList,
+    onCloseDropDownAside,
+    response,
+    selectedColor
+  ])
 
   const onRemove = id => {
     const newLists = response.filter(item => item.id !== id)
@@ -119,7 +127,6 @@ const AsideAddList = ({ handlerAddList }) => {
     )
   }, [asideInputValue, colors, onCloseDropDownAside])
 
-  //подумать
   const AsideDropDownFooter = useMemo(() => {
     return (
       <Button
@@ -131,15 +138,22 @@ const AsideAddList = ({ handlerAddList }) => {
             size={20}
             title='loading'
             className={' visibility'}
-          /> : <p>Добавить</p>
+          /> : <Button
+            type={'button'}
+            className={'button-add'}
+          >Добавить</Button>
         }
       </Button>
     )
   }, [handlerAddListAside, isLoading])
 
   return (
-    <>
-      <button onClick={openDropDown}>Добавить список</button>
+    <AddListDropDown>
+      <Button
+        type='button'
+        className={'button-dropDown'}
+        onClick={openDropDown}
+      >Добавить список</Button>
       { visibleDropDown && (
         <DropDownMenu
           width={200}
@@ -149,7 +163,7 @@ const AsideAddList = ({ handlerAddList }) => {
           footer={AsideDropDownFooter}
         />
       )}
-    </>
+    </AddListDropDown>
   )
 }
 
