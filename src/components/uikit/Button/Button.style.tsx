@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
-const ButtonComponent = styled.button`
-    
+export const ButtonComponent = styled.button`
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border: none;
 `
 
 
-
-export { ButtonComponent }

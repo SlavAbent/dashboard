@@ -9,7 +9,7 @@ export const Checkbox = styled.div`
     transition: opacity 0.15s ease-in-out;
 
     path {
-      stroke: #f2f2f2;
+      stroke: ${(p) => p.theme.colors.lightTheme.lighterGreen};
     }
   }
 
@@ -21,22 +21,7 @@ export const Checkbox = styled.div`
       opacity: 1;
 
       path {
-        stroke: #fff;
-      }
-    }
-  }
-
-  &:hover {
-    label {
-      background-color: #f2f2f2;
-      border-color: #f2f2f2;
-
-      svg {
-        opacity: 1;
-
-        path {
-          stroke: #b2b2b2;
-        }
+        stroke: ${(p) => p.theme.colors.lightTheme.mainColor};
       }
     }
   }
@@ -45,16 +30,11 @@ export const Checkbox = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #e8e8e8;
+    border: 2px solid ${(p) => p.theme.colors.lightTheme.mainColor};
     border-radius: 30px;
     width: 20px;
     height: 20px;
     cursor: pointer;
-    transition: background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out;
-
-    svg {
-      opacity: 0;
-    }
+    transition: background-color 0.15s ease-in-out;
   }
 `
