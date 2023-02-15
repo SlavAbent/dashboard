@@ -2,11 +2,16 @@ import React from 'react';
 import { ToDo } from './ToDo'
 import TodoProvider from './ToDo/context/provider/todoProvider'
 
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider, useDrag } from 'react-dnd'
+
 const Main = () => {
   return (
-    <TodoProvider>
-      <ToDo/>
-    </TodoProvider>
+    <DndProvider backend={HTML5Backend}>
+      <TodoProvider>
+        <ToDo/>
+      </TodoProvider>
+    </DndProvider>
   )
 }
 

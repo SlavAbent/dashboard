@@ -26,11 +26,6 @@ const menu: LinkData[] = [
     name: 'Дашборд',
   },
   {
-    to: 'UI',
-    icon: <IoIosQrScanner/>,
-    name: 'UI',
-  },
-  {
     to: 'Chat',
     icon: <BsChatDots/>,
     name: 'Чат',
