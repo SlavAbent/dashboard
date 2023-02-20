@@ -6,8 +6,6 @@ import { TimeWrapper, TimeContainer } from './Time.styled'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import { ThemeContext } from '../ThemeContainer/context/ThemeContext'
 
-// Sington?
-
 export const TimeDate = () => {
   const [time, setTime] = useState<string>()
   const [date, setDate] = useState<string>()

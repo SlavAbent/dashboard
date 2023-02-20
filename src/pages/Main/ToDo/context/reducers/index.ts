@@ -1,16 +1,15 @@
-import { TodoActionsTypes } from '../../../../../types/enums/todoEnums'
+import { TodoActionsTypes } from 'types/enums/todoEnums'
 import { TodoAction } from 'types/interfaces/todoInterfaces'
-import { store } from '../../../../../redux/state'
+import { store } from 'redux/state'
 import { IInitialState } from 'types/interfaces/interfaces'
 
 export const todoReducer = (state = store, action: TodoAction): IInitialState => {
   const { type, payload } = action
   switch (type) {
     case TodoActionsTypes.ADD_TODO:
-      return {
+      return <IInitialState>{
         todos: [
           payload,
-          // @ts-ignore
           ...state.todos,
         ]
       }
@@ -26,6 +25,11 @@ export const todoReducer = (state = store, action: TodoAction): IInitialState =>
       )
       return {
         todos: toggledTodo
+      }
+    case TodoActionsTypes.VIEW_LIST:
+      return {
+        ...state,
+        toggleTodoCards: !state.toggleTodoCards
       }
 
     default: return state

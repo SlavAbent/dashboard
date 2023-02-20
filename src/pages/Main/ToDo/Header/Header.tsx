@@ -9,18 +9,23 @@ import { HeaderWrapper,
 } from './Header.style'
 import { BsFilterRight, BsSortUpAlt, BsViewList } from 'react-icons/bs'
 import { ThemeContext } from '../../../../components/ThemeContainer/context/ThemeContext'
+import { TodoListContext } from '../context/provider/todoProvider'
+import { viewList } from '../context/actions'
 
 export const Header = () => {
   const { toggleTheme } = useContext(ThemeContext)
+  const { dispatch } = useContext(TodoListContext);
   return (
     <HeaderWrapper>
       <HeaderContainer>
         <HeaderLeftSide>
-          <HeaderBoardView color={toggleTheme}>
+          <HeaderBoardView
+            color={toggleTheme}
+            onClick={() => dispatch(viewList(false))}
+          >
             <BsViewList/>
             <p>Board view</p>
           </HeaderBoardView>
-          {/*<HeaderAddView>add view</HeaderAddView>*/}
         </HeaderLeftSide>
         <HeaderRightSide>
           <HeaderFilter color={toggleTheme}>

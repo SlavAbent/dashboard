@@ -2,7 +2,7 @@ import React from 'react';
 
 const Chat = () => {
     return (
-        <>2</>
+        <>здесь будет чат на сокетах</>
     )
 }
 

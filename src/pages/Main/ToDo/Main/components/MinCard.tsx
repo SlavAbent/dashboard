@@ -1,34 +1,29 @@
-import React from 'react'
-import {
-  TodoCardTitle,
-  TodoCardWrapper,
-} from '../Main.style'
-import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi'
+import React, { FC } from 'react'
+import { ITodoCard } from './model/TodoCardComponent.model'
+import { MinCardTitle, MinCardWrapper } from './styles/MinCard.styles'
+import { Delete } from 'components/Icons/Delete/Delete'
 
-const MaxCard = (props) => {
-  const {
-    title,
+export const MinCard:FC<ITodoCard> = ({
     index,
-    description,
     completed,
     handleDeleteTodo,
     handleToggleTodo,
-  }  = props
+    title
+  }) => {
   return (
     <>
-      <TodoCardWrapper
+      <MinCardWrapper
         className={completed ? 'completed' : ''}
         onClick={() => handleToggleTodo(index)}
       >
-        <TodoCardTitle>{title}</TodoCardTitle>
-        {/*<TodoCardDescription>{description}</TodoCardDescription>*/}
-      </TodoCardWrapper>
-      <HiOutlineDotsCircleHorizontal
+        <MinCardTitle>{title}</MinCardTitle>
+      </MinCardWrapper>
+      <Delete
+        size={16}
+        color='#ffffff'
         onClick={() => handleDeleteTodo(index)}
       />
-
     </>
   )
 }
 
-export default MaxCard

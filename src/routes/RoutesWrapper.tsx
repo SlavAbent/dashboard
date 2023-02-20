@@ -8,7 +8,7 @@ import React from 'react';
 import {RoutesComponentLocation } from './RoutesWrapper.style'
 import { MainListWrapper } from '../pages/List/components/MainList/MainList.style'
 
-// import Map from '../pages/Map/Map'
+import { Map } from '../pages/Map/Map'
 
 export interface IRoutesWrapper {}
 
@@ -22,7 +22,7 @@ export const RoutesWrapper: React.FC<IRoutesWrapper> = (): JSX.Element => {
           </Route>
           <Route path="Chat" element={<Chat />} />
           <Route path="Profile" element={<Profile />} />
-          {/* <Route exact  path="/Map" element={<Map />} /> */}
+          <Route path="/Map" element={<Map />} />
         </Routes>
       </RoutesComponentLocation>
     )

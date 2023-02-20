@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import {
   TodoDropDownComponent,
   TodoDropDownButton,
@@ -7,6 +7,7 @@ import {
   TodoDropDownInput,
   TodoDropDownMain
 } from './TodoDropDown.styled'
+import { Close } from 'components/Icons/Close/Close'
 
 interface TodoDropDownProps {
   title: string
@@ -25,17 +26,19 @@ const TodoDropDown = (props: TodoDropDownProps) => {
     setActiveDropDown,
   } = props
 
-  const closeDropDown = () => {
-    setActiveDropDown(false)
-  }
+  const closeDropDown = () => setActiveDropDown((prev) => !prev)
 
   return (
     <TodoDropDownComponent>
-      <TodoDropDownDelete onClick={closeDropDown}>x</TodoDropDownDelete>
+      <TodoDropDownDelete onClick={closeDropDown}>
+        <Close
+          color="#000000"
+        />
+      </TodoDropDownDelete>
       <TodoDropDownMain>
         <TodoDropDownInput
           type="text"
-          placeholder="Enter text"
+          placeholder="Введите текст"
           value={title}
           onChange={handleChange}
           onKeyDown={handleEnter}
@@ -45,10 +48,7 @@ const TodoDropDown = (props: TodoDropDownProps) => {
             type="submit"
             onClick={handleSubmit}
           >
-            add task
-          </TodoDropDownButton>
-          <TodoDropDownButton>
-            edit task
+            Добавить задачу
           </TodoDropDownButton>
         </TodoDropDownFlexButton>
       </TodoDropDownMain>

@@ -10,27 +10,6 @@ const MainContainer = styled.div`
   border-radius: ${props => props.theme.padding.default};
 `;
 
-const MainContainerListAside = styled.div`
-  display: flex;
-  align-items: flex-start;
-  margin-left: 350px;
-  height: calc(100vh - 130px);
-  overflow: hidden;
-  background-color: ${props => props.theme.colors.darkTheme.grey_smallDark};
-  border-radius: ${props => props.theme.padding.default};
-`;
-
-const MainWrapper = styled.div`
-  width: 300px;
-  height: 100%;
-  box-sizing: border-box;
-  padding: ${props => props.theme.decoration.borderRadius.large};
-  margin-right: 10px;
-  padding-right: 5px; 
-  border-radius: ${props => props.theme.padding.default};
-  background-color: ${props => props.theme.colors.darkTheme.grey_dark};
-`;
-
 const MainWrapperTodo = styled.div`
   width: 100%;
   display: flex;
@@ -110,8 +89,6 @@ const TodoCardContainer = styled.div`
   align-items: center;
   svg {
     cursor: pointer;
-    width: 20px;
-    height: 20px;
     color: ${props => props.theme.colors.lightTheme.mainColor};
   }
 `;
@@ -153,8 +130,6 @@ const TodoDateCreate = styled.p`
 const TodoFixNote = styled.div`
   svg{
     cursor: pointer;
-    width: 20px;
-    height: 20px;
     color: ${props => props.theme.colors.lightTheme.mainColor};
   }
 `;
@@ -162,7 +137,6 @@ const TodoFixNote = styled.div`
 
 export {
   MainContainer,
-  MainWrapper,
   MainWrapperTodo,
   TodoCount,
   TodoAddNewTask,
@@ -176,5 +150,4 @@ export {
   TodoFixNote,
   TodoFooter,
   MainWrapperContent,
-  MainContainerListAside,
 }

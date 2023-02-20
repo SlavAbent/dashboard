@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
 import { BsChatDots, BsListCheck, BsMap } from 'react-icons/bs'
-import { IoIosQrScanner, IoIosKeypad, IoIosContact } from "react-icons/io";
+import { IoIosKeypad, IoIosContact } from "react-icons/io";
 
 import { LinksContainer, LinkAnchor, LinkAnchorTitle } from './Links.style'
 import { ThemeContext } from '../components/ThemeContainer/context/ThemeContext'
