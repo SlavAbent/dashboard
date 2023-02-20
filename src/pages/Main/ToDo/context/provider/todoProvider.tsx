@@ -1,11 +1,19 @@
-import { createContext, useReducer } from 'react'
+import { createContext, Dispatch, useReducer } from 'react'
+import logger from 'use-reducer-logger';
 import { todoReducer } from '../reducers'
-import { store } from '../../../../../redux/state'
+import { store } from 'redux/state'
+import { IInitialState,} from 'types/interfaces/interfaces'
 
-export const TodoListContext = createContext({});
+export const TodoListContext = createContext<{
+  state: IInitialState,
+  dispatch: Dispatch<any>
+}>({
+  state: store,
+  dispatch: () => null,
+});
 
 const TodoProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(todoReducer, store)
+  const [state, dispatch] = useReducer(logger(todoReducer), store)
 
   return (
     <TodoListContext.Provider value={{state, dispatch}}>
@@ -13,5 +21,4 @@ const TodoProvider = ({ children }) => {
     </TodoListContext.Provider>
   )
 }
-
 export default TodoProvider

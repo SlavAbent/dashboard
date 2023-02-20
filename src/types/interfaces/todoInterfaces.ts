@@ -1,17 +1,22 @@
 import { TodoActionsTypes } from '../enums/todoEnums'
 
-interface IAdd_Todo {
+interface IAddTodo {
   type: TodoActionsTypes.ADD_TODO,
-  payload: any[]
+  payload: number | string,
 }
 
-interface IDelete_Todo {
+interface IDeleteTodo {
   type: TodoActionsTypes.DELETE_TODO,
-  payload: any[]
+  payload: number | string,
 }
-interface IToggle_Todo {
+interface IToggleTodo {
   type: TodoActionsTypes.TOGGLE_TODO,
-  payload: any[]
+  payload: number | string,
 }
 
-export type TodoAction = IAdd_Todo | IDelete_Todo | IToggle_Todo
+interface ITodoToggleCards {
+  type: TodoActionsTypes.VIEW_LIST,
+  payload: boolean
+}
+
+export type TodoAction = IAddTodo | IDeleteTodo | IToggleTodo | ITodoToggleCards

@@ -6,5 +6,5 @@ export interface IIcon {
   size?: sizeBox | number;
   color?: string;
   title?: string;
-  onClick?: (event: MouseEvent) => void
+  onClick?: (event: React.MouseEvent) => void
 }

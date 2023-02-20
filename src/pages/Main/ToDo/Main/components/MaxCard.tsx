@@ -1,19 +1,18 @@
-import React from 'react'
+import React, { FC } from 'react'
 import {
   TodoCardTitle,
   TodoCardWrapper,
 } from '../Main.style'
-import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi'
+import { Delete } from 'components/Icons/Delete/Delete'
+import { ITodoCard } from './model/TodoCardComponent.model'
 
-const MaxCard = ({props}) => {
-  const {
-    index,
-    description,
-    completed,
-    handleDeleteTodo,
-    handleToggleTodo,
-    title
-  }  = props
+export const MaxCard:FC<ITodoCard> = ({
+   index,
+   completed,
+   handleDeleteTodo,
+   handleToggleTodo,
+   title
+  }) => {
 
   return (
     <>
@@ -22,12 +21,12 @@ const MaxCard = ({props}) => {
         onClick={() => handleToggleTodo(index)}
       >
         <TodoCardTitle>{title}</TodoCardTitle>
-        {/*<TodoCardDescription>{description}</TodoCardDescription>*/}
       </TodoCardWrapper>
-      <HiOutlineDotsCircleHorizontal
+      <Delete
+        size={16}
+        color='#ffffff'
         onClick={() => handleDeleteTodo(index)}
       />
-
     </>
   )
 }
