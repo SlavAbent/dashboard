@@ -14,12 +14,12 @@ export const todoReducer = (state = store, action: TodoAction): IInitialState =>
         ]
       }
     case TodoActionsTypes.DELETE_TODO:
-      const newTodo = state.todos?.filter(elem => elem.id !== payload)
+      const newTodo = state.todos.filter(elem => elem.id !== payload)
       return {
         todos: newTodo
       }
     case TodoActionsTypes.TOGGLE_TODO:
-      const toggledTodo = state.todos?.map(elem => elem.id === payload
+      const toggledTodo = state.todos.map(elem => elem.id === payload
         ? { ...elem, completed: !elem.completed }
         : elem
       )

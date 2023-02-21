@@ -5,7 +5,7 @@ export const AsideWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     transition: .3s;
-    padding-top: ${(props) => props.theme.padding.default};
+    padding: ${(props) => props.theme.padding.default} 0;
     background-color: ${(props) => props.color === 'night' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
     position: relative;
     z-index: 1000;

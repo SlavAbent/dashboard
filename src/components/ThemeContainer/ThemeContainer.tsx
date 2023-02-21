@@ -1,9 +1,9 @@
 import React from 'react'
-import { ThemeWrapper } from './ThemeContainer.styled'
+import { ThemeWrapper } from './styles/ThemeContainer.styled'
 import { BsSun } from 'react-icons/bs'
 import { MdOutlineNightlight } from 'react-icons/md'
 import { Theme } from './context/ThemeContext'
-import { useTheme } from './context/useTheme'
+import { useTheme } from '../../hooks/useTheme'
 
 const ThemeContainer = () => {
 
