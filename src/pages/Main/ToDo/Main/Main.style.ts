@@ -93,47 +93,6 @@ const TodoCardContainer = styled.div`
   }
 `;
 
-const TodoCardWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  &.completed {
-    text-decoration: line-through;
-    color: ${props => props.theme.colors.lightTheme.mainColor};
-  }
-`;
-
-const TodoCardTitle = styled.p`
-  max-width: 250px;
-  font-size: 16px;
-  color: ${props => props.theme.colors.lightTheme.mainColor};
-`;
-
-const TodoCardDescription = styled.p`
-  max-width: 250px;
-  font-size: 14px;
-  color: ${props => props.theme.colors.lightTheme.mainColor};
-`;
-
-const TodoFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-`;
-
-const TodoDateCreate = styled.p`
-  font-size: 14px;
-  color: ${props => props.theme.colors.lightTheme.mainColored};
-`;
-
-const TodoFixNote = styled.div`
-  svg{
-    cursor: pointer;
-    color: ${props => props.theme.colors.lightTheme.mainColor};
-  }
-`;
-
 
 export {
   MainContainer,
@@ -143,11 +102,5 @@ export {
   TodoNewTaskTitle,
   TodoCard,
   TodoCardContainer,
-  TodoCardWrapper,
-  TodoCardTitle,
-  TodoCardDescription,
-  TodoDateCreate,
-  TodoFixNote,
-  TodoFooter,
   MainWrapperContent,
 }
