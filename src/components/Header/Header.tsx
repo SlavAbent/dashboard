@@ -9,13 +9,10 @@ import { TimeDate } from '../Time/Time'
 import { ThemeContext } from '../ThemeContainer/context/ThemeContext'
 
 const Header = () => {
-    const [activeDropDown, setActiveDropDown] = useState<boolean>(false)
+    const [activeDropDown, setActiveDropDown] = useState(false)
     const { toggleTheme } = useContext(ThemeContext)
 
-    const avatarDropDownMenu = () => {
-        //refactor!
-        setActiveDropDown(!activeDropDown)
-    }
+    const avatarDropDownMenu = () => setActiveDropDown((activeDropDown) => !activeDropDown )
 
     const person = 'Slava'
 

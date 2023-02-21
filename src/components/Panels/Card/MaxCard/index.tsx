@@ -12,7 +12,7 @@ import {
   TodoCard,
 } from './styles/MaxCard.styles'
 
-export const MaxCard:FC<IMaxCard> = ({
+export const MaxCard:FC<Readonly<IMaxCard>> = ({
     description,
     className,
     onClick,

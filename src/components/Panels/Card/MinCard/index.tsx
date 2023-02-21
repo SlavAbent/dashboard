@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { MinCardTitle, MinCardWrapper } from './styles/MinCard.styles'
 import { IMinCard } from '../types/cards.model'
 
-export const MinCard:FC<IMinCard> = ({
+export const MinCard:FC<Readonly<IMinCard>> = ({
     title,
     className,
     icon,

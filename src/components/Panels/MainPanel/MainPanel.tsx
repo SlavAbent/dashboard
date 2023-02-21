@@ -3,7 +3,7 @@ import { MainPaneColumn, MainPanelWrapper, MainPanelWrap, MainPanelText } from '
 import { MainPanelProps } from './model/MainPanel.model'
 import { useDrop } from 'react-dnd'
 
-export const MainPanel:FC<MainPanelProps> = (
+export const MainPanel:FC<Readonly<MainPanelProps>> = (
   {
     header,
     content,

@@ -41,7 +41,6 @@ export const LinkAnchor = styled(NavLink)`
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
       position: relative;
-      left: 1px;
       box-shadow: ${props => props.theme.decoration.boxShadow.purple};
     }
 
