@@ -34,14 +34,14 @@ export const Content:FC<IContent> = ( {todos, dispatch, setIsColumn} ) => {
 
   const content = useMemo(() => {
     return todos && todos.map((todo) => {
-      const { description, completed, date, id} = todo
+      const { description, completed, date, id, title} = todo
       const opacity = isDragging ? 0.4 : 1;
       return (
         <div ref={drag} key={id}>
           <TodoCardComponent
             index={id}
             date={date}
-            title={todo.title}
+            title={title}
             style={{  opacity }}
             completed={completed}
             description={description}

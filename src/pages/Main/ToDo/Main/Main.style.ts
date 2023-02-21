@@ -55,8 +55,6 @@ const TodoAddNewTask = styled.div`
   align-items: center;
   cursor: pointer;
   svg {
-    width: 18px;
-    height: 18px;
     margin-right: 5px;
     color: ${props => props.theme.colors.lightTheme.mainColor};
   }
@@ -66,6 +64,11 @@ const TodoAddNewTask = styled.div`
     align-items: flex-start;
   }
 `;
+
+const TodoAddNew = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 const TodoNewTaskTitle = styled.p`
   color: ${props => props.theme.colors.lightTheme.mainColor};
@@ -103,4 +106,5 @@ export {
   TodoCard,
   TodoCardContainer,
   MainWrapperContent,
+  TodoAddNew,
 }
