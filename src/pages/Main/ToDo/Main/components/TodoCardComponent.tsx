@@ -2,14 +2,12 @@ import React, { FC, useContext } from 'react'
 import {
   TodoCard,
   TodoCardContainer,
-  TodoDateCreate, TodoFixNote,
-  TodoFooter
 } from '../Main.style'
-import { AiOutlinePaperClip } from 'react-icons/ai'
-import { MaxCard } from './MaxCard'
-import { MinCard } from './MinCard'
-import { ITodoCard } from './model/TodoCardComponent.model'
 import { TodoListContext } from '../../context/provider/todoProvider'
+import { MinCard } from 'components/Panels/Card/MinCard'
+import { Delete } from 'components/Icons/Delete/Delete'
+import { MaxCard } from 'components/Panels/Card/MaxCard'
+import { ITodoCard } from './model/TodoCardComponent.model'
 
 const TodoCardComponent:FC<ITodoCard> = (
   {
@@ -24,41 +22,42 @@ const TodoCardComponent:FC<ITodoCard> = (
  }) => {
   const { state: { toggleTodoCards} } = useContext(TodoListContext);
 
-  console.log(toggleTodoCards)
+  const completeTask = completed ? 'completed' : ''
 
   return (
     <TodoCard>
       <TodoCardContainer>
         { toggleTodoCards ? (
           <MaxCard
-            description={description}
-            handleDeleteTodo={handleDeleteTodo}
-            handleToggleTodo={handleToggleTodo}
-            index={index}
-            style={style}
+            date={date}
             title={title}
-            completed={completed}
+            style={style}
+            description={description}
+            className={completeTask}
+            onClick={() => handleToggleTodo(index)}
+            icon={
+              <Delete
+                size={16}
+                color='#ffffff'
+                onClick={() => handleDeleteTodo(index)}
+              />
+            }
           />
         ) : (
           <MinCard
-            description={description}
-            handleDeleteTodo={handleDeleteTodo}
-            handleToggleTodo={handleToggleTodo}
-            index={index}
-            style={style}
+            className={completeTask}
+            onClick={() => handleToggleTodo(index)}
             title={title}
-            completed={completed}
+            icon={
+              <Delete
+                size={16}
+                color='#ffffff'
+                onClick={() => handleDeleteTodo(index)}
+              />
+            }
           />
         )}
       </TodoCardContainer>
-      { toggleTodoCards ? (
-        <TodoFooter>
-          <TodoDateCreate>{date}</TodoDateCreate>
-          <TodoFixNote>
-            <AiOutlinePaperClip/>
-          </TodoFixNote>
-        </TodoFooter>
-      ) : null }
     </TodoCard>
   )
 }
