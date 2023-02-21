@@ -1,7 +1,6 @@
 import React, { FC, useContext } from 'react'
 import {
-  TodoCard,
-  TodoCardContainer,
+  TodoCard, TodoCardContainer
 } from '../Main.style'
 import { TodoListContext } from '../../context/provider/todoProvider'
 import { MinCard } from 'components/Panels/Card/MinCard'

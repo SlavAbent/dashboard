@@ -8,21 +8,25 @@ const TodoDropDownComponent = styled.div`
 
 const TodoDropDownDelete = styled.p`
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: -10px;
+  right: -15px;
 `;
 
 const TodoDropDownInput = styled.input`
   outline: none;
-  border: 1px solid ${props => props.theme.colors.lighterRed};
+  padding: ${(props) => props.theme.padding.small};
+  border-radius: ${(props) => props.theme.decoration.borderRadius.small};
+  border: 1px solid ${props => props.theme.colors.darkTheme.grey_dark};
   margin-top: 15px;
   margin-bottom: 10px;
 `;
 
 const TodoDropDownButton = styled.button`
-  width: auto;
-  border: 1px solid ${props => props.theme.colors.lighterRed};
-  background-color: ${props => props.theme.colors.lighterRed};
+  width: 100%;
+  border: 1px solid ${props => props.theme.colors.darkTheme.grey_dark};
+  background-color: ${props => props.theme.colors.darkTheme.grey_dark};
+  padding: ${(props) => props.theme.padding.small};
+  border-radius: ${(props) => props.theme.decoration.borderRadius.small};
   color: ${props => props.theme.colors.lightTheme.mainColor};
   box-sizing: border-box;
   outline: none;
@@ -32,11 +36,10 @@ const TodoDropDownButton = styled.button`
 const TodoDropDownMain = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 const TodoDropDownFlexButton = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
 `;
 
 export {

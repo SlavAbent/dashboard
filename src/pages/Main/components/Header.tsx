@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { MainWrapperTodo, TodoAddNewTask, TodoCount, TodoNewTaskTitle } from '../ToDo/Main/Main.style'
-import { AiOutlinePlusCircle } from 'react-icons/ai'
+import { MainWrapperTodo, TodoAddNew, TodoAddNewTask, TodoCount, TodoNewTaskTitle } from '../ToDo/Main/Main.style'
 import { DropDownMenu } from '../../../components/uikit/DropDownMenu'
-import TodoDropDown from '../ToDo/Main/components/TodoDropDown/TodoDropDown'
+import { TodoDropDown } from '../ToDo/Main/components/TodoDropDown/TodoDropDown'
 import { addTodo } from '../ToDo/context/actions'
 import moment from 'moment/moment'
+import { Plus } from '../../../components/Icons/Plus/Plus'
 
 export const Header = ( {todos, dispatch} ) => {
   const [title, setTitle] = useState('')
@@ -30,8 +30,13 @@ export const Header = ( {todos, dispatch} ) => {
     <MainWrapperTodo>
       <TodoCount>{todos.length}</TodoCount>
       <TodoAddNewTask>
-        <AiOutlinePlusCircle onClick={openCreateWindow} />
-        <TodoNewTaskTitle>add task</TodoNewTaskTitle>
+        <TodoAddNew onClick={openCreateWindow}>
+          <Plus
+            color="#ffffff"
+            size={12}
+          />
+          <TodoNewTaskTitle>Добавить</TodoNewTaskTitle>
+        </TodoAddNew>
         <DropDownMenu
           width={200}
           activeDropDown={activeDropDown}

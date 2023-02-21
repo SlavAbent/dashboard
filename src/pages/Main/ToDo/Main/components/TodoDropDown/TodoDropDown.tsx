@@ -17,8 +17,8 @@ interface TodoDropDownProps {
   setActiveDropDown: Dispatch<SetStateAction<boolean>>
 }
 
-const TodoDropDown = (props: TodoDropDownProps) => {
-  const {
+export const TodoDropDown = (props: TodoDropDownProps) => {
+  let {
     title,
     handleEnter,
     handleSubmit,
@@ -33,6 +33,7 @@ const TodoDropDown = (props: TodoDropDownProps) => {
       <TodoDropDownDelete onClick={closeDropDown}>
         <Close
           color="#000000"
+          size={24}
         />
       </TodoDropDownDelete>
       <TodoDropDownMain>
@@ -46,7 +47,10 @@ const TodoDropDown = (props: TodoDropDownProps) => {
         <TodoDropDownFlexButton>
           <TodoDropDownButton
             type="submit"
-            onClick={handleSubmit}
+            onClick={() => {
+              handleSubmit()
+              closeDropDown()
+            }}
           >
             Добавить задачу
           </TodoDropDownButton>
@@ -56,4 +60,3 @@ const TodoDropDown = (props: TodoDropDownProps) => {
   )
 }
 
-export default TodoDropDown

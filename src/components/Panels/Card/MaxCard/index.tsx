@@ -1,12 +1,16 @@
 import React, { FC } from 'react'
+
+import { IMaxCard } from '../types/cards.model'
 import {
+  TodoCardDescription,
   TodoCardTitle,
   TodoCardWrapper,
   TodoDateCreate,
   TodoFixNote,
-  TodoFooter
-} from '../../../../pages/Main/ToDo/Main/Main.style'
-import { IMaxCard } from '../types/cards.model'
+  TodoFooter,
+  TodoCardInfo,
+  TodoCard,
+} from './styles/MaxCard.styles'
 
 export const MaxCard:FC<IMaxCard> = ({
     description,
@@ -19,24 +23,24 @@ export const MaxCard:FC<IMaxCard> = ({
     style
   }) => {
   return (
-    <div style={style}>
-      <div>
+    <TodoCard style={style}>
+      <TodoCardInfo>
         <TodoCardWrapper
           className={className}
           onClick={onClick}
         >
           <TodoCardTitle>{title}</TodoCardTitle>
-          <>{description}</>
+          <TodoCardDescription>{description}</TodoCardDescription>
         </TodoCardWrapper>
         { icon }
-      </div>
+      </TodoCardInfo>
       <TodoFooter>
         <TodoDateCreate>{date}</TodoDateCreate>
         <TodoFixNote>
           { iconFix }
         </TodoFixNote>
       </TodoFooter>
-    </div>
+    </TodoCard>
   )
 }
 
