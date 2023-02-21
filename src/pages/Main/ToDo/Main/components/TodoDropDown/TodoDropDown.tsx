@@ -18,7 +18,7 @@ interface TodoDropDownProps {
 }
 
 export const TodoDropDown = (props: TodoDropDownProps) => {
-  const {
+  let {
     title,
     handleEnter,
     handleSubmit,
@@ -47,7 +47,10 @@ export const TodoDropDown = (props: TodoDropDownProps) => {
         <TodoDropDownFlexButton>
           <TodoDropDownButton
             type="submit"
-            onClick={handleSubmit}
+            onClick={() => {
+              handleSubmit()
+              closeDropDown()
+            }}
           >
             Добавить задачу
           </TodoDropDownButton>
