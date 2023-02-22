@@ -5,13 +5,14 @@ import ThemeContainer from '../ThemeContainer/ThemeContainer'
 
 import { AsideWrapper, AsideGrowedContainer } from './Aside.styled'
 import { ThemeContext } from '../ThemeContainer/context/ThemeContext'
-import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../../redux/actions/panels'
+import { useAppSelector } from '../../hooks/redux/useAppSelector'
+import { useAppDispatch } from '../../hooks/redux/useAppDispatch'
 
 const Aside = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   // @ts-ignore
-  const isOpenMenu = useSelector((state) => state.isOpenMenu)
+  const isOpenMenu = useAppSelector((state) => state.isOpenMenu)
   const { toggleTheme } = useContext(ThemeContext)
 
   const className = `${isOpenMenu ? ' full__menu' : ' min__menu'}`

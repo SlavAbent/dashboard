@@ -7,7 +7,7 @@ export const addTodo = (payload: { id: string; title: string; date: string; comp
   }
 }
 
-export const setTodo = (payload: any) => {
+export const setTodo = (payload: boolean) => {
   return {
     type: TodoActionsTypes.SET_TODO,
     payload

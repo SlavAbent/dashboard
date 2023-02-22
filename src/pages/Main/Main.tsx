@@ -1,6 +1,6 @@
 import React from 'react';
 import { ToDo } from './ToDo'
-import TodoProvider from './ToDo/context/provider/todoProvider'
+import TodoProvider from './context/provider/todoProvider'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 

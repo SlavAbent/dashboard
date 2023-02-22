@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import { AsideWrapper } from './Aside.style'
 import AsideHeader from './AsideHeader'
 import AsideContainer from './AsideContainer'
-import AsideAddList from './AsideAddList'
-import { useAddedList } from './hooks/useAddedList'
+import { AsideAddList } from './AsideAddList'
+import { useAddedList } from '../../../../hooks/useAddedList'
 import { baseURL } from '../../../../utils/urls'
-import { ListContext } from '../utility/context/ListProvider'
+import { ListContext } from '../../utility/context/ListProvider'
 
 const Aside = () => {
   const { deleteListOnAside } = useAddedList()

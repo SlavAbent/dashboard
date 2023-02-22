@@ -102,6 +102,5 @@ const theme = {
       wetAsphalt: '#798FBE',
     },
   }
-  
+
  export default theme
-  

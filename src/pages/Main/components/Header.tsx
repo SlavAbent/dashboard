@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { MainWrapperTodo, TodoAddNew, TodoAddNewTask, TodoCount, TodoNewTaskTitle } from '../ToDo/Main/Main.style'
 import { DropDownMenu } from '../../../components/uikit/DropDownMenu'
 import { TodoDropDown } from '../ToDo/Main/components/TodoDropDown/TodoDropDown'
-import { addTodo } from '../ToDo/context/actions'
+import { addTodo } from '../context/actions'
 import moment from 'moment/moment'
 import { Plus } from '../../../components/Icons/Plus/Plus'
 
