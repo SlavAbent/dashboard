@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import {
   MainContainer
 } from './Main.style'
-import { TodoListContext } from '../context/provider/todoProvider'
+import { TodoListContext } from '../../context/provider/todoProvider'
 import { ThemeContext } from '../../../../components/ThemeContainer/context/ThemeContext'
 import { MainPanel } from '../../../../components/Panels'
 import { Content } from '../../components/Content'

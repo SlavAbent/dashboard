@@ -2,13 +2,13 @@ import React, { useCallback, useContext, useMemo } from 'react'
 import { MainTodoList } from './components/MainTodoList'
 import { MainListHeader } from './components/MainListHeader'
 import { MainListWrapper } from './MainList.style'
-import { ListContext } from '../utility/context/ListProvider'
+import { ListContext } from '../../utility/context/ListProvider'
 import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { tasks } from 'utils/urls'
 import { AddList } from './components/MainTodoList/AddList/AddList'
-import { IList } from '../utility/types/index.model'
+import { IList } from '../../utility/types/index.model'
 
 const MainList = () => {
   const { response, setResponse } = useContext(ListContext)

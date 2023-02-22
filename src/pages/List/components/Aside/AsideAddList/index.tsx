@@ -15,7 +15,7 @@ import { Button } from '../../../../../components/uikit/Button'
 import { Notification } from '../../../../../components/uikit/Notification/Notification'
 import { Loader } from '../../../../../components/uikit/Loader'
 import { uniqueId } from 'lodash'
-import { useAddedList } from '../hooks/useAddedList'
+import { useAddedList } from '../../../../../hooks/useAddedList'
 import { baseURL } from '../../../../../utils/urls'
 
 export interface IColor {
@@ -24,7 +24,7 @@ export interface IColor {
   name: string
 }
 
-const AsideAddList = ({ handlerAddList }) => {
+export const AsideAddList = ({ handlerAddList }) => {
   const [selectedColor, setSelectedColor] = useState(1)
   const [asideInputValue, setAsideInputValue] = useState('')
   const [colors, setColors] = useState<IColor[]>([])
@@ -36,7 +36,6 @@ const AsideAddList = ({ handlerAddList }) => {
   })
 
   const { addListOnAside } = useAddedList()
-
 
   useEffect(() => {
     if(Array.isArray(response)) {
@@ -62,7 +61,6 @@ const AsideAddList = ({ handlerAddList }) => {
           children={'Отсутствует название списка'}
         />
       )
-      return
     }
     setIsLoading(true)
     addListOnAside(baseURL, asideInputValue, selectedColor)
@@ -166,5 +164,3 @@ const AsideAddList = ({ handlerAddList }) => {
     </AddListDropDown>
   )
 }
-
-export default AsideAddList

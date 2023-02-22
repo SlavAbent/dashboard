@@ -9,7 +9,10 @@ import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 import { panelsReducer } from './redux/reducers/panels'
 import thunk from 'redux-thunk'
-const store = createStore(panelsReducer, applyMiddleware(thunk))
+import {  logger } from 'redux-logger'
+
+const middlewares = [logger, thunk];
+export const store = createStore(panelsReducer, applyMiddleware(...middlewares))
 
 export const AppMainWrapper = () => {
   const { toggleTheme } = useContext(ThemeContext)

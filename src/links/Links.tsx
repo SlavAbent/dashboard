@@ -6,7 +6,7 @@ import { IoIosKeypad, IoIosContact } from "react-icons/io";
 import { LinksContainer, LinkAnchor, LinkAnchorTitle } from './Links.style'
 import { ThemeContext } from '../components/ThemeContainer/context/ThemeContext'
 import { uniqueId } from 'lodash'
-import { useSelector } from 'react-redux'
+import { useAppSelector } from '../hooks/redux/useAppSelector'
 
 interface LinkData {
   to: string,
@@ -43,8 +43,7 @@ const menu: LinkData[] = [
 ]
 
 export const Links = () => {
-  // @ts-ignore
-  const isOpenMenu = useSelector((state) => state.isOpenMenu)
+  const isOpenMenu = useAppSelector((state) => state.isOpenMenu)
 
   const { toggleTheme } = useContext(ThemeContext)
   const className = ({isActive}) => isActive ? ' active' : ''

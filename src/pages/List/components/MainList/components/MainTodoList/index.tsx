@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { MainTodoListWrapper } from './components/styles/index.styled'
 import { uniqueId } from 'lodash'
-import { Tasks } from '../../../utility/types/index.model'
+import { Tasks } from '../../../../utility/types/index.model'
 import Task from './Task/Task'
 
 interface IMainTodoListProps {

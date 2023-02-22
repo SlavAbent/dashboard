@@ -5,7 +5,7 @@ import { Badge } from 'components/uikit/Badge/Badge'
 import { Notification } from 'components/uikit/Notification/Notification'
 import classNames from 'classnames'
 import { AsideRow, AsideRowText, AsideRowWrapper, AsideContain } from './index.styles'
-import { IAsideProps, IList } from '../../utility/types/index.model'
+import { IAsideProps, IList } from '../../../utility/types/index.model'
 import { Delete } from 'components/Icons/Delete/Delete'
 import { Link } from 'react-router-dom'
 

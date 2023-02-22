@@ -2,7 +2,7 @@ import React, { FC, useContext } from 'react'
 import {
   TodoCard, TodoCardContainer
 } from '../Main.style'
-import { TodoListContext } from '../../context/provider/todoProvider'
+import { TodoListContext } from '../../../context/provider/todoProvider'
 import { MinCard } from 'components/Panels/Card/MinCard'
 import { Delete } from 'components/Icons/Delete/Delete'
 import { MaxCard } from 'components/Panels/Card/MaxCard'
