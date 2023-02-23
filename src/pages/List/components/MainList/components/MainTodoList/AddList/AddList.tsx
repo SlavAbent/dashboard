@@ -59,7 +59,7 @@ export const AddList:FC<IAddListProps> = ({ list, onAddTask }) => {
       { !visibleForm ? (
           <AddListWrapper onClick={toggleVisibleForm}>
             <AddListIcon>
-              <Plus size={16} color='#ffffff' />
+              <Plus size={16} />
             </AddListIcon>
             <AddListText>Новая задача</AddListText>
           </AddListWrapper>

@@ -28,11 +28,8 @@ export const LinkAnchor = styled(NavLink)`
       svg{
         width: 25px;
         height: 25px;
-        color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
       }
     }
-  
-
   
     &.active {
       display: flex;
@@ -42,6 +39,9 @@ export const LinkAnchor = styled(NavLink)`
       border-bottom-right-radius: 8px;
       position: relative;
       box-shadow: ${props => props.theme.decoration.boxShadow.purple};
+      svg {
+        color: white;
+      }
     }
 
     &.link__active {
@@ -50,7 +50,6 @@ export const LinkAnchor = styled(NavLink)`
 `;
 
 export const LinkAnchorTitle = styled.p`
-  color: ${(p) => p.theme.colors.lightTheme.mainColor};
   margin-left: ${(p) => p.theme.padding.small};
   text-decoration: none;
   display: none;

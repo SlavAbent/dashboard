@@ -8,13 +8,13 @@ const HeaderComponent = styled.div`
     height: 25px;
     transition: .3s;
     padding: ${props => props.theme.padding.default};
+    box-shadow: ${props => props.theme.decoration.boxShadow.panel};
     background-color: ${(props) => props.color === 'night' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
 `;
 
-const HeaderTitle = styled.div`
+const HeaderTitle = styled.p`
   display: flex;
   flex-grow: 1;
-  color: ${(props) => props.color === 'night' ? props.theme.colors?.darkTheme.mainColor : props.theme.colors?.lightTheme.mainColor};
 `;
 
 const HeaderSearch = styled.div`
@@ -29,7 +29,6 @@ const HeaderSearch = styled.div`
   svg {
     width: 100%;
     height: 100%;
-    color: ${(props) => props.color === 'night' ? props.theme.colors?.darkTheme.mainColor : props.theme.colors?.lightTheme.mainColor}
   }
 `;
 

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const TodoCardTitle = styled.p`
   max-width: 250px;
   font-size: 16px;
-  color: ${props => props.theme.colors.lightTheme.mainColor};
 `;
 
 export const TodoCardInfo = styled.div`
@@ -20,9 +19,9 @@ export const TodoCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  box-shadow: ${props => props.theme.decoration.boxShadow.panel};
   &.completed {
     text-decoration: line-through;
-    color: ${props => props.theme.colors.lightTheme.mainColor};
   }
 `;
 
@@ -35,19 +34,16 @@ export const TodoFooter = styled.div`
 
 export const TodoDateCreate = styled.p`
   font-size: 14px;
-  color: ${props => props.theme.colors.lightTheme.mainColored};
 `;
 
 export const TodoCardDescription = styled.p`
   max-width: 250px;
   font-size: 14px;
-  color: ${props => props.theme.colors.lightTheme.mainColor};
 `;
 
 
 export const TodoFixNote = styled.div`
   svg{
     cursor: pointer;
-    color: ${props => props.theme.colors.lightTheme.mainColor};
   }
 `;

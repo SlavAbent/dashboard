@@ -22,10 +22,7 @@ const CustomCheckbox:FC<ICustomCheckbox> = ({
         checked={completed}
       />
       <label htmlFor={`task-${id}`}>
-        <Check
-          size={20}
-          color='#ffffff'
-        />
+        <Check size={20} />
       </label>
     </Checkbox>
   )

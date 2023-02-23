@@ -8,7 +8,8 @@ export const MainPanelWrapper = styled.div`
   margin-right: 10px;
   padding-right: 5px;
   border-radius: ${props => props.theme.padding.default};
-  background-color: ${props => props.theme.colors.darkTheme.grey_dark};
+  box-shadow: ${props => props.theme.decoration.boxShadow.panel};
+  background-color: ${(props) => props.color === 'light' ? props.theme.colors.darkTheme.grey_dark : props.theme.colors.lightTheme.mainColor};
 `
 
 export const MainPaneColumn = styled.div`

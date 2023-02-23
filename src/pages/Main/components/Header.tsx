@@ -31,10 +31,7 @@ export const Header = ( {todos, dispatch} ) => {
       <TodoCount>{todos.length}</TodoCount>
       <TodoAddNewTask>
         <TodoAddNew onClick={openCreateWindow}>
-          <Plus
-            color="#ffffff"
-            size={12}
-          />
+          <Plus size={12} />
           <TodoNewTaskTitle>Добавить</TodoNewTaskTitle>
         </TodoAddNew>
         <DropDownMenu

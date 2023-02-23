@@ -5,16 +5,13 @@ export const MinCardWrapper = styled.div`
   display: flex;
   align-items: center;
   border-radius: ${props => props.theme.decoration.borderRadius.default};
-  background-color: ${props => props.theme.colors.darkTheme.grey_darked};
+  box-shadow: ${props => props.theme.decoration.boxShadow.panel};
   box-sizing: border-box;
   &.completed {
     text-decoration: line-through;
-    color: ${props => props.theme.colors.lightTheme.mainColor};
   }
 `
 
 export const MinCardTitle = styled.p`
   font-size: 14px;
-  color: ${props => props.theme.colors.lightTheme.mainColor};
-  
 `
