@@ -20,16 +20,17 @@ export const MaxCard:FC<Readonly<IMaxCard>> = ({
     icon,
     date,
     iconFix,
-    style
+    style,
+    color
   }) => {
   return (
-    <TodoCard style={style}>
+    <TodoCard style={style} color={color}>
       <TodoCardInfo>
         <TodoCardWrapper
           className={className}
-          onClick={onClick}
+
         >
-          <TodoCardTitle>{title}</TodoCardTitle>
+          <TodoCardTitle onClick={onClick}>{title}</TodoCardTitle>
           <TodoCardDescription>{description}</TodoCardDescription>
         </TodoCardWrapper>
         { icon }

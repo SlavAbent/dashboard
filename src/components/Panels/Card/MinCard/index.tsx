@@ -8,14 +8,15 @@ export const MinCard:FC<Readonly<IMinCard>> = ({
     icon,
     onClick,
     children,
+    color,
   }) => {
   return (
     <>
       <MinCardWrapper
         className={className}
-        onClick={onClick}
+        color={color}
       >
-        <MinCardTitle>{title}</MinCardTitle>
+        <MinCardTitle onClick={onClick}>{title}</MinCardTitle>
         { children }
       </MinCardWrapper>
       <div>{icon}</div>

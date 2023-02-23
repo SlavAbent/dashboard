@@ -22,9 +22,7 @@ export const AddListWrapper = styled.div`
 export const AddListIcon = styled.div`
   margin-right: ${(p) => p.theme.margin.small};
 `
-export const AddListText = styled.div`
-  color: ${(p) => p.theme.colors.lightTheme.mainColor};
-`
+export const AddListText = styled.p``
 
 export const AddListForm = styled.form`
   

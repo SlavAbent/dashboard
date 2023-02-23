@@ -11,14 +11,20 @@ export const MainPanel:FC<Readonly<MainPanelProps>> = (
     className,
     children,
     title,
+    color
   }
 ) => {
+  //TODO  refactor useDrop -> вырезать нахер отсюда и вынести в контекст
   const [, drop] = useDrop({
     accept: 'kanban panel',
     drop: () => ({ name: title }),
   });
   return (
-    <MainPanelWrapper ref={drop} className={className}>
+    <MainPanelWrapper
+      ref={drop}
+      className={className}
+      color={color}
+    >
       <MainPaneColumn>
         <MainPanelWrap>{header}</MainPanelWrap>
         <MainPanelWrap>{content}</MainPanelWrap>

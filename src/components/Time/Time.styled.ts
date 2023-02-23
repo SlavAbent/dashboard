@@ -5,7 +5,6 @@ export const TimeWrapper = styled.div`
   align-items: center;
   margin-right: ${props => props.theme.margin.large};
   transition: .3s;
-  color: ${(props) => props.color === 'night' ? props.theme.colors?.darkTheme.mainColor : props.theme.colors?.lightTheme.mainColor};
   p {
     margin-top: 2px;
     margin-bottom: 0;
@@ -15,7 +14,6 @@ export const TimeWrapper = styled.div`
     height: 18px;
     margin-right: 5px;
     transition: .3s;
-    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor}
   }
 `;
 

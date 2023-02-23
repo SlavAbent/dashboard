@@ -8,6 +8,14 @@ export const AppWrapper = styled.div`
     opacity: 1;
     transition: .3s;
     background-color: ${(props) => props.color === 'light' ? props.theme.colors?.darkTheme.mainColored : props.theme.colors?.lightTheme.mainColored};
+
+    p {
+      color: ${(props) => props.color === 'light' ? props.theme.colors.lightTheme.mainColored : props.theme.colors.darkTheme.grey_dark};
+    }
+    
+    svg {
+      color: ${(props) => props.color === 'light' ? props.theme.colors.lightTheme.mainColored : props.theme.colors.darkTheme.grey_dark};
+    }
 `;
 
 export const AppMainFields = styled.div`

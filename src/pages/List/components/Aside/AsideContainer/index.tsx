@@ -27,10 +27,7 @@ const AsideContainer: FC<IAsideProps> = ( props) => {
                />
                <AsideRowText>{list?.name}</AsideRowText>
                <div onClick={() => handleAsideDeleteItem && handleAsideDeleteItem(list)}>
-                 <Delete
-                   size={16}
-                   color='#ffffff'
-                 />
+                 <Delete size={16} />
                </div>
              </AsideRow>
           </Link>

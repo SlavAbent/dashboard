@@ -7,6 +7,7 @@ export interface MainPanelProps {
   className?: string
   children?: ReactNode
   title?: ReactNode | string
+  color?: string
 }
 
 interface specPanels {

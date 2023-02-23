@@ -13,7 +13,13 @@ export const Main = () => {
   const { toggleTheme } = useContext(ThemeContext)
   const [isColumn, setIsColumn] = useState(true)
 
-  const Item = <Content dispatch={dispatch} todos={todos} setIsColumn={setIsColumn} />
+  const Item = (
+    <Content
+      dispatch={dispatch}
+      todos={todos}
+      setIsColumn={setIsColumn}
+    />
+  )
 
   return (
     <MainContainer color={toggleTheme}>
@@ -21,11 +27,13 @@ export const Main = () => {
         title={"Column 2"}
         header={<Header dispatch={dispatch} todos={todos}/>}
         content={isColumn && Item}
+        color={toggleTheme}
       />
       <MainPanel
         title="Column 2"
         header={'вероятно в будущем канбан'}
         content={!isColumn && Item}
+        color={toggleTheme}
       />
     </MainContainer>
   )

@@ -6,6 +6,7 @@ export const AsideWrapper = styled.div`
     align-items: center;
     transition: .3s;
     padding: ${(props) => props.theme.padding.default} 0;
+    box-shadow: ${props => props.theme.decoration.boxShadow.panel};
     background-color: ${(props) => props.color === 'night' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
     position: relative;
     z-index: 1000;

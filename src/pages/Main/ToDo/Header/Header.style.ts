@@ -33,10 +33,6 @@ const HeaderBoardView = styled.div`
   transition: .3s;
   p {
     margin-left: 5px;
-    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
-  }
-  svg {
-    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
   }
 `;
 
@@ -47,10 +43,6 @@ const HeaderFilter = styled.div`
   transition: .3s;
   p {
     margin-left: 5px;
-    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
-  }
-  svg {
-    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
   }
 `;
 
@@ -62,10 +54,6 @@ const HeaderSort = styled.div`
   transition: .3s;
   p {
     margin-left: 5px;
-    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
-  }
-  svg {
-    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
   }
 `;
 

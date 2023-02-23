@@ -11,7 +11,8 @@ const DropDownMenuWrapper = styled.div`
   position: absolute;
   top: 53px;
   z-index: 1000;
-  background-color: white;
+  background-color: ${props => props.theme.colors.lightTheme.mainColor};
+  box-shadow: ${props => props.theme.decoration.boxShadow.panel};
   border-radius: 8px;
   opacity: 0;
   visibility: hidden;
@@ -25,6 +26,7 @@ const DropDownMenuWrapper = styled.div`
   
   &.todoDropDown {
     background-color: ${props => props.theme.colors.darkTheme.grey_darked};
+    box-shadow: ${props => props.theme.decoration.boxShadow.panel};
   }
   
   &.open {
