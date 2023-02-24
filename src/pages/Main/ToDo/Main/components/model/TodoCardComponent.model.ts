@@ -1,6 +1,4 @@
-type OpacityType = 0 | 1 | 0.4
-
-export interface ITodoCard {
+export interface ITodoCard<T> {
   index: number,
   completed: boolean
   handleDeleteTodo: (index: number) => void
@@ -9,6 +7,6 @@ export interface ITodoCard {
   date?: string
   description: string
   style: {
-    opacity: OpacityType
+    opacity: T
   }
 }

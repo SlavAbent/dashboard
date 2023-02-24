@@ -1,10 +1,11 @@
 import React from 'react'
 
 export type sizeBox = 'small' | 'default' | 'defaultBig' | 'big'
-export interface IIcon {
+export type IIcon = {
   children?: React.ReactNode;
-  size?: sizeBox | number;
+  size?: number;
   color?: string;
   title?: string;
+  className?: sizeBox | string;
   onClick?: (event: React.MouseEvent) => void
 }

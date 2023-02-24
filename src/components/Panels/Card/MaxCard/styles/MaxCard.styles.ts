@@ -19,7 +19,6 @@ export const TodoCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: ${props => props.theme.decoration.boxShadow.panel};
   &.completed {
     text-decoration: line-through;
   }
