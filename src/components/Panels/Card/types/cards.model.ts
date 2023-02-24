@@ -1,6 +1,4 @@
 import { ReactNode } from 'react'
-
-type OpacityType = 0 | 1 | 0.4
 export interface IMinCard {
   title: string
   className?: string,
@@ -10,7 +8,7 @@ export interface IMinCard {
   color?: string
 }
 
-export interface IMaxCard {
+export interface IMaxCard<T> {
   title: string
   className?: string,
   onClick: () => void
@@ -20,6 +18,6 @@ export interface IMaxCard {
   description?: string
   color?: string
   style: {
-    opacity: OpacityType
+    opacity: T
   }
 }
