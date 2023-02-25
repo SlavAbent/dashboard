@@ -1,15 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 import 'moment/locale/ru';
 
 import { TimeWrapper, TimeContainer } from './Time.styled'
 import { AiOutlineCalendar } from 'react-icons/ai'
-import { ThemeContext } from '../ThemeContainer/context/ThemeContext'
 
 export const TimeDate = () => {
   const [time, setTime] = useState<string>()
   const [date, setDate] = useState<string>()
-  const { toggleTheme } = useContext(ThemeContext)
 
   useEffect(() => {
     setInterval(() => {
@@ -21,8 +19,8 @@ export const TimeDate = () => {
   }, [])
 
   return (
-    <TimeWrapper color={toggleTheme}>
-      <AiOutlineCalendar color={toggleTheme}/>
+    <TimeWrapper>
+      <AiOutlineCalendar/>
       <TimeContainer>
         <p>{time}</p>
         <p>{date}</p>
