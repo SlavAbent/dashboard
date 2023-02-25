@@ -5,6 +5,7 @@ export const MinCardWrapper = styled.div`
   display: flex;
   align-items: center;
   border-radius: ${props => props.theme.decoration.borderRadius.default};
+  box-shadow: ${props => props.theme.decoration.boxShadow.panel};
   box-sizing: border-box;
   &.completed {
     text-decoration: line-through;

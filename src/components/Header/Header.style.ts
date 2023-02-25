@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 
-export const HeaderComponent = styled.div`
+const HeaderComponent = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -12,12 +12,12 @@ export const HeaderComponent = styled.div`
     background-color: ${(props) => props.color === 'night' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
 `;
 
-export const HeaderTitle = styled.p`
+const HeaderTitle = styled.p`
   display: flex;
   flex-grow: 1;
 `;
 
-export const HeaderSearch = styled.div`
+const HeaderSearch = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,3 +31,6 @@ export const HeaderSearch = styled.div`
     height: 100%;
   }
 `;
+
+
+export { HeaderComponent, HeaderTitle, HeaderSearch }

@@ -9,7 +9,7 @@ import { MaxCard } from 'components/Panels/Card/MaxCard'
 import { ITodoCard } from './model/TodoCardComponent.model'
 import { ThemeContext } from '../../../../../components/ThemeContainer/context/ThemeContext'
 
-const TodoCardComponent:FC<ITodoCard<number>> = (
+const TodoCardComponent:FC<ITodoCard> = (
   {
    index,
    completed,
