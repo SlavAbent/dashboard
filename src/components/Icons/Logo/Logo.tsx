@@ -1,19 +1,15 @@
-import React, { FC } from 'react'
-import { IIcon } from '../types'
-import { LogoIcon } from './Logo.style'
+import React, { useContext } from 'react'
+import { IconLogo } from './Logo.style'
+import { FiCircle } from "react-icons/fi";
+import { ThemeContext } from '../../ThemeContainer/context/ThemeContext'
 
-const Logo:FC<Partial<IIcon>> = (props) => {
-  const { children, size = 16, color, title, onClick} = props
+const Logo = ({ handleToggleMenu }) => {
+  const { toggleTheme } = useContext(ThemeContext)
 
   return (
-    <LogoIcon
-      size={size}
-      color={color}
-      title={title}
-      onClick={onClick}
-    >
-      {children}
-    </LogoIcon>
+    <IconLogo color={toggleTheme} onClick={handleToggleMenu}>
+      <FiCircle />
+    </IconLogo>
   )
 }
 
