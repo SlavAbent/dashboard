@@ -24,7 +24,7 @@ export const Header = () => {
             onClick={() => dispatch(viewList(false))}
           >
             <BsViewList/>
-            <p>Board view</p>
+            <p>Вид карточек</p>
           </HeaderBoardView>
         </HeaderLeftSide>
         <HeaderRightSide>

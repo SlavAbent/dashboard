@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { CloseIcon } from './Close.styled'
 import { IIcon } from '../types'
 
-export const Close: FC<IIcon> = (props) => {
+export const Close: FC<Partial<IIcon>> = (props) => {
   const { children, size = 16, color, title, } = props
 
   return (
