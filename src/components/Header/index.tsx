@@ -4,12 +4,16 @@ import avatar from '../../assets/avatar.jpeg'
 import { DropDownMenu } from '../uikit/DropDownMenu'
 import { Link } from 'react-router-dom'
 import { Header } from '../Panels/Header'
-import { ThemeContext } from '../ThemeContainer/context/ThemeContext'
+import { ThemeContext } from '../../context/themeContext'
+import Logo from '../Icons/Logo/Logo'
+import { togglePanels } from '../../redux/reducers/panels.slice'
+import { useAppDispatch } from '../../redux/hooks/useAppDispatch'
 
 export const HeaderComponent = () => {
+  const dispatch = useAppDispatch()
   const [activeDropDown, setActiveDropDown] = useState(false)
   const { toggleTheme } = useContext(ThemeContext)
-
+  const handleToggleMenu = () => dispatch(togglePanels())
   const avatarDropDownMenu = () => setActiveDropDown((activeDropDown) => !activeDropDown )
 
   const avatarContent = (
@@ -35,15 +39,23 @@ export const HeaderComponent = () => {
     </DropDownMenu>
   )
 
+  const logoContent = (
+    <Logo
+      size={32}
+      onClick={handleToggleMenu}
+    />
+  )
+
   const person = 'Slava'
   return (
-    <Header
-      title={`Welcome back, ${person} 💪`}
-      date
-      search
-      color={toggleTheme}
-      avatar={avatarContent}
-      content={headerContent}
-    />
+     <Header
+       logo={logoContent}
+       title={`Welcome back, ${person} 💪`}
+       date
+       search
+       color={toggleTheme}
+       avatar={avatarContent}
+       content={headerContent}
+     />
   )
 }

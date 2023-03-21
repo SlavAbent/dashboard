@@ -1,7 +1,7 @@
 import { MainWrapperContent } from '../ToDo/Main/Main.style'
 import TodoCardComponent from '../ToDo/Main/components/TodoCardComponent'
 import React, { Dispatch, FC, SetStateAction, useMemo } from 'react'
-import { deleteTodo, toggleTodo } from '../context/actions'
+import { deleteTodo, toggleTodo } from '../../../redux/actions/todo.actions'
 import { DragSourceMonitor, useDrag } from 'react-dnd'
 import { ITodoList } from '../../../types/interfaces/interfaces'
 import { TodoActionsTypes } from '../../../types/enums/todoEnums'

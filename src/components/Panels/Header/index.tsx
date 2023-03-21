@@ -5,10 +5,11 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { IHeaderComponent } from '../../Header/model/HeaderCompoennt.model'
 
 export const Header:FC<IHeaderComponent> = (props) => {
-  const { title, date, search, content, color, avatar } = props
+  const { title, date, search, content, color, avatar, logo } = props
 
   return (
     <HeaderComponent color={color}>
+      {logo}
       <HeaderTitle>{title}</HeaderTitle>
       { date && <TimeDate />}
       { search && <HeaderSearch><AiOutlineSearch/></HeaderSearch> }

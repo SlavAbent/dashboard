@@ -1,4 +1,4 @@
 
-export enum ToggleMenuTypes {
-  TOGGLE_MENU = 'toggle_menu',
+export enum TogglePanelTypes {
+  TOGGLE_PANEL = 'toggle_panel',
 }

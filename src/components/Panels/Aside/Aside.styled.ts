@@ -5,16 +5,16 @@ export const AsideWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     transition: .3s;
-    padding: ${(props) => props.theme.padding.default} 0;
+    padding-bottom: ${(props) => props.theme.padding.default};
     box-shadow: ${props => props.theme.decoration.boxShadow.panel};
-    background-color: ${(props) => props.color === 'night' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
+    background-color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
     position: relative;
     z-index: 1000;
     &.min__menu {
       width: 60px;
     }
     &.full__menu {
-      width: 180px;
+      width: 300px;
     }
 `;
 

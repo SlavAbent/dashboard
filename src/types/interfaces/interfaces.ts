@@ -4,7 +4,7 @@ export interface ITodoList {
   date: string,
   completed: boolean,
   description: string,
-  index: number,
+  index?: number,
 }
 
 export interface IInitialState {

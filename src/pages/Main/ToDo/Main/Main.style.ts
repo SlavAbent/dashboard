@@ -76,7 +76,7 @@ const TodoCard = styled.div`
   margin-bottom: 10px;
   padding: ${props => props.theme.padding.small};
   border-radius: ${props => props.theme.decoration.borderRadius.default};
-  background-color: ${(props) => props.color === 'light' ? props.theme.colors?.darkTheme.mainColored : props.theme.colors?.lightTheme.mainColored};
+  background-color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColored : props.theme.colors?.darkTheme.mainColored};
   box-sizing: border-box;
 `;
 

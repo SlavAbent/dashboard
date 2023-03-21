@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import "@fontsource/alef"
 
 
 export const AppWrapper = styled.div`
@@ -7,14 +8,15 @@ export const AppWrapper = styled.div`
     height: 100vh;
     opacity: 1;
     transition: .3s;
-    background-color: ${(props) => props.color === 'light' ? props.theme.colors?.darkTheme.mainColored : props.theme.colors?.lightTheme.mainColored};
+    background-color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColored :  props.theme.colors?.darkTheme.mainColored};
 
     p {
-      color: ${(props) => props.color === 'light' ? props.theme.colors.lightTheme.mainColored : props.theme.colors.darkTheme.grey_dark};
+      font-size: 14px;
+      color: ${(props) => props.color === 'light' ? props.theme.colors.darkTheme.grey_dark : props.theme.colors.lightTheme.mainColored};
     }
     
     svg {
-      color: ${(props) => props.color === 'light' ? props.theme.colors.lightTheme.mainColored : props.theme.colors.darkTheme.grey_dark};
+      color: ${(props) => props.color === 'light' ? props.theme.colors.darkTheme.grey_dark : props.theme.colors.lightTheme.mainColored};
     }
 `;
 
@@ -22,8 +24,17 @@ export const AppMainFields = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: calc(100% - 92px);
-  //Todo fix width params
-  //width: calc(100% - 332px);
+  width: 100%;
+  height: 100vh;
 `;
+export const AsideWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+`
 
+export const AsideWrap = styled.div`
+  display: flex;
+  height: 100vh;
+`
