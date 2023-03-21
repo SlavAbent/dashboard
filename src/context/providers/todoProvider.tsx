@@ -1,6 +1,6 @@
 import { createContext, Dispatch, useReducer } from 'react'
 import logger from 'use-reducer-logger';
-import { todoReducer } from '../reducers'
+import { todoReducer } from '../../redux/reducers/todo.reducer'
 import { store } from 'redux/state'
 import { IInitialState,} from 'types/interfaces/interfaces'
 

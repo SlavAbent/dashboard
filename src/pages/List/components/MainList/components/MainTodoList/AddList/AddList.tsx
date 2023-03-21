@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Plus } from 'components/Icons/Plus/Plus'
 import { Button } from 'components/uikit/Button'
-import { IList } from '../../../../../utility/types/index.model'
+import { IList } from '../../../../../model/index.model'
 
 import {
   AddListContainer,

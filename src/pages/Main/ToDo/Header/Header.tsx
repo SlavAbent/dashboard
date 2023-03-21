@@ -8,9 +8,9 @@ import { HeaderWrapper,
   HeaderSort,
 } from './Header.style'
 import { BsFilterRight, BsSortUpAlt, BsViewList } from 'react-icons/bs'
-import { ThemeContext } from '../../../../components/ThemeContainer/context/ThemeContext'
-import { TodoListContext } from '../../context/provider/todoProvider'
-import { viewList } from '../../context/actions'
+import { ThemeContext } from '../../../../context/themeContext'
+import { TodoListContext } from '../../../../context/providers/todoProvider'
+import { viewList } from '../../../../redux/actions/todo.actions'
 
 export const Header = () => {
   const { toggleTheme } = useContext(ThemeContext)

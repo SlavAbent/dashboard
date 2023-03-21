@@ -4,12 +4,11 @@ export const HeaderComponent = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 100%;
     height: 25px;
     transition: .3s;
     padding: ${props => props.theme.padding.default};
     box-shadow: ${props => props.theme.decoration.boxShadow.panel};
-    background-color: ${(props) => props.color === 'night' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
+    background-color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
 `;
 
 export const HeaderTitle = styled.p`

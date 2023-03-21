@@ -9,7 +9,7 @@ export const MainPanelWrapper = styled.div`
   padding-right: 5px;
   border-radius: ${props => props.theme.padding.default};
   box-shadow: ${props => props.theme.decoration.boxShadow.panel};
-  background-color: ${(props) => props.color === 'light' ? props.theme.colors.darkTheme.grey_dark : props.theme.colors.lightTheme.mainColor};
+  background-color: ${(props) => props.color === 'light' ? props.theme.colors.lightTheme.mainColor : props.theme.colors.darkTheme.grey_dark};
 `
 
 export const MainPaneColumn = styled.div`

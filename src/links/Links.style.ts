@@ -15,8 +15,8 @@ export const LinkAnchor = styled(NavLink)`
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     background-color: inherit;
     transition: .3s;
     text-decoration: none;
@@ -26,22 +26,16 @@ export const LinkAnchor = styled(NavLink)`
         padding-left: 20px;
       }
       svg{
-        width: 25px;
-        height: 25px;
+        width: 22px;
+        height: 22px;
       }
     }
   
     &.active {
       display: flex;
       align-items: center;
-      background-color: ${props => props.theme.colors.purple};
-      border-top-right-radius: 8px;
-      border-bottom-right-radius: 8px;
+      background-color: ${props => props.theme.colors.lighterMain};
       position: relative;
-      box-shadow: ${props => props.theme.decoration.boxShadow.purple};
-      svg {
-        color: white;
-      }
     }
 
     &.link__active {

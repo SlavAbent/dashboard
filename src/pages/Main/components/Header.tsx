@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { MainWrapperTodo, TodoAddNew, TodoAddNewTask, TodoCount, TodoNewTaskTitle } from '../ToDo/Main/Main.style'
 import { DropDownMenu } from '../../../components/uikit/DropDownMenu'
 import { TodoDropDown } from '../ToDo/Main/components/TodoDropDown/TodoDropDown'
-import { addTodo } from '../context/actions'
+import { addTodo } from '../../../redux/actions/todo.actions'
 import moment from 'moment/moment'
 import { Plus } from '../../../components/Icons/Plus/Plus'
 
@@ -18,6 +18,7 @@ export const Header = ( {todos, dispatch} ) => {
 
   const handleSubmit = () => {
     setTitle('')
+    // useContext with useReducer
     dispatch(addTodo({
       id: crypto.randomUUID(),
       title,

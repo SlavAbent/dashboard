@@ -2,12 +2,12 @@ import React, { FC, useContext } from 'react'
 import {
   TodoCard, TodoCardContainer
 } from '../Main.style'
-import { TodoListContext } from '../../../context/provider/todoProvider'
+import { TodoListContext } from '../../../../../context/providers/todoProvider'
 import { MinCard } from 'components/Panels/Card/MinCard'
 import { Delete } from 'components/Icons/Delete/Delete'
 import { MaxCard } from 'components/Panels/Card/MaxCard'
 import { ITodoCard } from './model/TodoCardComponent.model'
-import { ThemeContext } from '../../../../../components/ThemeContainer/context/ThemeContext'
+import { ThemeContext } from '../../../../../context/themeContext'
 
 const TodoCardComponent:FC<ITodoCard<number>> = (
   {

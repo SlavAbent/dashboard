@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 
 export interface IHeaderComponent{
+  logo?: ReactNode
   title: string
   date?: ReactNode
   search?: boolean

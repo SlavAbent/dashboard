@@ -24,6 +24,11 @@
       "id": 5,
       "name": "Личное",
       "colorId": 5
+    },
+    {
+      "name": "dgf",
+      "colorId": 7,
+      "id": 6
     }
   ],
   "tasks": [

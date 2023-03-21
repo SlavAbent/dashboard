@@ -4,9 +4,9 @@ import { BsChatDots, BsListCheck, BsMap } from 'react-icons/bs'
 import { IoIosKeypad, IoIosContact } from "react-icons/io";
 
 import { LinksContainer, LinkAnchor, LinkAnchorTitle } from './Links.style'
-import { ThemeContext } from '../components/ThemeContainer/context/ThemeContext'
+import { ThemeContext } from '../context/themeContext'
 import { uniqueId } from 'lodash'
-import { useAppSelector } from '../hooks/redux/useAppSelector'
+import { useAppSelector } from '../redux/hooks/useAppSelector'
 
 interface LinkData {
   to: string,
@@ -43,8 +43,7 @@ const menu: LinkData[] = [
 ]
 
 export const Links = () => {
-  const isOpenMenu = useAppSelector((state) => state.isOpenMenu)
-
+  const isOpenMenu = useAppSelector((state) => state.togglePanels.togglePanels)
   const { toggleTheme } = useContext(ThemeContext)
   const className = ({isActive}) => isActive ? ' active' : ''
   const openMenu = isOpenMenu ? 'link__active' : ''
@@ -60,9 +59,7 @@ export const Links = () => {
             className={`${className} ${openMenu}` }
           >
             <span className={openMenu}>{icon}</span>
-            <LinkAnchorTitle
-              className={openMenu}
-            >
+            <LinkAnchorTitle className={openMenu}>
               {name}
             </LinkAnchorTitle>
           </LinkAnchor>

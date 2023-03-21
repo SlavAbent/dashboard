@@ -5,7 +5,7 @@ import AsideContainer from './AsideContainer'
 import { AsideAddList } from './AsideAddList'
 import { useAddedList } from '../../../../hooks/useAddedList'
 import { baseURL } from '../../../../utils/urls'
-import { ListContext } from '../../utility/context/ListProvider'
+import { ListContext } from '../../../../context/providers/listProvider'
 
 const Aside = () => {
   const { deleteListOnAside } = useAddedList()

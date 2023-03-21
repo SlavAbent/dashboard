@@ -13,7 +13,7 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: calc(100% - 20px);
 `;
 
 const HeaderLeftSide = styled.div`

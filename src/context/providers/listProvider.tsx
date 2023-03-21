@@ -1,6 +1,6 @@
 import React, { createContext, Dispatch, FC } from 'react'
 import { useAxios } from 'hooks/useAxios'
-import { IList } from '../types/index.model'
+import { IList } from '../../pages/List/model/index.model'
 
 export interface ListProviderProps {
   children: React.ReactNode

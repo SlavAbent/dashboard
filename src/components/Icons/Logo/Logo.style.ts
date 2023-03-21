@@ -5,7 +5,7 @@ export const LogoIcon = styled(FiCircle)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-right: 30px;
   transition: .3s;
   cursor: pointer;
 `

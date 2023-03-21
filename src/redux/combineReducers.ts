@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import { panelsReducer } from './panels'
-import { store } from '../../AppMainWrapper'
+import store from './store'
+
 
 export const rootReducer = combineReducers({
-  panelsReducer,
+  // panelsReducer,
 })
 
 export type AppDispatch = typeof store.dispatch;
