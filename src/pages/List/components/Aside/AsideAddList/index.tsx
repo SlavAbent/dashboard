@@ -12,11 +12,12 @@ import {
 import classNames from 'classnames'
 import { Close } from '../../../../../components/Icons/Close/Close'
 import { Button } from '../../../../../components/uikit/Button'
-import { Notification } from '../../../../../components/uikit/Notification/Notification'
 import { Loader } from '../../../../../components/uikit/Loader'
 import { uniqueId } from 'lodash'
 import { useAddedList } from '../../../../../hooks/useAddedList'
 import { baseURL } from '../../../../../utils/urls'
+import { notificationFabric } from '../../../../../components/uikit/Notification/notificationFabric'
+import { notificationEnum } from '../../../../../components/uikit/Notification/model/Notification.model'
 
 export interface IColor {
   hex: string
@@ -54,13 +55,13 @@ export const AsideAddList = ({ handlerAddList }) => {
 
   const handlerAddListAside = useCallback(() => {
     if(!asideInputValue) {
-      return (
-        <Notification
-          title={'Ошибка'}
-          position={'top-center'}
-          children={'Отсутствует название списка'}
-        />
-      )
+      return notificationFabric({
+        className: 'notification__error',
+        type: notificationEnum.error,
+        icon: <div/>,
+        title: 'Ошибка',
+        position: 'bottom-right',
+      })
     }
     setIsLoading(true)
     addListOnAside(baseURL, asideInputValue, selectedColor)

@@ -2,12 +2,15 @@ import React, { FC, useMemo } from 'react'
 import { uniqueId } from 'lodash'
 import { Loader } from 'components/uikit/Loader'
 import { Badge } from 'components/uikit/Badge/Badge'
-import { Notification } from 'components/uikit/Notification/Notification'
 import classNames from 'classnames'
 import { AsideRow, AsideRowText, AsideRowWrapper, AsideContain } from './index.styles'
 import { IAsideProps, IList } from '../../../model/index.model'
 import { Delete } from 'components/Icons/Delete/Delete'
 import { Link } from 'react-router-dom'
+import { notificationFabric } from '../../../../../components/uikit/Notification/notificationFabric'
+import { notificationEnum } from '../../../../../components/uikit/Notification/model/Notification.model'
+import { errorsList } from '../../../../../utils/errorsGenerator'
+import { NotifIcon } from '../../../../../components/Icons/Notification/Notification'
 
 const AsideContainer: FC<IAsideProps> = ( props) => {
   const { data, loading, error, handleAsideDeleteItem } = props;
@@ -47,16 +50,14 @@ const AsideContainer: FC<IAsideProps> = ( props) => {
         : (
           <AsideRowWrapper>
             {
-              error && (
-                <Notification
-                  className={'notification__error'}
-                  icon={<div/>}
-                  position={'bottom-right'}
-                  title={'Error'}
-                  type={'error'}
-                  children={'data was errors'}
-                />
-              )
+              error && notificationFabric({
+                className: 'notification__error',
+                type: notificationEnum.error,
+                icon: <NotifIcon />,
+                title: 'Ошибка',
+                position: 'bottom-right',
+                children: errorsList.missingListName
+              })
             }
             { dataAside }
           </AsideRowWrapper>

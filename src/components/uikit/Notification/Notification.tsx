@@ -36,7 +36,7 @@ export const Notification: FC<INotification> = (props) => {
     >
       <>{icon}</>
       <p>{title}</p>
-      {children}
+      <p>{children}</p>
     </NotificationWrapper>
   )
 }
