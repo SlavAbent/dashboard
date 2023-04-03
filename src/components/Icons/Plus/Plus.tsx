@@ -4,8 +4,6 @@ import { IIcon } from '../types'
 
 export const Plus: FC<Partial<IIcon>> = (props) => {
   const { children, size = 16, color,title} = props
-
-
   return (
     <PlusIcon
       size={size}

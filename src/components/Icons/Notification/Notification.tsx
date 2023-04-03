@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { NotifIcon } from './Notification'
+import { NotifIcon } from './Notification.style'
 import { IIcon } from '../types'
 
 export const NotificationIcon: FC<Partial<IIcon>> = (props) => {
