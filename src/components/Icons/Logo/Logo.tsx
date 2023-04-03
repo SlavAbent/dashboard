@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { IIcon } from '../types'
 import { LogoIcon } from './Logo.style'
 
-const Logo:FC<Partial<IIcon>> = (props) => {
+export const Logo:FC<Partial<IIcon>> = (props) => {
   const { children, size = 16, color, title, onClick} = props
 
   return (
@@ -16,5 +16,3 @@ const Logo:FC<Partial<IIcon>> = (props) => {
     </LogoIcon>
   )
 }
-
-export default Logo

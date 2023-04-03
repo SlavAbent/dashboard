@@ -1,46 +1,10 @@
 import React, { useContext } from 'react'
 
-import { BsChatDots, BsListCheck, BsMap } from 'react-icons/bs'
-import { IoIosKeypad, IoIosContact } from "react-icons/io";
-
 import { LinksContainer, LinkAnchor, LinkAnchorTitle } from './Links.style'
 import { ThemeContext } from '../context/themeContext'
 import { uniqueId } from 'lodash'
 import { useAppSelector } from '../redux/hooks/useAppSelector'
-
-interface LinkData {
-  to: string,
-  icon: React.ReactElement
-  name: string
-}
-
-const menu: LinkData[] = [
-  {
-    to: '/',
-    icon: <IoIosKeypad/>,
-    name: 'Главная',
-  },
-  {
-    to: 'List',
-    icon: <BsListCheck/>,
-    name: 'Дашборд',
-  },
-  {
-    to: 'Chat',
-    icon: <BsChatDots/>,
-    name: 'Чат',
-  },
-  {
-    to: 'Profile',
-    icon: <IoIosContact/>,
-    name: 'Профиль',
-  },
-  {
-    to: 'Map',
-    icon: <BsMap/>,
-    name: 'Карта',
-  },
-]
+import { asideLinks } from './asideLinks'
 
 export const Links = () => {
   const isOpenMenu = useAppSelector((state) => state.togglePanels.togglePanels)
@@ -49,7 +13,7 @@ export const Links = () => {
   const openMenu = isOpenMenu ? 'link__active' : ''
   return  (
     <LinksContainer>
-      { menu.map((link) => {
+      { asideLinks.map((link) => {
         const { to, icon, name } = link
         return (
           <LinkAnchor

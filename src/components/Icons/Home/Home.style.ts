@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { DiReact } from 'react-icons/di'
+import { AiOutlineHome } from 'react-icons/ai'
 
-export const LogoIcon = styled(DiReact)`
+export const HomeIcon = styled(AiOutlineHome)`
   display: flex;
   justify-content: center;
   align-items: center;

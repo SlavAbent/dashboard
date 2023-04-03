@@ -10,17 +10,18 @@ import { Link } from 'react-router-dom'
 import { notificationFabric } from '../../../../../components/uikit/Notification/notificationFabric'
 import { notificationEnum } from '../../../../../components/uikit/Notification/model/Notification.model'
 import { errorsList } from '../../../../../utils/errorsGenerator'
-import { NotifIcon } from '../../../../../components/Icons/Notification/Notification'
+import { NotificationIcon } from '../../../../../components/Icons/Notification'
 
 const AsideContainer: FC<IAsideProps> = ( props) => {
   const { data, loading, error, handleAsideDeleteItem } = props;
+
   const dataAside = useMemo(() => {
     if(Array.isArray(data)) {
       return data.map((list: IList) => {
         const { id, name } = list.color
         const className = classNames('badge', { [`badge--${name}`]: name}, 'default')
         return (
-          <Link to={`${id}`} key={uniqueId('list_')}>
+          <Link to={`${list.id}`} key={uniqueId('list_')}>
              <AsideRow>
                <Badge
                  id={id}
@@ -49,16 +50,14 @@ const AsideContainer: FC<IAsideProps> = ( props) => {
         />
         : (
           <AsideRowWrapper>
-            {
-              error && notificationFabric({
-                className: 'notification__error',
-                type: notificationEnum.error,
-                icon: <NotifIcon />,
-                title: 'Ошибка',
-                position: 'bottom-right',
-                children: errorsList.missingListName
-              })
-            }
+            { error && notificationFabric({
+              className: 'notification__error',
+              type: notificationEnum.error,
+              icon: <NotificationIcon />,
+              title: 'Ошибка',
+              position: 'bottom-right',
+              children: errorsList.missingListName
+            })}
             { dataAside }
           </AsideRowWrapper>
         )

@@ -5,9 +5,10 @@ import { DropDownMenu } from '../uikit/DropDownMenu'
 import { Link } from 'react-router-dom'
 import { Header } from '../Panels/Header'
 import { ThemeContext } from '../../context/themeContext'
-import Logo from '../Icons/Logo/Logo'
 import { togglePanels } from '../../redux/reducers/panels.slice'
 import { useAppDispatch } from '../../redux/hooks/useAppDispatch'
+import { Logo } from '../Icons/Logo'
+import { Home } from '../Icons/Home'
 
 export const HeaderComponent = () => {
   const dispatch = useAppDispatch()
@@ -40,10 +41,15 @@ export const HeaderComponent = () => {
   )
 
   const logoContent = (
-    <Logo
-      size={32}
-      onClick={handleToggleMenu}
-    />
+    <>
+      <Logo
+        size={32}
+        onClick={handleToggleMenu}
+      />
+      <Link to="List">
+        <Home size={32} />
+      </Link>
+    </>
   )
 
   const person = 'Slava'
