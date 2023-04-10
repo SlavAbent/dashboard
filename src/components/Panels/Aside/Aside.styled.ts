@@ -6,12 +6,12 @@ export const AsideWrapper = styled.div`
     align-items: center;
     transition: .3s;
     padding-bottom: ${(props) => props.theme.padding.default};
-    box-shadow: ${props => props.theme.decoration.boxShadow.panel};
+    box-shadow: ${props => props.theme.decoration.boxShadow.panelWithoutTop};
     background-color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
     position: relative;
     z-index: 1000;
     &.min__menu {
-      width: 60px;
+      width: 40px;
     }
     &.full__menu {
       width: 300px;

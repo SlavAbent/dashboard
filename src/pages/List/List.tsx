@@ -1,6 +1,6 @@
 import React from 'react'
 import Aside from './components/Aside'
-import MainList from './components/MainList'
+import { MainList } from './components/MainList'
 
 import { TodoListWrapper } from './TodoList.styled'
 import { ListProvider } from '../../context/providers/listProvider'

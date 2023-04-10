@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { DiReact } from 'react-icons/di'
+import { FiBookOpen } from 'react-icons/fi'
 
-export const LogoIcon = styled(DiReact)`
+export const LogoIcon = styled(FiBookOpen)`
   display: flex;
   justify-content: center;
   align-items: center;

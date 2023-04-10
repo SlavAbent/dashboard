@@ -1,4 +1,3 @@
-import React from 'react'
 import  theme  from '../src/styles/themeMain'
 import { ThemeProvider } from 'styled-components'
 

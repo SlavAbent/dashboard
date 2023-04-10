@@ -10,8 +10,8 @@ export const MainListHeader = ({id, name, color, colorId}) => {
 
   return (
     <MainListHeaderContainer>
-      <MainListHeaderName key={`item__${id}_${colorId}_${color}`}>
-        <MainListHeaderText style={{color: color.hex}}>
+      <MainListHeaderName key={`item__${id}_${colorId}_${color}`} style={{backgroundColor: color.hex}}>
+        <MainListHeaderText>
           {name}
         </MainListHeaderText>
         <MainListHeaderIcon style={{color: color.hex}}>

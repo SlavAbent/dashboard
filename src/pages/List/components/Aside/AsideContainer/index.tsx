@@ -3,10 +3,9 @@ import { uniqueId } from 'lodash'
 import { Loader } from 'components/uikit/Loader'
 import { Badge } from 'components/uikit/Badge/Badge'
 import classNames from 'classnames'
-import { AsideRow, AsideRowText, AsideRowWrapper, AsideContain } from './index.styles'
+import { AsideRow, AsideRowText, AsideRowWrapper, AsideContain, AsideNavLink } from './index.styles'
 import { IAsideProps, IList } from '../../../model/index.model'
 import { Delete } from 'components/Icons/Delete/Delete'
-import { Link } from 'react-router-dom'
 import { notificationFabric } from '../../../../../components/uikit/Notification/notificationFabric'
 import { notificationEnum } from '../../../../../components/uikit/Notification/model/Notification.model'
 import { errorsList } from '../../../../../utils/errorsGenerator'
@@ -21,12 +20,15 @@ const AsideContainer: FC<IAsideProps> = ( props) => {
         const { id, name } = list.color
         const className = classNames('badge', { [`badge--${name}`]: name}, 'default')
         return (
-          <Link to={`${list.id}`} key={uniqueId('list_')}>
+          <AsideNavLink
+            to={`${list.id}`}
+            key={uniqueId('list_')}
+          >
              <AsideRow>
                <Badge
                  id={id}
                  className={className}
-                 size={16}
+                 size={12}
                  color="custom--badge"
                />
                <AsideRowText>{list?.name}</AsideRowText>
@@ -34,7 +36,7 @@ const AsideContainer: FC<IAsideProps> = ( props) => {
                  <Delete size={16} />
                </div>
              </AsideRow>
-          </Link>
+          </AsideNavLink>
         )
       })
     }

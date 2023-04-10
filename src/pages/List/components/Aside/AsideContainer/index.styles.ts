@@ -1,9 +1,12 @@
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 export const AsideRow = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: ${(p) => p.theme.margin.default};
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
 `
 
 export const AsideContain = styled.div`
@@ -20,4 +23,11 @@ export const AsideRowText = styled.p`
 `
 
 export const AsideRowWrapper = styled.div`
+`
+export const AsideNavLink = styled(NavLink)`
+  border-radius: ${props => props.theme.decoration.borderRadius.default};
+  &.active {
+    display: flex;
+    background-color: ${props => props.theme.colors.lighterMain};
+  }
 `

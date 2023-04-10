@@ -6,10 +6,12 @@ export const MainListHeaderContainer = styled.div`
 export const MainListHeaderName = styled.div`
   display: flex;
   align-items: center;
+  background-color: ${props => props.theme.colors.lighterMain};
+  padding: ${props => props.theme.padding.small};
+  border-radius: ${props => props.theme.decoration.borderRadius.default};
 `
 export const MainListHeaderIcon = styled.div`
   cursor: pointer;
-  //opacity: 0;
 `
 export const MainListHeaderText = styled.p`
   font-size: 32px;

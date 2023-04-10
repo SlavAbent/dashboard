@@ -8,6 +8,7 @@ export const BadgeContainer =  styled.span`
   height: 8px;
   margin-right: ${(p) => p.theme.margin.default};
   border-radius: 50%;
+  border: 1px solid ${(p) => p.theme.colors.mainColorDark};
   cursor: pointer;
 
   &.badge {

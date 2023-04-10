@@ -51,6 +51,7 @@ const theme = {
         light: '0px -18px 40px rgba(14, 51, 137, 0.02), 0px 18px 40px rgba(14, 51, 137, 0.06)',
         lighter: '0px -2px 4px rgba(14, 51, 137, 0.02), 0px 2px 4px rgba(14, 51, 137, 0.1)',
         panel: '0px -2px 4px rgba(14, 51, 137, 0.02), 0px 2px 4px rgba(14, 51, 137, 0.1)',
+        panelWithoutTop: '4px 4px 8px 0px rgba(14, 51, 137, 0.02)'
       },
       gradient: {
         default: 'linear-gradient(0deg, rgba(125,102,233,1) 0%, rgba(105,80,219,1) 100%)',
@@ -100,6 +101,7 @@ const theme = {
       purple: '#765FE2',
       brown: '#B49B84',
       wetAsphalt: '#798FBE',
+      mainColorDark: '#0E1011',
     },
   }
 

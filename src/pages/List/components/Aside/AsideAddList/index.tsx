@@ -114,7 +114,7 @@ export const AsideAddList = ({ handlerAddList }) => {
              <Badge
                key={uniqueId(`list_${index}`)}
                className={className}
-               size={16}
+               size={12}
                onClick={() => setSelectedColor(id)}
              >
                {item}

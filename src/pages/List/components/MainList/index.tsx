@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useMemo } from 'react'
 import { MainTodoList } from './components/MainTodoList'
 import { MainListHeader } from './components/MainListHeader'
-import { MainListWrapper } from './MainList.style'
+import { MainListWrapper, MainListContainer } from './MainList.style'
 import { ListContext } from '../../../../context/providers/listProvider'
 import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
@@ -10,7 +10,7 @@ import { tasks } from 'utils/urls'
 import { AddList } from './components/MainTodoList/AddList/AddList'
 import { IList } from '../../model/index.model'
 
-const MainList = () => {
+export const MainList = () => {
   const { response, setResponse } = useContext(ListContext)
   const location = useLocation();
 
@@ -99,7 +99,7 @@ const MainList = () => {
     const { id, name, color, colorId, tasks } = item
     return (
       <div key={`${name}${colorId}`}>
-        { location.pathname === `/List/${id}` ? (
+        { location.pathname === `/List/${id}` && (
           <>
             <MainListWrapper>
               <Link to={`Edit/${id}`}>
@@ -123,15 +123,13 @@ const MainList = () => {
             />
           </>
 
-        ) : null }
+        )}
       </div>
     )
   }), [response, location.pathname, onRemove, onEditTask, onComplete, onAddTask])
   return (
-    <div>
+    <MainListContainer>
       {data}
-    </div>
+    </MainListContainer>
   )
 }
-
-export default MainList

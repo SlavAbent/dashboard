@@ -9,14 +9,14 @@ export const LinksContainer = styled.div`
     margin-bottom: 50px;
 `;
 
-export const LinkAnchor = styled(NavLink)`
+export const LinkAnchor = styled(NavLink)<{showNameLink: boolean}>`
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: ${(p) => p.showNameLink ? 'flex-start' : 'center'};
     width: 100%;
     height: 100%;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: ${props => props.theme.padding.small};
+    padding-bottom: ${props => props.theme.padding.small};
     background-color: inherit;
     transition: .3s;
     text-decoration: none;
@@ -43,11 +43,9 @@ export const LinkAnchor = styled(NavLink)`
     }
 `;
 
-export const LinkAnchorTitle = styled.p`
+export const LinkAnchorTitle = styled.p<{showNameLink: boolean}>`
   margin-left: ${(p) => p.theme.padding.small};
   text-decoration: none;
-  display: none;
-  &.link__active {
-    display: block;
-  }
+  display: ${(p) => p.showNameLink ? 'block' : 'none'};
+  transition: .3s;
 `

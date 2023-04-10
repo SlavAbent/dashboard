@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import CustomCheckbox from '../components/CustomCheckbox'
 import { MainTodoListIcon, MainTodoListTitle } from '../components/styles/index.styled'
-import { Edit } from '../../../../../../../components/Icons/Edit/Edit'
-import { Delete } from '../../../../../../../components/Icons/Delete/Delete'
+import { Edit } from '../../../../../../../components/Icons/Edit'
+import { Delete } from '../../../../../../../components/Icons/Delete'
 
 interface ITaskProps {
   id: number
