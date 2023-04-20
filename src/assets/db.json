@@ -65,7 +65,7 @@
     {
       "listId": 1,
       "text": "test",
-      "completed": false,
+      "completed": true,
       "id": 6
     },
     {
@@ -109,6 +109,18 @@
       "text": "xcvxcvxcv",
       "completed": false,
       "id": 15
+    }
+  ],
+  "subtasks": [
+    {
+      "subtaskId": 1,
+      "text": "testtesttest",
+      "completed": false
+    },
+    {
+      "subtaskId": 2,
+      "text": "testtesttest",
+      "completed": false
     }
   ],
   "colors": [

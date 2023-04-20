@@ -4,7 +4,6 @@ import { MainListHeader } from './components/MainListHeader'
 import { MainListWrapper, MainListContainer } from './MainList.style'
 import { ListContext } from '../../../../context/providers/listProvider'
 import { useLocation } from 'react-router'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { tasks } from 'utils/urls'
 import { AddList } from './components/MainTodoList/AddList/AddList'
@@ -102,14 +101,14 @@ export const MainList = () => {
         { location.pathname === `/List/${id}` && (
           <>
             <MainListWrapper>
-              <Link to={`Edit/${id}`}>
+              {/*<Link to={`Edit/${id}`}>*/}
                 <MainListHeader
                   id={id}
                   name={name}
                   color={color}
                   colorId={colorId}
                 />
-              </Link>
+              {/*</Link>*/}
               <MainTodoList
                 tasks={tasks}
                 onRemove={onRemove}
@@ -122,7 +121,6 @@ export const MainList = () => {
               onAddTask={onAddTask}
             />
           </>
-
         )}
       </div>
     )

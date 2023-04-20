@@ -10,6 +10,7 @@ const DropDownMenuWrapper = styled.div`
   justify-content: center;
   position: absolute;
   top: 53px;
+  right: 0;
   z-index: 1000;
   background-color: ${props => props.theme.colors.lightTheme.mainColor};
   box-shadow: ${props => props.theme.decoration.boxShadow.panel};

@@ -1,4 +1,4 @@
-import { IoIosContact, IoIosKeypad } from 'react-icons/io'
+import { IoIosContact } from 'react-icons/io'
 import { BsChatDots, BsListCheck, BsMap } from 'react-icons/bs'
 import React from 'react'
 
@@ -10,14 +10,9 @@ interface LinkData {
 
 export const asideLinks: LinkData[] = [
   {
-    to: '/',
-    icon: <IoIosKeypad />,
-    name: 'Главная',
-  },
-  {
     to: 'List',
     icon: <BsListCheck />,
-    name: 'Дашборд',
+    name: 'Главная',
   },
   {
     to: 'Chat',

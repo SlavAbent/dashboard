@@ -91,7 +91,7 @@ const theme = {
       lighterMain: '#d5d5d5',
       disable: '#a6a6a6',
       lighterBlue: '#5DCBDF',
-      lighterGreen: '#6cda74',
+      lighterGreen: '#8BD394FF',
       lighterPink: '#F39FB9',
       lighterYellow: '#FCD68A',
       lighterRed: '#ED504E',
