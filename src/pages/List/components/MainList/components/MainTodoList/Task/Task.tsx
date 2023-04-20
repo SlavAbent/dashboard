@@ -42,14 +42,14 @@ const Task:FC<ITaskProps> = (
           {text}
         </MainTodoListTitle>
       </MainListLeftSide>
-      <MainTodoListRow>
-        <MainTodoListIcon onClick={() => onEdit(listId, { id, text } )}>
-          <Edit />
-        </MainTodoListIcon>
-        <MainTodoListIcon onClick={() => onRemove(listId, id)}>
-          <Delete />
-        </MainTodoListIcon>
-      </MainTodoListRow>
+        <MainTodoListRow>
+          <MainTodoListIcon onClick={() => onEdit(listId, { id, text } )}>
+            <Edit />
+          </MainTodoListIcon>
+          <MainTodoListIcon onClick={() => onRemove(listId, id)}>
+            <Delete />
+          </MainTodoListIcon>
+        </MainTodoListRow>
     </MainListRow>
   )
 }

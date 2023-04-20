@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { DropDownMenu } from 'components/uikit/DropDownMenu'
-import { useAxios } from '../../../../../hooks/useAxios'
-import { Badge } from '../../../../../components/uikit/Badge/Badge'
+import { useAxios } from '../../../../../../hooks/useAxios'
+import { Badge } from '../../../../../../components/uikit/Badge/Badge'
 import {
   AsidePopup,
   AsidePopupClose,
@@ -10,14 +10,14 @@ import {
   AddListDropDown,
 } from './index.styled'
 import classNames from 'classnames'
-import { Close } from '../../../../../components/Icons/Close/Close'
-import { Button } from '../../../../../components/uikit/Button'
-import { Loader } from '../../../../../components/uikit/Loader'
+import { Close } from '../../../../../../components/Icons/Close'
+import { Button } from '../../../../../../components/uikit/Button'
+import { Loader } from '../../../../../../components/uikit/Loader'
 import { uniqueId } from 'lodash'
-import { useAddedList } from '../../../../../hooks/useAddedList'
-import { baseURL } from '../../../../../utils/urls'
-import { notificationFabric } from '../../../../../components/uikit/Notification/notificationFabric'
-import { notificationEnum } from '../../../../../components/uikit/Notification/model/Notification.model'
+import { useAddedList } from '../../../../../../hooks/useAddedList'
+import { baseURL } from '../../../../../../utils/urls'
+import { notificationFabric } from '../../../../../../components/uikit/Notification/notificationFabric'
+import { notificationEnum } from '../../../../../../components/uikit/Notification/model/Notification.model'
 
 export interface IColor {
   hex: string

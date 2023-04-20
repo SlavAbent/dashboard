@@ -4,12 +4,12 @@ import { Loader } from 'components/uikit/Loader'
 import { Badge } from 'components/uikit/Badge/Badge'
 import classNames from 'classnames'
 import { AsideRow, AsideRowText, AsideRowWrapper, AsideContain, AsideNavLink } from './index.styles'
-import { IAsideProps, IList } from '../../../model/index.model'
+import { IAsideProps, IList } from '../../../../model/index.model'
 import { Delete } from 'components/Icons/Delete/Delete'
-import { notificationFabric } from '../../../../../components/uikit/Notification/notificationFabric'
-import { notificationEnum } from '../../../../../components/uikit/Notification/model/Notification.model'
-import { errorsList } from '../../../../../utils/errorsGenerator'
-import { NotificationIcon } from '../../../../../components/Icons/Notification'
+import { notificationFabric } from '../../../../../../components/uikit/Notification/notificationFabric'
+import { notificationEnum } from '../../../../../../components/uikit/Notification/model/Notification.model'
+import { errorsList } from '../../../../../../utils/errorsGenerator'
+import { NotificationIcon } from '../../../../../../components/Icons/Notification'
 
 const AsideContainer: FC<IAsideProps> = ( props) => {
   const { data, loading, error, handleAsideDeleteItem } = props;

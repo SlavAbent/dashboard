@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { FiBookOpen } from 'react-icons/fi'
+import { AiOutlineMenuUnfold } from 'react-icons/ai'
 
-export const LogoIcon = styled(FiBookOpen)`
+export const LogoIcon = styled(AiOutlineMenuUnfold)`
   display: flex;
   justify-content: center;
   align-items: center;

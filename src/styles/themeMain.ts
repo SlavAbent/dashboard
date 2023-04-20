@@ -84,6 +84,7 @@ const theme = {
       },
       lightTheme: {
         mainColor: '#ffffff',
+        mainColorOpacity: 'rgba(0, 0, 0, .05)',
         mainColored: '#dcdcdc',
         mainColorDarked: '#8c8c8c',
         mainColorDark: '#5e5e5e',

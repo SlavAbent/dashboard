@@ -30,4 +30,8 @@ export const AsideNavLink = styled(NavLink)`
     display: flex;
     background-color: ${props => props.theme.colors.lighterMain};
   }
+  div:hover {
+    background-color: ${props => props.theme.colors.lightTheme.mainColorOpacity};
+    border-radius: ${props => props.theme.decoration.borderRadius.default};
+  }
 `

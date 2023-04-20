@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 
 import { LinksContainer, LinkAnchor, LinkAnchorTitle } from './Links.style'
 import { ThemeContext } from '../context/themeContext'
@@ -9,7 +9,6 @@ import { asideLinks } from './asideLinks'
 export const Links = () => {
   const isOpenMenu = useAppSelector((state) => state.togglePanels.togglePanels)
   const { toggleTheme } = useContext(ThemeContext)
-  const [showNameLink, setShowNameLink] = useState(false)
   const className = ({isActive}) => isActive ? ' active' : ''
   const openMenu = isOpenMenu ? 'link__active' : ''
   return  (

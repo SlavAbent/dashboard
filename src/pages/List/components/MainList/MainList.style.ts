@@ -9,4 +9,5 @@ export const MainListWrapper = styled.div`
 
 export const MainListContainer = styled.div`
   width: 800px;
+  margin-left: ${(p) => p.theme.margin.large};
 `

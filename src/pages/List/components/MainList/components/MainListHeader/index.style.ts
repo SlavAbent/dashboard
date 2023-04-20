@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const MainListHeaderContainer = styled.div`
   width: 100%;
+  margin-bottom: ${(p) => p.theme.margin.large};
+  
 `
 export const MainListHeaderName = styled.div`
   display: flex;
