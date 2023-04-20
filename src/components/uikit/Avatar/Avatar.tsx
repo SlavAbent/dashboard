@@ -18,11 +18,11 @@ interface IAvatarProps {
     image?: string
     title?: string
     status?: statusType
-    onClick?: (event: React.MouseEvent) => void 
+    onClick?: (event: React.MouseEvent) => void
 }
 
 export const Avatar: React.FC<IAvatarProps> = (props) => {
-    const { size = 42, image, className, title, status, onClick } = props
+    const { size = 32, image, className, title, status, onClick } = props
 
     const sizeBox = `${size - 4}px`
     const sizeInner = `${size - 8}px`
@@ -34,31 +34,31 @@ export const Avatar: React.FC<IAvatarProps> = (props) => {
             className={className}
             onClick={onClick}
             style={{width: sizeInner, height: sizeInner}}>
-            <AvatarWrapper 
+            <AvatarWrapper
                 style={{width: sizeInner, height: sizeInner}}>
-                {status && <AvatarStatus className={status}/> }    
+                {status && <AvatarStatus className={status}/> }
                 {image && (
-                    <AvatarImage 
-                        src={image} 
-                        alt={title} 
-                        width={sizeInner} 
+                    <AvatarImage
+                        src={image}
+                        alt={title}
+                        width={sizeInner}
                         height={sizeInner}
                     />
                 )}
                 {title && (
-                    <AvatarFace 
+                    <AvatarFace
                         style={{fontSize: sizeTitle}}
                     >
                         {title}
                     </AvatarFace>
                 )}
-               
+
             </AvatarWrapper>
-            <AvatarBorder 
+            <AvatarBorder
                 style={{width: sizeWrapper, height: sizeWrapper}}>
                 <AvatarBorderBox style={{width: sizeBox, height: sizeBox}} />
             </AvatarBorder>
-            
+
         </AvatarButton>
     )
 }

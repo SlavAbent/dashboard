@@ -6,3 +6,8 @@ export const MainListWrapper = styled.div`
   margin: ${p => p.theme.margin.default} 0;
   padding: ${p => p.theme.padding.default} 0;
 `
+
+export const MainListContainer = styled.div`
+  width: 800px;
+  margin-left: ${(p) => p.theme.margin.large};
+`

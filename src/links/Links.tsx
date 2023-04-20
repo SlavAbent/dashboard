@@ -17,13 +17,14 @@ export const Links = () => {
         const { to, icon, name } = link
         return (
           <LinkAnchor
+            showNameLink={isOpenMenu}
             key={uniqueId('link_')}
             to={`${to}`}
             color={toggleTheme}
             className={`${className} ${openMenu}` }
           >
             <span className={openMenu}>{icon}</span>
-            <LinkAnchorTitle className={openMenu}>
+            <LinkAnchorTitle showNameLink={isOpenMenu}>
               {name}
             </LinkAnchorTitle>
           </LinkAnchor>

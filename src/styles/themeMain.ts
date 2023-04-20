@@ -51,6 +51,7 @@ const theme = {
         light: '0px -18px 40px rgba(14, 51, 137, 0.02), 0px 18px 40px rgba(14, 51, 137, 0.06)',
         lighter: '0px -2px 4px rgba(14, 51, 137, 0.02), 0px 2px 4px rgba(14, 51, 137, 0.1)',
         panel: '0px -2px 4px rgba(14, 51, 137, 0.02), 0px 2px 4px rgba(14, 51, 137, 0.1)',
+        panelWithoutTop: '4px 4px 8px 0px rgba(14, 51, 137, 0.02)'
       },
       gradient: {
         default: 'linear-gradient(0deg, rgba(125,102,233,1) 0%, rgba(105,80,219,1) 100%)',
@@ -83,6 +84,7 @@ const theme = {
       },
       lightTheme: {
         mainColor: '#ffffff',
+        mainColorOpacity: 'rgba(0, 0, 0, .05)',
         mainColored: '#dcdcdc',
         mainColorDarked: '#8c8c8c',
         mainColorDark: '#5e5e5e',
@@ -90,7 +92,7 @@ const theme = {
       lighterMain: '#d5d5d5',
       disable: '#a6a6a6',
       lighterBlue: '#5DCBDF',
-      lighterGreen: '#6cda74',
+      lighterGreen: '#8BD394FF',
       lighterPink: '#F39FB9',
       lighterYellow: '#FCD68A',
       lighterRed: '#ED504E',
@@ -100,6 +102,7 @@ const theme = {
       purple: '#765FE2',
       brown: '#B49B84',
       wetAsphalt: '#798FBE',
+      mainColorDark: '#0E1011',
     },
   }
 

@@ -24,6 +24,11 @@
       "id": 5,
       "name": "Личное",
       "colorId": 5
+    },
+    {
+      "name": "123",
+      "colorId": 4,
+      "id": 6
     }
   ],
   "tasks": [
@@ -37,7 +42,7 @@
       "id": 2,
       "listId": 2,
       "text": "Изучить паттерны проектирования",
-      "completed": false
+      "completed": true
     },
     {
       "id": 3,
@@ -49,18 +54,18 @@
       "id": 4,
       "listId": 2,
       "text": "Redux (redux-observable, redux-saga)",
-      "completed": false
+      "completed": true
     },
     {
       "listId": 2,
       "text": "123",
-      "completed": true,
+      "completed": false,
       "id": 5
     },
     {
       "listId": 1,
       "text": "test",
-      "completed": false,
+      "completed": true,
       "id": 6
     },
     {
@@ -104,6 +109,18 @@
       "text": "xcvxcvxcv",
       "completed": false,
       "id": 15
+    }
+  ],
+  "subtasks": [
+    {
+      "subtaskId": 1,
+      "text": "testtesttest",
+      "completed": false
+    },
+    {
+      "subtaskId": 2,
+      "text": "testtesttest",
+      "completed": false
     }
   ],
   "colors": [

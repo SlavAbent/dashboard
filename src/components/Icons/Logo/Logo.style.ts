@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { DiReact } from 'react-icons/di'
+import { AiOutlineMenuUnfold } from 'react-icons/ai'
 
-export const LogoIcon = styled(DiReact)`
+export const LogoIcon = styled(AiOutlineMenuUnfold)`
   display: flex;
   justify-content: center;
   align-items: center;

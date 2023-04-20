@@ -18,21 +18,25 @@ export const MainTodoList:FC<IMainTodoListProps> = ({ tasks, onRemove, onEdit, o
       {
         // @ts-ignore
         tasks && tasks.map((task: Tasks) => {
-        const { completed, id, listId, text} = task
-        return (
-         <MainTodoListWrapper key={uniqueId(`list_${listId}_${id}`)}>
-           <Task
-             id={id}
-             text={text}
-             listId={listId}
-             onEdit={onEdit}
-             onRemove={onRemove}
-             completed={completed}
-             onComplete={onComplete}
-
-           />
-         </MainTodoListWrapper>
-        )
+          const { completed, id, listId, text} = task
+          const className = `${completed ? 'completed' : ''}`
+          return (
+           <MainTodoListWrapper
+             key={uniqueId(`list_${listId}_${id}`)}
+             className={className}
+           >
+             <Task
+               id={id}
+               text={text}
+               listId={listId}
+               onEdit={onEdit}
+               onRemove={onRemove}
+               completed={completed}
+               onComplete={onComplete}
+               className={className}
+             />
+           </MainTodoListWrapper>
+          )
       })}
     </>
   )

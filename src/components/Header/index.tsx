@@ -19,7 +19,7 @@ export const HeaderComponent = () => {
 
   const avatarContent = (
     <Avatar
-      size={42}
+      size={32}
       image={avatar}
       onClick={avatarDropDownMenu}
     />
@@ -43,11 +43,11 @@ export const HeaderComponent = () => {
   const logoContent = (
     <>
       <Logo
-        size={32}
+        size={24}
         onClick={handleToggleMenu}
       />
       <Link to="List">
-        <Home size={32} />
+        <Home size={24} />
       </Link>
     </>
   )

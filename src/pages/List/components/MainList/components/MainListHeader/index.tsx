@@ -1,21 +1,48 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import {
   MainListHeaderContainer,
   MainListHeaderIcon,
   MainListHeaderName,
   MainListHeaderText
 } from './index.style'
-import { Edit } from 'components/Icons/Edit/Edit'
+import { Dots } from 'components/Icons/Dots/Dots'
+import { DropDownMenu } from '../../../../../../components/uikit/DropDownMenu'
 export const MainListHeader = ({id, name, color, colorId}) => {
+  const [isOpenDropDown, setIsOpenDropDown] = useState(false)
+
+  const handleIsOpenDropDown = useCallback(() => {
+    setIsOpenDropDown(prev => !prev)
+  }, [])
+
+  const content = (
+    <DropDownMenu
+      width={104}
+      activeDropDown={isOpenDropDown} // refactor!
+      // direction={'topToLeft'}
+      // transitioned={true}
+    >
+      <p>редактировать папку</p>
+      <p>удалить папку</p>
+      <p>добавить раздел</p>
+      <p>показать выполненные</p>
+      <p></p>
+    </DropDownMenu>
+  )
 
   return (
     <MainListHeaderContainer>
-      <MainListHeaderName key={`item__${id}_${colorId}_${color}`}>
-        <MainListHeaderText style={{color: color.hex}}>
+      <MainListHeaderName
+        key={`item__${id}_${colorId}_${color}`}
+        style={{backgroundColor: color.hex}}
+      >
+        <MainListHeaderText>
           {name}
         </MainListHeaderText>
         <MainListHeaderIcon style={{color: color.hex}}>
-          <Edit />
+          <Dots
+            onClick={handleIsOpenDropDown}
+          />
+          {isOpenDropDown && <>{ content }</> }
         </MainListHeaderIcon>
       </MainListHeaderName>
     </MainListHeaderContainer>

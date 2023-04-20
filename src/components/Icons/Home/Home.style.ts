@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { AiOutlineHome } from 'react-icons/ai'
+import { RiHome3Line } from 'react-icons/ri'
 
-export const HomeIcon = styled(AiOutlineHome)`
+export const HomeIcon = styled(RiHome3Line)`
   display: flex;
   justify-content: center;
   align-items: center;

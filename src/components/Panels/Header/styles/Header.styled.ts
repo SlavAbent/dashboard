@@ -6,7 +6,7 @@ export const HeaderComponent = styled.div`
     justify-content: flex-end;
     height: 25px;
     transition: .3s;
-    padding: ${props => props.theme.padding.default};
+    padding: ${props => props.theme.padding.small};
     box-shadow: ${props => props.theme.decoration.boxShadow.panel};
     background-color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
 `;

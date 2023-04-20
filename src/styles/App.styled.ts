@@ -8,7 +8,7 @@ export const AppWrapper = styled.div`
     height: 100vh;
     opacity: 1;
     transition: .3s;
-    background-color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColored :  props.theme.colors?.darkTheme.mainColored};
+    background-color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor :  props.theme.colors?.darkTheme.mainColored};
 
     p {
       font-size: 14px;
