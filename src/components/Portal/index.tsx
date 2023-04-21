@@ -26,7 +26,7 @@ export const Portal = ({ children, portalId = 'react-portal-wrapper' }) => {
   return createPortal(children, wrapElement)
 }
 
-function createWrapperPortal() {
+function createWrapperPortal(portalId) {
   const wrapperElement = document.createElement('div')
   document.body.appendChild(wrapperElement)
   return wrapperElement
