@@ -1,3 +1,4 @@
+import React from 'react'
 import {
     AvatarBorder,
     AvatarBorderBox,
@@ -6,23 +7,21 @@ import {
     AvatarImage,
     AvatarStatus,
     AvatarWrapper
-} from './Avatar.style'
+} from './styles/Avatar.style'
 
-import React from 'react'
+import { IAvatarProps } from './model/Avatar.model'
+import defaultAvatar from  '../../../assets/avatar.jpeg'
 
-export type statusType = 'success' | 'warning' | 'error'
-
-interface IAvatarProps {
-    className?: string
-    size?: number
-    image?: string
-    title?: string
-    status?: statusType
-    onClick?: (event: React.MouseEvent) => void
-}
 
 export const Avatar: React.FC<IAvatarProps> = (props) => {
-    const { size = 32, image, className, title, status, onClick } = props
+    const {
+      size = 32,
+      image = defaultAvatar as string,
+      className,
+      title,
+      status = 'success',
+      onClick
+    } = props
 
     const sizeBox = `${size - 4}px`
     const sizeInner = `${size - 8}px`
@@ -58,7 +57,6 @@ export const Avatar: React.FC<IAvatarProps> = (props) => {
                 style={{width: sizeWrapper, height: sizeWrapper}}>
                 <AvatarBorderBox style={{width: sizeBox, height: sizeBox}} />
             </AvatarBorder>
-
         </AvatarButton>
     )
 }

@@ -5,7 +5,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { useAppDispatch } from '../../../../redux/hooks/useAppDispatch'
 import { ThemeContext } from '../../../../context/themeContext'
 import { togglePanels } from '../../../../redux/reducers/panels.slice'
-import { Avatar } from '../../Avatar'
+import { Avatar } from '../../../../stories/UI/Avatar'
 import defaultAvatar from '../../../../assets/avatar.jpeg'
 import { DropDownMenu } from '../../DropDownMenu'
 import { Link } from 'react-router-dom'
@@ -70,7 +70,7 @@ export const Header:FC<IHeaderComponent> = (props) => {
 
   return (
     <HeaderComponent color={toggleTheme ?? color}>
-      {logo && logoContent}
+      { logo && logoContent }
       <HeaderTitle>{title && `Welcome back, ${person}` }</HeaderTitle>
       { date && <TimeDate />}
       { search && <HeaderSearch><AiOutlineSearch/></HeaderSearch> }
