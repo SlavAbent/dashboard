@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { DropDownMenu } from 'components/uikit/DropDownMenu'
 import { useAxios } from '../../../../../../hooks/useAxios'
-import { Badge } from '../../../../../../components/uikit/Badge/Badge'
+import { Badge } from '../../../../../../stories/UI/Badge/Badge'
 import {
   AsidePopup,
   AsidePopupClose,

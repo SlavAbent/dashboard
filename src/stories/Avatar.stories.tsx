@@ -3,7 +3,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Avatar } from './UI/Avatar';
 import React from 'react';
 
-
 export default {
   title: 'Avatar',
   component: Avatar,
