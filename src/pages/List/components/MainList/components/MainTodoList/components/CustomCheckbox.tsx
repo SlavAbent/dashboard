@@ -5,9 +5,9 @@ import { Check } from 'components/Icons/Check/Check'
 interface ICustomCheckbox {
   id: number
   completed: boolean | undefined
-
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
+
 const CustomCheckbox:FC<ICustomCheckbox> = ({
     onChange,
     completed,

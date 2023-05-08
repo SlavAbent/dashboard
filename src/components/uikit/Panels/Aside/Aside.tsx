@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { Links } from '../../../links/Links'
-import ThemeContainer from '../../ThemeContainer/ThemeContainer'
+import { Links } from '../../../../links/Links'
+import ThemeContainer from '../../../ThemeContainer/ThemeContainer'
 
 import { AsideWrapper, AsideGrowedContainer } from './Aside.styled'
-import { ThemeContext } from '../../../context/themeContext'
-import { useAppSelector } from '../../../redux/hooks/useAppSelector'
+import { ThemeContext } from '../../../../context/themeContext'
+import { useAppSelector } from '../../../../redux/hooks/useAppSelector'
 
 export const Aside = () => {
   const isOpenMenu = useAppSelector((state) => state.togglePanels.togglePanels);

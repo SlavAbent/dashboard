@@ -11,8 +11,8 @@ interface IMainTodoListProps {
   onComplete: (listId: number, id: number, event: any) => void
 }
 
-export const MainTodoList:FC<IMainTodoListProps> = ({ tasks, onRemove, onEdit, onComplete }) => {
-
+export const MainTodoList:FC<IMainTodoListProps> = (props) => {
+  const { tasks, onRemove, onEdit, onComplete } = props
   return (
     <>
       {

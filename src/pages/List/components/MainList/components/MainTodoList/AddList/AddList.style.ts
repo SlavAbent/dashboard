@@ -25,5 +25,8 @@ export const AddListIcon = styled.div`
 export const AddListText = styled.p``
 
 export const AddListForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   
 `
