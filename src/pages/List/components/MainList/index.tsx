@@ -8,13 +8,19 @@ import axios from 'axios'
 import { tasks } from 'utils/urls'
 import { AddList } from './components/MainTodoList/AddList/AddList'
 import { IList } from '../../model/index.model'
+import { Modal } from '../../../../components/uikit/Modal'
 
 export const MainList = () => {
   const { response, setResponse } = useContext(ListContext)
   const location = useLocation();
 
   const onEditTask = useCallback((listId, taskObj) => {
-    const newTaskText = window.prompt('Текст задачи', taskObj.text);
+    const newTaskText = (
+      <Modal
+
+      />
+    )
+    // window.prompt('Текст задачи', taskObj.text);
 
     if (!newTaskText) {
       return;

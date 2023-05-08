@@ -65,13 +65,13 @@
     {
       "listId": 1,
       "text": "test",
-      "completed": true,
+      "completed": false,
       "id": 6
     },
     {
       "listId": 1,
       "text": "qweqwe",
-      "completed": true,
+      "completed": false,
       "id": 7
     },
     {

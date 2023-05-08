@@ -3,13 +3,6 @@ import styled from 'styled-components'
 export const MainTodoListWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-top:  ${(p) => p.theme.margin.small};
-  margin-bottom:  ${(p) => p.theme.margin.small};
-  & .completed {
-    background-color: ${props => props.theme.colors.lighterGreen};
-    border-radius: ${props => props.theme.decoration.borderRadius.default};
-    border-bottom: 1px solid ${props => props.theme.colors.lighterGreen};
-  }
 `
 
 export const MainTodoListTitle = styled.p`
@@ -33,7 +26,12 @@ export const MainListRow = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: ${props => props.theme.padding.small};
-  border-bottom: 1px solid ${props => props.theme.colors.lighterMain};
+  border-bottom: 1px solid ${props => props.theme.colors.lightTheme.mainColorOpacity};
+  &:hover {
+    background-color: ${props => props.theme.colors.lightTheme.mainColorOpacity};
+    border-radius: ${props => props.theme.decoration.borderRadius.default};
+    border-bottom: 1px solid ${props => props.theme.colors.lightTheme.mainColorOpacity};
+  }
 `
 
 export const MainListLeftSide = styled.div`

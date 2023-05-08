@@ -2,13 +2,13 @@ import { Theme } from './styles/Theme'
 import ThemeProvider from './context/providers/themeProvider'
 import { AppMainFields, AppWrapper, AsideWrapper, AsideWrap } from './styles/App.styled'
 import { HashRouter } from 'react-router-dom'
-import { Aside } from './components/Panels/Aside/Aside'
-import { HeaderComponent } from './components/Header'
+import { Aside } from './components/uikit/Panels/Aside/Aside'
 import { RoutesWrapper } from './routes/RoutesWrapper'
 import { Provider } from 'react-redux'
 import React, { useContext } from 'react'
 import { ThemeContext } from './context/themeContext'
 import store from './redux/store'
+import { Header } from './components/uikit/Panels/Header'
 
 const MainComponent = () => {
   const { toggleTheme } = useContext(ThemeContext)
@@ -17,7 +17,14 @@ const MainComponent = () => {
       <HashRouter>
         <AppMainFields>
           <AsideWrapper>
-            <HeaderComponent />
+            <Header
+              avatar
+              search
+              content
+              logo
+              title
+              date
+            />
             <AsideWrap>
               <Aside/>
               <RoutesWrapper/>

@@ -12,7 +12,7 @@ import {
 } from './AddList.style'
 import axios from 'axios'
 import { tasks } from '../../../../../../../utils/urls'
-import { Modal } from '../../../../../../../components/Modal'
+import { Modal } from '../../../../../../../components/uikit/Modal'
 import { Close } from '../../../../../../../components/Icons/Close'
 
 interface IAddListProps {

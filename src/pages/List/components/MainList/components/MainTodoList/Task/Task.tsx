@@ -15,8 +15,8 @@ interface ITaskProps {
   className: string
 }
 
-const Task:FC<ITaskProps> = (
-  {
+const Task:FC<ITaskProps> = (props) => {
+  const {
     id,
     text,
     listId,
@@ -25,7 +25,8 @@ const Task:FC<ITaskProps> = (
     completed,
     onComplete,
     className,
-  }) => {
+  } = props
+
   const onChangeTask = (e) => {
     onComplete(listId, id, e.target.checked);
   }
@@ -42,14 +43,14 @@ const Task:FC<ITaskProps> = (
           {text}
         </MainTodoListTitle>
       </MainListLeftSide>
-        <MainTodoListRow>
-          <MainTodoListIcon onClick={() => onEdit(listId, { id, text } )}>
-            <Edit />
-          </MainTodoListIcon>
-          <MainTodoListIcon onClick={() => onRemove(listId, id)}>
-            <Delete />
-          </MainTodoListIcon>
-        </MainTodoListRow>
+      <MainTodoListRow>
+        <MainTodoListIcon onClick={() => onEdit(listId, { id, text } )}>
+          <Edit />
+        </MainTodoListIcon>
+        <MainTodoListIcon onClick={() => onRemove(listId, id)}>
+          <Delete />
+        </MainTodoListIcon>
+      </MainTodoListRow>
     </MainListRow>
   )
 }
