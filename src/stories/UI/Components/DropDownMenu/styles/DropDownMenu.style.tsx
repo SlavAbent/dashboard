@@ -10,7 +10,6 @@ const DropDownMenuWrapper = styled.div`
   justify-content: center;
   position: absolute;
   top: 53px;
-  right: 0;
   z-index: 1000;
   background-color: ${props => props.theme.colors.lightTheme.mainColor};
   box-shadow: ${props => props.theme.decoration.boxShadow.panel};
@@ -38,43 +37,26 @@ const DropDownMenuWrapper = styled.div`
       opacity: 0;
       visibility: hidden;
   }
-  
-  &.bottomToLeft {
-    top: auto;
-    right: auto;
-    left: 53px;
-    bottom: 53px;
-    opacity: 1;
-    visibility: visible;
-  }
-  &.bottomToRight {
-    top: auto;
-    left: auto;
-    right: 53px;
-    bottom: 53px;
-    opacity: 1;
-    visibility: visible;
-  }
+
   &.topToLeft {
     left: 53px;
-    top: 53px;
-    bottom: auto;
-    right: auto;
-    opacity: 1;
-    visibility: visible;
+    bottom: 53px;
   }
   &.topToRight {
     right: 53px;
-    top: 53px;
-    bottom: auto;
-    left: auto;
-    opacity: 1;
-    visibility: visible;
+    bottom: 53px;
+  }
+  &.bottomToLeft {
+    left: 5px;
+    top: 40px;
+  }
+  &.bottomToRight {
+    right: 5px;
+    top: 40px;
   }
 
   &.transitioned {
       transition: .1s ease-in-out;
   }
 `
-
 export { DropDownMenuWrapper }

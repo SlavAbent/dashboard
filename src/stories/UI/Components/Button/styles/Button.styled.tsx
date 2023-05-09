@@ -6,6 +6,7 @@ export const ButtonComponent = styled.button `
   cursor: pointer;
   border: none;
   border-radius: ${p => p.theme.decoration.borderRadius.default};
+  position: relative;
   &.small {
     border-radius: ${p => p.theme.decoration.borderRadius.small};
   }

@@ -30,3 +30,7 @@ export const HeaderSearch = styled.div`
     height: 100%;
   }
 `;
+
+export const CustomAvatarHeader = styled.div`
+  position: relative;
+`

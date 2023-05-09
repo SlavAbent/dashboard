@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import { DropDownMenu } from 'components/uikit/DropDownMenu'
+import { DropDownMenu } from 'stories/UI/Components/DropDownMenu'
 import { useAxios } from '../../../../../../hooks/useAxios'
 import { Badge } from '../../../../../../stories/UI/Components/Badge'
 import {

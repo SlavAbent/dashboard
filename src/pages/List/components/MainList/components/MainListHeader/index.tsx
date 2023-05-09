@@ -6,7 +6,7 @@ import {
   MainListHeaderText
 } from './index.style'
 import { Dots } from 'components/Icons/Dots/Dots'
-import { DropDownMenu } from '../../../../../../components/uikit/DropDownMenu'
+import { DropDownMenu } from '../../../../../../stories/UI/Components/DropDownMenu'
 export const MainListHeader = ({id, name, color, colorId}) => {
   const [isOpenDropDown, setIsOpenDropDown] = useState(false)
 
