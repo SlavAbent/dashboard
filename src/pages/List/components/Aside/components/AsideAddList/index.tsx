@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { DropDownMenu } from 'components/uikit/DropDownMenu'
 import { useAxios } from '../../../../../../hooks/useAxios'
-import { Badge } from '../../../../../../stories/UI/Badge'
+import { Badge } from '../../../../../../stories/UI/Components/Badge'
 import {
   AsidePopup,
   AsidePopupClose,
@@ -11,8 +11,8 @@ import {
 } from './index.styled'
 import classNames from 'classnames'
 import { Close } from '../../../../../../components/Icons/Close'
-import { Button } from '../../../../../../components/uikit/Button'
-import { Loader } from '../../../../../../components/uikit/Loader'
+import { Button } from '../../../../../../stories/UI/Components/Button'
+import { Loader } from '../../../../../../stories/UI/Components/Loader'
 import { uniqueId } from 'lodash'
 import { useAddedList } from '../../../../../../hooks/useAddedList'
 import { baseURL } from '../../../../../../utils/urls'

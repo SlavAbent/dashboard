@@ -14,7 +14,7 @@ export const Badge: FC<IBadge> = (
 
   const style = useMemo(() => {
     return { width: sizeBadge, height: sizeBadge }
-  }, []);
+  }, [sizeBadge]);
 
   return (
     <BadgeContainer

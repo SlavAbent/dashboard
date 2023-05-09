@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useState } from 'react'
 import { Plus } from 'components/Icons/Plus/Plus'
-import { Button } from 'components/uikit/Button'
+import { Button } from 'stories/UI/Components/Button'
 import { IList } from '../../../../../model/index.model'
 
 import {

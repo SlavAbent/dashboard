@@ -10,7 +10,7 @@ import {
 } from './styles/Avatar.style'
 
 import { IAvatarProps } from './model/Avatar.model'
-import defaultAvatar from  '../../../assets/avatar.jpeg'
+import defaultAvatar from '../../../../assets/avatar.jpeg'
 
 
 export const Avatar: React.FC<IAvatarProps> = (props) => {

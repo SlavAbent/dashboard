@@ -1,11 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Badge } from './UI/Badge';
+import { Badge } from '../UI/Components/Badge';
 import React from 'react';
 
 
 export default {
-  title: 'Badge',
+  title: 'Components/Badge',
   component: Badge,
   argTypes: {
     color: {
@@ -22,4 +22,5 @@ export const Default = Template.bind({})
 Default.args = {
   className: 'badge',
   size: 8,
+  color: '--black'
 }
