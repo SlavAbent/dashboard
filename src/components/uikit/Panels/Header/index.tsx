@@ -46,7 +46,7 @@ export const Header:FC<IHeaderComponent> = (props) => {
       width={104}
       activeDropDown={activeDropDown} // refactor!
       direction={'bottomToRight'}
-      transitioned={true}
+      // transitioned={true}
       header={'123'}
     >
       <>

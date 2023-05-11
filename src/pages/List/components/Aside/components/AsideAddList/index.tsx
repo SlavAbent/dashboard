@@ -157,7 +157,7 @@ export const AsideAddList = ({ handlerAddList }) => {
         <DropDownMenu
           width={200}
           direction={'bottomToLeft'}
-          transitioned={true}
+          // transitioned={true}
           children={AsideDropDownContent}
           footer={AsideDropDownFooter}
         />
