@@ -64,6 +64,7 @@ const theme = {
     padding: {
       large: '40px',
       default: '16px',
+      miniSmall: '12px',
       small: '8px',
     },
     margin: {

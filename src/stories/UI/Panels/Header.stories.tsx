@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Header } from '../../components/uikit/Panels/Header'
+import { Header } from '../../../components/uikit/Panels/Header'
 import React from 'react';
 
 export default {
