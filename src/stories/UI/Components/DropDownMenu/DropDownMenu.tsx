@@ -5,6 +5,7 @@ import { IDropDownMenuProps } from './model/DropDownMenu.model'
 
 export const DropDownMenu: React.FC<IDropDownMenuProps> = (props) => {
     const {
+        visibleDropdownMenu = false,
         activeDropDown,
         width = 104,
         children,
@@ -14,7 +15,7 @@ export const DropDownMenu: React.FC<IDropDownMenuProps> = (props) => {
         isHeader,
         isFooter,
     } = props
-    const activeDropMenu = activeDropDown ? 'open' : 'close' // if else from direction,transitioned and actived
+    const activeDropMenu = visibleDropdownMenu  ? 'open' : 'close' // if else from direction,transitioned and actived
 
     const defaultChildren = 'Lorem ipsum'
 

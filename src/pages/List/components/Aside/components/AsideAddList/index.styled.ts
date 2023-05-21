@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 const styledButton = css`
     padding: ${(props) => props.theme.padding.small};
-    background-color: ${(props) => props.theme.colors.darkTheme.grey_dark};
+    background-color: ${(props) => props.theme.colors.lightTheme.mainColorDarked};
     color: ${(props) => props.theme.colors.lightTheme.mainColor};
     border-radius: ${(props) => props.theme.decoration.borderRadius.default};
     border: none;
@@ -37,6 +37,7 @@ export const AsidePopupColors = styled.div`
 `
 
 export const AddListDropDown = styled.div`
+  position: relative;
   .button-dropDown {
     ${styledButton}
   }

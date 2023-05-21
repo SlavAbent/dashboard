@@ -4,13 +4,18 @@ import { IBadge } from './model/Badge.model'
 
 export const Badge: FC<IBadge> = (
   {
+    id,
     color,
     size = 8,
     onClick ,
-    className
+    className,
+    selectedColor
   }
 ) => {
   const sizeBadge = `${size}px`
+
+  // TODO add custom checkbox
+  // const activeBadge = `${selectedColor === id ? 'active' : 'default'}`
 
   const style = useMemo(() => {
     return { width: sizeBadge, height: sizeBadge }
@@ -18,7 +23,7 @@ export const Badge: FC<IBadge> = (
 
   return (
     <BadgeContainer
-      className={`${className}${color}` }
+      className={`${className}` }
       style={style}
       onClick={onClick}
     />

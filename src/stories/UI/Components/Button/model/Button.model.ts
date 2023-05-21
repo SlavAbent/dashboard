@@ -7,9 +7,10 @@ export enum ButtonSizeEnum {
   small = 'small',
 }
 export interface IButtonProps extends DOMAttributes<HTMLButtonElement> {
+  text?: string
   className?: string;
   isDisabled?: boolean;
   type?: ButtonType;
   onClick?: (event: React.MouseEvent) => void
-  size?: ButtonSizeEnum
+  size?: ButtonSizeEnum | string
 }
