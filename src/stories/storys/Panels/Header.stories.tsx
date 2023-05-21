@@ -22,10 +22,10 @@ export const Default = Template.bind({})
 
 Default.args = {
   color: 'light',
-  title: false,
-  date: false,
-  logo: false,
-  search: false,
-  avatar: false,
-  content: false,
+  title: true,
+  date: true,
+  logo: true,
+  search: true,
+  avatar: true,
+  content: true,
 }

@@ -10,7 +10,7 @@ import { Avatar } from '../../Components/Avatar'
 import defaultAvatar from '../../../../assets/avatar.jpeg'
 import { DropDownMenu } from '../../Components/DropDownMenu'
 import { Logo } from '../../../../components/Icons/Logo'
-import { TimeDate } from '../../../../components/uikit/Time/Time'
+import { Time } from '../../Components/Time'
 
 const Header:FC<HeaderProps> = ({
   color,
@@ -61,7 +61,9 @@ const Header:FC<HeaderProps> = ({
     <HeaderComponent color={color}>
       { logo && logoContent }
       <HeaderTitle>{title && `Welcome back, ${personName}` }</HeaderTitle>
-      { date && <TimeDate /> }
+      { date && <Time
+        showTime showIcon
+      /> }
       { search && <HeaderSearch><AiOutlineSearch/></HeaderSearch> }
       <CustomAvatarHeader>
         { avatar && avatarContent }
