@@ -2,8 +2,6 @@ import { Theme } from './styles/Theme'
 import ThemeProvider from './context/providers/themeProvider'
 import { AppMainFields, AppWrapper, AsideWrapper, AsideWrap } from './styles/App.styled'
 import { HashRouter, Link } from 'react-router-dom'
-import { Aside } from './components/uikit/Panels/Aside/Aside'
-import { RoutesWrapper } from './routes/RoutesWrapper'
 import { Provider } from 'react-redux'
 import React, { useContext } from 'react'
 import { ThemeContext } from './context/themeContext'
@@ -12,11 +10,17 @@ import Header from './stories/UI/Panels/Header'
 import { Home } from './components/Icons/Home'
 import { useAppDispatch } from './redux/hooks/useAppDispatch'
 import { togglePanels } from './redux/reducers/panels.slice'
+import Aside from './stories/UI/Panels/Aside'
+import { RoutesWrapper } from './routes/RoutesWrapper'
+import { useAppSelector } from './redux/hooks/useAppSelector'
+import { Links } from './links/Links'
 
 const MainComponent = () => {
   const { toggleTheme } = useContext(ThemeContext)
 
   const dispatch = useAppDispatch()
+  const isOpenMenu = useAppSelector((state) => state.togglePanels.togglePanels);
+  const className = `${isOpenMenu ? ' full__menu' : ' min__menu'}`
 
   const handleToggleMenu = () => dispatch(togglePanels())
 
@@ -38,6 +42,10 @@ const MainComponent = () => {
     </>
   )
 
+  const asideLinksContent = (
+    <Links />
+  )
+
   return (
     <AppWrapper color={toggleTheme}>
       <HashRouter>
@@ -56,7 +64,11 @@ const MainComponent = () => {
               handleToggleMenu={handleToggleMenu}
            />
             <AsideWrap>
-              <Aside/>
+              <Aside
+                className={className}
+                color={toggleTheme}
+                asideLinksContent={asideLinksContent}
+              />
               <RoutesWrapper/>
             </AsideWrap>
           </AsideWrapper>
