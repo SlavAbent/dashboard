@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 
-export const HeaderComponent = styled.div`
+export const HeaderComponent = styled.div<{color: string | undefined}>`
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -8,7 +8,23 @@ export const HeaderComponent = styled.div`
     transition: .3s;
     padding: ${props => props.theme.padding.small};
     box-shadow: ${props => props.theme.decoration.boxShadow.panel};
-    background-color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
+    background-color: ${(props) => props.color === 'light' 
+      ? props.theme.colors?.lightTheme.mainColor 
+      : props.theme.colors?.darkTheme.mainColor
+    };
+
+    svg {
+        color: ${(props) => props.color === 'light'
+          ? props.theme.colors?.darkTheme.mainColor
+          : props.theme.colors?.lightTheme.mainColor
+        }
+    }
+    p {
+        color: ${(props) => props.color === 'light'
+          ? props.theme.colors?.darkTheme.mainColor
+          : props.theme.colors?.lightTheme.mainColor
+        }
+    }
 `;
 
 export const HeaderTitle = styled.p`
@@ -34,3 +50,9 @@ export const HeaderSearch = styled.div`
 export const CustomAvatarHeader = styled.div`
   position: relative;
 `
+
+export const HeaderTogglerMenu = styled.div``
+export const HeaderDate = styled.div``
+export const HeaderSearchComponent = styled.div``
+export const HeaderAvatar = styled.div``
+export const HeaderContent = styled.div``

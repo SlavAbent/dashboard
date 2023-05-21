@@ -5,6 +5,7 @@ import { IDropDownMenuProps } from './model/DropDownMenu.model'
 
 export const DropDownMenu: React.FC<IDropDownMenuProps> = (props) => {
     const {
+        color = 'light',
         visibleDropdownMenu = false,
         activeDropDown,
         width = 104,
@@ -22,9 +23,9 @@ export const DropDownMenu: React.FC<IDropDownMenuProps> = (props) => {
     return (
       <>
           { activeDropDown && (
-            <DropDownMenuWrapper className={`${direction} ${activeDropMenu} ${width}px`}>
+            <DropDownMenuWrapper className={`${direction} ${activeDropMenu} ${width}px`} color={color}>
                 <div>{isHeader ?? header}</div>
-                {children ?? defaultChildren}
+                <p>{children ?? defaultChildren}</p>
                 <div>{isFooter ?? footer}</div>
             </DropDownMenuWrapper>
           ) }

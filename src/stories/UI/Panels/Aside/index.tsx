@@ -4,7 +4,7 @@ import ThemeContainer from '../../../../components/ThemeContainer/ThemeContainer
 import { AsideGrowedContainer, AsideWrapper } from './styles/Aside.styled'
 
 const Aside:FC<AsideProps> = ({
-  color,
+  color = 'light',
   className,
   asideLinksContent,
 }) => {

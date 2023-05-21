@@ -6,7 +6,6 @@ import { Provider } from 'react-redux'
 import React, { useContext } from 'react'
 import { ThemeContext } from './context/themeContext'
 import store from './redux/store'
-import Header from './stories/UI/Panels/Header'
 import { Home } from './components/Icons/Home'
 import { useAppDispatch } from './redux/hooks/useAppDispatch'
 import { togglePanels } from './redux/reducers/panels.slice'
@@ -14,17 +13,17 @@ import Aside from './stories/UI/Panels/Aside'
 import { RoutesWrapper } from './routes/RoutesWrapper'
 import { useAppSelector } from './redux/hooks/useAppSelector'
 import { Links } from './links/Links'
+import Header from './stories/UI/Panels/Header'
 
 const MainComponent = () => {
   const { toggleTheme } = useContext(ThemeContext)
-
   const dispatch = useAppDispatch()
   const isOpenMenu = useAppSelector((state) => state.togglePanels.togglePanels);
   const className = `${isOpenMenu ? ' full__menu' : ' min__menu'}`
-
   const handleToggleMenu = () => dispatch(togglePanels())
 
   const person = 'Slava'
+
 
   const logoContentBody = (
     <>

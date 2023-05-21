@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react'
 import {
-  CustomAvatarHeader, HeaderComponent,
-  HeaderSearch,
-  HeaderTitle
+  CustomAvatarHeader, HeaderAvatar, HeaderComponent, HeaderContent, HeaderDate,
+  HeaderSearch, HeaderSearchComponent,
+  HeaderTitle, HeaderTogglerMenu
 } from './styles/Header.styled'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { HeaderProps } from './model/Header.model'
@@ -13,18 +13,18 @@ import { Logo } from '../../../../components/Icons/Logo'
 import { Time } from '../../Components/Time'
 
 const Header:FC<HeaderProps> = ({
-  color,
-  title,
-  logo,
-  date,
-  search,
-  avatar,
-  content,
-  personName,
-  logoContentBody,
-  headerContentBody,
-  handleToggleMenu,
-}) => {
+    color,
+    title,
+    logo,
+    date,
+    search,
+    avatar,
+    content,
+    personName = 'Slava',
+    logoContentBody,
+    headerContentBody,
+    handleToggleMenu,
+  }) => {
   const [activeDropDown, setActiveDropDown] = useState(false)
 
   const avatarContent = (
@@ -37,10 +37,11 @@ const Header:FC<HeaderProps> = ({
 
   const headerContent = (
     <DropDownMenu
+      color={color}
       width={104}
       activeDropDown={activeDropDown}
       direction={'bottomToRight'}
-      header={'header'}
+      header={<></>}
     >
       { headerContentBody }
     </DropDownMenu>
@@ -58,15 +59,19 @@ const Header:FC<HeaderProps> = ({
 
   return (
     <HeaderComponent color={color}>
-      { logo && logoContent }
-      <HeaderTitle>{title && `Welcome back, ${personName}` }</HeaderTitle>
-      { date && <Time
-        showTime showIcon
-      /> }
-      { search && <HeaderSearch><AiOutlineSearch/></HeaderSearch> }
+      <HeaderTogglerMenu>{ logo && logoContent }</HeaderTogglerMenu>
+      <HeaderTitle>{ title && `Welcome back, ${personName}` }</HeaderTitle>
+      <HeaderDate>{ date && <Time showTime showIcon /> }</HeaderDate>
+      <HeaderSearchComponent>
+        { search && (
+          <HeaderSearch>
+            <AiOutlineSearch />
+          </HeaderSearch>
+        ) }
+      </HeaderSearchComponent>
       <CustomAvatarHeader>
-        { avatar && avatarContent }
-        { content && headerContent }
+        <HeaderAvatar>{ avatar && avatarContent }</HeaderAvatar>
+        <HeaderContent>{ content && headerContent }</HeaderContent>
       </CustomAvatarHeader>
     </HeaderComponent>
   )

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const DropDownMenuWrapper = styled.div`
+const DropDownMenuWrapper = styled.div<{color: string | undefined}>`
   width: auto;
   height: auto;
   padding: 10px;
@@ -16,6 +16,17 @@ const DropDownMenuWrapper = styled.div`
   border-radius: 8px;
   opacity: 0;
   visibility: hidden;
+  background-color: ${(props) => props.color === 'light'
+      ? props.theme.colors?.lightTheme.mainColor 
+      : props.theme.colors?.darkTheme.mainColor
+  };
+
+  p {
+    color: ${(props) => props.color === 'light'
+            ? props.theme.colors?.darkTheme.mainColor
+            : props.theme.colors?.lightTheme.mainColor
+    }
+  }
   
   form {
     display: flex;

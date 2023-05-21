@@ -6,6 +6,7 @@ export type DirectionType = 'bottomToLeft'
   | 'topToRight'
 
 export interface IDropDownMenuProps {
+  color?: string
   visibleDropdownMenu?: boolean
   width?: string | number
   activeDropDown?: boolean

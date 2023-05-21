@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 
-export const AsideWrapper = styled.div`
+export const AsideWrapper = styled.div<{color: string}>`
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: .3s;
-  padding-bottom: ${(props) => props.theme.padding.default};
+  padding: ${(props) => props.theme.padding.default} 0;
   box-shadow: ${props => props.theme.decoration.boxShadow.panelWithoutTop};
-  background-color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
+  background-color: ${(props) => props.color === 'light' 
+      ? props.theme.colors?.lightTheme.mainColor 
+      : props.theme.colors?.darkTheme.mainColor
+  };
   position: relative;
   z-index: 1000;
   &.min__menu {
@@ -15,6 +18,13 @@ export const AsideWrapper = styled.div`
   }
   &.full__menu {
     width: 300px;
+  }
+  
+  svg {
+    fill: ${(props) => props.color === 'light' 
+      ? props.theme.colors?.darkTheme.mainColor 
+      : props.theme.colors?.lightTheme.mainColor
+    }
   }
 `;
 
