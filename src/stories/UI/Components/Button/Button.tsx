@@ -6,6 +6,7 @@ import { ButtonSizeEnum, IButtonProps } from './model/Button.model'
 // TODO add icon and classnames
 
 export const Button: React.FC<IButtonProps>  = ({
+    text,
     className,
     children,
     isDisabled,
@@ -15,13 +16,13 @@ export const Button: React.FC<IButtonProps>  = ({
     ...rest
 }) => {
     return (
-        <ButtonComponent className={`${isDisabled} ${size}`}
+        <ButtonComponent className={`${isDisabled} ${size} ${className}`}
             disabled={isDisabled}
             type={type}
             onClick={onClick}
             {...rest}
         >
-            <span>{children}</span>
+            <span>{text ?? children}</span>
         </ButtonComponent>
     )
 }

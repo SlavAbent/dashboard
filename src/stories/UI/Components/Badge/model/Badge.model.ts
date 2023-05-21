@@ -9,4 +9,5 @@ export interface IBadge {
   className?: classNameType | string
   onClick?: (event: React.MouseEvent) => void
   children?: any
+  selectedColor?: number
 }

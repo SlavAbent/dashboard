@@ -21,6 +21,7 @@
     "json-server": "^0.17.0",
     "mapbox-gl": "^2.12.1",
     "moment": "2.29.4",
+    "muuri": "^0.9.5",
     "node-sass": "^8.0.0",
     "normalize.css": "^8.0.1",
     "react": "^18.1.0",
@@ -49,7 +50,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
-    "fake-json": "json-server ./src/assets/db.json --watch --port 3001"
+    "fake-json": "json-server ./src/assets/db.json --watch --port 4001"
   },
   "resolutions": {
     "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.cd77847.0"

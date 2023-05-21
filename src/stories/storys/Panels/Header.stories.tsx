@@ -1,23 +1,31 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Header } from '../../../components/uikit/Panels/Header'
+import Header from '../../UI/Panels/Header'
 import React from 'react';
 
 export default {
   title: 'Header',
   component: Header,
+  argTypes: {
+    color: {
+      options: ['light', 'dark'],
+      control: { type: 'radio' },
+    },
+  },
 } as ComponentMeta<typeof Header>
 
 const Template: ComponentStory<typeof Header> = (arg) => <Header {...arg}/>
 
 export const Default = Template.bind({})
 
+// TODO add redux toolkit in stories and refactor Header Component
+
 Default.args = {
-  logo: <div>logo</div>,
-  title: 'some title',
-  date: <div>date</div>,
+  color: 'light',
+  title: true,
+  date: true,
+  logo: true,
   search: true,
-  content: <div>content</div>,
-  avatar: <div>avatar</div>,
-  color: 'some color',
+  avatar: true,
+  content: true,
 }

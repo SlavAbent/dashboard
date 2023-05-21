@@ -109,9 +109,11 @@ export const AsideAddList = ({ handlerAddList }) => {
         <AsidePopupColors>
           { colors.map((item: IColor, index: number) => {
            const { id, name } = item
-           const className = classNames('badge--aside', { [`badge--${name}`]: name}, 'default')
+           const className = classNames('badge--aside', { [`badge--${name}`]: name}, 'badge')
            return (
              <Badge
+               // id={id}
+               // selectedColor={selectedColor}
                key={uniqueId(`list_${index}`)}
                className={className}
                size={12}
@@ -129,19 +131,18 @@ export const AsideAddList = ({ handlerAddList }) => {
   const AsideDropDownFooter = useMemo(() => {
     return (
       <Button
+        size="small"
         type="button"
         onClick={handlerAddListAside}
+        text="Добавить"
       >
-        { isLoading ?
-          <Loader
-            size={20}
-            title='loading'
-            className={' visibility'}
-          /> : <Button
-            type={'button'}
-            className={'button-add'}
-          >Добавить</Button>
-        }
+        { isLoading && (
+            <Loader
+              size={20}
+              title='loading'
+              className={' visibility'}
+            />
+        )}
       </Button>
     )
   }, [handlerAddListAside, isLoading])
@@ -152,12 +153,14 @@ export const AsideAddList = ({ handlerAddList }) => {
         type='button'
         className={'button-dropDown'}
         onClick={openDropDown}
-      >Добавить список</Button>
+        size='small'
+        text="Добавить список"
+      />
       { visibleDropDown && (
         <DropDownMenu
           width={200}
           direction={'bottomToLeft'}
-          // transitioned={true}
+          visibleDropdownMenu={visibleDropDown}
           children={AsideDropDownContent}
           footer={AsideDropDownFooter}
         />

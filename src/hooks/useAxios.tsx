@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseURL = 'http://localhost:4001';
 
 export const useAxios = (axiosParams) => {
   const [response, setResponse] = useState<any>([]);
