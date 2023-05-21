@@ -21,7 +21,7 @@ export const DropDownMenu: React.FC<IDropDownMenuProps> = (props) => {
 
     return (
       <>
-          { activeDropMenu && (
+          { activeDropDown && (
             <DropDownMenuWrapper className={`${direction} ${activeDropMenu} ${width}px`}>
                 <div>{isHeader ?? header}</div>
                 {children ?? defaultChildren}

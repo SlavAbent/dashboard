@@ -41,18 +41,26 @@ const DropDownMenuWrapper = styled.div`
   &.topToLeft {
     left: 53px;
     bottom: 53px;
+    opacity: 1;
+    visibility: visible;
   }
   &.topToRight {
     right: 53px;
     bottom: 53px;
+    opacity: 1;
+    visibility: visible;
   }
   &.bottomToLeft {
     left: 5px;
     top: 40px;
+    opacity: 1;
+    visibility: visible;
   }
   &.bottomToRight {
     right: 5px;
     top: 40px;
+    opacity: 1;
+    visibility: visible;
   }
 
   &.transitioned {
