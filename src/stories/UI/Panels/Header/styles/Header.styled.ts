@@ -51,7 +51,10 @@ export const CustomAvatarHeader = styled.div`
   position: relative;
 `
 
-export const HeaderTogglerMenu = styled.div``
+export const HeaderTogglerMenu = styled.div`
+    display: flex;
+    align-items: center;
+`
 export const HeaderDate = styled.div``
 export const HeaderSearchComponent = styled.div``
 export const HeaderAvatar = styled.div``

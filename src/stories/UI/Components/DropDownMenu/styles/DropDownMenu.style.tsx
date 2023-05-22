@@ -4,10 +4,6 @@ const DropDownMenuWrapper = styled.div<{color: string | undefined}>`
   width: auto;
   height: auto;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: absolute;
   top: 53px;
   z-index: 1000;
@@ -22,6 +18,9 @@ const DropDownMenuWrapper = styled.div<{color: string | undefined}>`
   };
 
   p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: ${(props) => props.color === 'light'
             ? props.theme.colors?.darkTheme.mainColor
             : props.theme.colors?.lightTheme.mainColor
