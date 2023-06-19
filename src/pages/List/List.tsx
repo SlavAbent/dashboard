@@ -3,9 +3,10 @@ import Aside from './components/Aside'
 import { MainList } from './components/MainList'
 
 import { TodoListWrapper } from './styles/index.styled'
-import { ListProvider } from '../../context/providers/listProvider'
+import { ListProvider } from '../../shared/context/providers/listProvider'
 
 export const TodoList = () => {
+  console.log('render')
   return (
     <ListProvider>
       <TodoListWrapper>

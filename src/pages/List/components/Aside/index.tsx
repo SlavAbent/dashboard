@@ -3,9 +3,9 @@ import { AsideWrapper } from './Aside.style'
 import AsideHeader from './components/AsideHeader'
 import AsideContainer from './components/AsideContainer'
 import { AsideAddList } from './components/AsideAddList'
-import { useAddedList } from '../../../../hooks/useAddedList'
-import { baseURL } from '../../../../utils/urls'
-import { ListContext } from '../../../../context/providers/listProvider'
+import { useAddedList } from '../../../../shared/hooks/useAddedList'
+import { baseURL } from '../../../../shared/urls'
+import { ListContext } from '../../../../shared/context/providers/listProvider'
 
 const Aside = () => {
   const { deleteListOnAside } = useAddedList()

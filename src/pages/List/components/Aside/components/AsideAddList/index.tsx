@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import { DropDownMenu } from 'stories/UI/Components/DropDownMenu'
-import { useAxios } from '../../../../../../hooks/useAxios'
-import { Badge } from '../../../../../../stories/UI/Components/Badge'
+import React, { FC, memo, useCallback, useEffect, useMemo, useState } from 'react'
+import { DropDownMenu } from 'shared/stories/UI/Components/DropDownMenu'
+import { useAxios } from '../../../../../../shared/hooks/useAxios'
+import { Badge } from '../../../../../../shared/stories/UI/Components/Badge'
 import {
   AsidePopup,
   AsidePopupClose,
@@ -11,25 +11,25 @@ import {
 } from './index.styled'
 import classNames from 'classnames'
 import { Close } from '../../../../../../components/Icons/Close'
-import { Button } from '../../../../../../stories/UI/Components/Button'
-import { Loader } from '../../../../../../stories/UI/Components/Loader'
+import { Button } from '../../../../../../shared/stories/UI/Components/Button'
+import { Loader } from '../../../../../../shared/stories/UI/Components/Loader'
 import { uniqueId } from 'lodash'
-import { useAddedList } from '../../../../../../hooks/useAddedList'
-import { baseURL } from '../../../../../../utils/urls'
+import { useAddedList } from '../../../../../../shared/hooks/useAddedList'
+import { baseURL } from '../../../../../../shared/urls'
 import { notificationFabric } from '../../../../../../components/uikit/Notification/notificationFabric'
 import { notificationEnum } from '../../../../../../components/uikit/Notification/model/Notification.model'
+import { IColor } from '../../../../model/index.model'
 
-export interface IColor {
-  hex: string
-  id: number
-  name: string
+interface IAsideAddListProps {
+  handlerAddList: (listAside) => void
 }
 
-export const AsideAddList = ({ handlerAddList }) => {
+export const AsideAddList: FC<IAsideAddListProps> = memo((props) => {
+  const { handlerAddList } = props
   const [selectedColor, setSelectedColor] = useState(1)
   const [asideInputValue, setAsideInputValue] = useState('')
   const [colors, setColors] = useState<IColor[]>([])
-  const [visibleDropDown, setVisibleDropDown] = useState(false)
+  const [activeDropDown, setActiveDropDown] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const { response, setResponse } = useAxios({
     url: '/colors',
@@ -37,6 +37,17 @@ export const AsideAddList = ({ handlerAddList }) => {
   })
 
   const { addListOnAside } = useAddedList()
+  const openDropDown = () => {
+    setActiveDropDown(prev => !prev)
+  }
+
+  //TODO Fix problem rerender
+  // console.log(response)
+
+  const onRemove = (id: number) => {
+    const newLists = response.filter((item) => item.id !== id)
+    setResponse(newLists)
+  }
 
   useEffect(() => {
     if(Array.isArray(response)) {
@@ -46,12 +57,10 @@ export const AsideAddList = ({ handlerAddList }) => {
   }, [colors, response])
 
   const onCloseDropDownAside = useCallback(() => {
-    setVisibleDropDown(false)
+    setActiveDropDown(false)
     setAsideInputValue('')
     setSelectedColor(colors[0].id)
   }, [colors])
-
-  const openDropDown = () => setVisibleDropDown(prev => !prev)
 
   const handlerAddListAside = useCallback(() => {
     if(!asideInputValue) {
@@ -87,11 +96,6 @@ export const AsideAddList = ({ handlerAddList }) => {
     selectedColor
   ])
 
-  const onRemove = id => {
-    const newLists = response.filter(item => item.id !== id)
-    setResponse(newLists)
-  }
-
   const AsideDropDownContent = useMemo(() => {
     return (
       <AsidePopup>
@@ -112,8 +116,8 @@ export const AsideAddList = ({ handlerAddList }) => {
            const className = classNames('badge--aside', { [`badge--${name}`]: name}, 'badge')
            return (
              <Badge
-               // id={id}
-               // selectedColor={selectedColor}
+               id={id}
+               selectedColor={selectedColor}
                key={uniqueId(`list_${index}`)}
                className={className}
                size={12}
@@ -128,7 +132,7 @@ export const AsideAddList = ({ handlerAddList }) => {
     )
   }, [asideInputValue, colors, onCloseDropDownAside])
 
-  const AsideDropDownFooter = useMemo(() => {
+  const asideDropDownFooter = useMemo(() => {
     return (
       <Button
         size="small"
@@ -156,15 +160,14 @@ export const AsideAddList = ({ handlerAddList }) => {
         size='small'
         text="Добавить список"
       />
-      { visibleDropDown && (
-        <DropDownMenu
-          width={200}
-          direction={'bottomToLeft'}
-          visibleDropdownMenu={visibleDropDown}
-          children={AsideDropDownContent}
-          footer={AsideDropDownFooter}
-        />
-      )}
+      <DropDownMenu
+        width={200}
+        direction={'bottomToLeft'}
+        activeDropDown={activeDropDown}
+        footer={asideDropDownFooter}
+        >
+          { AsideDropDownContent }
+        </DropDownMenu>
     </AddListDropDown>
   )
-}
+})

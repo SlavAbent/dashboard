@@ -1,19 +1,19 @@
-import { Theme } from './styles/Theme'
-import ThemeProvider from './context/providers/themeProvider'
-import { AppMainFields, AppWrapper, AsideWrapper, AsideWrap } from './styles/App.styled'
+import { Theme } from './shared/styles/Theme'
+import ThemeProvider from './shared/context/providers/themeProvider'
+import { AppMainFields, AppWrapper, AsideWrapper, AsideWrap } from './shared/styles/App.styled'
 import { HashRouter, Link } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import React, { useContext } from 'react'
-import { ThemeContext } from './context/themeContext'
-import store from './redux/store'
+import { ThemeContext } from './shared/context/themeContext'
+import store from './shared/redux/store'
 import { Home } from './components/Icons/Home'
-import { useAppDispatch } from './redux/hooks/useAppDispatch'
-import { togglePanels } from './redux/reducers/panels.slice'
-import Aside from './stories/UI/Panels/Aside'
-import { RoutesWrapper } from './routes/RoutesWrapper'
-import { useAppSelector } from './redux/hooks/useAppSelector'
-import { Links } from './links/Links'
-import Header from './stories/UI/Panels/Header'
+import { useAppDispatch } from './shared/redux/hooks/useAppDispatch'
+import { togglePanels } from './shared/redux/reducers/panels.slice'
+import Aside from './shared/stories/UI/Panels/Aside'
+import { RoutesWrapper } from './shared/routes/RoutesWrapper'
+import { useAppSelector } from './shared/redux/hooks/useAppSelector'
+import { Links } from './shared/links/Links'
+import Header from './shared/stories/UI/Panels/Header'
 
 const MainComponent = () => {
   const { toggleTheme } = useContext(ThemeContext)
@@ -23,7 +23,6 @@ const MainComponent = () => {
   const handleToggleMenu = () => dispatch(togglePanels())
 
   const person = 'Slava'
-
 
   const logoContentBody = (
     <>

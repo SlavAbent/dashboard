@@ -2,34 +2,28 @@ import React, { useCallback, useContext, useMemo } from 'react'
 import { MainTodoList } from './components/MainTodoList'
 import { MainListHeader } from './components/MainListHeader'
 import { MainListWrapper, MainListContainer } from './MainList.style'
-import { ListContext } from '../../../../context/providers/listProvider'
+import { ListContext } from '../../../../shared/context/providers/listProvider'
 import { useLocation } from 'react-router'
 import axios from 'axios'
-import { tasks } from 'utils/urls'
+import { tasks } from 'shared/urls'
 import { AddList } from './components/MainTodoList/AddList/AddList'
-import { IList } from '../../model/index.model'
-import { Modal } from '../../../../components/uikit/Modal'
+import { IList, Tasks } from '../../model/index.model'
+import { Link } from 'react-router-dom'
 
 export const MainList = () => {
   const { response, setResponse } = useContext(ListContext)
   const location = useLocation();
 
   const onEditTask = useCallback((listId, taskObj) => {
-    const newTaskText = (
-      <Modal
-
-      />
-    )
-    // window.prompt('Текст задачи', taskObj.text);
+    const newTaskText = window.prompt('Текст задачи', taskObj.text);
 
     if (!newTaskText) {
       return;
     }
 
-    const newList = response.map(list => {
+    const newList = response.map((list: IList) => {
       if (list.id === listId) {
-        // @ts-ignore
-        list.tasks = list.tasks.map((task: any) => {
+        list.tasks = list.tasks.map((task: Tasks) => {
           if (task.id === taskObj.id) {
             task.text = newTaskText;
           }
@@ -40,7 +34,7 @@ export const MainList = () => {
     });
     setResponse(newList);
     axios
-      .patch('http://localhost:3001/tasks/' + taskObj.id, {
+      .patch('http://localhost:4001/tasks/' + taskObj.id, {
         text: newTaskText
       })
       .catch(() => {
@@ -49,8 +43,7 @@ export const MainList = () => {
   },[response, setResponse]);
 
   const onAddTask = useCallback((listId, taskObj) => {
-    // TODO fix this any
-    const newList = response.map((item: any) => {
+    const newList = response.map((item: IList) => {
       if (item.id === listId) {
         item.tasks = [...item.tasks, taskObj]
       }
@@ -59,12 +52,11 @@ export const MainList = () => {
     setResponse(newList)
   },[response, setResponse])
 
-  const onRemove = useCallback(((listId: number, id: number) => {
+  const onRemove = useCallback(((listId: number, id: number): void => {
     if(window.confirm('Вы действительно хотите удалить?')) {
-      // TODO fix this any
-      const newList = response.map((itemTasks: any) => {
+      const newList = response.map((itemTasks: IList) => {
         if (itemTasks.id === listId) {
-          itemTasks.tasks = itemTasks.tasks.filter((task) => task.id !== id);
+          itemTasks.tasks = itemTasks.tasks.filter((task: Tasks): boolean => task.id !== id);
         }
         return itemTasks;
       });
@@ -76,13 +68,10 @@ export const MainList = () => {
     }
   }),[response, setResponse])
 
-  const onComplete = useCallback((listId: number, taskId: number, completed) => {
+  const onComplete = useCallback((listId: number, taskId: number, completed): void => {
     const newList = response.map((list: IList) => {
       if(list.id === listId) {
-        // eslint-disable-next-line array-callback-return
-        // TODO fix this any
-        // @ts-ignore
-        list.tasks = list.tasks.map((task: any) => {
+        list.tasks = list.tasks.map((task: Tasks) => {
           if(task.id === taskId) task.completed = completed
           return task
         })
@@ -100,21 +89,21 @@ export const MainList = () => {
       });
   }, [response, setResponse])
 
-  const data = useMemo(() => response && response.map((item) => {
+  const data = useMemo(() => response && response.map((item: IList) => {
     const { id, name, color, colorId, tasks } = item
     return (
       <div key={`${name}${colorId}`}>
         { location.pathname === `/List/${id}` && (
           <>
             <MainListWrapper>
-              {/*<Link to={`Edit/${id}`}>*/}
+              <Link to={`Edit/${id}`}>
                 <MainListHeader
                   id={id}
                   name={name}
                   color={color}
                   colorId={colorId}
                 />
-              {/*</Link>*/}
+              </Link>
               <MainTodoList
                 tasks={tasks}
                 onRemove={onRemove}

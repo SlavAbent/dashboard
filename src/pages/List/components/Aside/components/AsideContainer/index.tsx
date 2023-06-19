@@ -1,14 +1,14 @@
 import React, { FC, useMemo } from 'react'
 import { uniqueId } from 'lodash'
-import { Loader } from 'stories/UI/Components/Loader'
-import { Badge } from 'stories/UI/Components/Badge/Badge'
+import { Loader } from 'shared/stories/UI/Components/Loader'
+import { Badge } from 'shared/stories/UI/Components/Badge/Badge'
 import classNames from 'classnames'
 import { AsideRow, AsideRowText, AsideRowWrapper, AsideContain, AsideNavLink } from './index.styles'
 import { IAsideProps, IList } from '../../../../model/index.model'
 import { Delete } from 'components/Icons/Delete/Delete'
 import { notificationFabric } from '../../../../../../components/uikit/Notification/notificationFabric'
 import { notificationEnum } from '../../../../../../components/uikit/Notification/model/Notification.model'
-import { errorsList } from '../../../../../../utils/errorsGenerator'
+import { errorsList } from '../../../../../../shared/errorsGenerator'
 import { NotificationIcon } from '../../../../../../components/Icons/Notification'
 
 const AsideContainer: FC<IAsideProps> = ( props) => {

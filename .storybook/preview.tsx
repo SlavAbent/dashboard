@@ -1,4 +1,4 @@
-import  theme  from '../src/styles/themeMain'
+import  theme  from '../src/shared/styles/themeMain'
 import { ThemeProvider } from 'styled-components'
 
 export const parameters = {
