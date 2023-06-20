@@ -6,7 +6,6 @@ import {
   AsidePopup,
   AsidePopupClose,
   AsidePopupColors,
-  AsidePopupInput,
   AddListDropDown,
 } from './index.styled'
 import classNames from 'classnames'
@@ -19,6 +18,7 @@ import { baseURL } from '../../../../../../shared/urls'
 import { notificationFabric } from '../../../../../../components/uikit/Notification/notificationFabric'
 import { notificationEnum } from '../../../../../../components/uikit/Notification/model/Notification.model'
 import { IColor } from '../../../../model/index.model'
+import { TextInput } from '../../../../../../shared/stories/UI/Inputs/TextInput'
 
 interface IAsideAddListProps {
   handlerAddList: (listAside) => void
@@ -52,6 +52,7 @@ export const AsideAddList: FC<IAsideAddListProps> = memo((props) => {
   useEffect(() => {
     if(Array.isArray(response)) {
       setColors(response)
+      // more rerenders
       if(colors && colors.length) setSelectedColor(colors[0].id)
     }
   }, [colors, response])
@@ -104,11 +105,12 @@ export const AsideAddList: FC<IAsideAddListProps> = memo((props) => {
             size={24}
           />
         </AsidePopupClose>
-        <AsidePopupInput
+        <TextInput
           type="text"
           value={asideInputValue}
           placeholder="Название списка"
           onChange={e => setAsideInputValue(e.target.value)}
+          className=""
         />
         <AsidePopupColors>
           { colors.map((item: IColor, index: number) => {
