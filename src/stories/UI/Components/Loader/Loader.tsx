@@ -10,9 +10,7 @@ export const Loader: React.FC<ILoader> = (props) => {
   return (
     <>
       { loading && (
-        <LoaderWrapper
-          className={className}
-        >
+        <LoaderWrapper className={className}>
           <BiLoaderCircle
             size={size}
             color={color}

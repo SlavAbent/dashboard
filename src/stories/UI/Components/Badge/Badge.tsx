@@ -1,8 +1,8 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC, memo, useMemo } from 'react'
 import { BadgeContainer } from './styles/Badge.styled'
 import { IBadge } from './model/Badge.model'
 
-export const Badge: FC<IBadge> = (
+export const Badge: FC<IBadge> = memo((
   {
     id,
     color,
@@ -14,8 +14,7 @@ export const Badge: FC<IBadge> = (
 ) => {
   const sizeBadge = `${size}px`
 
-  // TODO add custom checkbox
-  // const activeBadge = `${selectedColor === id ? 'active' : 'default'}`
+  const activeBadge = `${selectedColor === id ? 'active' : 'default'}`
 
   const style = useMemo(() => {
     return { width: sizeBadge, height: sizeBadge }
@@ -23,9 +22,9 @@ export const Badge: FC<IBadge> = (
 
   return (
     <BadgeContainer
-      className={`${className}` }
+      className={`${className} ${activeBadge} ${color}` }
       style={style}
       onClick={onClick}
     />
   )
-}
+})

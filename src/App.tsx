@@ -1,6 +1,6 @@
 import { Theme } from './styles/Theme'
 import ThemeProvider from './context/providers/themeProvider'
-import { AppMainFields, AppWrapper, AsideWrapper, AsideWrap } from './styles/App.styled'
+import { AppMainFields, AppWrapper, AsideWrapper, AsideWrap, GlobalStyles } from './styles/App.styled'
 import { HashRouter, Link } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import React, { useContext } from 'react'
@@ -14,6 +14,7 @@ import { RoutesWrapper } from './routes/RoutesWrapper'
 import { useAppSelector } from './redux/hooks/useAppSelector'
 import { Links } from './links/Links'
 import Header from './stories/UI/Panels/Header'
+import { ToastContainer } from 'react-toastify'
 
 const MainComponent = () => {
   const { toggleTheme } = useContext(ThemeContext)
@@ -23,7 +24,6 @@ const MainComponent = () => {
   const handleToggleMenu = () => dispatch(togglePanels())
 
   const person = 'Slava'
-
 
   const logoContentBody = (
     <>
@@ -81,8 +81,10 @@ export const App = () => {
   return (
     <Theme>
       <ThemeProvider>
+        <GlobalStyles />
         <Provider store={store}>
           <MainComponent />
+          <ToastContainer />
         </Provider>
       </ThemeProvider>
     </Theme>

@@ -26,7 +26,6 @@ const Header:FC<HeaderProps> = ({
     handleToggleMenu,
   }) => {
   const [activeDropDown, setActiveDropDown] = useState(false)
-
   const avatarContent = (
     <Avatar
       size={32}

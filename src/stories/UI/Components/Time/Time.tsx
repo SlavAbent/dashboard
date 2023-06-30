@@ -10,16 +10,17 @@ export const Time:FC<ITime> = ({
  showIcon,
  showTime,
 }) => {
-  const [time, setTime] = useState<string>()
-  const [date, setDate] = useState<string>()
+  const [time, setTime] = useState('')
+  const [date, setDate] = useState('')
 
   useEffect(() => {
-    setInterval(() => {
+    const time = setInterval(() => {
       const date = moment().format('DD MMM YYYY');
       const clock = moment().format('HH:mm:ss')
       setTime(clock)
       setDate(date)
     }, 1000)
+    return () => clearInterval(time)
   }, [])
 
   return (

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { ChangeEvent, FC, SyntheticEvent } from 'react'
 import CustomCheckbox from '../components/CustomCheckbox'
 import { MainTodoListIcon, MainTodoListTitle, MainTodoListRow, MainListRow, MainListLeftSide } from '../components/styles/index.styled'
 import { Edit } from '../../../../../../../components/Icons/Edit'
@@ -27,7 +27,7 @@ const Task:FC<ITaskProps> = (props) => {
     className,
   } = props
 
-  const onChangeTask = (e) => {
+  const onChangeTask = (e: ChangeEvent<HTMLInputElement>): void => {
     onComplete(listId, id, e.target.checked);
   }
 

@@ -51,7 +51,6 @@ export const Avatar: React.FC<IAvatarProps> = (props) => {
                         {title}
                     </AvatarFace>
                 )}
-
             </AvatarWrapper>
             <AvatarBorder
                 style={{width: sizeWrapper, height: sizeWrapper}}>

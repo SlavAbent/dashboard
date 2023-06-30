@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react'
+import React, { ChangeEvent, FC, useCallback, useState } from 'react'
 import { Plus } from 'components/Icons/Plus/Plus'
 import { Button } from 'stories/UI/Components/Button'
 import { IList } from '../../../../../model/index.model'
@@ -11,13 +11,13 @@ import {
   AddListForm,
 } from './AddList.style'
 import axios from 'axios'
-import { tasks } from '../../../../../../../utils/urls'
+import { tasks } from '../../../../../../../shared/urls'
 import { Modal } from '../../../../../../../components/uikit/Modal'
 import { Close } from '../../../../../../../components/Icons/Close'
 
 interface IAddListProps {
   list: IList
-  onAddTask: (id: number, data: any) => void
+  onAddTask: (id: number, data) => void
 }
 
 export const AddList:FC<IAddListProps> = ({ list, onAddTask }) => {
@@ -67,7 +67,7 @@ export const AddList:FC<IAddListProps> = ({ list, onAddTask }) => {
       <input
         value={inputValue}
         placeholder="Новая задача"
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)}
       />
       <Button
         type="button"

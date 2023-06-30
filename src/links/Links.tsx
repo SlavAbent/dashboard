@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 
-import { LinksContainer, LinkAnchor, LinkAnchorTitle } from './Links.style'
+import { LinksContainer, LinkAnchor, LinkAnchorTitle } from './styles/Links.style'
 import { ThemeContext } from '../context/themeContext'
 import { uniqueId } from 'lodash'
 import { useAppSelector } from '../redux/hooks/useAppSelector'
-import { asideLinks } from './asideLinks'
+import { asideLinks } from './data/asideLinks'
 
 export const Links = () => {
   const isOpenMenu = useAppSelector((state) => state.togglePanels.togglePanels)

@@ -1,16 +1,9 @@
 import React, { createContext, Dispatch, FC } from 'react'
 import { useAxios } from 'hooks/useAxios'
-import { IList } from '../../pages/List/model/index.model'
+import { IList, IListContextData } from '../../pages/List/model/index.model'
 
 export interface ListProviderProps {
   children: React.ReactNode
-}
-
-interface IListContextData {
-  response: Array<IList>
-  loading?: boolean
-  error?: null | any | string
-  setResponse: Dispatch<any>
 }
 
 const defaultValue = {

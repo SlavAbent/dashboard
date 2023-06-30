@@ -6,6 +6,7 @@ export const AsideWrapper = styled.div<{color: string}>`
   align-items: center;
   transition: .3s;
   padding: ${(props) => props.theme.padding.default} 0;
+  padding-top: 0;
   box-shadow: ${props => props.theme.decoration.boxShadow.panelWithoutTop};
   background-color: ${(props) => props.color === 'light' 
       ? props.theme.colors?.lightTheme.mainColor 
@@ -17,7 +18,7 @@ export const AsideWrapper = styled.div<{color: string}>`
     width: 40px;
   }
   &.full__menu {
-    width: 300px;
+    width: 150px;
   }
   
   svg {

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect } from 'react'
+import React, { FC, MouseEventHandler, ReactNode, useEffect } from 'react'
 import {
   ModalContainer,
   ModalHeader,
@@ -23,7 +23,7 @@ interface IModalProps {
   children?: string | ReactNode
   iconClose?: ReactNode
   isOpen?: boolean
-  handleClose?: any
+  handleClose?: (boolean) => void
 }
 
 export const Modal:FC<IModalProps> = (props) => {
@@ -42,7 +42,7 @@ export const Modal:FC<IModalProps> = (props) => {
   } = props
 
   useEffect(() => {
-    const closeOnEscapeKey = e => e.key === 'Escape' ? handleClose() : null
+    const closeOnEscapeKey = e => e.key === 'Escape' ? handleClose : null
     document.body.addEventListener('keydown', closeOnEscapeKey)
 
     return () => {

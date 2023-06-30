@@ -1,3 +1,11 @@
+import { Dispatch } from 'react'
+
+export interface IListContextData {
+  response: Array<IList>
+  loading?: boolean
+  error?: null | any | string
+  setResponse: Dispatch<unknown>
+}
 
 export interface IAsideProps {
   data: Array<IList>
@@ -24,5 +32,11 @@ export interface IList {
   name: string,
   colorId: number
   color: Colors
-  tasks: Tasks
+  tasks: Tasks[]
+}
+
+export interface IColor {
+  hex: string
+  id: number
+  name: string
 }

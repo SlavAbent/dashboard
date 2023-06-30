@@ -10,6 +10,10 @@ export const BadgeContainer =  styled.span`
   border-radius: 50%;
   border: 1px solid ${(p) => p.theme.colors.mainColorDark};
   cursor: pointer;
+  
+  &.selected {
+	 border: 2px solid red;
+  }
 
   &.badge {
     &--aside {

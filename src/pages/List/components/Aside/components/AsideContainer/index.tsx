@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC, useContext, useMemo } from 'react'
 import { uniqueId } from 'lodash'
 import { Loader } from 'stories/UI/Components/Loader'
 import { Badge } from 'stories/UI/Components/Badge/Badge'
@@ -6,12 +6,12 @@ import classNames from 'classnames'
 import { AsideRow, AsideRowText, AsideRowWrapper, AsideContain, AsideNavLink } from './index.styles'
 import { IAsideProps, IList } from '../../../../model/index.model'
 import { Delete } from 'components/Icons/Delete/Delete'
-import { notificationFabric } from '../../../../../../components/uikit/Notification/notificationFabric'
-import { notificationEnum } from '../../../../../../components/uikit/Notification/model/Notification.model'
-import { errorsList } from '../../../../../../utils/errorsGenerator'
-import { NotificationIcon } from '../../../../../../components/Icons/Notification'
+import 'react-toastify/dist/ReactToastify.css';
+import { Notification } from '../../../../../../components/uikit/Notification/Notification'
+import { ThemeContext } from '../../../../../../context/themeContext'
 
 const AsideContainer: FC<IAsideProps> = ( props) => {
+  const { toggleTheme } = useContext(ThemeContext)
   const { data, loading, error, handleAsideDeleteItem } = props;
 
   const dataAside = useMemo(() => {
@@ -42,28 +42,38 @@ const AsideContainer: FC<IAsideProps> = ( props) => {
     }
   }, [data, handleAsideDeleteItem])
 
+
+  if (error) {
+    return (
+      <Notification
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        progress
+        theme={toggleTheme}
+      />
+    )
+  }
+
   return (
     <AsideContain>
-      { loading ?
+      { loading ? (
         <Loader
           size={50}
           title='loading'
           className='visibility'
+          loading={loading}
         />
-        : (
-          <AsideRowWrapper>
-            { error && notificationFabric({
-              className: 'notification__error',
-              type: notificationEnum.error,
-              icon: <NotificationIcon />,
-              title: 'Ошибка',
-              position: 'bottom-right',
-              children: errorsList.missingListName
-            })}
-            { dataAside }
-          </AsideRowWrapper>
-        )
-      }
+      ) : (
+        <AsideRowWrapper>
+          { dataAside }
+        </AsideRowWrapper>
+      )}
     </AsideContain>
   )
 }

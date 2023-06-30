@@ -26,9 +26,14 @@
       "colorId": 5
     },
     {
-      "name": "123",
-      "colorId": 4,
+      "name": "sdsdfsfsdf",
+      "colorId": 1,
       "id": 6
+    },
+    {
+      "name": "sdf",
+      "colorId": 4,
+      "id": 7
     }
   ],
   "tasks": [
@@ -64,14 +69,8 @@
     },
     {
       "listId": 1,
-      "text": "test",
-      "completed": false,
-      "id": 6
-    },
-    {
-      "listId": 1,
       "text": "qweqwe",
-      "completed": false,
+      "completed": true,
       "id": 7
     },
     {
@@ -83,7 +82,7 @@
     {
       "listId": 1,
       "text": "123",
-      "completed": false,
+      "completed": true,
       "id": 9
     },
     {
@@ -91,12 +90,6 @@
       "text": "Купить 1984!",
       "completed": true,
       "id": 10
-    },
-    {
-      "listId": 1,
-      "text": "546456",
-      "completed": false,
-      "id": 13
     },
     {
       "listId": 5,
@@ -109,12 +102,6 @@
       "text": "xcvxcvxcv",
       "completed": false,
       "id": 15
-    },
-    {
-      "listId": 1,
-      "text": "wewer",
-      "completed": false,
-      "id": 16
     }
   ],
   "subtasks": [

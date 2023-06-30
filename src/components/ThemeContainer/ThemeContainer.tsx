@@ -10,7 +10,7 @@ const ThemeContainer = () => {
 
   return (
     <ThemeWrapper color={toggleTheme} onClick={toggleThemeFunc}>
-      {toggleTheme === Theme.NIGHT ? <MdOutlineNightlight color="#ffffff" /> : <BsSun  color="#000000" />}
+      {toggleTheme === Theme.DARK ? <MdOutlineNightlight color="#ffffff" /> : <BsSun  color="#000000" />}
     </ThemeWrapper>
   )
 }

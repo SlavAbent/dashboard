@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { ReactComponent as IconsSVG } from 'assets/Person/male.svg';
-import { newGuid } from '../../../../utils/guid'
+import { newGuid } from '../../../../shared/guid'
 import { IIconProps, IconType } from './model/Icon.model'
 import { CustomIcon } from './styles/Icon.styles'
 

@@ -4,7 +4,6 @@ import styled from 'styled-components'
 export const LinksContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     margin-bottom: 50px;
 `;
@@ -12,40 +11,36 @@ export const LinksContainer = styled.div`
 export const LinkAnchor = styled(NavLink)<{showNameLink: boolean}>`
     display: flex;
     align-items: center;
-    justify-content: ${(p) => p.showNameLink ? 'flex-start' : 'center'};
-    width: 100%;
-    height: 100%;
     padding-top: ${props => props.theme.padding.small};
     padding-bottom: ${props => props.theme.padding.small};
-    background-color: inherit;
-    transition: .3s;
+
     text-decoration: none;
+    &:hover {
+      background-color: ${(p) => p.theme.colors?.lightTheme.mainColorOpacity};
+    }
 
     span {
-      &.link__active {
-        padding-left: 20px;
-      }
-      svg{
+      padding-left: ${props => props.theme.padding.small};
+      svg {
         width: 22px;
         height: 22px;
       }
     }
   
+    p {
+      opacity: ${(p) => p.showNameLink ? 1 : 0};
+      transition: .3s;
+    }
+  
     &.active {
-      display: flex;
-      align-items: center;
       background-color: ${props => props.theme.colors.lighterMain};
       position: relative;
-    }
-
-    &.link__active {
-      justify-content: flex-start;
+      transition: .3s;
     }
 `;
 
 export const LinkAnchorTitle = styled.p<{showNameLink: boolean}>`
   margin-left: ${(p) => p.theme.padding.small};
   text-decoration: none;
-  display: ${(p) => p.showNameLink ? 'block' : 'none'};
   transition: .3s;
 `

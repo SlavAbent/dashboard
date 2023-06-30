@@ -13,8 +13,8 @@ export const AsidePopup = styled.div`
 `
 export const AsidePopupClose = styled.div`
   position: absolute;
-  top: -8px;
-  right: 0;
+  top: -15px;
+  right: -32px;
   cursor: pointer;
 `
 export const AsidePopupInput = styled.input`
@@ -34,9 +34,11 @@ export const AsidePopupInput = styled.input`
 export const AsidePopupColors = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 16px;
 `
 
 export const AddListDropDown = styled.div`
+  margin-top: 16px;
   position: relative;
   .button-dropDown {
     ${styledButton}

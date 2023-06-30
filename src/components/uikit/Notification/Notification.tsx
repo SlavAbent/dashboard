@@ -1,42 +1,37 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
-import { NotificationWrapper } from './Notification.styled'
+import React, { FC } from 'react'
 import { INotification } from './model/Notification.model'
+import { toast } from 'react-toastify'
 
 export const Notification: FC<INotification> = (props) => {
   const {
-    title,
-    children,
-    className,
-    timeout,
-    onClick,
-    icon,
     position,
-    type,
+    autoClose,
+    hideProgressBar,
+    // newestOnTop,
+    closeOnClick,
+    rtl,
+    pauseOnFocusLoss,
+    draggable,
+    pauseOnHover,
+    progress,
+    theme,
   } = props
 
-  const ref = useRef(null)
-  const [notificationTime, setNotificationTime] = useState('')
-
-  //refactoring
-  useEffect(() => {
-    const timeIsOver = setTimeout(() => {
-      // not working
-      setNotificationTime('hideNotification')
-    }, timeout)
-    return clearTimeout(timeIsOver)
-  }, [timeout])
-
-  const classname = `${className} ${type} ${position} ${notificationTime}`
-
   return (
-    <NotificationWrapper
-      ref={ref}
-      className={classname}
-      onClick={onClick}
-    >
-      <>{icon}</>
-      <p>{title}</p>
-      <p>{children}</p>
-    </NotificationWrapper>
+    <>
+      {toast('🦄 Wow so easy!', {
+        position: position,
+        autoClose: autoClose,
+        hideProgressBar: hideProgressBar,
+        // newestOnTop: newestOnTop,
+        rtl: rtl,
+        pauseOnFocusLoss: pauseOnFocusLoss,
+        closeOnClick: closeOnClick,
+        pauseOnHover: pauseOnHover,
+        draggable: draggable,
+        progress: progress,
+        theme: theme,
+      })}
+    </>
   )
 }

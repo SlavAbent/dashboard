@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 const DropDownMenuWrapper = styled.div<{color: string | undefined}>`
-  width: auto;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
   position: absolute;
-  top: 53px;
   z-index: 1000;
   background-color: ${props => props.theme.colors.lightTheme.mainColor};
   box-shadow: ${props => props.theme.decoration.boxShadow.panel};
@@ -61,13 +61,13 @@ const DropDownMenuWrapper = styled.div<{color: string | undefined}>`
     visibility: visible;
   }
   &.bottomToLeft {
-    left: 5px;
+    left: 0;
     top: 40px;
     opacity: 1;
     visibility: visible;
   }
   &.bottomToRight {
-    right: 5px;
+    right: 0;
     top: 40px;
     opacity: 1;
     visibility: visible;
