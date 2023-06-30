@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import "@fontsource/alef"
 
 
@@ -38,3 +38,11 @@ export const AsideWrap = styled.div`
   display: flex;
   height: 100vh;
 `
+
+export const GlobalStyles = createGlobalStyle`
+  body {
+    background-color: black;
+    color: white;
+    transition: background 0.2s ease-in, color 0.2s ease-in;
+  }
+`;

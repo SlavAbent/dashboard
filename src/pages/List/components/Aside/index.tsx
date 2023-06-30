@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { AsideWrapper } from './Aside.style'
 import AsideHeader from './components/AsideHeader'
 import AsideContainer from './components/AsideContainer'
@@ -10,8 +10,6 @@ import { ListContext } from '../../../../context/providers/listProvider'
 const Aside = () => {
   const { deleteListOnAside } = useAddedList()
   const { response, error, loading, setResponse } = useContext(ListContext)
-
-  console.log({ response, error, loading, setResponse } )
 
   const handlerAddList = listAside => {
     const newListsAside = [...response, listAside]

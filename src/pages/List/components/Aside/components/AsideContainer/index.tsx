@@ -13,7 +13,6 @@ import { ThemeContext } from '../../../../../../context/themeContext'
 const AsideContainer: FC<IAsideProps> = ( props) => {
   const { toggleTheme } = useContext(ThemeContext)
   const { data, loading, error, handleAsideDeleteItem } = props;
-  console.log(props)
 
   const dataAside = useMemo(() => {
     if(Array.isArray(data)) {
@@ -43,7 +42,6 @@ const AsideContainer: FC<IAsideProps> = ( props) => {
     }
   }, [data, handleAsideDeleteItem])
 
-  console.log(loading)
 
   if (error) {
     return (

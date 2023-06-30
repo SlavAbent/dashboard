@@ -6,7 +6,6 @@ import { TodoListWrapper } from './styles/index.styled'
 import { ListProvider } from '../../context/providers/listProvider'
 
 export const TodoList = () => {
-  console.log('render')
   return (
     <ListProvider>
       <TodoListWrapper>

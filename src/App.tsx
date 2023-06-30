@@ -1,6 +1,6 @@
 import { Theme } from './styles/Theme'
 import ThemeProvider from './context/providers/themeProvider'
-import { AppMainFields, AppWrapper, AsideWrapper, AsideWrap } from './styles/App.styled'
+import { AppMainFields, AppWrapper, AsideWrapper, AsideWrap, GlobalStyles } from './styles/App.styled'
 import { HashRouter, Link } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import React, { useContext } from 'react'
@@ -81,6 +81,7 @@ export const App = () => {
   return (
     <Theme>
       <ThemeProvider>
+        <GlobalStyles />
         <Provider store={store}>
           <MainComponent />
           <ToastContainer />
