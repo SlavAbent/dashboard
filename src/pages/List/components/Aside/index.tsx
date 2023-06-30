@@ -1,15 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { AsideWrapper } from './Aside.style'
 import AsideHeader from './components/AsideHeader'
 import AsideContainer from './components/AsideContainer'
 import { AsideAddList } from './components/AsideAddList'
-import { useAddedList } from '../../../../shared/hooks/useAddedList'
+import { useAddedList } from '../../../../hooks/useAddedList'
 import { baseURL } from '../../../../shared/urls'
-import { ListContext } from '../../../../shared/context/providers/listProvider'
+import { ListContext } from '../../../../context/providers/listProvider'
 
 const Aside = () => {
   const { deleteListOnAside } = useAddedList()
   const { response, error, loading, setResponse } = useContext(ListContext)
+
+  console.log({ response, error, loading, setResponse } )
 
   const handlerAddList = listAside => {
     const newListsAside = [...response, listAside]
@@ -22,7 +24,9 @@ const Aside = () => {
   }
   const handleAsideDeleteItem = item => {
     if(window.confirm('Вы точно хотите удалить элемент?')) {
-      deleteListOnAside(baseURL, item.id).then(() => onRemove(item.id))
+      deleteListOnAside(baseURL, item.id).then(() => {
+        onRemove(item.id)
+      })
     }
   }
 

@@ -1,24 +1,21 @@
-import React, { ReactNode } from 'react'
+import { ToastContainerProps, ToastPosition } from 'react-toastify/dist/types'
 
-export enum notificationEnum {
-  success = 'success',
-  error = 'error',
-  warning = 'warning',
-  default = 'default',
-}
+export type PositionType = ToastPosition & 'center' | 'centerLeft' | 'centerRight'
 
-export type notificationPositionType =
-  'top-left' | 'top-center' | 'top-right' |
-  'center-left' | 'center' | 'center-right' |
-  'bottom-left' | 'bottom-center' | 'bottom-right'
+// type OmitKeysNotification = Omit<ToastPosition, "rtl">;
+
 
 export interface INotification {
-  title?: string
-  children?: string | ReactNode
-  className?: string
-  timeout?: number
-  onClick?: (event: React.MouseEvent) => void
-  icon?: React.ReactNode
-  position?: notificationPositionType
-  type?: notificationEnum
+  // position?: PositionType
+  position?
+  autoClose?
+  hideProgressBar?
+  // newestOnTop?: any
+  closeOnClick?
+  rtl?
+  pauseOnFocusLoss?
+  draggable?
+  pauseOnHover?
+  theme?
+  progress?
 }

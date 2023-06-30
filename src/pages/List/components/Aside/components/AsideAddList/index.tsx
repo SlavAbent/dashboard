@@ -1,7 +1,7 @@
 import React, { FC, memo, useCallback, useEffect, useMemo, useState } from 'react'
-import { DropDownMenu } from 'shared/stories/UI/Components/DropDownMenu'
-import { useAxios } from '../../../../../../shared/hooks/useAxios'
-import { Badge } from '../../../../../../shared/stories/UI/Components/Badge'
+import { DropDownMenu } from 'stories/UI/Components/DropDownMenu'
+import { useAxios } from '../../../../../../hooks/useAxios'
+import { Badge } from '../../../../../../stories/UI/Components/Badge'
 import {
   AsidePopup,
   AsidePopupClose,
@@ -10,15 +10,13 @@ import {
 } from './index.styled'
 import classNames from 'classnames'
 import { Close } from '../../../../../../components/Icons/Close'
-import { Button } from '../../../../../../shared/stories/UI/Components/Button'
-import { Loader } from '../../../../../../shared/stories/UI/Components/Loader'
+import { Button } from '../../../../../../stories/UI/Components/Button'
+import { Loader } from '../../../../../../stories/UI/Components/Loader'
 import { uniqueId } from 'lodash'
-import { useAddedList } from '../../../../../../shared/hooks/useAddedList'
+import { useAddedList } from '../../../../../../hooks/useAddedList'
 import { baseURL } from '../../../../../../shared/urls'
-import { notificationFabric } from '../../../../../../components/uikit/Notification/notificationFabric'
-import { notificationEnum } from '../../../../../../components/uikit/Notification/model/Notification.model'
 import { IColor } from '../../../../model/index.model'
-import { TextInput } from '../../../../../../shared/stories/UI/Inputs/TextInput'
+import { TextInput } from '../../../../../../stories/UI/Inputs/TextInput'
 
 interface IAsideAddListProps {
   handlerAddList: (listAside) => void
@@ -65,13 +63,7 @@ export const AsideAddList: FC<IAsideAddListProps> = memo((props) => {
 
   const handlerAddListAside = useCallback(() => {
     if(!asideInputValue) {
-      return notificationFabric({
-        className: 'notification__error',
-        type: notificationEnum.error,
-        icon: <div/>,
-        title: 'Ошибка',
-        position: 'bottom-right',
-      })
+      return <>notification</>
     }
     setIsLoading(true)
     addListOnAside(baseURL, asideInputValue, selectedColor)

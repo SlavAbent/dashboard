@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react'
 import { useLocation } from 'react-router'
-import { ListContext } from '../../../../shared/context/providers/listProvider'
+import { ListContext } from '../../../../context/providers/listProvider'
 
 const EditPage = () => {
   const { response } = useContext(ListContext)

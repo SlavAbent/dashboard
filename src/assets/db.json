@@ -24,6 +24,16 @@
       "id": 5,
       "name": "Личное",
       "colorId": 5
+    },
+    {
+      "name": "sdsdfsfsdf",
+      "colorId": 1,
+      "id": 6
+    },
+    {
+      "name": "sdf",
+      "colorId": 4,
+      "id": 7
     }
   ],
   "tasks": [
