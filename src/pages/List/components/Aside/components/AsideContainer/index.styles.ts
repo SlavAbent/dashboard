@@ -19,7 +19,6 @@ export const AsideRowEdit = styled.div`
 export const AsideRowText = styled.p`
   display: flex;
   flex-grow: 1;
-  color: ${(p) => p.theme.colors.lightTheme.mainColor};
 `
 
 export const AsideRowWrapper = styled.div`
@@ -29,6 +28,12 @@ export const AsideNavLink = styled(NavLink)`
   &.active {
     display: flex;
     background-color: ${props => props.theme.colors.lighterMain};
+    p {
+      color: ${(props) => props.color === 'light'
+              ? props.theme.colors?.lightTheme.mainColor
+              : props.theme.colors?.darkTheme.mainColor
+      };
+    }
   }
   div:hover {
     background-color: ${props => props.theme.colors.lightTheme.mainColorOpacity};
