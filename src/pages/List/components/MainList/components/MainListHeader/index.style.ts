@@ -9,10 +9,15 @@ export const MainListHeaderName = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${props => props.theme.colors.lighterMain};
   padding: ${props => props.theme.padding.small};
   border-radius: ${props => props.theme.decoration.borderRadius.default};
   position: relative;
+  p, svg {
+    color: ${(props) => props.color === 'light'
+            ? props.theme.colors?.lightTheme.mainColor
+            : props.theme.colors?.darkTheme.mainColor
+    };
+  }
 `
 export const MainListHeaderIcon = styled.div`
   cursor: pointer;
@@ -21,6 +26,10 @@ export const MainListHeaderIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  fill: ${(props) => props.color === 'light'
+          ? props.theme.colors?.lightTheme.mainColor
+          : props.theme.colors?.darkTheme.mainColor
+  };
 `
 export const MainListHeaderText = styled.p`
   font-size: 32px;
