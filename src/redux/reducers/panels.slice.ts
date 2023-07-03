@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   togglePanels: false,
+  toggleModals: false,
   isVisiblePanel: true,
   isHidePanel: false,
   showContextMenu: false,
@@ -10,39 +11,27 @@ const initialState = {
   isHideModal: false,
 }
 export const panelsSlice = createSlice({
-  name: 'isTogglePanels',
+  name: 'panels',
   initialState,
   reducers: {
     togglePanels: (state ) => {
       state.togglePanels = !state.togglePanels;
     },
-    isVisiblePanel: (state, action) => {
-      state.isVisiblePanel = action.payload.isVisiblePanel(true)
+    toggleModals: (state ) => {
+      state.toggleModals = !state.toggleModals;
     },
-    isHidePanel: (state, action) => {
-      state.isHidePanel = action.payload.isHidePanel(false)
+    isOpenModal: (state, { payload }) => {
+      state.isOpenModal = payload
     },
-    showContextMenu: (state, action) => {
-      state.showContextMenu = action.payload.showContextMenu(true)
-    },
-    clearContextMenu: (state, action) => {
-      state.showContextMenu = action.payload.clearContextMenu(false)
-    },
-    isOpenModal: (state, action) => {
-      state.isOpenModal = action.payload.isOpenModal(true)
-    },
-    isHideModal: (state, action) => {
-      state.isHideModal = action.payload.isHideModal(false)
+    isHideModal: (state, { payload  }) => {
+      state.isHideModal = payload
     },
   }
 })
 
 export const {
   togglePanels,
-  isVisiblePanel,
-  isHidePanel,
-  showContextMenu,
-  clearContextMenu,
+  toggleModals,
   isOpenModal,
   isHideModal,
 } = panelsSlice.actions

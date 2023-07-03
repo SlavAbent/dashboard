@@ -28,5 +28,12 @@ export const AddListForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
+`
+
+export const AddListFormFooter = styled.div`
+  margin-top: ${(p) => p.theme.margin.default};
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
