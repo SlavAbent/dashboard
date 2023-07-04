@@ -17,7 +17,7 @@ import { Close } from 'components/Icons/Close'
 import { useAppDispatch } from 'redux/hooks/useAppDispatch'
 import { toggleModals } from 'redux/reducers/panels.slice'
 import { useAppSelector } from 'redux/hooks/useAppSelector'
-import { Input } from '../../../../../../../stories/UI/Inputs/TextInput/styled/TextInput.styles'
+import { Input } from 'stories/UI/Inputs/TextInput/styled/TextInput.styles'
 
 interface IAddListProps {
   list: IList
@@ -80,11 +80,18 @@ export const AddList:FC<IAddListProps> = ({ list, onAddTask }) => {
           children={buttonStatusSuccess}
           isDisabled={loading || !inputValueValidate}
           onClick={addList}
+          className='success'
+          size={'small'}
+          icon={<Plus />}
+          isIcon
+          iconPosition='left'
         />
         <Button
           type="button"
           children='Отмена'
           onClick={toggleVisibleForm}
+          className='danger'
+          size={'small'}
         />
       </AddListFormFooter>
     </AddListForm>

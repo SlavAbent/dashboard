@@ -99,6 +99,8 @@ const theme = {
       lighterRed: '#ED504E',
       lighterPurple: '#C6B2DB',
       lighterBrown: '#CBAD97',
+      red: '#e32b28',
+      green: '#5fe570',
       yellow: '#C0B94E',
       purple: '#765FE2',
       brown: '#B49B84',

@@ -4,7 +4,7 @@ export const HeaderComponent = styled.div<{color: string | undefined}>`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    height: 25px;
+    height: 45px;
     transition: .3s;
     padding: ${props => props.theme.padding.small};
     box-shadow: ${props => props.theme.decoration.boxShadow.panel};
