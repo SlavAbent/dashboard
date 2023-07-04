@@ -1,4 +1,4 @@
-import React, { DOMAttributes } from 'react'
+import React, { DOMAttributes, ReactNode } from 'react'
 
 export type ButtonType = 'button' | 'submit' | 'reset'
 export enum ButtonSizeEnum {
@@ -6,6 +6,12 @@ export enum ButtonSizeEnum {
   default = 'default',
   small = 'small',
 }
+
+export enum PositionIconEnum {
+  left = 'left',
+  right = 'right',
+}
+
 export interface IButtonProps extends DOMAttributes<HTMLButtonElement> {
   text?: string
   className?: string;
@@ -13,4 +19,7 @@ export interface IButtonProps extends DOMAttributes<HTMLButtonElement> {
   type?: ButtonType;
   onClick?: (event: React.MouseEvent) => void
   size?: ButtonSizeEnum | string
+  icon?: ReactNode
+  isIcon?: boolean
+  iconPosition?: PositionIconEnum | string
 }

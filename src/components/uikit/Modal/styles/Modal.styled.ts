@@ -30,19 +30,18 @@ export const ModalHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${(p) => p.theme.margin.large};
 `
 export const ModalTitle = styled.div`
   
 `
 export const ModalIconClose = styled.div`
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
   cursor: pointer;
 `
 export const ModalBody = styled.div`
-  margin-bottom: ${(p) => p.theme.margin.large};
+  margin-bottom: ${(p) => p.theme.margin.default};
   padding: ${(p) => p.theme.padding.default};
 `
 export const ModalBodyContent = styled.div`

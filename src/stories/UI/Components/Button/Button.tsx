@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react'
+import cn from 'classnames'
 
-import { ButtonComponent } from './styles/Button.styled';
-import { ButtonSizeEnum, IButtonProps } from './model/Button.model'
+import { ButtonChildren, ButtonComponent, ButtonIcon, ButtonText } from './styles/Button.styled'
+import { ButtonSizeEnum, IButtonProps, PositionIconEnum } from './model/Button.model'
 
-// TODO add icon and classnames
-
-export const Button: React.FC<IButtonProps>  = ({
+export const Button: FC<IButtonProps>  = ({
     text,
     className,
     children,
@@ -13,16 +12,38 @@ export const Button: React.FC<IButtonProps>  = ({
     type,
     onClick,
     size = ButtonSizeEnum.default,
+    icon,
+    isIcon,
+    iconPosition = PositionIconEnum.left,
+    onMouseMove,
+    onMouseDown,
+    // tooltip,
     ...rest
 }) => {
+
     return (
-        <ButtonComponent className={`${isDisabled} ${size} ${className}`}
-            disabled={isDisabled}
-            type={type}
-            onClick={onClick}
-            {...rest}
+        <ButtonComponent className={cn('button', {
+            [`${isDisabled}`]: isDisabled,
+            [`${size}`]: size,
+            [`${className}`]: className
+        })}
+         disabled={isDisabled}
+         type={type}
+         onClick={onClick}
+         onMouseMove={onMouseMove}
+         onMouseDown={onMouseDown}
+         {...rest}
         >
-            <span>{text ?? children}</span>
+            <ButtonChildren>
+                { isIcon && (
+                  <ButtonIcon
+                    icon={isIcon}
+                    iconPosition={iconPosition}>
+                      {icon}
+                  </ButtonIcon>
+                )}
+                <ButtonText iconPosition={iconPosition}>{text ?? children}</ButtonText>
+            </ButtonChildren>
         </ButtonComponent>
     )
 }

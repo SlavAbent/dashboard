@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler, ReactNode, useEffect } from 'react'
+import React, { FC, ReactNode, useEffect } from 'react'
 import {
   ModalContainer,
   ModalHeader,
@@ -11,6 +11,7 @@ import {
   ModalWrapper,
 } from './styles/Modal.styled'
 import { Portal } from '../Portal'
+import { useAppSelector } from '../../../redux/hooks/useAppSelector'
 
 interface IModalProps {
   title?: string
@@ -22,8 +23,11 @@ interface IModalProps {
   content?: string | ReactNode
   children?: string | ReactNode
   iconClose?: ReactNode
+  isIconClose?: boolean
   isOpen?: boolean
+  isClose?: boolean
   handleClose?: (boolean) => void
+  onClose?: (boolean) => void
 }
 
 export const Modal:FC<IModalProps> = (props) => {
@@ -35,14 +39,18 @@ export const Modal:FC<IModalProps> = (props) => {
     customHeader,
     customFooter,
     iconClose,
+    isIconClose,
     content,
     children,
     isOpen,
+    onClose,
     handleClose,
   } = props
 
+
   useEffect(() => {
-    const closeOnEscapeKey = e => e.key === 'Escape' ? handleClose : null
+    //@ts-ignore
+    const closeOnEscapeKey = e => e.key === 'Escape' ? handleClose() : null
     document.body.addEventListener('keydown', closeOnEscapeKey)
 
     return () => {
@@ -55,14 +63,15 @@ export const Modal:FC<IModalProps> = (props) => {
   return (
     <Portal portalId="react-portal-modal-container">
       <ModalContainer>
-        <ModalWrapper >
-          <ModalIconClose onClick={handleClose}>{iconClose}</ModalIconClose>
-          { header && !customMode ? (
+        <ModalWrapper>
+          {isIconClose && <ModalIconClose onClick={handleClose}>
+            {iconClose}
+          </ModalIconClose>}
+          { header && !customMode && (
             <ModalHeader>
               <ModalTitle>{title}</ModalTitle>
-
             </ModalHeader>
-          ): null}
+          )}
           {customMode ?? (customHeader && <></>)}
           <ModalBody>
             <ModalBodyContent>

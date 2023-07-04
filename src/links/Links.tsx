@@ -37,8 +37,6 @@ export const Links = () => {
     )
   }, []);
 
-  console.log(isOpenMenu)
-
   return  (
     <LinksContainer>
       {memoRoutes}

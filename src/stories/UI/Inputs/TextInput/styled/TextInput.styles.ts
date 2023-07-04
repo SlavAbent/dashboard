@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Input = styled.input`
-  width: auto;
+  width: 100%;
   position: relative;
   padding: ${props => props.theme.padding.miniSmall};
   margin-bottom: ${props => props.theme.margin.default};
