@@ -11,6 +11,7 @@ import {
   ModalWrapper,
 } from './styles/Modal.styled'
 import { Portal } from '../Portal'
+import { useAppSelector } from '../../../redux/hooks/useAppSelector'
 
 interface IModalProps {
   title?: string
@@ -26,6 +27,7 @@ interface IModalProps {
   isOpen?: boolean
   isClose?: boolean
   handleClose?: (boolean) => void
+  onClose?: (boolean) => void
 }
 
 export const Modal:FC<IModalProps> = (props) => {
@@ -41,8 +43,10 @@ export const Modal:FC<IModalProps> = (props) => {
     content,
     children,
     isOpen,
+    onClose,
     handleClose,
   } = props
+
 
   useEffect(() => {
     //@ts-ignore

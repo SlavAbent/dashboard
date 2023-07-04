@@ -15,7 +15,7 @@ import { tasks } from 'shared/urls'
 import { Modal } from 'components/uikit/Modal'
 import { Close } from 'components/Icons/Close'
 import { useAppDispatch } from 'redux/hooks/useAppDispatch'
-import { toggleModals } from 'redux/reducers/panels.slice'
+import { isHideModal, toggleModals } from 'redux/reducers/panels.slice'
 import { useAppSelector } from 'redux/hooks/useAppSelector'
 import { Input } from 'stories/UI/Inputs/TextInput/styled/TextInput.styles'
 
@@ -41,7 +41,9 @@ export const AddList:FC<IAddListProps> = ({ list, onAddTask }) => {
   }
 
   const handleCloseModal = () => {
-    dispatch(toggleModals())
+    if (openModal) {
+      dispatch(toggleModals())
+    }
   }
 
   const addList = () => {

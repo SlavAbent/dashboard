@@ -36,8 +36,8 @@ export const ModalTitle = styled.div`
 `
 export const ModalIconClose = styled.div`
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
   cursor: pointer;
 `
 export const ModalBody = styled.div`
