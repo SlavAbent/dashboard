@@ -15,7 +15,7 @@ import { tasks } from 'shared/urls'
 import { Modal } from 'components/uikit/Modal'
 import { Close } from 'components/Icons/Close'
 import { useAppDispatch } from 'redux/hooks/useAppDispatch'
-import { isHideModal, toggleModals } from 'redux/reducers/panels.slice'
+import { toggleModals } from 'redux/reducers/panels.slice'
 import { useAppSelector } from 'redux/hooks/useAppSelector'
 import { Input } from 'stories/UI/Inputs/TextInput/styled/TextInput.styles'
 
