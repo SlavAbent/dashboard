@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler, ReactNode, useEffect } from 'react'
+import React, { FC, ReactNode, useEffect } from 'react'
 import {
   ModalContainer,
   ModalHeader,
