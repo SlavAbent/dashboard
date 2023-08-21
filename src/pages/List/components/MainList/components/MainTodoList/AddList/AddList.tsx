@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FC, useState } from 'react'
 import { Plus } from 'components/Icons/Plus/Plus'
-import { Button } from 'stories/UI/Components/Button'
+
 import { IList } from '../../../../../model/index.model'
 
 import {
@@ -18,6 +18,7 @@ import { useAppDispatch } from 'redux/hooks/useAppDispatch'
 import { toggleModals } from 'redux/reducers/panels.slice'
 import { useAppSelector } from 'redux/hooks/useAppSelector'
 import { Input } from 'stories/UI/Inputs/TextInput/styled/TextInput.styles'
+import { ANTDButton } from '../../../../../../../stories/UI/ANTD/Button'
 
 interface IAddListProps {
   list: IList
@@ -77,19 +78,14 @@ export const AddList:FC<IAddListProps> = ({ list, onAddTask }) => {
         onChange={(e: ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)}
       />
       <AddListFormFooter>
-        <Button
-          type="button"
+        <ANTDButton
           children={buttonStatusSuccess}
-          isDisabled={loading || !inputValueValidate}
+          disable={loading || !inputValueValidate}
           onClick={addList}
           className='success'
           size={'small'}
-          icon={<Plus />}
-          isIcon
-          iconPosition='left'
         />
-        <Button
-          type="button"
+        <ANTDButton
           children='Отмена'
           onClick={toggleVisibleForm}
           className='danger'

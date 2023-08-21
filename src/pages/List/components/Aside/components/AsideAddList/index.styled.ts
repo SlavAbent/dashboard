@@ -38,12 +38,7 @@ export const AsidePopupColors = styled.div`
 `
 
 export const AddListDropDown = styled.div`
-  margin-top: 16px;
   position: relative;
-  .button-dropDown {
-    ${styledButton}
-  }
-  
   .button-add {
     ${styledButton}
   }

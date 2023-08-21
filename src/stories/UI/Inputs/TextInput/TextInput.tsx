@@ -1,7 +1,6 @@
-import React, { FC, MouseEvent } from 'react'
+import React, { FC } from 'react'
 import { Input, InputLabel } from './styled/TextInput.styles'
 import cn from 'classnames'
-import classNames from 'classnames'
 
 interface ITextInput {
   type: string
