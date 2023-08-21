@@ -21,7 +21,7 @@ const AvatarStatus = styled.div`
     border-radius: 50%;
     z-index: 1100;
     &.success {
-        background-color: ${props => props.theme.colors.lighterGreen};
+      background-color: ${props => props.theme.colors.lighterGreen};
     }
     &.error {
         background-color: ${props => props.theme.colors.lighterRed};

@@ -10,13 +10,13 @@ import {
 } from './index.styled'
 import classNames from 'classnames'
 import { Close } from '../../../../../../components/Icons/Close'
-import { Button } from '../../../../../../stories/UI/Components/Button'
 import { Loader } from '../../../../../../stories/UI/Components/Loader'
 import { uniqueId } from 'lodash'
 import { useAddedList } from '../../../../../../hooks/useAddedList'
 import { baseURL } from '../../../../../../shared/urls'
 import { IColor } from '../../../../model/index.model'
 import { TextInput } from '../../../../../../stories/UI/Inputs/TextInput'
+import { ANTDButton } from '../../../../../../stories/UI/ANTD/Button'
 
 interface IAsideAddListProps {
   handlerAddList: (listAside) => void
@@ -126,33 +126,36 @@ export const AsideAddList: FC<IAsideAddListProps> = memo((props) => {
     )
   }, [asideInputValue, colors, onCloseDropDownAside])
 
+  const loading = () => {
+    return isLoading && (
+      <Loader
+        size={20}
+        title='loading'
+        className={' visibility'}
+      />
+    )
+  }
+
   const asideDropDownFooter = useMemo(() => {
     return (
-      <Button
+      <ANTDButton
         size="small"
-        type="button"
         onClick={handlerAddListAside}
-        text="Добавить"
-      >
-        { isLoading && (
-            <Loader
-              size={20}
-              title='loading'
-              className={' visibility'}
-            />
-        )}
-      </Button>
+        children={"Добавить"}
+        loading={!!loading}
+      />
     )
   }, [handlerAddListAside, isLoading])
 
   return (
     <AddListDropDown>
-      <Button
-        type='button'
+      <ANTDButton
+        type={"primary"}
         className={'button-dropDown'}
         onClick={openDropDown}
-        size='small'
-        text="Добавить список"
+        size={'middle'}
+        children={"Добавить список"}
+        textTransform={'capitalize'}
       />
       <DropDownMenu
         width={200}
