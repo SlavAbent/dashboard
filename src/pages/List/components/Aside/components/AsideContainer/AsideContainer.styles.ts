@@ -22,9 +22,14 @@ export const AsideRowText = styled.p`
 `
 
 export const AsideRowWrapper = styled.div`
+  a:hover {
+    background-color: ${props => props.theme.colors.lightTheme.mainColorDarked};
+    border-radius: ${props => props.theme.decoration.borderRadius.default};
+  }
 `
 export const AsideNavLink = styled(NavLink)`
   border-radius: ${props => props.theme.decoration.borderRadius.default};
+  transition: .3s;
   &.active {
     display: flex;
     background-color: ${props => props.theme.colors.lighterMain};
@@ -34,9 +39,30 @@ export const AsideNavLink = styled(NavLink)`
               : props.theme.colors?.darkTheme.mainColor
       };
     }
+    svg {
+      color: ${(props) => props.color === 'light'
+              ? props.theme.colors?.darkTheme.mainColor
+              : props.theme.colors?.lightTheme.mainColor
+      };
+    }
   }
   div:hover {
-    background-color: ${props => props.theme.colors.lightTheme.mainColorOpacity};
+    background-color: ${(props) => props.color === 'light'
+            ? props.theme.colors?.lightTheme.mainColor
+            : props.theme.colors?.darkTheme.mainColor
+    };
     border-radius: ${props => props.theme.decoration.borderRadius.default};
+    p {
+      color: ${(props) => props.color === 'light'
+              ? props.theme.colors?.darkTheme.mainColor
+              : props.theme.colors?.lightTheme.mainColor
+      };
+    }
+    svg {
+      color: ${(props) => props.color === 'light'
+              ? props.theme.colors?.darkTheme.mainColor
+              : props.theme.colors?.lightTheme.mainColor
+      };
+    }
   }
 `

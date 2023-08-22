@@ -4,7 +4,7 @@ import {
   MainListHeaderIcon,
   MainListHeaderName,
   MainListHeaderText
-} from './index.style'
+} from './MainListHeader.style'
 import { Dots } from 'components/Icons/Dots/Dots'
 import { DropDownMenu } from '../../../../../../stories/UI/Components/DropDownMenu'
 export const MainListHeader = ({id, name, color, colorId}) => {

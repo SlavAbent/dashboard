@@ -17,7 +17,14 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "allowSyntheticDefaultImports": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+//    "paths": {
+//      "@app/*": ["app/*"],
+//      "@config/*": ["app/_config/*"],
+//      "@environment/*": ["environments/*"],
+//      "@shared/*": ["app/_shared/*"],
+//      "@helpers/*": ["helpers/*"]
+//    }
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

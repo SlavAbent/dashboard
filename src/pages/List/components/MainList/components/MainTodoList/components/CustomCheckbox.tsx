@@ -8,7 +8,7 @@ interface ICustomCheckbox {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const CustomCheckbox:FC<ICustomCheckbox> = ({
+export const CustomCheckbox:FC<ICustomCheckbox> = ({
     onChange,
     completed,
     id
@@ -28,4 +28,3 @@ const CustomCheckbox:FC<ICustomCheckbox> = ({
   )
 }
 
-export default CustomCheckbox

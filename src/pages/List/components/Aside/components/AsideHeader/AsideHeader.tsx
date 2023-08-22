@@ -1,12 +1,10 @@
 import React from 'react'
-import { AsideHeaderWrapper, AsideHeaderText } from './index.styled'
+import { AsideHeaderWrapper, AsideHeaderText } from './AsideHeader.styled'
 
-const AsideHeader = ({data}) => {
+export const AsideHeader = ({data}) => {
   return (
     <AsideHeaderWrapper>
       <AsideHeaderText>Всего списков: {data.length}</AsideHeaderText>
     </AsideHeaderWrapper>
   )
 }
-
-export default AsideHeader

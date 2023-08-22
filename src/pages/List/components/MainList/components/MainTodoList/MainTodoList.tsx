@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { MainTodoListWrapper } from './components/styles/index.styled'
 import { uniqueId } from 'lodash'
 import { Tasks } from '../../../../model/index.model'
-import Task from './Task/Task'
+import { Task } from './Task'
 
 interface IMainTodoListProps {
   tasks: Tasks[]
@@ -15,8 +15,7 @@ export const MainTodoList:FC<IMainTodoListProps> = (props) => {
   const { tasks, onRemove, onEdit, onComplete } = props
   return (
     <>
-      {
-        Array.isArray(tasks) && tasks.map((task: Tasks) => {
+      { Array.isArray(tasks) && tasks.map((task: Tasks) => {
           const { completed, id, listId, text} = task
           const className = `${completed ? 'completed' : ''}`
           return (
