@@ -10,6 +10,7 @@ import { MainListWrapper } from '../pages/List/components/MainList/MainList.styl
 import { Map } from '../pages/Map'
 import { StandartPage } from './StandartPage'
 import { route } from '../shared/urls'
+import { Kanban } from '../pages/Kanban'
 
 export interface IRoutesWrapper {}
 
@@ -18,6 +19,7 @@ export const RoutesWrapper: FC<IRoutesWrapper> = () => {
       <RoutesComponentLocation>
         <StandartPage href={route}/>
         <Routes>
+          <Route path="Kanban" element={<Kanban />} />
           <Route path="List" element={<TodoList />}>
             <Route path=":id" element={<MainListWrapper />} />
           </Route>
