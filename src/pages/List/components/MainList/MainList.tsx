@@ -1,12 +1,12 @@
 import React, { useCallback, useContext, useMemo } from 'react'
-import { MainTodoList } from './components/MainTodoList'
+import { MainTodoList } from './components/MainTodoList/MainTodoList'
 import { MainListHeader } from './components/MainListHeader'
 import { MainListWrapper, MainListContainer } from './MainList.style'
 import { ListContext } from '../../../../context/providers/listProvider'
 import { useLocation } from 'react-router'
 import axios from 'axios'
 import { tasks } from 'shared/urls'
-import { AddList } from './components/MainTodoList/AddList/AddList'
+import { AddList } from './components/MainTodoList/AddList'
 import { IList, Tasks } from '../../model/index.model'
 import { Link } from 'react-router-dom'
 
@@ -43,6 +43,7 @@ export const MainList = () => {
   },[response, setResponse]);
 
   const onAddTask = useCallback((listId, taskObj) => {
+    console.log(listId, taskObj)
     const newList = response.map((item: IList) => {
       if (item.id === listId) {
         item.tasks = [...item.tasks, taskObj]
@@ -70,9 +71,9 @@ export const MainList = () => {
 
   const onComplete = useCallback((listId: number, taskId: number, completed): void => {
     const newList = response.map((list: IList) => {
-      if(list.id === listId) {
+      if (list.id === listId) {
         list.tasks = list.tasks.map((task: Tasks) => {
-          if(task.id === taskId) task.completed = completed
+          if (task.id === taskId) task.completed = completed
           return task
         })
       }
@@ -89,7 +90,7 @@ export const MainList = () => {
       });
   }, [response, setResponse])
 
-  const data = useMemo(() => response && response.map((item: IList) => {
+  const createAllTasksOnPage = useMemo(() => response && response.map((item: IList) => {
     const { id, name, color, colorId, tasks } = item
     return (
       <div key={`${name}${colorId}`}>
@@ -122,7 +123,7 @@ export const MainList = () => {
   }), [response, location.pathname, onRemove, onEditTask, onComplete, onAddTask])
   return (
     <MainListContainer>
-      {data}
+      {createAllTasksOnPage}
     </MainListContainer>
   )
 }

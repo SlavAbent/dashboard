@@ -2,7 +2,7 @@ import React, { useContext, useMemo } from 'react'
 import { useLocation } from 'react-router'
 import { ListContext } from '../../../../context/providers/listProvider'
 
-const EditPage = () => {
+export const EditPage = () => {
   const { response } = useContext(ListContext)
   const location = useLocation();
 
@@ -18,5 +18,3 @@ const EditPage = () => {
   }), [response, location])
   return <div>{data}</div>
 }
-
-export default EditPage

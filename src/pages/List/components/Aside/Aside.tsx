@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { AsideWrapper } from './Aside.style'
-import AsideHeader from './components/AsideHeader'
-import AsideContainer from './components/AsideContainer'
+import { AsideHeader } from './components/AsideHeader'
+import { AsideContainer } from './components/AsideContainer'
 import { AsideAddList } from './components/AsideAddList'
 import { useAddedList } from '../../../../hooks/useAddedList'
 import { baseURL } from '../../../../shared/urls'
 import { ListContext } from '../../../../context/providers/listProvider'
 
-const Aside = () => {
+export const Aside = () => {
   const { deleteListOnAside } = useAddedList()
   const { response, error, loading, setResponse } = useContext(ListContext)
 
@@ -41,5 +41,3 @@ const Aside = () => {
     </AsideWrapper>
   )
 }
-
-export default Aside

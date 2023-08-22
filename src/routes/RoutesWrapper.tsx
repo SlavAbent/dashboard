@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom'
 
-import Chat from '../pages/Chat'
-import List from '../pages/List'
-import Profile from '../pages/Profile'
+import { Chat } from '../pages/Chat'
+import { TodoList } from '../pages/List'
+import { Profile } from '../pages/Profile'
 import React, { FC } from 'react'
 import {RoutesComponentLocation } from './styles/RoutesWrapper.style'
 import { MainListWrapper } from '../pages/List/components/MainList/MainList.style'
 
-import { Map } from '../pages/Map/Map'
+import { Map } from '../pages/Map'
 import { StandartPage } from './StandartPage'
 import { route } from '../shared/urls'
 
@@ -18,7 +18,7 @@ export const RoutesWrapper: FC<IRoutesWrapper> = () => {
       <RoutesComponentLocation>
         <StandartPage href={route}/>
         <Routes>
-          <Route path="List" element={<List />}>
+          <Route path="List" element={<TodoList />}>
             <Route path=":id" element={<MainListWrapper />} />
           </Route>
           <Route path="Chat" element={<Chat />} />

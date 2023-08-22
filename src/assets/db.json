@@ -52,12 +52,6 @@
       "completed": false
     },
     {
-      "listId": 2,
-      "text": "123",
-      "completed": false,
-      "id": 5
-    },
-    {
       "listId": 1,
       "text": "qweqwe",
       "completed": true,

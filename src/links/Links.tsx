@@ -3,7 +3,7 @@ import React, { useContext, useMemo } from 'react'
 import { LinksContainer, LinkAnchor, LinkAnchorTitle } from './styles/Links.style'
 import { ThemeContext } from '../context/themeContext'
 import { uniqueId } from 'lodash'
-import { useAppSelector } from '../redux/hooks/useAppSelector'
+import { useAppSelector } from '../redux/hooks'
 import { asideLinks } from './data/asideLinks'
 
 export const Links = () => {
@@ -16,7 +16,6 @@ export const Links = () => {
     return (
       <>
         {asideLinks.map((link) => {
-          console.log('isOpenMenu', isOpenMenu)
           const { to, icon, name } = link
           return (
             <LinkAnchor
@@ -35,7 +34,7 @@ export const Links = () => {
         })}
       </>
     )
-  }, []);
+  }, [isOpenMenu, openMenu, toggleTheme]);
 
   return  (
     <LinksContainer>

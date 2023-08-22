@@ -1,22 +1,14 @@
 import React, { FC, memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { DropDownMenu } from 'stories/UI/Components/DropDownMenu'
 import { useAxios } from '../../../../../../hooks/useAxios'
-import { Badge } from '../../../../../../stories/UI/Components/Badge'
 import {
-  AsidePopup,
-  AsidePopupClose,
-  AsidePopupColors,
   AddListDropDown,
-} from './index.styled'
-import classNames from 'classnames'
-import { Close } from '../../../../../../components/Icons/Close'
-import { Loader } from '../../../../../../stories/UI/Components/Loader'
-import { uniqueId } from 'lodash'
+} from './AsideAddList.styled'
 import { useAddedList } from '../../../../../../hooks/useAddedList'
 import { baseURL } from '../../../../../../shared/urls'
 import { IColor } from '../../../../model/index.model'
-import { TextInput } from '../../../../../../stories/UI/Inputs/TextInput'
 import { ANTDButton } from '../../../../../../stories/UI/ANTD/Button'
+import { AsideDropDown } from './AsideDropDown'
 
 interface IAsideAddListProps {
   handlerAddList: (listAside) => void
@@ -89,60 +81,13 @@ export const AsideAddList: FC<IAsideAddListProps> = memo((props) => {
     selectedColor
   ])
 
-  const AsideDropDownContent = useMemo(() => {
-    return (
-      <AsidePopup>
-        <AsidePopupClose onClick={onCloseDropDownAside}>
-          <Close
-            size={24}
-          />
-        </AsidePopupClose>
-        <TextInput
-          type="text"
-          value={asideInputValue}
-          placeholder="Название списка"
-          onChange={e => setAsideInputValue(e.target.value)}
-          className=""
-        />
-        <AsidePopupColors>
-          { colors.map((item: IColor, index: number) => {
-           const { id, name } = item
-           const className = classNames('badge--aside', { [`badge--${name}`]: name}, 'badge')
-           return (
-             <Badge
-               id={id}
-               selectedColor={selectedColor}
-               key={uniqueId(`list_${index}`)}
-               className={className}
-               size={12}
-               onClick={() => setSelectedColor(id)}
-             >
-               {item}
-             </Badge>
-           )
-          })}
-        </AsidePopupColors>
-      </AsidePopup>
-    )
-  }, [asideInputValue, colors, onCloseDropDownAside])
-
-  const loading = () => {
-    return isLoading && (
-      <Loader
-        size={20}
-        title='loading'
-        className={' visibility'}
-      />
-    )
-  }
-
   const asideDropDownFooter = useMemo(() => {
     return (
       <ANTDButton
         size="small"
         onClick={handlerAddListAside}
         children={"Добавить"}
-        loading={!!loading}
+        loading={isLoading}
       />
     )
   }, [handlerAddListAside, isLoading])
@@ -163,7 +108,14 @@ export const AsideAddList: FC<IAsideAddListProps> = memo((props) => {
         activeDropDown={activeDropDown}
         footer={asideDropDownFooter}
         >
-          { AsideDropDownContent }
+          <AsideDropDown
+            onCloseDropDownAside={onCloseDropDownAside}
+            selectedColor={selectedColor}
+            setSelectedColor={setSelectedColor}
+            colors={colors}
+            asideInputValue={asideInputValue}
+            setAsideInputValue={setAsideInputValue}
+          />
         </DropDownMenu>
     </AddListDropDown>
   )

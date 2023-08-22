@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect } from 'react'
+import React, { FC, JSX, ReactNode, useEffect } from 'react'
 import {
   ModalContainer,
   ModalHeader,
@@ -11,7 +11,6 @@ import {
   ModalWrapper,
 } from './styles/Modal.styled'
 import { Portal } from '../Portal'
-import { useAppSelector } from '../../../redux/hooks/useAppSelector'
 
 interface IModalProps {
   title?: string
@@ -20,8 +19,8 @@ interface IModalProps {
   customMode?: boolean
   customHeader?: ReactNode
   customFooter?: ReactNode
-  content?: string | ReactNode
-  children?: string | ReactNode
+  content?: string | ReactNode | JSX.Element
+  children?: string | ReactNode | JSX.Element
   iconClose?: ReactNode
   isIconClose?: boolean
   isOpen?: boolean
@@ -43,7 +42,6 @@ export const Modal:FC<IModalProps> = (props) => {
     content,
     children,
     isOpen,
-    onClose,
     handleClose,
   } = props
 

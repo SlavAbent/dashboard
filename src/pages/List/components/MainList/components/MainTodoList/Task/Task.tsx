@@ -1,5 +1,5 @@
-import React, { ChangeEvent, FC, SyntheticEvent } from 'react'
-import CustomCheckbox from '../components/CustomCheckbox'
+import React, { ChangeEvent, FC } from 'react'
+import { CustomCheckbox } from '../components'
 import { MainTodoListIcon, MainTodoListTitle, MainTodoListRow, MainListRow, MainListLeftSide } from '../components/styles/index.styled'
 import { Edit } from '../../../../../../../components/Icons/Edit'
 import { Delete } from '../../../../../../../components/Icons/Delete'
@@ -15,7 +15,7 @@ interface ITaskProps {
   className: string
 }
 
-const Task:FC<ITaskProps> = (props) => {
+export const Task:FC<ITaskProps> = (props) => {
   const {
     id,
     text,
@@ -55,4 +55,3 @@ const Task:FC<ITaskProps> = (props) => {
   )
 }
 
-export default Task
