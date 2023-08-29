@@ -3,6 +3,7 @@ import { TodoAction } from 'types/interfaces/todoInterfaces'
 import { store } from 'redux/state'
 import { IInitialState } from 'types/interfaces/interfaces'
 
+//TODO refactoring to sliced
 export const todoReducer = (state: typeof store, action: TodoAction): IInitialState => {
   const { type, payload } = action
   switch (type) {
