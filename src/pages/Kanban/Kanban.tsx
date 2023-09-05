@@ -1,60 +1,74 @@
-import React, { useState } from 'react'
-import { MuuriComponent } from "muuri-react";
-import { boardOptions, columnOptions, useSend } from './utils'
-import { KanbanColumn } from './KanbanColumn';
-import { KanbanItem } from './KanbanItem'
-import { KanbanMuuriComponent } from './styles/Kanban.styled'
-
-
-const todos = {
-  todo: [
-    // {
-    //   id: '1',
-    //   title: 'test',
-    //   description: 'test'
-    // },
-    // {
-    //   id: '2',
-    //   title: 'test2',
-    //   description: 'test2'
-    // },
-    '1', '2'
-  ],
-  working: [],
-  done: []
-}
+import { useState } from 'react'
+import { columnsFromBackend } from './mockdata'
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import { TaskCard } from './TaskCard'
+import { Container, TaskColumnStyles, TaskList, Title } from './Kanban.styled'
 
 export const Kanban = () => {
-  const [items, setItems] = useState(todos);
+  const [columns, setColumns] = useState(columnsFromBackend)
 
-  const onSend = useSend(setItems);
+  const onDragEnd = (result, columns, setColumns) => {
+    if (!result.destination) return
 
-  // Children.
-  const children = {
-    todo: items.todo.map((id) => <KanbanItem id={id} key={id} />),
-    done: items.done.map((id) => <KanbanItem id={id} key={id} />),
-    working: items.working.map((id) => <KanbanItem id={id} key={id} />)
-  };
-
-  const {todo, done, working} = children
+    const { source, destination } = result
+    
+    if (source.droppableId !== destination.droppableId) {
+      const sourceColumn = columns[source.droppableId]
+      const destColumn = columns[destination.droppableId]
+      const sourceItems = [...sourceColumn.items]
+      const destItems = [...destColumn.items]
+      const [removed] = sourceItems.splice(source.index, 1)
+      destItems.splice(destination.index, 0, removed)
+      setColumns({
+        ...columns,
+        [source.droppableId]: {
+          ...sourceColumn,
+          items: sourceItems
+        },
+        [destination.droppableId]: {
+          ...destColumn,
+          items: destItems
+        }
+      })
+    } else {
+      const column = columns[source.droppableId]
+      const copiedItems = [...column.items]
+      const [removed] = copiedItems.splice(source.index, 1)
+      copiedItems.splice(destination.index, 0, removed)
+      setColumns({
+        ...columns,
+        [source.droppableId]: {
+          ...column,
+          items: copiedItems
+        }
+      })
+    }
+  }
 
   return (
-    <KanbanMuuriComponent {...boardOptions}>
-      <KanbanColumn actionClass="todo" title="Задачи">
-        <MuuriComponent id={"todo"} onSend={onSend} {...columnOptions}>
-          {todo}
-        </MuuriComponent>
-      </KanbanColumn>
-      <KanbanColumn actionClass="working" title="В работе">
-        <MuuriComponent id={"working"} onSend={onSend} {...columnOptions}>
-          {working}
-        </MuuriComponent>
-      </KanbanColumn>
-      <KanbanColumn actionClass="done" title="Выполнено">
-        <MuuriComponent id={"done"} onSend={onSend} {...columnOptions}>
-          {done}
-        </MuuriComponent>
-      </KanbanColumn>
-    </KanbanMuuriComponent>
+    <DragDropContext onDragEnd={(result) => onDragEnd(result, columns, setColumns)}>
+      <Container>
+        <TaskColumnStyles>
+          {Object.entries(columns).map(([columnId, column]) => {
+            const { title, items } = column
+            return (
+              <Droppable key={columnId} droppableId={columnId}>
+                {(provided) => {
+                  return (
+                    <TaskList ref={provided.innerRef} {...provided.droppableProps}>
+                      <Title>{title}</Title>
+                      {items.map((item, index) => (
+                        <TaskCard key={item.id} item={item} index={index} />
+                      ))}
+                      {provided.placeholder}
+                    </TaskList>
+                  )
+                }}
+              </Droppable>
+            )
+          })}
+        </TaskColumnStyles>
+      </Container>
+    </DragDropContext>
   )
 }

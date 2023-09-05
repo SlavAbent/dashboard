@@ -36,7 +36,16 @@ export const kanbanSlice = createSlice({
 })
 
 export const {
-
+  onAddKanbanTask,
+  onRemoveKanbanTask,
+  onEditKanbanTask,
+  onDragKanbanTask,
+  onChangeStatusKanbanTask,
+  onDeleteAllKanbanTasks,
+  onAddBoardKanbanTasks,
+  onDeleteBoardKanbanTasks,
+  onEditBoardKanbanTasks,
+  onSortKanbanTasks,
 } = kanbanSlice.actions
 
 export default kanbanSlice.reducer
