@@ -5,19 +5,18 @@ export interface ThemeProviderProps {
   children: React.ReactNode
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = ({children}) => {
+const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const [toggleTheme, setToggleTheme] = useState<Theme>(Theme.LIGHT)
 
-  const defaultTheme = useMemo(() => ({
-    toggleTheme: toggleTheme,
-    setToggleTheme: setToggleTheme
-  }), [toggleTheme])
-
-  return (
-    <ThemeContext.Provider value={defaultTheme}>
-      {children}
-    </ThemeContext.Provider>
+  const defaultTheme = useMemo(
+    () => ({
+      toggleTheme: toggleTheme,
+      setToggleTheme: setToggleTheme
+    }),
+    [toggleTheme]
   )
+
+  return <ThemeContext.Provider value={defaultTheme}>{children}</ThemeContext.Provider>
 }
 
 export default ThemeProvider

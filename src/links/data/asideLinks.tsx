@@ -1,5 +1,5 @@
 import { IoIosContact } from 'react-icons/io'
-import { BsChatDots, BsListCheck, BsMap } from 'react-icons/bs'
+import { BsChatDots, BsKanban, BsListCheck, BsMap } from 'react-icons/bs'
 import React from 'react'
 
 interface LinkData {
@@ -9,6 +9,11 @@ interface LinkData {
 }
 
 export const asideLinks: LinkData[] = [
+  {
+    to: 'Kanban',
+    icon: <BsKanban />,
+    name: 'Доска',
+  },
   {
     to: 'List',
     icon: <BsListCheck />,

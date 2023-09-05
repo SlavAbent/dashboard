@@ -18,3 +18,11 @@ p {
 a {
  text-decoration: none;
 }
+
+.board {
+ position: relative;
+ min-width: 1200px;
+ &-column-content {
+  height: 70vh !important;
+ }
+}
