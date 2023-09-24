@@ -48,7 +48,7 @@ export const Modal:FC<IModalProps> = (props) => {
 
   useEffect(() => {
     //@ts-ignore
-    const closeOnEscapeKey = e => e.key === 'Escape' ? handleClose() : null
+    const closeOnEscapeKey = (e: { key: string }) => e.key === 'Escape' ? handleClose() : null
     document.body.addEventListener('keydown', closeOnEscapeKey)
 
     return () => {

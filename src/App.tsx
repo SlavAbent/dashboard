@@ -7,7 +7,7 @@ import React, { useContext } from 'react'
 import { ThemeContext } from './context/themeContext'
 import store from './redux/store'
 import { Home } from './components/Icons/Home'
-import { togglePanels } from './redux/reducers/panels.slice'
+import { togglePanels } from './redux/reducers/panels/panels.slice'
 import Aside from './stories/UI/Panels/Aside'
 import { RoutesWrapper } from './routes'
 import { useAppDispatch, useAppSelector } from './redux/hooks'
@@ -18,7 +18,7 @@ import { ToastContainer } from 'react-toastify'
 const MainComponent = () => {
   const { toggleTheme } = useContext(ThemeContext)
   const dispatch = useAppDispatch()
-  const isOpenMenu = useAppSelector((state) => state.togglePanels.togglePanels);
+  const isOpenMenu = useAppSelector((state) => state.panelsSlice.togglePanels)
   const className = `${isOpenMenu ? ' full__menu' : ' min__menu'}`
   const handleToggleMenu = () => dispatch(togglePanels())
 
@@ -40,16 +40,14 @@ const MainComponent = () => {
     </>
   )
 
-  const asideLinksContent = (
-    <Links />
-  )
+  const asideLinksContent = <Links />
 
   return (
     <AppWrapper color={toggleTheme}>
       <HashRouter>
         <AppMainFields>
           <AsideWrapper>
-           <Header
+            <Header
               logo
               date
               search
@@ -60,14 +58,10 @@ const MainComponent = () => {
               logoContentBody={logoContentBody}
               headerContentBody={headerContentBody}
               handleToggleMenu={handleToggleMenu}
-           />
+            />
             <AsideWrap>
-              <Aside
-                className={className}
-                color={toggleTheme}
-                asideLinksContent={asideLinksContent}
-              />
-              <RoutesWrapper/>
+              <Aside className={className} color={toggleTheme} asideLinksContent={asideLinksContent} />
+              <RoutesWrapper />
             </AsideWrap>
           </AsideWrapper>
         </AppMainFields>
@@ -87,7 +81,7 @@ export const App = () => {
         </Provider>
       </ThemeProvider>
     </Theme>
-  );
+  )
 }
 
-export default App;
+export default App
