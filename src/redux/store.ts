@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import isOpenPanels from './reducers/panels.slice';
 import { logger } from 'redux-logger'
 import thunk from 'redux-thunk'
+import { reducers } from './combineReducers'
+
 export default configureStore({
-  reducer: {
-    togglePanels: isOpenPanels,
-  },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger, thunk),
-});
+  reducer: reducers,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger, thunk)
+})

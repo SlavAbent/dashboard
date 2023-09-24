@@ -7,9 +7,9 @@ import { useAppSelector } from '../redux/hooks'
 import { asideLinks } from './data/asideLinks'
 
 export const Links = () => {
-  const isOpenMenu = useAppSelector((state) => state.togglePanels.togglePanels)
+  const isOpenMenu = useAppSelector((state) => state.panelsSlice.togglePanels)
   const { toggleTheme } = useContext(ThemeContext)
-  const className = ({isActive}) => isActive ? ' active' : ''
+  const className = ({ isActive }) => (isActive ? ' active' : '')
   const openMenu = isOpenMenu ? 'link__active' : ''
 
   const memoRoutes = useMemo(() => {
@@ -26,19 +26,13 @@ export const Links = () => {
               className={`${className} ${openMenu}`}
             >
               <span className={openMenu}>{icon}</span>
-              <LinkAnchorTitle showNameLink={isOpenMenu}>
-                {name}
-              </LinkAnchorTitle>
+              <LinkAnchorTitle showNameLink={!!isOpenMenu}>{name}</LinkAnchorTitle>
             </LinkAnchor>
           )
         })}
       </>
     )
-  }, [isOpenMenu, openMenu, toggleTheme]);
+  }, [isOpenMenu, openMenu, toggleTheme])
 
-  return  (
-    <LinksContainer>
-      {memoRoutes}
-    </LinksContainer>
-  )
+  return <LinksContainer>{memoRoutes}</LinksContainer>
 }
