@@ -18,7 +18,7 @@ export const TaskInformation = styled.div`
     align-items: center;
     width: 100%;
     font-size: 12px;
-    font-weight: 400px;
+    font-weight: 400;
     color: ${(props) => props.theme.colors.lightTheme.mainColorDark};
   }
 `

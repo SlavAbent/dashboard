@@ -1,15 +1,13 @@
-import React, { FC, useContext } from 'react'
+import React, { FC } from 'react'
 import { Loader } from 'stories/UI/Components/Loader'
-import { AsideRowWrapper, AsideContain } from './AsideContainer.styles'
+import { AsideRowWrapper } from './AsideContainer.styles'
 import { IAsideProps } from '../../../../model/index.model'
 import 'react-toastify/dist/ReactToastify.css';
 import { Notification } from '../../../../../../components/uikit/Notification/Notification'
-import { ThemeContext } from '../../../../../../context/themeContext'
 import { AsideRowCreate } from './AsideRowCreate'
 
 export const AsideContainer: FC<IAsideProps> = ( props) => {
-  const { toggleTheme } = useContext(ThemeContext)
-  const { loading, error, handleAsideDeleteItem } = props;
+  const { loading, error, handleAsideDeleteItem, themeColor } = props;
 
 
   // TODO refactoring to notification fabric
@@ -25,13 +23,13 @@ export const AsideContainer: FC<IAsideProps> = ( props) => {
         draggable
         pauseOnHover
         progress
-        theme={toggleTheme}
+        theme={themeColor}
       />
     )
   }
 
   return (
-    <AsideContain>
+    <>
       { loading ? (
         <Loader
           size={50}
@@ -42,10 +40,11 @@ export const AsideContainer: FC<IAsideProps> = ( props) => {
       ) : (
         <AsideRowWrapper>
           <AsideRowCreate
+            themeColor={themeColor}
             handleAsideDeleteItem={handleAsideDeleteItem}
           />
         </AsideRowWrapper>
       )}
-    </AsideContain>
+    </>
   )
 }

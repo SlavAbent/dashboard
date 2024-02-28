@@ -9,8 +9,8 @@ export const TodoList = () => {
   return (
     <ListProvider>
       <TodoListWrapper>
-        <Aside />
-        <MainList />
+        <Aside/>
+        <MainList/>
       </TodoListWrapper>
     </ListProvider>
   )

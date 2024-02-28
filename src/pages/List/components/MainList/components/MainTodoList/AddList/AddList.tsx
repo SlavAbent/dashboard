@@ -1,10 +1,11 @@
 import React, { FC, useState } from 'react'
 import { Plus } from 'components/Icons/Plus/Plus'
 import { IList } from '../../../../../model/index.model'
-import { AddListContainer, AddListWrapper, AddListIcon, AddListText } from './style/AddList.style'
+import { AddListContainer, AddListIcon } from './style/AddList.style'
 import { AddListModal } from './AddListModal'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { closeModal, openModal } from 'redux/reducers/modal/modal.slice'
+import { ANTDButton } from '../../../../../../../stories/UI/ANTD/Button'
 
 export interface IAddListProps {
   list: IList
@@ -25,12 +26,16 @@ export const AddList: FC<IAddListProps> = ({ list, onAddTask }) => {
 
   return (
     <AddListContainer>
-      <AddListWrapper onClick={() => dispatch(openModal(true))}>
-        <AddListIcon>
-          <Plus size={16} />
-        </AddListIcon>
-        <AddListText>Новая задача</AddListText>
-      </AddListWrapper>
+      <ANTDButton
+        type={"primary"}
+        className={'button-dropDown'}
+        onClick={() => dispatch(openModal(true))}
+        size={'large'}
+        children={"Новая задача"}
+        textTransform={'lowercase'}
+        defaultIcon
+        iconNode={<AddListIcon><Plus size={16} color='#ffffff' /></AddListIcon>}
+      />
       {isOpenModal && (
         <AddListModal
           list={list}

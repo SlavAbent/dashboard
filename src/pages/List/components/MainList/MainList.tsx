@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useMemo } from 'react'
+import React, { useCallback, useContext } from 'react'
 import { MainTodoList } from './components/MainTodoList/MainTodoList'
 import { MainListHeader } from './components/MainListHeader'
 import { MainListWrapper, MainListContainer } from './MainList.style'
@@ -9,9 +9,11 @@ import { tasks } from 'shared/urls'
 import { AddList } from './components/MainTodoList/AddList'
 import { IList, Tasks } from '../../model/index.model'
 import { Link } from 'react-router-dom'
+import { ThemeContext } from '../../../../context/themeContext'
 
 export const MainList = () => {
   const { response, setResponse } = useContext(ListContext)
+  const { toggleTheme } = useContext(ThemeContext)
   const location = useLocation();
 
   const onEditTask = useCallback((listId, taskObj) => {
@@ -53,7 +55,7 @@ export const MainList = () => {
     setResponse(newList)
   },[response, setResponse])
 
-  const onRemove = useCallback(((listId: number, id: number): void => {
+  const onRemove = useCallback(((listId: number, id: number) => {
     if(window.confirm('Вы действительно хотите удалить?')) {
       const newList = response.map((itemTasks: IList) => {
         if (itemTasks.id === listId) {
@@ -90,40 +92,41 @@ export const MainList = () => {
       });
   }, [response, setResponse])
 
-  const createAllTasksOnPage = useMemo(() => response && response.map((item: IList) => {
-    const { id, name, color, colorId, tasks } = item
-    return (
-      <div key={`${name}${colorId}`}>
-        { location.pathname === `/List/${id}` && (
-          <>
-            <MainListWrapper>
-              <Link to={`Edit/${id}`}>
-                <MainListHeader
-                  id={id}
-                  name={name}
-                  color={color}
-                  colorId={colorId}
-                />
-              </Link>
-              <MainTodoList
-                tasks={tasks}
-                onRemove={onRemove}
-                onEdit={onEditTask}
-                onComplete={onComplete}
-              />
-            </MainListWrapper>
-            <AddList
-              list={item}
-              onAddTask={onAddTask}
-            />
-          </>
-        )}
-      </div>
-    )
-  }), [response, location.pathname, onRemove, onEditTask, onComplete, onAddTask])
   return (
     <MainListContainer>
-      {createAllTasksOnPage}
+      {
+        response && response.map((item: IList) => {
+          const { id, name, color, colorId, tasks } = item
+          return (
+            <div key={`${name}${colorId}`}>
+              { location.pathname === `/List/${id}` && (
+                <>
+                  <MainListWrapper color={toggleTheme}>
+                    <Link to={`Edit/${id}`}>
+                      <MainListHeader
+                        id={id}
+                        name={name}
+                        color={color}
+                        colorId={colorId}
+                      />
+                    </Link>
+                    <MainTodoList
+                      tasks={tasks}
+                      onRemove={onRemove}
+                      onEdit={onEditTask}
+                      onComplete={onComplete}
+                    />
+                  </MainListWrapper>
+                  <AddList
+                    list={item}
+                    onAddTask={onAddTask}
+                  />
+                </>
+              )}
+            </div>
+          )
+        })
+      }
     </MainListContainer>
   )
 }

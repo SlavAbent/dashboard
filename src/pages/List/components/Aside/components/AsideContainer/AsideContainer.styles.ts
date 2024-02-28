@@ -1,19 +1,16 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
 
 export const AsideRow = styled.div`
   display: flex;
   align-items: center;
-  padding: 8px;
+  padding: ${p => p.theme.padding.miniSmall};
   width: 100%;
   box-sizing: border-box;
 `
 
-export const AsideContain = styled.div`
-`
-
-export const AsideRowEdit = styled.div`
-  margin-right:${(p) => p.theme.margin.small};
+export const AsideRowWrapper = styled.div`
+  margin-bottom: ${p => p.theme.margin.small};
 `
 
 export const AsideRowText = styled.p`
@@ -21,48 +18,31 @@ export const AsideRowText = styled.p`
   flex-grow: 1;
 `
 
-export const AsideRowWrapper = styled.div`
-  a:hover {
-    background-color: ${props => props.theme.colors.lightTheme.mainColorDarked};
-    border-radius: ${props => props.theme.decoration.borderRadius.default};
+export const AsideNavLinkWrapper = styled.div`
+  margin-bottom: ${p => p.theme.margin.small};
+  transition: .3s;
+  background-color: ${(p) => p.color === 'light'
+          ? p.theme.colors.lightTheme.mainColor
+          : p.theme.colors.darkTheme.mainColor
+  };
+  
+  &:hover {
+    background-color: ${(p) => p.color === 'light'
+        ? p.theme.colors?.lightTheme.mainColorOpacity
+        : p.theme.colors?.darkTheme.grey_dark
+    };
+    border-radius: ${p => p.theme.decoration.borderRadius.default};
   }
 `
+
 export const AsideNavLink = styled(NavLink)`
-  border-radius: ${props => props.theme.decoration.borderRadius.default};
+  border-radius: ${p => p.theme.decoration.borderRadius.default};
   transition: .3s;
   &.active {
     display: flex;
-    background-color: ${props => props.theme.colors.lighterMain};
-    p {
-      color: ${(props) => props.color === 'light'
-              ? props.theme.colors?.lightTheme.mainColor
-              : props.theme.colors?.darkTheme.mainColor
-      };
-    }
-    svg {
-      color: ${(props) => props.color === 'light'
-              ? props.theme.colors?.darkTheme.mainColor
-              : props.theme.colors?.lightTheme.mainColor
-      };
-    }
-  }
-  div:hover {
-    background-color: ${(props) => props.color === 'light'
-            ? props.theme.colors?.lightTheme.mainColor
-            : props.theme.colors?.darkTheme.mainColor
+    background-color: ${(p) => p.color === 'light' 
+      ? p.theme.colors.lightTheme.mainColorDarked 
+      : p.theme.colors.darkTheme.mainColored
     };
-    border-radius: ${props => props.theme.decoration.borderRadius.default};
-    p {
-      color: ${(props) => props.color === 'light'
-              ? props.theme.colors?.darkTheme.mainColor
-              : props.theme.colors?.lightTheme.mainColor
-      };
-    }
-    svg {
-      color: ${(props) => props.color === 'light'
-              ? props.theme.colors?.darkTheme.mainColor
-              : props.theme.colors?.lightTheme.mainColor
-      };
-    }
   }
 `

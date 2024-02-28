@@ -27,6 +27,7 @@ interface IModalProps {
   isClose?: boolean
   handleClose?: (boolean) => void
   onClose?: (boolean) => void
+  theme?: string
 }
 
 export const Modal:FC<IModalProps> = (props) => {
@@ -43,6 +44,7 @@ export const Modal:FC<IModalProps> = (props) => {
     children,
     isOpen,
     handleClose,
+    theme
   } = props
 
 
@@ -61,7 +63,7 @@ export const Modal:FC<IModalProps> = (props) => {
   return (
     <Portal portalId="react-portal-modal-container">
       <ModalContainer>
-        <ModalWrapper>
+        <ModalWrapper color={theme}>
           {isIconClose && <ModalIconClose onClick={handleClose}>
             {iconClose}
           </ModalIconClose>}

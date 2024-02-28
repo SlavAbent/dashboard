@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 const styledButton = css`
     padding: ${(props) => props.theme.padding.small};
-    background-color: ${(props) => props.theme.colors.lightTheme.mainColorDarked};
+    background-color: ${(props) => props.theme.colors.lightTheme.mainColored};
     color: ${(props) => props.theme.colors.lightTheme.mainColor};
     border-radius: ${(props) => props.theme.decoration.borderRadius.default};
     border: none;

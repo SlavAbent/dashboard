@@ -12,6 +12,7 @@ export interface IAsideProps {
   loading?: boolean
   error?: null | any | string
   handleAsideDeleteItem?: (item) => void
+  themeColor: string
 }
 
 export interface Tasks {

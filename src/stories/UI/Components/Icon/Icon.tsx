@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react'
-import { ReactComponent as IconsSVG } from 'assets/Person/male.svg';
+// import { IconsSVG } from 'assets/Person/male.svg';
 import { newGuid } from '../../../../shared/guid'
 import { IIconProps, IconType } from './model/Icon.model'
 import { CustomIcon } from './styles/Icon.styles'
 
 const iconTypes = new Map([
-    ["svg", <IconsSVG key={newGuid()}/>],
+    // ["svg", <IconsSVG key={newGuid()}/>],
 ])
 
 const getIcon = (type: IconType): JSX.Element => iconTypes.get(type) as JSX.Element

@@ -2,8 +2,7 @@ import styled from 'styled-components'
 
 export const ModalContainer = styled.div`
   position: fixed;
-  inset: 0; 
-  background-color: rgba(0, 0, 0, 0.6);
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,9 +19,13 @@ export const ModalWrapper = styled.div`
   width: 400px;
   transform: translate(-50%, -50%);
   padding: ${(p) => p.theme.padding.default};
-  background-color:  ${(p) => p.theme.colors.lightTheme.mainColor};
   box-shadow: ${(p) => p.theme.decoration.boxShadow.panel};
   border-radius: ${(p) => p.theme.decoration.borderRadius.large};
+
+  background-color: ${p => p.color === 'light'
+          ? p.theme.colors?.lightTheme.mainColored
+          : p.theme.colors?.darkTheme.mainColored
+  };
 `
 
 export const ModalHeader = styled.div`
