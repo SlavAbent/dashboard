@@ -1,11 +1,11 @@
 import React from 'react'
-import { ThemeWrapper } from './styles/ThemeContainer.styled'
+import { ThemeWrapper } from './styles/ThemeSwitchContainer.styled'
 import { BsSun } from 'react-icons/bs'
 import { MdOutlineNightlight } from 'react-icons/md'
 import { Theme } from '../../context/themeContext'
 import { useTheme } from '../../hooks/useTheme'
 
-const ThemeContainer = () => {
+const ThemeSwitchContainer = () => {
   const { toggleTheme, toggleThemeFunc } = useTheme()
 
   return (
@@ -15,4 +15,4 @@ const ThemeContainer = () => {
   )
 }
 
-export default ThemeContainer
+export default ThemeSwitchContainer

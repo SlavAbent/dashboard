@@ -1,24 +1,25 @@
 import styled from 'styled-components'
 
-export const AsideWrapper = styled.div<{color: string}>`
+export const AsideWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: .3s;
-  padding: ${(props) => props.theme.padding.default} 0;
-  padding-top: 0;
-  box-shadow: ${props => props.theme.decoration.boxShadow.panelWithoutTop};
+  padding: ${(props) => props.theme.padding.default};
+  box-shadow: ${props => props.theme.decoration.boxShadow.panel};
   background-color: ${(props) => props.color === 'light' 
       ? props.theme.colors?.lightTheme.mainColor 
       : props.theme.colors?.darkTheme.mainColor
   };
+  margin-top: ${p => p.theme.margin.default};
+  border-radius: ${p => p.theme.decoration.borderRadius.large};
   position: relative;
   z-index: 1000;
   &.min__menu {
-    width: 40px;
+    width: 60px;
   }
   &.full__menu {
-    width: 150px;
+    width: 300px;
   }
   
   svg {

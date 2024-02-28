@@ -4,10 +4,12 @@ export const HeaderComponent = styled.div<{color: string | undefined}>`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    height: 45px;
+    width: 100%;
+    min-height: 60px;
     transition: .3s;
-    padding: ${props => props.theme.padding.small};
+    padding: ${props => props.theme.padding.default};
     box-shadow: ${props => props.theme.decoration.boxShadow.panel};
+    border-radius: ${p => p.theme.decoration.borderRadius.large};
     background-color: ${(props) => props.color === 'light' 
       ? props.theme.colors?.lightTheme.mainColor 
       : props.theme.colors?.darkTheme.mainColor

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { AsideProps } from './model/Aside.model'
-import ThemeContainer from '../../../../components/ThemeContainer/ThemeContainer'
+import ThemeSwitchContainer from '../../../../components/ThemeSwitchContainer/ThemeSwitchContainer'
 import { AsideGrowedContainer, AsideWrapper } from './styles/Aside.styled'
 
 const Aside:FC<AsideProps> = ({
@@ -10,10 +10,8 @@ const Aside:FC<AsideProps> = ({
 }) => {
   return (
     <AsideWrapper color={color} className={className}>
-      <AsideGrowedContainer>
-        { asideLinksContent }
-      </AsideGrowedContainer>
-      <ThemeContainer />
+      <AsideGrowedContainer>{ asideLinksContent }</AsideGrowedContainer>
+      <ThemeSwitchContainer />
     </AsideWrapper>
   )
 }

@@ -98,9 +98,9 @@ export const AsideAddList: FC<IAsideAddListProps> = memo((props) => {
         type={"primary"}
         className={'button-dropDown'}
         onClick={openDropDown}
-        size={'middle'}
+        size={'large'}
         children={"Добавить список"}
-        textTransform={'capitalize'}
+        textTransform={'lowercase'}
       />
       <DropDownMenu
         width={200}

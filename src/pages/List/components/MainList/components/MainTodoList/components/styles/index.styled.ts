@@ -1,8 +1,25 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 export const MainTodoListWrapper = styled.div`
   display: flex;
   align-items: center;
+  box-shadow: ${props => props.theme.decoration.boxShadow.panel};
+  border-radius: ${p => p.theme.decoration.borderRadius.default};
+  padding: ${p => p.theme.padding.small};
+  cursor: pointer;
+  margin-bottom: ${props => props.theme.margin.small};
+  background-color: ${(p) => p.color === 'light'
+          ? p.theme.colors.lightTheme.mainColor
+          : p.theme.colors.darkTheme.mainColor
+  };
+
+  &:hover {
+    background-color: ${(p) => p.color === 'light'
+            ? p.theme.colors?.lightTheme.mainColorOpacity
+            : p.theme.colors?.darkTheme.grey_dark
+    };
+    border-radius: ${p => p.theme.decoration.borderRadius.default};
+  }
 `
 
 export const MainTodoListTitle = styled.p`
@@ -26,12 +43,6 @@ export const MainListRow = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: ${props => props.theme.padding.small};
-  border-bottom: 1px solid ${props => props.theme.colors.lightTheme.mainColorOpacity};
-  &:hover {
-    background-color: ${props => props.theme.colors.lightTheme.mainColorOpacity};
-    border-radius: ${props => props.theme.decoration.borderRadius.default};
-    border-bottom: 1px solid ${props => props.theme.colors.lightTheme.mainColorOpacity};
-  }
 `
 
 export const MainListLeftSide = styled.div`

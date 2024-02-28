@@ -1,6 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 import "@fontsource/alef"
-
 
 export const AppWrapper = styled.div`
     display: flex;
@@ -8,15 +7,15 @@ export const AppWrapper = styled.div`
     height: 100vh;
     opacity: 1;
     transition: .3s;
-    background-color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor :  props.theme.colors?.darkTheme.mainColored};
+    background-color: ${(p) => p.color === 'light' ? p.theme.colors?.lightTheme.mainColor :  p.theme.colors?.darkTheme.mainColored};
 
     p {
       font-size: 14px;
-      color: ${(props) => props.color === 'light' ? props.theme.colors.darkTheme.grey_dark : props.theme.colors.lightTheme.mainColored};
+      color: ${(p) => p.color === 'light' ? p.theme.colors.darkTheme.grey_dark : p.theme.colors.lightTheme.mainColored};
     }
     
     svg {
-      color: ${(props) => props.color === 'light' ? props.theme.colors.darkTheme.grey_dark : props.theme.colors.lightTheme.mainColored};
+      color: ${(p) => p.color === 'light' ? p.theme.colors.darkTheme.grey_dark : p.theme.colors.lightTheme.mainColored};
     }
 `;
 
@@ -26,23 +25,10 @@ export const AppMainFields = styled.div`
   align-items: flex-start;
   width: 100%;
   height: 100vh;
+  padding: ${(p) => p.theme.padding.default};
 `;
-export const AsideWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-`
 
 export const AsideWrap = styled.div`
   display: flex;
   height: 100vh;
 `
-
-export const GlobalStyles = createGlobalStyle`
-  body {
-    background-color: black;
-    color: white;
-    transition: background 0.2s ease-in, color 0.2s ease-in;
-  }
-`;

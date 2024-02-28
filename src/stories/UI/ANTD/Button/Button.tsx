@@ -25,18 +25,19 @@ export const ANTDButton: FC<AntdCustomButtonProps> = (props) => {
             <ButtonIcon
               shape={props.shape}
               icon={defaultIcon}
-              iconPosition={iconPosition}>
+              iconPosition={iconPosition}
+            >
                 {iconNode}
             </ButtonIcon>
           )}
-          {props.shape !== 'circle' ? (
+          {props.shape !== 'circle' && (
             <ButtonText
               iconPosition={iconPosition}
               textTransform={textTransform}
             >
               { children }
             </ButtonText>
-          ) : null}
+          )}
         </ButtonChildren>
       </ButtonComponent>
     )

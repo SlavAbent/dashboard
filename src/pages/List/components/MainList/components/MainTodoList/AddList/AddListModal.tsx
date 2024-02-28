@@ -1,10 +1,11 @@
-import React, { Dispatch, FC, SetStateAction } from 'react'
+import React, { Dispatch, FC, SetStateAction, useContext } from 'react'
 import { Close } from 'components/Icons/Close'
 import { AddListForm } from './AddListForm'
 import { Modal } from 'components/uikit/Modal'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { IList } from '../../../../../model/index.model'
 import { closeModal } from 'redux/reducers/modal/modal.slice'
+import { ThemeContext } from '../../../../../../../context/themeContext'
 
 interface AddListModalProps {
   inputValue?: string
@@ -17,7 +18,7 @@ interface AddListModalProps {
 
 export const AddListModal: FC<AddListModalProps> = (props) => {
   const { list, inputValue, loading, toggleVisibleForm, setInputValue, onAddTask } = props
-
+  const { toggleTheme } = useContext(ThemeContext)
   const dispatch = useAppDispatch()
   const isOpenModal = useAppSelector((state) => state.modalSlice)
 
@@ -51,6 +52,7 @@ export const AddListModal: FC<AddListModalProps> = (props) => {
         isOpen={!!isOpenModal}
         handleClose={handleCloseModal}
         content={modalContent}
+        theme={toggleTheme}
       />
     </>
   )

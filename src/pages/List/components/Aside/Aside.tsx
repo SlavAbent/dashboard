@@ -1,14 +1,16 @@
 import React, { useContext } from 'react'
-import { AsideWrapper } from './Aside.style'
+import { AsidePanel, AsideWrapper } from './Aside.style'
 import { AsideHeader } from './components/AsideHeader'
 import { AsideContainer } from './components/AsideContainer'
 import { AsideAddList } from './components/AsideAddList'
 import { useAddedList } from '../../../../hooks/useAddedList'
 import { baseURL } from '../../../../shared/urls'
 import { ListContext } from '../../../../context/providers/listProvider'
+import { ThemeContext } from '../../../../context/themeContext'
 
 export const Aside = () => {
   const { deleteListOnAside } = useAddedList()
+  const { toggleTheme } = useContext(ThemeContext)
   const { response, error, loading, setResponse } = useContext(ListContext)
 
   const handlerAddList = listAside => {
@@ -30,13 +32,16 @@ export const Aside = () => {
 
   return (
     <AsideWrapper>
-      <AsideHeader data={response}/>
-      <AsideContainer
-        data={response}
-        error={error}
-        loading={loading}
-        handleAsideDeleteItem={handleAsideDeleteItem}
-      />
+      <AsidePanel color={toggleTheme}>
+        <AsideHeader data={response}/>
+        <AsideContainer
+          themeColor={toggleTheme as string}
+          data={response}
+          error={error}
+          loading={loading}
+          handleAsideDeleteItem={handleAsideDeleteItem}
+        />
+      </AsidePanel>
       <AsideAddList handlerAddList={handlerAddList}/>
     </AsideWrapper>
   )

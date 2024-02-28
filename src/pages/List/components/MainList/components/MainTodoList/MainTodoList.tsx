@@ -1,8 +1,9 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import { MainTodoListWrapper } from './components/styles/index.styled'
 import { uniqueId } from 'lodash'
 import { Tasks } from '../../../../model/index.model'
 import { Task } from './Task'
+import { ThemeContext } from '../../../../../../context/themeContext'
 
 interface IMainTodoListProps {
   tasks: Tasks[]
@@ -13,6 +14,8 @@ interface IMainTodoListProps {
 
 export const MainTodoList:FC<IMainTodoListProps> = (props) => {
   const { tasks, onRemove, onEdit, onComplete } = props
+  const { toggleTheme } = useContext(ThemeContext)
+
   return (
     <>
       { Array.isArray(tasks) && tasks.map((task: Tasks) => {
@@ -22,6 +25,7 @@ export const MainTodoList:FC<IMainTodoListProps> = (props) => {
            <MainTodoListWrapper
              key={uniqueId(`list_${listId}_${id}`)}
              className={className}
+             color={toggleTheme}
            >
              <Task
                id={id}
