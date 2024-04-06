@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Checkbox = styled.div`
   input {
@@ -37,4 +37,4 @@ export const Checkbox = styled.div`
     cursor: pointer;
     transition: background-color 0.15s ease-in-out;
   }
-`
+`;

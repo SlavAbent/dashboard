@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import "@fontsource/alef"
+import styled from "styled-components";
+import "@fontsource/alef";
 
 export const AppWrapper = styled.div`
     display: flex;
@@ -7,15 +7,15 @@ export const AppWrapper = styled.div`
     height: 100vh;
     opacity: 1;
     transition: .3s;
-    background-color: ${(p) => p.color === 'light' ? p.theme.colors?.lightTheme.mainColor :  p.theme.colors?.darkTheme.mainColored};
+    background-color: ${(p) => p.color === "light" ? p.theme.colors?.lightTheme.mainColor :  p.theme.colors?.darkTheme.mainColored};
 
     p {
       font-size: 14px;
-      color: ${(p) => p.color === 'light' ? p.theme.colors.darkTheme.grey_dark : p.theme.colors.lightTheme.mainColored};
+      color: ${(p) => p.color === "light" ? p.theme.colors.darkTheme.grey_dark : p.theme.colors.lightTheme.mainColored};
     }
     
     svg {
-      color: ${(p) => p.color === 'light' ? p.theme.colors.darkTheme.grey_dark : p.theme.colors.lightTheme.mainColored};
+      color: ${(p) => p.color === "light" ? p.theme.colors.darkTheme.grey_dark : p.theme.colors.lightTheme.mainColored};
     }
 `;
 
@@ -31,4 +31,4 @@ export const AppMainFields = styled.div`
 export const AsideWrap = styled.div`
   display: flex;
   height: 100vh;
-`
+`;

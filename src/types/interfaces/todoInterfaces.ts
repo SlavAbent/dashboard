@@ -1,4 +1,4 @@
-import { TodoActionsTypes } from '../enums/todoEnums'
+import { TodoActionsTypes } from "../enums/todoEnums";
 
 interface IAddTodo {
   type: TodoActionsTypes.ADD_TODO,

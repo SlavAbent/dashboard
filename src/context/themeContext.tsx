@@ -1,9 +1,9 @@
-import { createContext } from 'react'
+import { createContext } from "react";
 
 export enum Theme {
-  LIGHT = 'light',
-  DARK = 'dark',
-  AUTO = 'auto'
+  LIGHT = "light",
+  DARK = "dark",
+  AUTO = "auto"
 }
 
 export interface ThemeContextProps {
@@ -11,4 +11,4 @@ export interface ThemeContextProps {
   setToggleTheme?: (theme: Theme) => void
 }
 
-export const ThemeContext = createContext<ThemeContextProps>({})
+export const ThemeContext = createContext<ThemeContextProps>({});

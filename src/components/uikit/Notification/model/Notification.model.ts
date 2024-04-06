@@ -1,6 +1,6 @@
-import { ToastContainerProps, ToastPosition } from 'react-toastify/dist/types'
+import { ToastPosition } from "react-toastify/dist/types";
 
-export type PositionType = ToastPosition & 'center' | 'centerLeft' | 'centerRight'
+export type PositionType = ToastPosition & "center" | "centerLeft" | "centerRight"
 
 // type OmitKeysNotification = Omit<ToastPosition, "rtl">;
 

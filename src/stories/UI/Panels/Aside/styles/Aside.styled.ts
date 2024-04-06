@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const AsideWrapper = styled.div`
   display: flex;
@@ -7,10 +7,10 @@ export const AsideWrapper = styled.div`
   transition: .3s;
   padding: ${(props) => props.theme.padding.default};
   box-shadow: ${props => props.theme.decoration.boxShadow.panel};
-  background-color: ${(props) => props.color === 'light' 
-      ? props.theme.colors?.lightTheme.mainColor 
-      : props.theme.colors?.darkTheme.mainColor
-  };
+  background-color: ${(props) => props.color === "light" 
+		? props.theme.colors?.lightTheme.mainColor 
+		: props.theme.colors?.darkTheme.mainColor
+};
   margin-top: ${p => p.theme.margin.default};
   border-radius: ${p => p.theme.decoration.borderRadius.large};
   position: relative;
@@ -23,10 +23,10 @@ export const AsideWrapper = styled.div`
   }
   
   svg {
-    fill: ${(props) => props.color === 'light' 
-      ? props.theme.colors?.darkTheme.mainColor 
-      : props.theme.colors?.lightTheme.mainColor
-    }
+    fill: ${(props) => props.color === "light" 
+		? props.theme.colors?.darkTheme.mainColor 
+		: props.theme.colors?.lightTheme.mainColor
+}
   }
 `;
 
@@ -36,4 +36,4 @@ export const AsideGrowedContainer = styled.div`
   align-items: center;
   flex-grow: 1;
   width: 100%;
-`
+`;

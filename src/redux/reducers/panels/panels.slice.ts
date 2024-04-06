@@ -1,19 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  togglePanels: false
-}
+	togglePanels: false
+};
 
 export const panelsSlice = createSlice({
-  name: 'panels',
-  initialState,
-  reducers: {
-    togglePanels: (state) => {
-      state.togglePanels = !state.togglePanels
-    }
-  }
-})
+	name: "panels",
+	initialState,
+	reducers: {
+		togglePanels: (state) => {
+			state.togglePanels = !state.togglePanels;
+		}
+	}
+});
 
-export const { togglePanels } = panelsSlice.actions
+export const { togglePanels } = panelsSlice.actions;
 
-export default panelsSlice.reducer
+export default panelsSlice.reducer;

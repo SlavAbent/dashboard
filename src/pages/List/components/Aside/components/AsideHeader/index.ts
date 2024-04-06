@@ -1,1 +1,1 @@
-export { AsideHeader } from './AsideHeader'
+export { AsideHeader } from "./AsideHeader";

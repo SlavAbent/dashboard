@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { AiOutlineMenuUnfold } from 'react-icons/ai'
+import styled from "styled-components";
+import { AiOutlineMenuUnfold } from "react-icons/ai";
 
 export const LogoIcon = styled(AiOutlineMenuUnfold)`
   display: flex;
@@ -8,4 +8,4 @@ export const LogoIcon = styled(AiOutlineMenuUnfold)`
   margin-right: 30px;
   transition: .3s;
   cursor: pointer;
-`
+`;

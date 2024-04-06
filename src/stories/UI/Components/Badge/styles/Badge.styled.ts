@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const BadgeContainer =  styled.span`
   display: flex;
@@ -44,4 +44,4 @@ export const BadgeContainer =  styled.span`
       background-color: #ffbbcc;
     }
   }
-`
+`;

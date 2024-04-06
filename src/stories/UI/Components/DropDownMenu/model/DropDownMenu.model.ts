@@ -1,9 +1,9 @@
-import { ReactNode } from 'react'
+import { ReactNode } from "react";
 
-export type DirectionType = 'bottomToLeft'
-  | 'bottomToRight'
-  | 'topToLeft'
-  | 'topToRight'
+export type DirectionType = "bottomToLeft"
+  | "bottomToRight"
+  | "topToLeft"
+  | "topToRight"
 
 export interface IDropDownMenuProps {
   color?: string

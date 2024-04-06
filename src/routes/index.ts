@@ -1,2 +1,2 @@
-export { RoutesWrapper } from './RoutesWrapper'
-export { StandartPage } from './StandartPage'
+export { RoutesWrapper } from "./RoutesWrapper";
+export { StandartPage } from "./StandartPage";

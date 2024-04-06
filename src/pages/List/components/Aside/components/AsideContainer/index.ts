@@ -1,1 +1,1 @@
-export { AsideContainer } from './AsideContainer'
+export { AsideContainer } from "./AsideContainer";

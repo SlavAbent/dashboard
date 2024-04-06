@@ -1,5 +1,5 @@
-import { IInitialState } from 'types/interfaces/interfaces'
+import { IInitialState } from "types/interfaces/interfaces";
 
 export const store: IInitialState = {
-  todos: [],
-}
+	todos: [],
+};

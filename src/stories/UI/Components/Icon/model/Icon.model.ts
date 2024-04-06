@@ -1,6 +1,6 @@
-import { DOMAttributes } from 'react'
+import { DOMAttributes } from "react";
 
-export type IconType = 'svg' | 'png'
+export type IconType = "svg" | "png"
 
 export interface IIconProps extends DOMAttributes<HTMLDivElement> {
   className?: string

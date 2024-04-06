@@ -1,46 +1,46 @@
-import React, { FC } from 'react'
+import React, { FC } from "react";
 
-import { IMaxCard } from '../types/cards.model'
+import { IMaxCard } from "../types/cards.model";
 import {
-  TodoCardDescription,
-  TodoCardTitle,
-  TodoCardWrapper,
-  TodoDateCreate,
-  TodoFixNote,
-  TodoFooter,
-  TodoCardInfo,
-  TodoCard,
-} from './styles/MaxCard.styles'
+	TodoCardDescription,
+	TodoCardTitle,
+	TodoCardWrapper,
+	TodoDateCreate,
+	TodoFixNote,
+	TodoFooter,
+	TodoCardInfo,
+	TodoCard,
+} from "./styles/MaxCard.styles";
 
 export const MaxCard:FC<Readonly<IMaxCard<number>>> = ({
-    description,
-    className,
-    onClick,
-    title,
-    icon,
-    date,
-    iconFix,
-    style,
-    color
-  }) => {
-  return (
-    <TodoCard style={style} color={color}>
-      <TodoCardInfo>
-        <TodoCardWrapper
-          className={className}
-        >
-          <TodoCardTitle>{title}</TodoCardTitle>
-          <TodoCardDescription>{description}</TodoCardDescription>
-        </TodoCardWrapper>
-        { icon }
-      </TodoCardInfo>
-      <TodoFooter>
-        <TodoDateCreate>{date}</TodoDateCreate>
-        <TodoFixNote>
-          { iconFix }
-        </TodoFixNote>
-      </TodoFooter>
-    </TodoCard>
-  )
-}
+	description,
+	className,
+	onClick,
+	title,
+	icon,
+	date,
+	iconFix,
+	style,
+	color
+}) => {
+	return (
+		<TodoCard style={style} color={color}>
+			<TodoCardInfo>
+				<TodoCardWrapper
+					className={className}
+				>
+					<TodoCardTitle>{title}</TodoCardTitle>
+					<TodoCardDescription>{description}</TodoCardDescription>
+				</TodoCardWrapper>
+				{ icon }
+			</TodoCardInfo>
+			<TodoFooter>
+				<TodoDateCreate>{date}</TodoDateCreate>
+				<TodoFixNote>
+					{ iconFix }
+				</TodoFixNote>
+			</TodoFooter>
+		</TodoCard>
+	);
+};
 

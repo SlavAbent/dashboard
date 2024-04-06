@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Input = styled.input`
   width: 100%;
@@ -28,10 +28,10 @@ export const Input = styled.input`
       color: ${props => props.theme.colors.lighterRed};
     }
   }
-`
+`;
 
 export const InputLabel = styled.label`
   position: absolute;
   top: 5px;
   z-index: 10;
-`
+`;

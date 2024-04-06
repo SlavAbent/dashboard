@@ -1,12 +1,12 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const AvatarButton = styled.div`
     position: relative;
     cursor: pointer;
-`
+`;
 
 const AvatarWrapper = styled.div`
-    background-color: ${(props) => props.color === 'light' ? props.theme.colors?.darkTheme.mainColor : props.theme.colors?.lightTheme.mainColor};
+    background-color: ${(props) => props.color === "light" ? props.theme.colors?.darkTheme.mainColor : props.theme.colors?.lightTheme.mainColor};
     border-radius: 50%;
     z-index: 10000;
     overflow: hidden;
@@ -54,7 +54,7 @@ const AvatarBorder = styled.div`
     bottom: 0;
     z-index: 1001;
     border-radius: 50%;
-    border: 1px solid ${(props) => props.color === 'light' ? props.theme.colors?.darkTheme.mainColor : props.theme.colors?.lightTheme.mainColor};;
+    border: 1px solid ${(props) => props.color === "light" ? props.theme.colors?.darkTheme.mainColor : props.theme.colors?.lightTheme.mainColor};;
 `;
 
 const AvatarBorderBox = styled.div`
@@ -62,11 +62,11 @@ const AvatarBorderBox = styled.div`
 `;
 
 export {
-  AvatarWrapper,
-  AvatarImage,
-  AvatarButton,
-  AvatarFace,
-  AvatarBorder,
-  AvatarBorderBox,
-  AvatarStatus,
-}
+	AvatarWrapper,
+	AvatarImage,
+	AvatarButton,
+	AvatarFace,
+	AvatarBorder,
+	AvatarBorderBox,
+	AvatarStatus,
+};

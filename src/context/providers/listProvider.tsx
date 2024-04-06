@@ -1,29 +1,31 @@
-import React, { createContext, Dispatch, FC } from 'react'
-import { useAxios } from 'hooks/useAxios'
-import { IList, IListContextData } from '../../pages/List/model/index.model'
+import React, { FC, createContext } from "react";
+
+import { IListContextData } from "../../pages/List/model/index.model";
+import { useAxios } from "hooks/useAxios";
 
 export interface ListProviderProps {
   children: React.ReactNode
 }
 
 const defaultValue = {
-  response: [],
-  setResponse: () => {},
-  loading: true,
-  error: '',
-}
+	response: [],
+	// eslint-disable-next-line @typescript-eslint/no-empty-function
+	setResponse: () => {},
+	loading: true,
+	error: "",
+};
 
-export const ListContext = createContext<IListContextData>(defaultValue)
+export const ListContext = createContext<IListContextData>(defaultValue);
 
 export const ListProvider:FC<ListProviderProps> = ({ children }) => {
-  const { response, error, loading, setResponse } = useAxios({
-    url: '/lists?_expand=color&_embed=tasks',
-    method: 'GET',
-  })
+	const { response, error, loading, setResponse } = useAxios({
+		url: "/lists?_expand=color&_embed=tasks",
+		method: "GET",
+	});
 
-  return (
-    <ListContext.Provider value={{ response, error, loading, setResponse }}>
-      {children}
-    </ListContext.Provider>
-  )
-}
+	return (
+		<ListContext.Provider value={{ response, error, loading, setResponse }}>
+			{children}
+		</ListContext.Provider>
+	);
+};

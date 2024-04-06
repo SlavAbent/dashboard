@@ -1,1 +1,1 @@
-export { Plus } from './Plus'
+export { Plus } from "./Plus";

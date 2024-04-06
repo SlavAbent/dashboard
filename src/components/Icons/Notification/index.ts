@@ -1,1 +1,1 @@
-export { NotificationIcon } from './Notification'
+export { NotificationIcon } from "./Notification";
