@@ -1,1 +1,1 @@
-export { Check } from './Check'
+export { Check } from "./Check";

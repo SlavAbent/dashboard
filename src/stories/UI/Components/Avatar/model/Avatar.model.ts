@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-export type statusType = 'success' | 'warning' | 'error'
+export type statusType = "success" | "warning" | "error"
 
 export interface IAvatarProps {
   className?: string

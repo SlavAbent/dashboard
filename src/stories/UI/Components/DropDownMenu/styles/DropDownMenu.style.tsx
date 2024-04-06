@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const DropDownMenuWrapper = styled.div<{color: string | undefined}>`
   display: flex;
@@ -12,19 +12,19 @@ const DropDownMenuWrapper = styled.div<{color: string | undefined}>`
   border-radius: 8px;
   opacity: 0;
   visibility: hidden;
-  background-color: ${(props) => props.color === 'light'
-      ? props.theme.colors?.lightTheme.mainColor 
-      : props.theme.colors?.darkTheme.mainColor
-  };
+  background-color: ${(props) => props.color === "light"
+		? props.theme.colors?.lightTheme.mainColor 
+		: props.theme.colors?.darkTheme.mainColor
+};
 
   p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: ${(props) => props.color === 'light'
-            ? props.theme.colors?.darkTheme.mainColor
-            : props.theme.colors?.lightTheme.mainColor
-    }
+    color: ${(props) => props.color === "light"
+		? props.theme.colors?.darkTheme.mainColor
+		: props.theme.colors?.lightTheme.mainColor
+}
   }
   
   form {
@@ -76,5 +76,5 @@ const DropDownMenuWrapper = styled.div<{color: string | undefined}>`
   &.transitioned {
       transition: .1s ease-in-out;
   }
-`
-export { DropDownMenuWrapper }
+`;
+export { DropDownMenuWrapper };

@@ -1,14 +1,14 @@
-import { ReactNode } from 'react'
+import { ReactNode } from "react";
 
-export type antdButtonSize = 'large' | 'middle' | 'small'
-export type antdButtonType = 'primary' | 'dashed' | 'link' | 'text' | 'default'
-export type antdButtonShape = 'default' | 'circle' | 'round'
+export type antdButtonSize = "large" | "middle" | "small"
+export type antdButtonType = "primary" | "dashed" | "link" | "text" | "default"
+export type antdButtonShape = "default" | "circle" | "round"
 export enum AntdButtonIconPosition {
-  left = 'left',
-  right = 'right',
+  left = "left",
+  right = "right",
 }
 
-export type AntdButtonTextTransform = 'uppercase' | 'lowercase' | 'capitalize'
+export type AntdButtonTextTransform = "uppercase" | "lowercase" | "capitalize"
 
 export interface AntdCustomButtonProps {
   shape?: antdButtonShape
@@ -23,7 +23,7 @@ export interface AntdCustomButtonProps {
   iconPosition?: AntdButtonIconPosition.left
   iconNode?: ReactNode | string
   loading?: boolean
-  children?: string | number | ReactNode
+  children?: string
   textTransform?: AntdButtonTextTransform
   className?: string
 }

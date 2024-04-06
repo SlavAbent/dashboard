@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const TaskInformation = styled.div`
   display: flex;
@@ -21,8 +21,8 @@ export const TaskInformation = styled.div`
     font-weight: 400;
     color: ${(props) => props.theme.colors.lightTheme.mainColorDark};
   }
-`
+`;
 
 export const TaskStatus = styled.span`
   color: ${(props) => props.theme.colors.lightTheme.mainColorDark};
-`
+`;

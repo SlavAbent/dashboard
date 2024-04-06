@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const ThemeWrapper = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ export const ThemeWrapper = styled.div`
   svg {
     width: 100%;
     height: 100%;
-    color: ${(props) => props.color === 'light' ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
+    color: ${(props) => props.color === "light" ? props.theme.colors?.lightTheme.mainColor : props.theme.colors?.darkTheme.mainColor};
     cursor: pointer;
   }
-`
+`;

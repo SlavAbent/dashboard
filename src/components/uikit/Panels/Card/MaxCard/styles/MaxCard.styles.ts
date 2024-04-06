@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const TodoCardTitle = styled.p`
   max-width: 250px;
@@ -10,10 +10,10 @@ export const TodoCardInfo = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-`
+`;
 export const TodoCard = styled.div`
   width: 100%;
-`
+`;
 
 export const TodoCardWrapper = styled.div`
   display: flex;

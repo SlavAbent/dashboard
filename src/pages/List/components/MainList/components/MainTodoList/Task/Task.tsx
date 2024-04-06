@@ -1,8 +1,8 @@
-import React, { ChangeEvent, FC, useContext } from 'react'
-import { CustomCheckbox } from '../components'
-import { MainTodoListIcon, MainTodoListTitle, MainTodoListRow, MainListRow, MainListLeftSide } from '../components/styles/index.styled'
-import { Edit } from '../../../../../../../components/Icons/Edit'
-import { Delete } from '../../../../../../../components/Icons/Delete'
+import React, { ChangeEvent, FC } from "react";
+import { CustomCheckbox } from "../components";
+import { MainTodoListIcon, MainTodoListTitle, MainTodoListRow, MainListRow, MainListLeftSide } from "../components/styles/index.styled";
+import { Edit } from "../../../../../../../components/Icons/Edit";
+import { Delete } from "../../../../../../../components/Icons/Delete";
 
 interface ITaskProps {
   id: number
@@ -16,42 +16,42 @@ interface ITaskProps {
 }
 
 export const Task:FC<ITaskProps> = (props) => {
-  const {
-    id,
-    text,
-    listId,
-    onEdit,
-    onRemove,
-    completed,
-    onComplete,
-    className,
-  } = props
+	const {
+		id,
+		text,
+		listId,
+		onEdit,
+		onRemove,
+		completed,
+		onComplete,
+		className,
+	} = props;
 
-  const onChangeTask = (e: ChangeEvent<HTMLInputElement>): void => {
-    onComplete(listId, id, e.target.checked);
-  }
+	const onChangeTask = (e: ChangeEvent<HTMLInputElement>): void => {
+		onComplete(listId, id, e.target.checked);
+	};
 
-  return (
-    <MainListRow className={className}>
-      <MainListLeftSide>
-        <CustomCheckbox
-          id={id}
-          completed={completed}
-          onChange={onChangeTask}
-        />
-        <MainTodoListTitle className={className}>
-          {text}
-        </MainTodoListTitle>
-      </MainListLeftSide>
-      <MainTodoListRow>
-        <MainTodoListIcon onClick={() => onEdit(listId, { id, text } )}>
-          <Edit />
-        </MainTodoListIcon>
-        <MainTodoListIcon onClick={() => onRemove(listId, id)}>
-          <Delete />
-        </MainTodoListIcon>
-      </MainTodoListRow>
-    </MainListRow>
-  )
-}
+	return (
+		<MainListRow className={className}>
+			<MainListLeftSide>
+				<CustomCheckbox
+					id={id}
+					completed={completed}
+					onChange={onChangeTask}
+				/>
+				<MainTodoListTitle className={className}>
+					{text}
+				</MainTodoListTitle>
+			</MainListLeftSide>
+			<MainTodoListRow>
+				<MainTodoListIcon onClick={() => onEdit(listId, { id, text } )}>
+					<Edit />
+				</MainTodoListIcon>
+				<MainTodoListIcon onClick={() => onRemove(listId, id)}>
+					<Delete />
+				</MainTodoListIcon>
+			</MainTodoListRow>
+		</MainListRow>
+	);
+};
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const TimeWrapper = styled.div`
   display: flex;
@@ -21,4 +21,4 @@ export const TimeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;

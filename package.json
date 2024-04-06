@@ -20,6 +20,12 @@
     "antd": "^5.8.4",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-webpack-plugin": "^3.2.0",
     "jest": "^28.1.0",
     "json-server": "^0.17.0",
@@ -52,7 +58,9 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
-    "fake-json": "json-server ./src/assets/db.json --watch --port 4001"
+    "fake-json": "json-server ./src/assets/db.json --watch --port 4001",
+    "eslint:check": "eslint ./src",
+    "eslint:fix": "eslint ./src --fix"
   },
   "resolutions": {
     "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.cd77847.0"

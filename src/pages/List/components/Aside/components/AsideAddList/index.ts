@@ -1,1 +1,1 @@
-export { AsideAddList } from './AsideAddList'
+export { AsideAddList } from "./AsideAddList";

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const LoaderWrapper = styled.div`
   display: flex;
@@ -11,10 +11,10 @@ export const LoaderWrapper = styled.div`
   &.none{
     opacity: 0;
   }
-`
+`;
 
 export const LoaderTitle = styled.p`
   font-size: 14px;
-`
+`;
 
 

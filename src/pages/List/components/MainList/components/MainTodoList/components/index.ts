@@ -1,1 +1,1 @@
-export { CustomCheckbox } from './CustomCheckbox'
+export { CustomCheckbox } from "./CustomCheckbox";

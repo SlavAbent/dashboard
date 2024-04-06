@@ -1,1 +1,1 @@
-export { MainList } from './MainList'
+export { MainList } from "./MainList";

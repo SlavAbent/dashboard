@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const NotificationWrapper = styled.div`
   position: fixed;
@@ -76,4 +76,4 @@ export const NotificationWrapper = styled.div`
     bottom: ${(p) => p.theme.margin.large};
     right: ${(p) => p.theme.margin.large};
   }
-`
+`;

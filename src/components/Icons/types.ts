@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-export type sizeBox = 'small' | 'default' | 'defaultBig' | 'big'
+export type sizeBox = "small" | "default" | "defaultBig" | "big"
 export type IIcon = {
   children?: React.ReactNode;
   size?: number;

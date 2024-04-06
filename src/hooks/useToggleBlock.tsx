@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import { useState } from "react";
 
 export const useToggleBlock = () => {
-  const [activeDropDown, setActiveDropDown] = useState(false)
+	const [activeDropDown, setActiveDropDown] = useState(false);
 
-  if (activeDropDown) setActiveDropDown(activeDropDown => !activeDropDown)
+	if (activeDropDown) setActiveDropDown(activeDropDown => !activeDropDown);
 
 
-  if (!activeDropDown) return
+	if (!activeDropDown) return;
 
-  return { activeDropDown, setActiveDropDown }
-}
+	return { activeDropDown, setActiveDropDown };
+};
 

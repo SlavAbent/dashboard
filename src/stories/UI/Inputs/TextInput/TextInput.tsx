@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
-import { Input, InputLabel } from './styled/TextInput.styles'
-import cn from 'classnames'
+import React, { FC } from "react";
+import { Input, InputLabel } from "./styled/TextInput.styles";
+import cn from "classnames";
 
 interface ITextInput {
   type: string
@@ -13,36 +13,36 @@ interface ITextInput {
   required?: boolean
 }
 export const TextInput: FC<ITextInput> = (props) => {
-  const {
-    type,
-    placeholder,
-    value,
-    onChange,
-    error,
-    className,
-    required,
-    disabled,
-  } = props
+	const {
+		type,
+		placeholder,
+		value,
+		onChange,
+		error,
+		className,
+		required,
+		disabled,
+	} = props;
 
-  const classes = cn('input', {
-    [`error`]: error,
-    [`${disabled}`]: disabled
-  }, className)
+	const classes = cn("input", {
+		["error"]: error,
+		[`${disabled}`]: disabled
+	}, className);
 
-  return (
-    <>
-      <Input
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        disabled={disabled}
-        required={required}
-        className={classes}
-      />
-      <InputLabel
-        className={classes}
-      />
-    </>
-  )
-}
+	return (
+		<>
+			<Input
+				type={type}
+				placeholder={placeholder}
+				value={value}
+				onChange={onChange}
+				disabled={disabled}
+				required={required}
+				className={classes}
+			/>
+			<InputLabel
+				className={classes}
+			/>
+		</>
+	);
+};

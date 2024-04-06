@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 
 export const CustomIcon = styled.div`
@@ -9,4 +9,4 @@ export const CustomIcon = styled.div`
     width: 100%;
     height: 100%;
   }
-`
+`;

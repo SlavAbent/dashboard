@@ -1,9 +1,9 @@
-import styled from 'styled-components/macro';
+import styled from "styled-components/macro";
 
 const baseStyledRoutes = `
   display: flex;
   align-items: flex-start;
-`
+`;
 
 const RoutesComponent = styled.div`
   ${baseStyledRoutes};
@@ -15,4 +15,4 @@ const RoutesComponentLocation = styled.div`
   width: 100%;
 `;
 
-export { RoutesComponent, RoutesComponentLocation }
+export { RoutesComponent, RoutesComponentLocation };

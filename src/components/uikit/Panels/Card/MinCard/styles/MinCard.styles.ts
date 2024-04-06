@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro'
+import styled from "styled-components/macro";
 
 export const MinCardWrapper = styled.div`
   width: 100%;
@@ -9,8 +9,8 @@ export const MinCardWrapper = styled.div`
   &.completed {
     text-decoration: line-through;
   }
-`
+`;
 
 export const MinCardTitle = styled.p`
   font-size: 14px;
-`
+`;
